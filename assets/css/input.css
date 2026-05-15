@@ -531,4 +531,20 @@
   .footer-link {
     @apply text-sm text-Theme-Black transition-all duration-300 hover:text-Theme-Green
   }
+
+  .heading-h2 {
+    @apply text-[38px] leading-[48px] font-Inter-disp capitalize text-Theme-Black tracking-[-0.76px]
+  }
+
+  .card-Theme {
+    @apply bg-white rounded-10px flex items-center justify-center flex-col py-[48px] px-5
+  }
+
+  .card-title {
+    @apply mt-4 text-xl leading-[26px] tracking-[0.4px] font-Inter-disp capitalize text-Theme-Black text-center mb-3
+  }
+
+  .card-para {
+    @apply text-center text-sm leading-5 text-[#7D7676] w-full max-w-[304px] mx-auto
+  }
 }
