@@ -2662,14 +2662,9 @@
       }
     }
   }
-  .max-\[370px\]\:flex {
-    @media (width < 370px) {
-      display: flex;
-    }
-  }
-  .max-\[370px\]\:flex-row {
-    @media (width < 370px) {
-      flex-direction: row;
+  .max-2xl\:hidden {
+    @media (width < 96rem) {
+      display: none;
     }
   }
   .max-lg\:col-span-2 {
@@ -2685,11 +2680,6 @@
   .max-lg\:px-5 {
     @media (width < 64rem) {
       padding-inline: calc(var(--spacing) * 5);
-    }
-  }
-  .max-md\:mb-\[26px\] {
-    @media (width < 48rem) {
-      margin-bottom: 26px;
     }
   }
   .max-md\:w-4 {
