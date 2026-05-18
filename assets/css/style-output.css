@@ -3942,12 +3942,9 @@
     }
   }
   .ticker-track {
-    animation: ticker 280s linear infinite;
+    animation: ticker 220s linear infinite;
     width: max-content;
     will-change: transform;
-  }
-  .ticker-wrapper:hover .ticker-track {
-    animation-play-state: paused;
   }
 }
 @property --tw-translate-x {
