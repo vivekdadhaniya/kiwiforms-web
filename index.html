@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="assets/css/style-output.css" />
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
 
   <body class="font-inter bg-[#E2DCDC] w-full flex flex-col gap-px">
@@ -294,7 +297,7 @@
               x-transition:leave="transition ease-in duration-200"
               x-transition:leave-start="opacity-100 translate-y-0"
               x-transition:leave-end="opacity-0 -translate-y-3"
-              class="lg:hidden gap-px w-full"
+              class="lg:hidden gap-px w-full overflow-auto h-auto max-h-[calc(100vh-64px)]"
               style="display: none"
             >
               <!-- left spacer -->
@@ -742,6 +745,7 @@
                                 FORM TEMPLATES
                               </p>
                               <svg
+                                class="mx-auto"
                                 width="254"
                                 height="78"
                                 viewBox="0 0 254 78"
@@ -1580,7 +1584,12 @@
             </div>
 
             <!-- WRAPPER -->
-            <div x-data="{ activeTab: 'forms' }" class="relative w-full">
+            <img
+              src="assets/images/aa.webp"
+              alt="Dashboard UI"
+              class="w-full h-auto rounded-10px lg:hidden"
+            />
+            <div x-data="{ activeTab: 'forms' }" class="relative w-full hidden lg:block">
               <!-- TABS -->
               <div
                 class="flex items-center justify-center p-[2px] gap-px bg-Theme-bg rounded-10px absolute -top-[22px] left-1/2 -translate-x-1/2 w-full max-w-[607px]"
@@ -1725,19 +1734,25 @@
             class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
-              <div class="rounded-l-10px flex items-center bg-white justify-center flex-col px-14">
-                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-[26px]">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col px-14 max-lg:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-[26px]"
+                >
                   Advanced forms made effortless
                 </p>
-                <h2 class="heading-h2">Build forms that convert without complexity</h2>
-                <p class="text-base leading-7 text-[#7D7676] mt-5">
+                <h2 class="heading-h2 text-center lg:text-left">
+                  Build forms that convert without complexity
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-5 text-center lg:text-left">
                   Kiwiform brings powerful form-building features together in a clean, intuitive
                   experience that’s easy to start and flexible as you grow. Truly a simplified
                   Typeform Alternative. Add and arrange form fields, refine layouts, and shape your
                   form exactly the way you need, without slowing down.
                 </p>
               </div>
-              <div class="rounded-r-10px overflow-hidden">
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
                 <img
                   src="assets/images/advanced forms made.webp"
                   alt="form fields image"
@@ -1745,7 +1760,7 @@
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
               <div class="card-Theme">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
@@ -1812,7 +1827,7 @@
                 </p>
               </div>
 
-              <div class="card-Theme">
+              <div class="card-Theme sm:col-span-2 lg:col-span-1">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1881,12 +1896,18 @@
             class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
-              <div class="rounded-l-10px flex items-center bg-white justify-center flex-col px-14">
-                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-[26px]">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col px-14 max-lg:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-[26px]"
+                >
                   Start faster with Kiwizard AI
                 </p>
-                <h2 class="heading-h2">AI Form Builder to turn ideas into forms instantly</h2>
-                <p class="text-base leading-7 text-[#7D7676] mt-5">
+                <h2 class="heading-h2 text-center lg:text-left">
+                  AI Form Builder to turn ideas into forms instantly
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-5 text-center lg:text-left">
                   Kiwizard is an AI form builder built into Kiwiform that helps you turn ideas into
                   structured form drafts in seconds. Describe what you need, generate a clear
                   starting point, and refine it through simple inputs. Build faster, skip the blank
@@ -1895,7 +1916,7 @@
                   your way.
                 </p>
               </div>
-              <div class="rounded-r-10px overflow-hidden">
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
                 <img
                   src="assets/images/Start faster with Kiwizard AI.webp"
                   alt="form fields image"
@@ -1903,7 +1924,7 @@
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
               <div class="card-Theme">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
@@ -1975,7 +1996,7 @@
                 </p>
               </div>
 
-              <div class="card-Theme">
+              <div class="card-Theme sm:col-span-2 lg:col-span-1">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
                     width="30"
@@ -2061,20 +2082,28 @@
             class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
-              <div class="rounded-l-10px flex items-center bg-white justify-center flex-col px-14">
-                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-[26px]">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col px-14 max-lg:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-[26px]"
+                >
                   Styling that stays simple
                 </p>
 
-                <h2 class="heading-h2 max-w-[480px]">Consistent design across forms</h2>
+                <h2 class="heading-h2 max-w-[480px] text-center lg:text-left">
+                  Consistent design across forms
+                </h2>
 
-                <p class="text-base leading-7 text-[#7D7676] mt-5 max-w-[560px]">
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 max-w-[560px] text-center lg:text-left"
+                >
                   Maintain consistent design across every form you create. Kiwiform lets you choose
                   from the Theme Library or save your own styles in My Themes, so your branding
                   stays unified without repeated effort.
                 </p>
               </div>
-              <div class="rounded-r-10px overflow-hidden">
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
                 <img
                   src="assets/images/Start faster with Kiwizard AI.webp"
                   alt="form fields image"
@@ -2082,7 +2111,7 @@
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
               <div class="card-Theme">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
@@ -2180,7 +2209,7 @@
                 </p>
               </div>
 
-              <div class="card-Theme">
+              <div class="card-Theme sm:col-span-2 lg:col-span-1">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2297,7 +2326,7 @@
             <div
               class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
             >
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
                 <div class="card-Theme">
                   <span class="w-[50px] h-[50px] flex items-center justify-center">
                     <svg
@@ -2602,21 +2631,29 @@
             class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
-              <div class="rounded-l-10px flex items-center bg-white justify-center flex-col px-14">
-                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-[26px]">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col px-14 max-lg:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-[26px]"
+                >
                   Integrations that deliver
                 </p>
 
-                <h2 class="heading-h2 max-w-[480px]">Connect your forms to your workflow</h2>
+                <h2 class="heading-h2 max-w-[480px] text-center lg:text-left">
+                  Connect your forms to your workflow
+                </h2>
 
-                <p class="text-base leading-7 text-[#7D7676] mt-5 max-w-[560px]">
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 max-w-[560px] text-center lg:text-left"
+                >
                   Streamline your work and boost efficiency with powerful integrations that connect
                   your forms to the tools you already use. Kiwiform makes it easy to send responses
                   where they matter most right when they’re submitted. Kiwiform keeps it simple and
                   hassle free. A smarter and affordable alternative of expensive Typeform.
                 </p>
               </div>
-              <div class="rounded-r-10px overflow-hidden">
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
                 <img
                   src="assets/images/Integrations that deliver.webp"
                   alt="form fields image"
@@ -2624,7 +2661,7 @@
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
               <div class="card-Theme">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
@@ -2715,7 +2752,7 @@
                 </p>
               </div>
 
-              <div class="card-Theme">
+              <div class="card-Theme sm:col-span-2 lg:col-span-1">
                 <span class="w-[50px] h-[50px] flex items-center justify-center">
                   <svg
                     width="24"
@@ -2789,12 +2826,14 @@
           <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center gap-px h-full bg-Theme-bg"
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex flex-col lg:flex-row items-center justify-center gap-px h-full bg-Theme-bg"
           >
             <!-- icon grid  -->
-            <div class="w-full max-w-[261px] grid grid-cols-2 gap-px">
+            <div
+              class="w-full lg:max-w-[261px] grid grid-cols-2 min-[500px]:grid-cols-4 md:grid-cols-8 lg:grid-cols-2 gap-px"
+            >
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -2845,7 +2884,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -2912,7 +2951,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -2936,7 +2975,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -2953,7 +2992,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="40"
@@ -2977,7 +3016,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3013,7 +3052,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3041,7 +3080,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3070,11 +3109,116 @@
                 </svg>
               </div>
             </div>
-            <div class="w-full h-full bg-white rounded-10px"></div>
-            <!-- icon grid  -->
-            <div class="w-full max-w-[261px] grid grid-cols-2 gap-px">
+            <!-- content for intigration  -->
+            <div
+              class="w-full h-full bg-white rounded-10px flex items-center justify-center flex-col px-4 max-lg:py-9"
+            >
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="flex items-center gap-2 p-[7px] pr-3.5 rounded-full border border-Theme-bg mb-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  overflow="visible"
+                >
+                  <g>
+                    <path
+                      d="M 0 10 C 0 4.477 4.477 0 10 0 C 15.523 0 20 4.477 20 10 C 20 15.523 15.523 20 10 20 C 4.477 20 0 15.523 0 10 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 9.999 1 C 10.631 1 11.26 1.066 11.878 1.197 C 12.69 1.369 13.199 2.135 13.199 2.965 L 13.199 5.8 C 13.199 6.352 13.647 6.8 14.199 6.8 L 17.034 6.8 C 17.864 6.8 18.63 7.31 18.802 8.121 C 19.598 11.85 17.958 15.676 14.708 17.67 C 11.459 19.665 7.305 19.395 4.34 16.997 C 1.376 14.599 0.244 10.593 1.516 6.999 C 2.787 3.404 6.186 1.001 9.999 1 Z"
+                      fill="rgb(184,221,47)"
+                    ></path>
+                    <g>
+                      <defs>
+                        <linearGradient
+                          id="idid_RbbaI1K_0g-1832893084"
+                          x1="0.28294222283904363"
+                          x2="0.7170577771609563"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0"
+                            stop-color="rgba(24,60,26,0.25)"
+                            stop-opacity="0.25"
+                          ></stop>
+                          <stop offset="1" stop-color="rgba(24,60,26,0)" stop-opacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M 13.5 6.5 L 19.014 6.8 L 19.183 9.13 C 19.21 9.509 19.2 9.89 19.153 10.267 L 19.08 10.866 C 19.036 11.221 18.96 11.572 18.851 11.913 L 18.634 12.6 L 16.214 9.6 Z"
+                        fill="url(#idid_RbbaI1K_0g-1832893084)"
+                      ></path>
+                    </g>
+                    <path
+                      d="M 7.5 10.066 C 7.5 8.649 8.649 7.5 10.066 7.5 C 11.483 7.5 12.632 8.649 12.632 10.066 C 12.632 11.483 11.483 12.632 10.066 12.632 C 8.649 12.632 7.5 11.483 7.5 10.066 Z"
+                      fill="rgb(242,243,181)"
+                    ></path>
+                    <path
+                      d="M 9.5 14.796 C 9.5 14.356 9.738 14 10.031 14 C 10.324 14 10.562 14.356 10.562 14.796 C 10.562 15.236 10.324 15.592 10.031 15.592 C 9.738 15.592 9.5 15.236 9.5 14.796 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 9.5 5.296 C 9.5 4.856 9.738 4.5 10.031 4.5 C 10.324 4.5 10.562 4.856 10.562 5.296 C 10.562 5.736 10.324 6.092 10.031 6.092 C 9.738 6.092 9.5 5.736 9.5 5.296 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 12.148 14.004 C 11.929 13.624 11.956 13.196 12.21 13.05 C 12.464 12.903 12.848 13.093 13.068 13.473 C 13.288 13.854 13.26 14.282 13.006 14.428 C 12.752 14.575 12.368 14.385 12.148 14.004 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 7.148 6.004 C 6.929 5.624 6.956 5.196 7.21 5.05 C 7.464 4.903 7.848 5.093 8.068 5.473 C 8.288 5.854 8.26 6.282 8.006 6.428 C 7.752 6.575 7.368 6.385 7.148 6.004 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 13.973 12.568 C 13.593 12.348 13.403 11.964 13.55 11.71 C 13.696 11.456 14.124 11.429 14.504 11.648 C 14.885 11.868 15.075 12.252 14.928 12.506 C 14.782 12.76 14.354 12.788 13.973 12.568 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 5.973 8.068 C 5.593 7.848 5.403 7.464 5.55 7.21 C 5.696 6.956 6.124 6.929 6.504 7.148 C 6.885 7.368 7.075 7.752 6.928 8.006 C 6.782 8.26 6.354 8.288 5.973 8.068 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 14.796 10.562 C 14.356 10.562 14 10.324 14 10.031 C 14 9.738 14.356 9.5 14.796 9.5 C 15.236 9.5 15.592 9.738 15.592 10.031 C 15.592 10.324 15.236 10.562 14.796 10.562 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 5.296 10.562 C 4.856 10.562 4.5 10.324 4.5 10.031 C 4.5 9.738 4.856 9.5 5.296 9.5 C 5.736 9.5 6.092 9.738 6.092 10.031 C 6.092 10.324 5.736 10.562 5.296 10.562 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 6.504 12.568 C 6.124 12.788 5.696 12.76 5.55 12.506 C 5.403 12.252 5.593 11.868 5.973 11.648 C 6.354 11.429 6.782 11.456 6.928 11.71 C 7.075 11.964 6.885 12.348 6.504 12.568 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                    <path
+                      d="M 8.068 14.004 C 7.848 14.385 7.464 14.575 7.21 14.428 C 6.956 14.282 6.929 13.854 7.148 13.473 C 7.368 13.093 7.752 12.903 8.006 13.05 C 8.26 13.196 8.288 13.624 8.068 14.004 Z"
+                      fill="rgb(24,60,26)"
+                    ></path>
+                  </g>
+                </svg>
+                <span class="text-sm leading-5 font-medium text-Theme-Black"
+                  >Connect your favorite apps</span
+                >
+              </div>
+              <h2 class="heading-h2 w-full max-w-[358px] mx-auto text-center mb-2.5">
+                Works with the tools you already use
+              </h2>
+              <p class="text-base leading-6 text-[#7D7676] text-center mb-[26px]">
+                Connect your forms with popular apps and services to automate workflows, send data
+                instantly, and keep everything in sync without manual steps or complex setup.
+              </p>
+              <a href="app.kiwiform.com" class="btn-kiwi-green w-max">Check All Integration </a>
+            </div>
+            <!-- icon grid  -->
+            <div
+              class="w-full lg:max-w-[261px] grid grid-cols-2 min-[500px]:grid-cols-4 md:grid-cols-8 lg:grid-cols-2 gap-px"
+            >
+              <div
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3099,7 +3243,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3140,7 +3284,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3191,7 +3335,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3219,7 +3363,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3240,7 +3384,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="45"
@@ -3272,7 +3416,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3304,7 +3448,7 @@
                 </svg>
               </div>
               <div
-                class="w-[130px] h-[130px] flex items-center justify-center rounded-10px bg-white"
+                class="w-full aspect-square flex items-center justify-center rounded-10px bg-white"
               >
                 <svg
                   width="46"
@@ -3337,6 +3481,1457 @@
         </div>
         <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
       </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </div>
+
+      <!-- 3 Card section -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_10605_2703)">
+                      <path
+                        d="M12 22.6875C17.9025 22.6875 22.6875 17.9025 22.6875 12C22.6875 6.09746 17.9025 1.3125 12 1.3125C6.09746 1.3125 1.3125 6.09746 1.3125 12C1.3125 17.9025 6.09746 22.6875 12 22.6875Z"
+                        fill="#E8F5B7"
+                      />
+                      <path
+                        d="M12 22.6875C17.9025 22.6875 22.6875 17.9025 22.6875 12C22.6875 6.09746 17.9025 1.3125 12 1.3125C6.09746 1.3125 1.3125 6.09746 1.3125 12C1.3125 17.9025 6.09746 22.6875 12 22.6875Z"
+                        fill="#E8F5B7"
+                        stroke="#B8DD2F"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        d="M6.75 8.16563H11.5594M11.5594 8.16563H17.4375M11.5594 8.16563V6.5625M8.35313 17.25C11.025 15.1125 14.2313 10.8375 14.7656 8.16563M9.95625 10.8375C10.4906 12.4406 12.6281 15.1125 13.6969 15.6469"
+                        stroke="#183C1A"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_10605_2703">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <p class="text-sm leading-5 text-Theme-Green mt-[18px] text-center">
+                  33+ Languages
+                </p>
+                <h4 class="card-title mt-3 mb-2">Create forms for a global audience</h4>
+                <p class="card-para mb-5">
+                  Create multilingual forms, Design once, translate effortlessly.
+                </p>
+                <a
+                  href="#"
+                  class="bg-[#F2EFEF] py-[7px] px-3 rounded-sm text-xs leading-[18px] text-Theme-Black transition-all duration-500 hover:bg-Theme-bg"
+                >
+                  Create Multilingual Form
+                </a>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 22V6.0625C4 5.4757 4.44772 5 5 5H16C16.5523 5 17 5.4757 17 6.0625V22L10.5 17.75L4 22Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20 19V4.125C20 2.95139 19.1046 2 18 2H8"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-sm leading-5 text-Theme-Green mt-[18px] text-center">
+                  Autosave Responses
+                </p>
+                <h4 class="card-title mt-3 mb-2">Always saved, automatically</h4>
+                <p class="card-para mb-5">
+                  Responses are saved automatically as people fill your form, nothing gets lost.
+                </p>
+                <a
+                  href="#"
+                  class="bg-[#F2EFEF] py-[7px] px-3 rounded-sm text-xs leading-[18px] text-Theme-Black transition-all duration-500 hover:bg-Theme-bg"
+                >
+                  See it in Action
+                </a>
+              </div>
+
+              <div class="card-Theme sm:col-span-2 lg:col-span-1">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.5 12C16 13 14.5 13.5 13 14C13 17 13 20.5 17.5 22C22 20.5 22 17 22 14C20.5 13.5 19 13 17.5 12Z"
+                      fill="#E8F5B7"
+                    />
+                    <path
+                      d="M10.5077 6V9.5M10.5077 6C10.5077 5.17157 9.83669 4.5 9.00897 4.5C8.18125 4.5 7.51025 5.17157 7.51025 6V14L4.78483 10.5903C4.13315 9.77501 3.00841 9.77501 2.35673 10.5903C1.92184 11.1344 1.88076 11.895 2.25451 12.4828L5.01239 17C6.51073 20 9.0086 22 12.0064 22M10.5077 6V3.5C10.5077 2.67157 11.1787 2 12.0064 2C12.8341 2 13.5051 2.67157 13.5051 3.5V5.5M13.5051 5.5V9.5M13.5051 5.5C13.5051 4.67157 14.1761 4 15.0038 4C15.8316 4 16.5026 4.67157 16.5026 5.5V8M16.5026 8V9.5M16.5026 8C16.5026 7.17157 17.1736 6.5 18.0013 6.5C18.829 6.5 19.5 7.17157 19.5 8V9.5"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 17L17 18L19 16"
+                      stroke="#B8DD2F"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.5 12C16 13 14.5 13.5 13 14C13 17 13 20.5 17.5 22C22 20.5 22 17 22 14C20.5 13.5 19 13 17.5 12Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-sm leading-5 text-Theme-Green mt-[18px] text-center">
+                  Enhanced Spam Protection
+                </p>
+                <h4 class="card-title mt-3 mb-2">Protected from spam by default</h4>
+                <p class="card-para mb-5">
+                  Built-in safeguards help block spam automatically, no setup required.
+                </p>
+                <a
+                  href="#"
+                  class="bg-[#F2EFEF] py-[7px] px-3 rounded-sm text-xs leading-[18px] text-Theme-Black transition-all duration-500 hover:bg-Theme-bg"
+                >
+                  See it in Action
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </div>
+
+      <!-- Template section -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="bg-white rounded-10px pt-28 pb-24 px-6 text-center w-full">
+              <h2
+                class="text-[38px] leading-[48px] tracking-[-0.76px] font-Inter-disp text-Theme-Black"
+              >
+                Start faster with ready-made templates
+              </h2>
+
+              <p class="mt-4 text-base leading-6 text-[#8C8484]">
+                Explore thoughtfully designed templates for common use cases, ready to use and easy
+                to customize.
+              </p>
+            </div>
+
+            <!-- tab function  -->
+            <!-- WRAPPER -->
+            <div x-data="{ activeTab1: 'Lead' }" class="relative w-full flex flex-col gap-px">
+              <!-- TABS -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:flex items-center justify-center flex-row lg:p-[2px] gap-px bg-Theme-bg rounded-10px lg:absolute lg:-top-[22px] lg:left-1/2 lg:-translate-x-1/2 w-full lg:max-w-[804px]"
+              >
+                <div class="absolute -left-[8px] top-[12.5px] hidden lg:block">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="17"
+                    fill="none"
+                    overflow="visible"
+                  >
+                    <path
+                      d="M 8 0 C 8 4.418 4.418 8 0 8 L 8 8 Z M 0 8 L 8 8 L 8 9 L 0 9 Z M 8 17 C 8 12.582 4.418 9 0 9 L 8 9 Z"
+                      fill="rgb(226,220,220)"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="absolute -right-[8px] top-[12.5px] hidden lg:block">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="17"
+                    fill="none"
+                    overflow="visible"
+                  >
+                    <path
+                      d="M 0 0 C 0 4.418 3.582 8 8 8 L 0 8 Z M 8 8 L 0 8 L 0 9 L 8 9 Z M 0 17 C 0 12.582 3.582 9 8 9 L 0 9 Z"
+                      fill="rgb(226,220,220)"
+                    ></path>
+                  </svg>
+                </div>
+                <!-- TAB -->
+                <button
+                  @click="activeTab1 = 'Lead'"
+                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
+                  :class="activeTab1 === 'Lead'
+          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
+          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
+                >
+                  Lead Generation
+                </button>
+
+                <!-- TAB -->
+                <button
+                  @click="activeTab1 = 'Marketing'"
+                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
+                  :class="activeTab1 === 'Marketing'
+          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
+          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
+                >
+                  Marketing
+                </button>
+
+                <!-- TAB -->
+                <button
+                  @click="activeTab1 = 'Surveys'"
+                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
+                  :class="activeTab1 === 'Surveys'
+          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
+          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
+                >
+                  Surveys
+                </button>
+
+                <!-- TAB -->
+                <button
+                  @click="activeTab1 = 'Registrations'"
+                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
+                  :class="activeTab1 === 'Registrations'
+          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
+          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
+                >
+                  Registrations
+                </button>
+
+                <!-- TAB -->
+                <button
+                  @click="activeTab1 = 'Quizzes'"
+                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300 sm:col-span-2"
+                  :class="activeTab1 === 'Quizzes'
+          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
+          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
+                >
+                  Quizzes
+                </button>
+              </div>
+              <div class="bg-white rounded-10px w-fill h-[46px]"></div>
+              <!-- CONTENT -->
+              <div class="">
+                <!-- Lead -->
+                <div
+                  x-show="activeTab1 === 'Lead'"
+                  class="overflow-hidden rounded-10px bg-Theme-bg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
+                >
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Marketing -->
+                <div
+                  x-show="activeTab1 === 'Marketing'"
+                  style="display: none"
+                  class="overflow-hidden rounded-10px bg-Theme-bg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
+                >
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Surveys -->
+                <div
+                  x-show="activeTab1 === 'Surveys'"
+                  style="display: none"
+                  class="overflow-hidden rounded-10px bg-Theme-bg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
+                >
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Registrations -->
+                <div
+                  x-show="activeTab1 === 'Registrations'"
+                  style="display: none"
+                  class="overflow-hidden rounded-10px bg-Theme-bg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
+                >
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Quizzes -->
+                <div
+                  x-show="activeTab1 === 'Quizzes'"
+                  style="display: none"
+                  class="overflow-hidden rounded-10px bg-Theme-bg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
+                >
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+
+                  <div class="p-[22px] pb-8 rounded-10px bg-white">
+                    <img src="assets/images/template-cover-1.png" alt="template poster image" />
+                    <h5
+                      class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
+                    >
+                      Lead generation form 01
+                    </h5>
+                    <p class="text-sm leading-5 text-[#8C8484]">
+                      Design attention-grabbing popups for your website in just a few clicks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-10px w-fill h-[74px]"></div>
+              <div class="bg-white rounded-10px w-fill h-[144px] relative overflow-visible">
+                <a
+                  href="#"
+                  class="btn-kiwi-green absolute w-max px-6 rounded-lg -top-5 left-1/2 -translate-x-1/2"
+                >
+                  Browse Templates
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </div>
+
+      <!-- Testimonials section -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="bg-white rounded-10px pt-28 pb-14 px-6 text-center w-full">
+              <h2
+                class="text-[38px] leading-[48px] tracking-[-0.76px] font-Inter-disp text-Theme-Black"
+              >
+                Loved By People Who Build Forms
+              </h2>
+
+              <p class="mt-4 text-base leading-6 text-[#8C8484]">
+                Read the stories of creators and businesses who chose Kiwiform for its powerful
+                features and simple, Free Model.
+              </p>
+            </div>
+
+            <!-- SLIDER -->
+            <div class="overflow-hidden w-full bg-Theme-bg rounded-10px">
+              <div class="swiper testimonial-swiper !overflow-visible">
+                <div class="swiper-wrapper">
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          We stopped worrying about hitting a limit on our lead forms.
+                          <span class="text-Theme-Green font-semibold">@kiwiform</span>
+                          unlimited responses and features being truly free is the game changer we
+                          needed.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-1.png"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Darrell Steward
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          After getting hit with a massive bill from our old provider, switching to
+                          <span class="text-Theme-Green font-semibold">@kiwiform</span>
+                          was a no-brainer. Same powerful features, zero cost. The migration was
+                          seamless.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-2.png"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Esther Howard
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          The form builder is incredibly intuitive, but what truly sold us was the
+                          'free forever' model. It's rare to find a tool this robust that isn't
+                          trying to upsell you constantly.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-3.png"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Devon Lane
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          Finally, a form builder that understands volume. We run high-traffic
+                          campaigns, and the ability to collect unlimited data without a premium
+                          subscription is invaluable.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-4.avif"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Theresa Webb
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          I love that I can use advanced logic and conditional fields features that
+                          were locked behind a $99/month paywall elsewhere for absolutely free here.
+                          <span class="text-Theme-Green font-semibold">@kiwiform</span>
+                          is a superior product.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-5.avif"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Arlene McCoy
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- duplicate cards  -->
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          We stopped worrying about hitting a limit on our lead forms.
+                          <span class="text-Theme-Green font-semibold">@kiwiform</span>
+                          unlimited responses and features being truly free is the game changer we
+                          needed.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-1.png"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Darrell Steward
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          After getting hit with a massive bill from our old provider, switching to
+                          <span class="text-Theme-Green font-semibold">@kiwiform</span>
+                          was a no-brainer. Same powerful features, zero cost. The migration was
+                          seamless.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-2.png"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Esther Howard
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          The form builder is incredibly intuitive, but what truly sold us was the
+                          'free forever' model. It's rare to find a tool this robust that isn't
+                          trying to upsell you constantly.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-3.png"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Devon Lane
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          Finally, a form builder that understands volume. We run high-traffic
+                          campaigns, and the ability to collect unlimited data without a premium
+                          subscription is invaluable.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-4.avif"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Theresa Webb
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD -->
+                  <div class="swiper-slide !w-[406px]">
+                    <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
+                      <!-- CONTENT -->
+                      <div class="min-h-[262px] pt-8 px-6 bg-white rounded-10px">
+                        <p class="text-lg leading-[30px] text-Theme-Black">
+                          I love that I can use advanced logic and conditional fields features that
+                          were locked behind a $99/month paywall elsewhere for absolutely free here.
+                          <span class="text-Theme-Green font-semibold">@kiwiform</span>
+                          is a superior product.
+                        </p>
+                      </div>
+
+                      <div
+                        class="flex items-center justify-start gap-3 py-[18px] pl-[24px] bg-white rounded-10px"
+                      >
+                        <img
+                          src="assets/images/testi-5.avif"
+                          class="h-12 w-12 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 class="text-base leading-[26px] font-semibold text-Theme-Black">
+                            Arlene McCoy
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg w-full">
+              <div class="flex flex-col gap-px w-full">
+                <div class="w-full h-full py-16 px-12 lg:p-16 bg-white rounded-10px">
+                  <h2 class="heading-h2 mb-2.5">Frequently Asked Questions</h2>
+                  <p class="text-base leading-[28px] text-[#8C8484]">
+                    Find clear answers about using Kiwiform, from getting started to scaling up.
+                  </p>
+                </div>
+                <div class="w-full h-auto p-12 bg-white rounded-10px">
+                  <h3
+                    class="text-2xl font-Inter-disp leading-[26px] tracking-[-0.4px] capitalize text-Theme-Black mb-2.5"
+                  >
+                    Have questions or need help?
+                  </h3>
+                  <p class="text-sm leading-5 text-[#8C8484] mb-[26px]">
+                    Check our FAQs or get in touch we’re happy to help.
+                  </p>
+                  <a href="#" class="btn-kiwi-green rounded-[5px]">Check All Integration </a>
+                </div>
+              </div>
+              <div class="rounded-10px overflow-hidden w-full">
+                <div x-data="{ active: 0 }" class="flex flex-col gap-px w-full">
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 0 ? null : 0"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        What is Kiwiform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 0 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 0" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform is a modern form builder that helps you collect data through
+                          clean, conversational forms designed for clarity and ease of use.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 1 ? null : 1"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Is Kiwiform really free to use?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 1 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 1" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform lets you create unlimited forms and collect unlimited
+                          responses with no hidden caps or trial limits.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 2 ? null : 2"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        How is Kiwiform different from Typeform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 2 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 2" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform is a free Typeform alternative that offers unlimited usage while
+                          keeping form creation simple, flexible, and accessible.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 3 ? null : 3"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Can I create forms without technical knowledge?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 3 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 3" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform is built for non-technical users, with an intuitive
+                          interface and smart defaults that make form building easy.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 4 ? null : 4"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        What types of forms can I build with Kiwiform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 4 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 4" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          You can build surveys, lead forms, feedback forms, registrations, quizzes,
+                          and workflow-based forms for many use cases.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 5 ? null : 5"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Does Kiwiform support logic and personalization?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 5 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 5" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. You can personalize forms and control flows using logic that adapts
+                          based on how respondents answer.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 6 ? null : 6"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Can I embed Kiwiform forms on my website?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 6 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 6" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform forms can be embedded on websites, landing pages, and other
+                          platforms easily.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 7 ? null : 7"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Are responses saved automatically?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 7 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 7" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Responses are collected securely and can include partial or completed
+                          submissions depending on your setup.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 8 ? null : 8"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Why should I choose Kiwiform over Typeform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 8 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 8" x-collapse style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform combines unlimited usage, thoughtful design, and powerful
+                          features into a free Typeform alternative built for real-world data
+                          collection.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </div>
     </main>
+
+    <script>
+      new Swiper('.testimonial-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 1,
+        loop: true,
+        speed: 30000,
+        allowTouchMove: false,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false
+        }
+      })
+    </script>
   </body>
 </html>

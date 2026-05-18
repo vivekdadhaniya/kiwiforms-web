@@ -98,6 +98,12 @@
   }
 }
 
+@utilities {
+  .btn-kiwi-green {
+    @apply py-2.5 cursor-pointer px-[15px] rounded-10px bg-Theme-Green w-full text-center text-sm font-medium leading-[140%] text-white transition-all duration-500 hover:bg-theme-Green-hover
+  }
+}
+
 @layer components {
 
   .radio-circle {
@@ -546,5 +552,9 @@
 
   .card-para {
     @apply text-center text-sm leading-5 text-[#7D7676] w-full max-w-[304px] mx-auto
+  }
+
+  .testimonial-swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
   }
 }

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Alpine -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <title>Kiwiform FAQ Accordion</title>
+  </head>
+
+  <body class="bg-[#f5f5f5] overflow-x-hidden">
+    <!-- SECTION -->
+    <section class="py-20">
+      <!-- OUTER GRID -->
+      <div class="flex md:grid grid-cols-14 gap-px w-full">
+        <!-- LEFT -->
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+
+        <!-- CENTER -->
+        <div class="w-full md:col-span-12 bg-Theme-bg rounded-10px overflow-hidden">
+          <!-- ACCORDION -->
+          <div x-data="{ active: 0 }" class="flex flex-col gap-px">
+            <!-- ITEM -->
+            <div class="bg-white">
+              <!-- HEADER -->
+              <button
+                @click="active = active === 0 ? null : 0"
+                class="flex w-full items-center justify-between px-7 py-8 text-left"
+              >
+                <span class="text-[18px] font-medium tracking-[-0.3px] text-[#000A06]">
+                  What is Kiwiform?
+                </span>
+
+                <svg
+                  class="h-5 w-5 text-[#111] transition duration-300"
+                  :class="active === 0 ? 'rotate-180' : ''"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <!-- CONTENT -->
+              <div x-show="active === 0" x-collapse style="display: none">
+                <div class="px-7 pb-8 pr-20">
+                  <p class="text-[16px] leading-8 text-[#8A8282]">
+                    Kiwiform is a modern form builder that helps you collect data through clean,
+                    conversational forms designed for clarity and ease of use.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white">
+              <button
+                @click="active = active === 1 ? null : 1"
+                class="flex w-full items-center justify-between px-7 py-8 text-left"
+              >
+                <span class="text-[18px] font-medium tracking-[-0.3px] text-[#000A06]">
+                  Is Kiwiform really free to use?
+                </span>
+
+                <svg
+                  class="h-5 w-5 text-[#111] transition duration-300"
+                  :class="active === 1 ? 'rotate-180' : ''"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div x-show="active === 1" x-collapse style="display: none">
+                <div class="px-7 pb-8 pr-20">
+                  <p class="text-[16px] leading-8 text-[#8A8282]">
+                    Yes. Kiwiform offers a generous free experience with unlimited forms and
+                    responses without forcing upgrades for essential features.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white">
+              <button
+                @click="active = active === 2 ? null : 2"
+                class="flex w-full items-center justify-between px-7 py-8 text-left"
+              >
+                <span class="text-[18px] font-medium tracking-[-0.3px] text-[#000A06]">
+                  How is Kiwiform different from Typeform?
+                </span>
+
+                <svg
+                  class="h-5 w-5 text-[#111] transition duration-300"
+                  :class="active === 2 ? 'rotate-180' : ''"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div x-show="active === 2" x-collapse style="display: none">
+                <div class="px-7 pb-8 pr-20">
+                  <p class="text-[16px] leading-8 text-[#8A8282]">
+                    Kiwiform focuses on flexibility, cleaner workflows, better pricing, and modern
+                    UI customization without limiting core features behind expensive plans.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white">
+              <button
+                @click="active = active === 3 ? null : 3"
+                class="flex w-full items-center justify-between px-7 py-8 text-left"
+              >
+                <span class="text-[18px] font-medium tracking-[-0.3px] text-[#000A06]">
+                  Can I create forms without technical knowledge?
+                </span>
+
+                <svg
+                  class="h-5 w-5 text-[#111] transition duration-300"
+                  :class="active === 3 ? 'rotate-180' : ''"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div x-show="active === 3" x-collapse style="display: none">
+                <div class="px-7 pb-8 pr-20">
+                  <p class="text-[16px] leading-8 text-[#8A8282]">
+                    Absolutely. Kiwiform is designed to help anyone create professional forms using
+                    an intuitive visual builder without coding.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white">
+              <button
+                @click="active = active === 4 ? null : 4"
+                class="flex w-full items-center justify-between px-7 py-8 text-left"
+              >
+                <span class="text-[18px] font-medium tracking-[-0.3px] text-[#000A06]">
+                  What types of forms can I build with Kiwiform?
+                </span>
+
+                <svg
+                  class="h-5 w-5 text-[#111] transition duration-300"
+                  :class="active === 4 ? 'rotate-180' : ''"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div x-show="active === 4" x-collapse style="display: none">
+                <div class="px-7 pb-8 pr-20">
+                  <p class="text-[16px] leading-8 text-[#8A8282]">
+                    You can build lead forms, surveys, onboarding forms, quizzes, feedback forms,
+                    application flows, and much more with flexible layouts and logic.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+      </div>
+    </section>
+  </body>
+</html>
