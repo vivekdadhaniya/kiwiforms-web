@@ -554,7 +554,23 @@
     @apply text-center text-sm leading-5 text-[#7D7676] w-full max-w-[304px] mx-auto
   }
 
-  .testimonial-swiper .swiper-wrapper {
-    transition-timing-function: linear !important;
+  @keyframes ticker {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .ticker-track {
+    animation: ticker 280s linear infinite;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .ticker-wrapper:hover .ticker-track {
+    animation-play-state: paused;
   }
 }

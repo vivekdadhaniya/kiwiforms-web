@@ -4235,9 +4235,9 @@
             </div>
 
             <!-- SLIDER -->
-            <div class="overflow-hidden w-full bg-Theme-bg rounded-10px">
-              <div class="swiper testimonial-swiper !overflow-visible">
-                <div class="swiper-wrapper">
+            <div class="ticker-wrapper overflow-hidden bg-Theme-bg w-full rounded-10px">
+              <div class="ticker-track flex gap-px">
+                <div class="flex gap-px w-full">
                   <!-- CARD -->
                   <div class="swiper-slide !w-[406px]">
                     <div class="h-auto overflow-hidden bg-Theme-bg flex flex-col gap-px">
@@ -4919,19 +4919,5 @@
         <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
       </div>
     </main>
-
-    <script>
-      new Swiper('.testimonial-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 1,
-        loop: true,
-        speed: 30000,
-        allowTouchMove: false,
-        autoplay: {
-          delay: 0,
-          disableOnInteraction: false
-        }
-      })
-    </script>
   </body>
 </html>
