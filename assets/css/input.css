@@ -573,4 +573,28 @@
   /* .ticker-wrapper:hover .ticker-track {
     animation-play-state: paused;
   } */
+
+  .legal-title {
+    @apply font-Inter text-xl leading-[140%] text-Theme-Black font-semibold
+  }
+
+  .legal-para {
+    @apply text-base leading-[26px] text-Theme-Black font-normal
+  }
+
+  .legal-para span {
+    @apply font-semibold
+  }
+
+  .legal-disc {
+    @apply flex flex-col gap-2.5 list-disc list-outside pl-7
+  }
+
+  .list-upper-alpha {
+    list-style-type: upper-alpha;
+  }
+
+  .legal-link {
+    @apply text-base leading-[26px] text-Theme-Green pointer-events-auto cursor-pointer z-10 font-medium transition-all duration-300 hover:text-theme-Green-hover
+  }
 }
