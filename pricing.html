@@ -1525,7 +1525,7 @@
       </div>
     </header>
 
-    <main class="pt-[61px] bg-transparent flex flex-col gap-px">
+  <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px"  x-data="{ plan: 'yearly', lifetime:false }">
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-auto">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
@@ -1629,11 +1629,13 @@
                               </span>
                             </div>
 
-                            <button
+                            <a
+                              href="https://app.kiwiform.com/"
+                                target="_blank"
                               class="bg-white text-base leading-5 text-Theme-Black font-medium px-6 py-3.5 rounded-lg hover:bg-gray-100 transition w-full text-center md:w-max"
                             >
                               Upgrade to Pro
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1687,7 +1689,7 @@
                     /month
                   </span>
                 </div>
-                <button class="btn-white-icon-text">Get Started</button>
+                <a href="https://app.kiwiform.com/" target="_blank" class="btn-white-icon-text">Get Started</a>
               </div>
               <div class="bg-[#13B871] w-full lg:max-w-[300px] rounded-10px overflow-visible">
                 <div
@@ -1707,7 +1709,7 @@
                     >
                     </span>
                   </div>
-                  <button class="btn-white-icon-text">Upgrade to Pro</button>
+                  <a href="https://app.kiwiform.com/" target="_blank" class="btn-white-icon-text">Upgrade to Pro</a>
                 </div>
               </div>
             </div>
@@ -10628,7 +10630,7 @@
                   <p class="text-sm leading-5 text-[#8C8484] mb-[26px]">
                     Check our FAQs or get in touch we’re happy to help.
                   </p>
-                  <a href="#" class="btn-kiwi-green rounded-[5px]">Check All Integration </a>
+                  <a href="./contact-us" class="btn-kiwi-green rounded-[5px]">Contact Us </a>
                 </div>
               </div>
               <div class="rounded-10px overflow-hidden w-full">
@@ -10962,7 +10964,7 @@
         </div>
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
-    </main>
+    </div>
     <!-- JS LIBRARIES -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="assets/js/main.js"></script>
