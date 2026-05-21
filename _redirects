@@ -2,3 +2,6 @@
 /templates /templates.html 200
 /templates/categories/* /templates.html 200
 /templates/* /template-detail.html 200
+/help.html /help 301
+/help /help.html 200
+/help/* /help.html 200

@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template Details | Kiwiform</title>
+    <title>Help Center | Kiwiform</title>
+    <link rel="canonical" href="https://kiwiform.com/help" />
     <link rel="stylesheet" href="assets/css/style-output.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
 
-  <body
-    class="bg-Theme-bg font-Inter text-Theme-Black"
-    x-data="templateDetailPage()"
-    x-init="init()"
-  >
+  <body class="bg-Theme-bg font-Inter text-Theme-Black" x-data="helpPage()" x-init="init()">
     <!-- navigation  -->
     <header
       x-data="{ open:false, open1:false, mobileMenu:false }"
@@ -1522,744 +1519,670 @@
       </div>
     </header>
 
-    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
-      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 rounded-10px w-full flex items-start justify-center flex-col gap-px h-full bg-Theme-bg"
-          >
-            <nav
-              class="flex flex-wrap items-center gap-2 text-xs font-semibold text-[#7D7676] p-[15px] bg-[#F6F6F6] w-full rounded-10px"
-              aria-label="Breadcrumb"
-            >
-              <a href="/templates" class="text-Theme-Green">Template</a>
-              <span aria-hidden="true">›</span>
-              <a :href="categoryHref" class="text-Theme-Green" x-text="categoryLabel"></a>
-              <span aria-hidden="true">›</span>
-              <span class="text-Theme-Green" x-text="templateTitle"></span>
-            </nav>
-            <template x-if="isLoading">
-              <section class="rounded-10px bg-white px-5 py-16 sm:px-8 lg:px-10">
-                <div class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]">
-                  Loading template...
-                </div>
-              </section>
-            </template>
+    <main class="flex md:grid md:grid-cols-14 gap-px w-full pt-[61px]">
+      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+      <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
 
-            <template x-if="!isLoading && error">
-              <section class="rounded-10px bg-white px-5 py-16 sm:px-8 lg:px-10">
-                <div
-                  class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]"
-                  x-text="error"
-                ></div>
-              </section>
-            </template>
-
-            <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-10px w-full overflow-hidden bg-[#F6F6F6]"
-            >
-              <div class="px-6 flex items-center justify-center flex-col">
-                <h1 class="heading-h2 w-full text-left" x-text="templateTitle"></h1>
-                <p
-                  class="mt-3.5 text-[#8C8484] text-base leading-7"
-                  x-text="templateDescription"
-                ></p>
-                <div class="mt-[26px] flex items-center justify-start gap-3 w-full">
-                  <a
-                    :href="useTemplateHref"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn-kiwi-green px-5 w-max rounded-[6px]"
-                  >
-                    Use this Template
-                  </a>
-                  <a
-                    :href="previewHref"
-                    target="_blank"
-                    rel="noopener"
-                    class="py-[9px] pr-5 pl-3 rounded-[6px] bg-[#F2EFEF] text-sm leading-[22px] font-medium text-Theme-Black flex items-center gap-2 transition-all duration-500 hover:bg-Theme-bg hover:text-Theme-Black"
-                  >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 15.75C12.7279 15.75 15.75 12.7279 15.75 9C15.75 5.27208 12.7279 2.25 9 2.25C5.27208 2.25 2.25 5.27208 2.25 9C2.25 12.7279 5.27208 15.75 9 15.75Z"
-                        stroke="#007D47"
-                        stroke-width="1.4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M9 12C10.6569 12 12 10.6569 12 9C12 7.34315 10.6569 6 9 6C7.34315 6 6 7.34315 6 9C6 10.6569 7.34315 12 9 12Z"
-                        fill="#E8F5B7"
-                        stroke="#B8DD2F"
-                        stroke-width="1.4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-
-                    <span>Live Preview</span>
-                  </a>
-                </div>
-              </div>
-              <div class="overflow-hidden py-14 pr-[50px]">
-                <img
-                  class="h-auto w-full object-cover"
-                  src="assets/images/template-cover-2.png"
-                  :alt="`${templateTitle} preview`"
+        <div
+          class="col-span-11 grid grid-cols-1 bg-Theme-bg gap-px lg:grid-cols-[245px_minmax(0,1fr)]"
+        >
+          <div class="col-span-full border-b border-Theme-bg">
+            <label class="relative block w-full" aria-label="Search help articles">
+              <svg
+                class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#756F6F]"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
                 />
-              </div>
-            </div>
+              </svg>
+              <input
+                class="w-full h-10 rounded-10px border-0 bg-[#F6F6F6] py-2.5 pl-9 pr-2 text-sm leading-5 text-Theme-Black outline-none placeholder:text-[#7D7676]"
+                type="search"
+                placeholder="Search help articles, tutorials, features, and guides..."
+                x-model.debounce.200ms="searchTerm"
+              />
+            </label>
           </div>
-          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
-      </section>
-
-      <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          ></div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
-
-      <!-- Template description  -->
-      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col p-14 gap-14 h-full bg-white"
+          <aside
+            class="order-2 rounded-10px bg-white lg:order-1 lg:sticky lg:top-[61px] lg:h-[calc(100vh-61px)] lg:overflow-y-auto lg:rounded-r-none"
+            aria-label="Help categories"
           >
-            <div class="w-full">
-              <h2
-                class="text-[22px] leading-7 md:text-[28px] md:leading-[38px] font-Inter-disp text-Theme-Black"
-                x-text="`About ${templateTitle}`"
-              ></h2>
-              <p
-                class="mt-5 text-sm leading-6 md:text-base md:leading-7 text-Theme-Black"
-                x-html="aboutCopy"
-              ></p>
-            </div>
-            <div class="w-full">
-              <h2
-                class="text-[22px] leading-7 md:text-[28px] md:leading-[38px] font-Inter-disp text-Theme-Black"
-                x-text="`Benefits of ${templateTitle}`"
-              ></h2>
-              <p
-                class="mt-5 text-sm leading-6 md:text-base md:leading-7 text-Theme-Black"
-                x-text="benefitsCopy"
-              ></p>
-            </div>
-            <div class="w-full">
-              <h2
-                class="text-[22px] leading-7 md:text-[28px] md:leading-[38px] font-Inter-disp text-Theme-Black"
-                x-text="`Use Cases of ${templateTitle}`"
-              ></h2>
-              <ul
-                class="mt-5 list-disc space-y-1.5 pl-5 text-sm font-medium leading-5 text-Theme-Black"
+            <nav class="p-4" aria-label="Help category list">
+              <a
+                href="/help"
+                class="mb-3 flex rounded-lg px-3.5 py-2 text-sm font-semibold leading-5"
+                :class="pageType === 'home' ? 'bg-[#F2EFEF] text-Theme-Black' : 'bg-transparent text-Theme-Black'"
               >
-                <template x-for="useCase in useCases" :key="useCase">
-                  <li
-                    x-text="useCase"
-                    class="text-sm leading-6 md:text-base md:leading-7 text-Theme-Black"
-                  ></li>
-                </template>
-              </ul>
-            </div>
-          </div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </section>
-
-      <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          ></div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
-
-      <!-- use case cards  -->
-      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
-          >
-            <div class="bg-white rounded-10px pt-28 pb-14 px-6 text-center w-full">
-              <h2
-                class="text-[38px] leading-[48px] tracking-[-0.76px] font-Inter-disp text-Theme-Black w-full max-w-[469px] mx-auto"
-              >
-                How to Use Kiwiform Content Access Form Template
-              </h2>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
-              <div class="card-Theme">
-                <span class="w-[50px] h-[50px] flex items-center justify-center">
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.5 10.5H28.5"
-                      stroke="#183C1A"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M9 28.5V10.5"
-                      stroke="#183C1A"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                    />
-                    <path
-                      d="M1.5 25.1667C1.5 26.738 1.5 27.5237 1.98816 28.0118C2.47631 28.5 3.26198 28.5 4.83333 28.5H25.1667C26.738 28.5 27.5237 28.5 28.0118 28.0118C28.5 27.5237 28.5 26.738 28.5 25.1667V4.83333C28.5 3.26199 28.5 2.47631 28.0118 1.98816C27.5237 1.5 26.738 1.5 25.1667 1.5H4.83333C3.26199 1.5 2.47631 1.5 1.98816 1.98816C1.5 2.47631 1.5 3.26198 1.5 4.83333V25.1667Z"
-                      stroke="#A2C92A"
-                      stroke-width="1.8"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-                <h4 class="card-title">Start with the template</h4>
-                <p class="card-para">
-                  Open this template in your Kiwiform workspace and begin instantly, no setup
-                  required.
-                </p>
-              </div>
-
-              <div class="card-Theme">
-                <span class="w-[50px] h-[50px] flex items-center justify-center">
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.75 2.5V6.07321C21.4953 3.8629 18.4069 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 16.7778 2.87111 18.4689 3.54011 20M6.25 27.5V23.9268C8.50469 26.1371 11.5932 27.5 15 27.5C21.9035 27.5 27.5 21.9035 27.5 15C27.5 13.2223 27.1289 11.5312 26.4599 10"
-                      stroke="#183C1A"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M13.2142 8.35471L12.7491 9.75L11.5792 10.4899L10.0253 10.1054C9.4905 9.9731 8.9321 10.2066 8.65058 10.6802L8.02905 11.7258C7.72176 12.2428 7.82618 12.9054 8.27761 13.3028L9.30881 14.2105V15.7895L8.27795 16.6972C7.82662 17.0946 7.72226 17.7571 8.02952 18.274L8.65113 19.3199C8.93263 19.7934 9.49105 20.0269 10.0259 19.8945L11.5798 19.5101L12.688 20.1316L13.1126 21.5976C13.2673 22.1321 13.7567 22.5 14.3132 22.5H15.6855C16.242 22.5 16.7315 22.1321 16.8862 21.5976L17.3107 20.1316L18.4185 19.5101L19.9724 19.8945C20.5071 20.0269 21.0656 19.7934 21.3471 19.3199L22.0009 18.2199C22.2935 17.7276 22.2141 17.0994 21.8083 16.6954L20.7297 15.6215L20.7303 14.3785L21.8089 13.3046C22.2147 12.9006 22.2941 12.2724 22.0015 11.7801L21.3476 10.6802C21.0661 10.2066 20.5077 9.9731 19.9729 10.1054L18.419 10.4899L17.2491 9.75L16.784 8.35471C16.6139 7.84429 16.1362 7.5 15.5981 7.5H14.4001C13.862 7.5 13.3843 7.84429 13.2142 8.35471Z"
-                      fill="#E8F5B7"
-                      stroke="#A2C92A"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <circle cx="15" cy="15" r="1.25" fill="#183C1A" />
-                  </svg>
-                </span>
-                <h4 class="card-title">Customize form fields & flow</h4>
-                <p class="card-para">
-                  Add, remove, or reorder form fields, apply logic, and adjust design to match your
-                  use case and brand style.
-                </p>
-              </div>
-
-              <div class="card-Theme">
-                <span class="w-[50px] h-[50px] flex items-center justify-center">
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8.01246 6.36788L20.9156 2.06684C26.706 0.136687 29.852 3.29787 27.9371 9.08832L23.636 21.9914C20.7484 30.6695 16.0066 30.6695 13.119 21.9914L11.8424 18.1615L8.01246 16.8849C-0.665612 13.9973 -0.665612 9.2707 8.01246 6.36788Z"
-                      fill="#E8F5B7"
-                    />
-                    <path
-                      d="M12.002 18.0007L18.002 12.0007"
-                      stroke="#183C1A"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M8.01246 6.36788L20.9156 2.06684C26.706 0.136687 29.852 3.29787 27.9371 9.08832L23.636 21.9914C20.7484 30.6695 16.0066 30.6695 13.119 21.9914L11.8424 18.1615L8.01246 16.8849C-0.665612 13.9973 -0.665612 9.2707 8.01246 6.36788Z"
-                      stroke="#A2C92A"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-                <h4 class="card-title">Share and collect responses</h4>
-                <p class="card-para">
-                  Publish your form, share it via link, embed it anywhere, and start collecting
-                  unlimited responses.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </section>
-
-      <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          ></div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
-
-      <!-- related templates  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          >
-            <div class="mb-5 flex items-center justify-between w-full px-14 pt-14">
-              <h2 class="text-lg font-semibold">Related Templates</h2>
-              <a :href="categoryHref" class="text-xs font-semibold text-Theme-Green">See More</a>
-            </div>
-            <template x-if="isLoadingRelatedTemplates">
-              <div class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]">
-                Loading related templates...
-              </div>
-            </template>
-            <div
-              class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 px-14 pb-14 pt-5"
-              x-show="!isLoadingRelatedTemplates"
-            >
-              <template
-                x-for="relatedTemplate in relatedTemplates"
-                :key="relatedTemplate.id || relatedTemplate.title"
-              >
-                <a class="group block min-w-0" :href="templateUrl(relatedTemplate)">
-                  <div class="aspect-[1.24/1] overflow-hidden rounded-lg bg-[#F3F3F3]">
-                    <img
-                      class="h-full w-full object-cover aspect-[209/169] transition-transform duration-300 group-hover:scale-[1.035]"
-                      :src="template.thumbnail || 'assets/images/template-cover-1.png'"
-                      :alt="`${relatedTemplate.title || 'Kiwiform'} template preview`"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h3
-                    class="mt-3 truncate text-base font-medium leading-[22px] text-Theme-Black"
-                    x-text="relatedTemplate.title"
-                  ></h3>
-                  <p
-                    class="mt-2 line-clamp-2 text-xs leading-[18px] text-[#8C8484]"
-                    x-text="relatedTemplate.description || 'Explore this ready-made template and customize it for your workflow.'"
-                  ></p>
-                </a>
-              </template>
-            </div>
-          </div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
-
-      <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          ></div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
-
-      <!-- template FAQs  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          >
-            <div class="pt-[120px] w-full">
-              <h2 class="heading-h2 text-center">Frequently Asked Questions</h2>
-              <p class="text-base leading-7 text-[#8C8484] text-center">
-                Find quick answers about Kiwiform, forms, integrations, and more.
-              </p>
-            </div>
-            <div class="pt-14 pb-[120px] w-full rounded-lg">
-              <div
-                class="flex flex-col gap-px w-full max-w-[864px] mx-auto p-px rounded-10px bg-Theme-bg overflow-hidden"
-              >
-                <template x-for="(faq, index) in faqs" :key="faq.question">
-                  <div class="bg-white py-5 px-6 w-full rounded-10px">
+                Help Center
+              </a>
+              <template x-for="category in sidebarCategories" :key="category.key">
+                <div class="mb-1">
+                  <div class="flex items-center gap-2">
                     <button
                       type="button"
-                      class="flex w-full items-center justify-between gap-4 text-left"
-                      @click="openFaq = openFaq === index ? null : index"
+                      class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[#7D7676] transition-all duration-300 hover:bg-[#F2EFEF] hover:text-Theme-Black"
+                      @click="toggleCategory(category.key)"
+                      :aria-label="`Toggle ${category.label} articles`"
                     >
-                      <span
-                        class="text-base leading-7 text-Theme-Black font-medium"
-                        x-text="faq.question"
-                      ></span>
                       <svg
-                        class="h-5 w-5 shrink-0 text-[#111] transition duration-300"
-                        :class="openFaq === index ? 'rotate-180' : ''"
+                        class="h-4 w-4 transition duration-300"
+                        :class="openCategories.includes(category.key) ? 'rotate-90' : ''"
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
                         viewBox="0 0 24 24"
                       >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
-                    <div x-show="openFaq === index" x-collapse>
-                      <div class="pt-6">
-                        <p
-                          class="text-[14px] font-medium leading-5 text-[#8c8484]"
-                          x-text="faq.answer"
-                        ></p>
-                      </div>
+                    <a
+                      class="min-w-0 flex-1 py-1.5 text-sm font-medium leading-5 transition-all duration-300 hover:text-Theme-Green"
+                      :class="pageType !== 'home' && activeCategory === category.key ? 'text-Theme-Green' : 'text-[#7D7676]'"
+                      :href="categoryUrl(category)"
+                      x-text="category.label"
+                    ></a>
+                  </div>
+                  <div x-show="openCategories.includes(category.key)" x-collapse>
+                    <div class="ml-9 flex flex-col gap-0.5 py-2">
+                      <template x-for="article in flattenArticles(category)" :key="article.slug">
+                        <a
+                          class="rounded-md px-2 py-1.5 text-sm font-medium leading-5 transition-all duration-300 hover:text-Theme-Green"
+                          :class="activeSlug === article.slug ? 'text-Theme-Green' : 'text-[#7D7676]'"
+                          :href="articleUrl(article)"
+                          x-text="article.title"
+                        ></a>
+                      </template>
                     </div>
                   </div>
-                </template>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
+                </div>
+              </template>
+            </nav>
+          </aside>
 
-      <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          ></div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+          <div class="order-1 flex min-w-0 flex-col gap-px lg:order-2">
+            <section class="rounded-10px bg-white px-5 py-9 sm:px-8 lg:px-10 lg:py-12">
+              <p class="mb-2 text-sm font-medium leading-5 text-Theme-Green" x-text="eyebrow"></p>
+              <h1
+                class="font-Inter-disp text-[28px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
+                x-text="pageTitle"
+              ></h1>
+              <p
+                class="mt-2.5 max-w-[760px] text-sm leading-5 text-[#8C8484]"
+                x-text="pageDescription"
+              ></p>
+            </section>
+
+            <section class="rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
+              <template x-if="!activePageData && pageType !== 'home'">
+                <div class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]">
+                  No help articles found.
+                </div>
+              </template>
+
+              <template x-if="activePageData && (pageType === 'home' || pageType === 'category')">
+                <article>
+                  <h2
+                    class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
+                    x-text="activePageData.label"
+                  ></h2>
+                  <p
+                    class="mt-3 max-w-[760px] text-sm leading-6 text-Theme-Black"
+                    x-text="activePageData.description"
+                  ></p>
+
+                  <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <template x-for="group in activePageData.groups" :key="group.title">
+                      <div class="overflow-hidden rounded-lg border border-Theme-bg">
+                        <h3
+                          class="bg-[#F7F7F7] px-4 py-3 text-sm font-semibold leading-5 text-Theme-Black"
+                          x-text="group.title"
+                        ></h3>
+                        <div class="divide-y divide-Theme-bg bg-white">
+                          <template x-for="article in group.articles" :key="article.slug">
+                            <a
+                              class="block px-4 py-3 text-sm font-medium leading-5 text-Theme-Black transition-all duration-300 hover:bg-[#F7F7F7] hover:text-Theme-Green"
+                              :href="articleUrl(article)"
+                              x-text="article.title"
+                            ></a>
+                          </template>
+                        </div>
+                      </div>
+                    </template>
+                  </div>
+                </article>
+              </template>
+
+              <template x-if="activePageData && pageType === 'article'">
+                <article>
+                  <div x-show="activeSlug === 'overview'">
+                    <h2
+                      class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
+                    >
+                      What Kiwiform is
+                    </h2>
+                    <div class="mt-7 space-y-3 text-sm leading-7 text-Theme-Black">
+                      <p>
+                        Kiwiform is a form-building platform that lets you create forms, surveys,
+                        applications, and workflows that are easy to build and simple for
+                        respondents to complete. You can customize design, apply logic, share forms
+                        anywhere, and view responses in real time.
+                      </p>
+                      <p>
+                        Everything happens inside a single workspace, from building and styling to
+                        sharing and analyzing results.
+                      </p>
+                    </div>
+
+                    <div class="mt-8 overflow-hidden rounded-lg bg-[#F2EFEF] p-8">
+                      <img
+                        class="w-full rounded-md object-cover"
+                        src="/assets/images/advanced%20forms%20made.webp"
+                        alt="Kiwiform workspace overview"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <div x-show="activeSlug !== 'overview'">
+                    <a
+                      class="mb-6 inline-flex text-sm font-semibold leading-5 text-Theme-Green transition-all duration-300 hover:text-theme-Green-hover"
+                      :href="categoryUrl(activeCategoryData)"
+                      x-text="activeCategoryData.label"
+                    ></a>
+                    <h2
+                      class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
+                      x-text="activePageData.title"
+                    ></h2>
+                    <p
+                      class="mt-3 max-w-[760px] text-sm leading-6 text-Theme-Black"
+                      x-text="articleIntro"
+                    ></p>
+
+                    <div class="mt-8 rounded-lg bg-[#F7F7F7] p-5 text-sm leading-6 text-[#756F6F]">
+                      This guide is ready for detailed help content. Add step-by-step instructions,
+                      screenshots, examples, and notes for this Kiwiform workflow here.
+                    </div>
+                  </div>
+                </article>
+              </template>
+            </section>
+          </div>
         </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+
+        <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
       </div>
-    </div>
+      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+    </main>
 
     <script>
-      function templateDetailPage() {
+      function helpPage() {
         return {
-          templates: [
-            {
-              id: 'expense-claim',
-              title: 'Expense Claim Form Template',
-              description:
-                'Expense Claim Form Template helps employees submit expense claims with clear details, categories, and supporting information for review. It standardizes the reimbursement process, reduces errors, and helps teams manage expenses efficiently.',
-              thumbnail: '/assets/images/template-cover-1.png',
-              workspaceName: 'Request'
-            },
-            {
-              id: 'supply-request',
-              title: 'Supply Request Form Template',
-              description:
-                'Supply Request Form Template helps teams request office or operational supplies in a clear and trackable format.',
-              thumbnail: '/assets/images/template-cover-1.png',
-              workspaceName: 'Request'
-            },
-            {
-              id: 'purchase-requisition',
-              title: 'Purchase Requisition Form Template',
-              description:
-                'Purchase Requisition Form Template helps organizations collect and approve purchase requests with complete details.',
-              thumbnail: '/assets/images/template-cover-1.png',
-              workspaceName: 'Request'
-            },
-            {
-              id: 'requisition',
-              title: 'Requisition Form Template',
-              description:
-                'Requisition Form Template helps teams request resources, approvals, or materials in a clean and structured way.',
-              thumbnail: '/assets/images/template-cover-1.png',
-              workspaceName: 'Request'
-            }
-          ],
-          apiUrl: 'https://pod-yukon-delight-lawyers.trycloudflare.com/api/templates',
-          template: null,
-          isLoading: false,
-          isLoadingRelatedTemplates: false,
-          error: '',
-          openFaq: null,
+          activeCategory: 'getting-started',
+          searchTerm: '',
+          openCategories: [],
+          isHome: false,
           categories: [
-            { key: 'lead-generation', label: 'Lead Generation', workspaceName: 'Lead generation' },
-            { key: 'survey', label: 'Survey', workspaceName: 'Surveys' },
-            { key: 'request', label: 'Request', workspaceName: 'Request' },
-            { key: 'remote-work', label: 'Remote Work', workspaceName: 'Remote Work' },
-            { key: 'contact', label: 'Contact', workspaceName: 'Contact' },
-            { key: 'poll', label: 'Poll', workspaceName: 'Poll' },
-            { key: 'business', label: 'Business', workspaceName: 'Business' },
-            { key: 'event', label: 'Event', workspaceName: 'Event' },
             {
-              key: 'banking-finance',
-              label: 'Banking & Finance',
-              workspaceName: 'Banking & Finance'
+              key: 'getting-started',
+              label: 'Getting Started',
+              description:
+                'Learn the basics of using Kiwiform, from creating your first form to understanding how the builder and templates work. This section helps you become familiar with the platform and move from setup to publishing quickly.',
+              groups: [
+                {
+                  title: 'Start Exploring Kiwiform',
+                  articles: [
+                    { title: 'Overview', slug: 'overview' },
+                    { title: 'Workspaces', slug: 'workspaces' },
+                    { title: 'Create a form', slug: 'create-a-form' },
+                    { title: 'Builder layout', slug: 'builder-layout' },
+                    { title: 'Form options', slug: 'form-options' },
+                    { title: 'Templates', slug: 'templates' },
+                    { title: 'Multi-page forms', slug: 'multi-page-forms' },
+                    { title: 'Progress bar', slug: 'progress-bar' },
+                    { title: 'Supported languages', slug: 'supported-languages' },
+                    { title: 'AI Form Builder', slug: 'ai-form-builder' },
+                    { title: 'Invite Members', slug: 'invite-members' }
+                  ]
+                }
+              ]
             },
             {
-              key: 'donations-fundraising',
-              label: 'Donations & Fundraising',
-              workspaceName: 'Donations & Fundraising'
+              key: 'form-building',
+              label: 'Form Building',
+              description:
+                'Understand how to structure forms using field types, layout elements, media, selection fields, and advanced inputs.',
+              groups: [
+                {
+                  title: 'First Steps of Form Building',
+                  articles: [{ title: 'Basics of Building', slug: 'basics-of-building' }]
+                },
+                {
+                  title: 'Media',
+                  articles: [
+                    { title: 'Image in Form', slug: 'image-in-form' },
+                    { title: 'Image Editor', slug: 'image-editor' },
+                    { title: 'Video in Form', slug: 'video-in-form' },
+                    { title: 'Answer Panel', slug: 'answer-panel' },
+                    { title: 'Endings', slug: 'endings' },
+                    { title: 'Add Content in form', slug: 'add-content-in-form' }
+                  ]
+                },
+                {
+                  title: 'Contact Information Fields',
+                  articles: [
+                    { title: 'Contact details', slug: 'contact-details' },
+                    { title: 'Email', slug: 'email' },
+                    { title: 'Phone', slug: 'phone' },
+                    { title: 'Address', slug: 'address' },
+                    { title: 'Website', slug: 'website' }
+                  ]
+                },
+                {
+                  title: 'Text & Media Fields',
+                  articles: [
+                    { title: 'Text Area [Long]', slug: 'text-area-long' },
+                    { title: 'Text Box [Short]', slug: 'text-box-short' },
+                    { title: 'Video & Audio', slug: 'video-audio' },
+                    { title: 'Date Picker', slug: 'date-picker' },
+                    { title: 'Quote', slug: 'quote' }
+                  ]
+                },
+                {
+                  title: 'Selection Fields',
+                  articles: [
+                    { title: 'Multiple Selection', slug: 'multiple-selection' },
+                    { title: 'Drop Down', slug: 'drop-down' },
+                    { title: 'Picture Selection', slug: 'picture-selection' },
+                    { title: 'Yes / No', slug: 'yes-no' },
+                    { title: 'Legal Text', slug: 'legal-text' },
+                    { title: 'Check Box', slug: 'check-box' }
+                  ]
+                },
+                {
+                  title: 'Advanced Fields',
+                  articles: [
+                    { title: 'Payment', slug: 'payment' },
+                    { title: 'File Upload', slug: 'file-upload' },
+                    { title: 'Number', slug: 'number' },
+                    { title: 'Partial Submission', slug: 'partial-submission' },
+                    { title: 'Redirect to Link', slug: 'redirect-to-link' },
+                    { title: 'Scheduler', slug: 'scheduler' }
+                  ]
+                },
+                {
+                  title: 'Rating & Ranking Fields',
+                  articles: [
+                    { title: 'Opinion Scale', slug: 'opinion-scale' },
+                    { title: 'Feedback Score', slug: 'feedback-score' },
+                    { title: 'Rating', slug: 'rating' },
+                    { title: 'Ranking Scale', slug: 'ranking-scale' },
+                    { title: 'Matrix', slug: 'matrix' }
+                  ]
+                },
+                {
+                  title: 'Layout Fields',
+                  articles: [{ title: 'Layout Fields', slug: 'layout-fields' }]
+                }
+              ]
             },
-            { key: 'application', label: 'Application', workspaceName: 'Application' },
-            { key: 'common-use', label: 'Common Use', workspaceName: 'Common Use' },
-            { key: 'healthcare', label: 'Healthcare', workspaceName: 'Healthcare' },
             {
-              key: 'questionnaires-quizzes',
-              label: 'Questionnaires & Quizzes',
-              workspaceName: 'Quizzes'
+              key: 'form-settings',
+              label: 'Form Settings',
+              description:
+                'Control form behavior after publishing, including availability, access, translations, messages, and response handling.',
+              groups: [
+                {
+                  title: 'Manage Form Settings',
+                  articles: [
+                    { title: 'Form Details', slug: 'form-details' },
+                    { title: 'Setup Endings', slug: 'setup-endings' },
+                    { title: 'Form Accessibility', slug: 'form-accessibility' },
+                    { title: 'Form Version History', slug: 'form-version-history' },
+                    { title: 'Form Translations', slug: 'form-translations' },
+                    { title: 'General Settings', slug: 'general-settings' },
+                    {
+                      title: 'Access & Availability Settings',
+                      slug: 'access-availability-settings'
+                    },
+                    { title: 'Form Opening & Closure', slug: 'form-opening-closure' },
+                    { title: 'Duplicate prevention', slug: 'duplicate-prevention' },
+                    { title: 'Spam protection', slug: 'spam-protection' },
+                    { title: 'Form Languages', slug: 'form-languages' },
+                    { title: 'System Default Messages', slug: 'system-default-messages' },
+                    { title: 'Form Meta Settings', slug: 'form-meta-settings' },
+                    { title: 'Search visibility', slug: 'search-visibility' }
+                  ]
+                }
+              ]
             },
-            { key: 'it-requests', label: 'IT Requests', workspaceName: 'IT Requests' },
             {
-              key: 'customer-support',
-              label: 'Customer Support',
-              workspaceName: 'Customer Support'
+              key: 'design-themes',
+              label: 'Design & Themes',
+              description:
+                'Customize fonts, colors, backgrounds, logos, and reusable themes to keep forms aligned with your brand.',
+              groups: [
+                {
+                  title: 'Customize Form Design',
+                  articles: [
+                    { title: 'Themes overview', slug: 'themes-overview' },
+                    { title: 'Create theme', slug: 'create-theme' },
+                    { title: 'Edit theme', slug: 'edit-theme' },
+                    { title: 'Theme library', slug: 'theme-library' },
+                    { title: 'Fonts', slug: 'fonts' },
+                    { title: 'Colors', slug: 'colors' },
+                    { title: 'Backgrounds', slug: 'backgrounds' },
+                    { title: 'Logo Upload', slug: 'logo-upload' }
+                  ]
+                }
+              ]
             },
-            { key: 'feedback', label: 'Feedback', workspaceName: 'Feedback' },
-            { key: 'education', label: 'Education', workspaceName: 'Education' },
-            { key: 'registration', label: 'Registration', workspaceName: 'Registrations' },
-            { key: 'marketing', label: 'Marketing', workspaceName: 'Marketing' },
-            { key: 'booking-order', label: 'Booking & Order', workspaceName: 'Booking & Order' },
-            { key: 'hr-hiring', label: 'HR & Hiring', workspaceName: 'HR & Hiring' },
             {
-              key: 'creators-templates',
-              label: 'Creators Templates',
-              workspaceName: 'Creators Templates'
+              key: 'logic-flow',
+              label: 'Logic & Flow',
+              description:
+                'Create dynamic form experiences using conditional logic, branching, scoring, variables, and respondent paths.',
+              groups: [
+                {
+                  title: 'Control Flow of The Form',
+                  articles: [
+                    { title: 'Logic basics', slug: 'logic-basics' },
+                    { title: 'Conditional logic', slug: 'conditional-logic' },
+                    { title: 'Branching', slug: 'branching' },
+                    { title: 'Show/hide fields', slug: 'show-hide-fields' },
+                    { title: 'Scoring', slug: 'scoring' },
+                    { title: 'Variables', slug: 'variables' },
+                    { title: 'Custom variables', slug: 'custom-variables' }
+                  ]
+                }
+              ]
             },
             {
-              key: 'miscellaneous-templates',
-              label: 'Miscellaneous Templates',
-              workspaceName: 'Miscellaneous Templates'
+              key: 'sharing-embeds',
+              label: 'Sharing & Embeds',
+              description:
+                'Share forms with links, QR codes, previews, emails, websites, and platform-specific embeds.',
+              groups: [
+                {
+                  title: 'Share Forms',
+                  articles: [
+                    { title: 'Share link', slug: 'share-link' },
+                    { title: 'Shareable QR Code', slug: 'shareable-qr-code' },
+                    { title: 'Embed basics', slug: 'embed-basics' },
+                    { title: 'Embed in email', slug: 'embed-in-email' },
+                    { title: 'Embed in website', slug: 'embed-in-website' },
+                    { title: 'Embed Modes', slug: 'embed-modes' },
+                    { title: 'Form preview', slug: 'form-preview' },
+                    { title: 'Custom embed', slug: 'custom-embed' },
+                    { title: 'Webflow embed', slug: 'webflow-embed' },
+                    { title: 'WordPress embed', slug: 'wordpress-embed' },
+                    { title: 'Shopify embed', slug: 'shopify-embed' },
+                    { title: 'Squarespace embed', slug: 'squarespace-embed' },
+                    { title: 'Customize Shareable Link', slug: 'customize-shareable-link' }
+                  ]
+                }
+              ]
+            },
+            {
+              key: 'responses-analytics',
+              label: 'Responses & Analytics',
+              description:
+                'View submissions, filter response data, understand analytics, download results, and export reports.',
+              groups: [
+                {
+                  title: 'View Results',
+                  articles: [
+                    { title: 'Results Overview', slug: 'results-overview' },
+                    { title: 'Insights', slug: 'insights' },
+                    { title: 'Responses', slug: 'responses' },
+                    { title: 'Partial responses', slug: 'partial-responses' },
+                    { title: 'Filtering', slug: 'filtering' },
+                    { title: 'Download data', slug: 'download-data' },
+                    { title: 'Analytics report', slug: 'analytics-report' },
+                    { title: 'Export PDF', slug: 'export-pdf' },
+                    { title: 'Response metadata', slug: 'response-metadata' }
+                  ]
+                }
+              ]
+            },
+            {
+              key: 'integrations-automations',
+              label: 'Integrations & Automations',
+              description:
+                'Connect Kiwiform with other tools, automate workflows, send notifications, and sync responses.',
+              groups: [
+                {
+                  title: 'Connect Tools and Apps',
+                  articles: [
+                    { title: 'Integrations Overview', slug: 'integrations-overview' },
+                    { title: 'Email Notifications', slug: 'email-notifications' },
+                    { title: 'Email To Respondents', slug: 'email-to-respondents' },
+                    { title: 'Webhooks', slug: 'webhooks' },
+                    { title: 'Zapier', slug: 'zapier' },
+                    { title: 'Stripe', slug: 'stripe' },
+                    { title: 'Google Sheets', slug: 'google-sheets' },
+                    { title: 'Google Drive', slug: 'google-drive' },
+                    { title: 'Google Analytics', slug: 'google-analytics' },
+                    { title: 'Google Tag Manager', slug: 'google-tag-manager' },
+                    { title: 'Slack', slug: 'slack' },
+                    { title: 'Notion', slug: 'notion' },
+                    { title: 'Airtable', slug: 'airtable' }
+                  ]
+                }
+              ]
+            },
+            {
+              key: 'account-plans',
+              label: 'Account & Plans',
+              description:
+                'Manage account settings, sign-in methods, security, notifications, billing, plans, and custom domains.',
+              groups: [
+                {
+                  title: 'Manage Account',
+                  articles: [
+                    { title: 'Sign-in methods', slug: 'sign-in-methods' },
+                    { title: 'Account setup', slug: 'account-setup' },
+                    { title: 'Connected accounts', slug: 'connected-accounts' },
+                    { title: 'Security', slug: 'security' },
+                    { title: 'Two-factor Authentication', slug: 'two-factor-authentication' },
+                    { title: 'Notifications', slug: 'notifications' },
+                    { title: 'SMTP Settings', slug: 'smtp-settings' },
+                    { title: 'Plan overview', slug: 'plan-overview' },
+                    { title: 'Billing', slug: 'billing' },
+                    { title: 'Delete account', slug: 'delete-account' },
+                    { title: 'Custom Domains', slug: 'custom-domains' }
+                  ]
+                }
+              ]
+            },
+            {
+              key: 'resources',
+              label: 'Resources',
+              description:
+                'Explore templates, best practices, policies, product updates, and additional guidance for better forms.',
+              groups: [
+                {
+                  title: 'Explore Resources',
+                  articles: [
+                    { title: 'Templates', slug: 'templates' },
+                    { title: 'Best practices', slug: 'best-practices' },
+                    { title: 'Privacy', slug: 'privacy' },
+                    { title: 'GDPR', slug: 'gdpr' },
+                    { title: 'Terms', slug: 'terms' },
+                    { title: 'Changelog', slug: 'changelog' }
+                  ]
+                }
+              ]
+            },
+            {
+              key: 'kiwiform-api',
+              label: 'Kiwiform API',
+              description:
+                'Find API references and developer guidance for working with Kiwiform programmatically.',
+              groups: [
+                {
+                  title: 'Developer Guides',
+                  articles: [
+                    { title: 'API Overview', slug: 'api-overview' },
+                    { title: 'Authentication', slug: 'api-authentication' },
+                    { title: 'Templates API', slug: 'templates-api' },
+                    { title: 'Responses API', slug: 'responses-api' }
+                  ]
+                }
+              ]
             }
           ],
-          get templateTitle() {
-            return this.template?.title || 'Template'
-          },
-          get templateDescription() {
-            return (
-              this.template?.description ||
-              `${this.templateTitle} helps teams collect information in a clean, structured workflow.`
-            )
-          },
-          get templateImage() {
-            return this.template?.thumbnail || '/assets/images/template-cover-1.png'
-          },
-          get category() {
-            const workspace = this.template?.workspaceName || this.template?.category || ''
-            return (
-              this.categories.find((category) => category.workspaceName === workspace) ||
-              this.categories.find((category) =>
-                this.templateTitle.toLowerCase().includes(category.key.replace(/-/g, ' '))
-              ) ||
-              this.categories[0]
-            )
-          },
-          get categoryLabel() {
-            return this.category?.label || 'Templates'
-          },
-          get categoryHref() {
-            return `/templates/categories/${this.category?.key || 'lead-generation'}`
-          },
-          get useTemplateHref() {
-            return this.template?.useUrl || this.template?.cloneUrl || 'https://app.kiwiform.com'
-          },
-          get previewHref() {
-            return this.template?.previewUrl || this.template?.url || this.useTemplateHref
-          },
-          get aboutCopy() {
-            return `The <strong>${this.templateTitle}</strong> helps teams collect clear details, supporting information, and responses in one structured form. Built on Kiwiform, a free Typeform alternative, this template supports organized data collection and consistent workflows.`
-          },
-          get benefitsCopy() {
-            return `${this.templateTitle} simplifies how information is collected and reviewed by capturing essential details in a structured format. It reduces errors, keeps submissions organized, and helps teams process responses more efficiently.`
-          },
-          get useCases() {
-            const base = this.templateTitle.replace(/\s+Template$/i, '').toLowerCase()
-            return [
-              `${this.capitalize(base)} submissions`,
-              'Internal request workflows',
-              'Team approval processes',
-              'Customer or employee data collection',
-              'Documentation and record keeping'
-            ]
-          },
-          get relatedTemplates() {
-            return this.templates
-              .filter((item) => item && item.title !== this.templateTitle)
-              .filter((item) => {
-                const workspace = item.workspaceName || item.category || ''
-                return workspace === (this.template?.workspaceName || this.template?.category || '')
-              })
-              .concat(this.templates.filter((item) => item && item.title !== this.templateTitle))
-              .filter(
-                (item, index, list) =>
-                  list.findIndex((entry) => entry.title === item.title) === index
-              )
-              .slice(0, 3)
-          },
-          get faqs() {
-            const name = this.templateTitle.toLowerCase()
-            return [
-              {
-                question: `What is ${name} used for?`,
-                answer: `${this.templateTitle} is used to collect structured information through a ready-made Kiwiform form.`
-              },
-              {
-                question: `What form fields are included in ${name}?`,
-                answer:
-                  'You can customize every field, but the template starts with practical questions for the selected use case.'
-              },
-              {
-                question: `Who should use ${name}?`,
-                answer:
-                  'Teams, creators, operators, and businesses can use it to collect responses faster without building from scratch.'
-              },
-              {
-                question: `How does ${name} improve response collection?`,
-                answer:
-                  'It standardizes the form flow, keeps responses organized, and makes publishing or embedding simple.'
-              }
-            ]
-          },
           init() {
-            this.template =
-              this.templates.find(
-                (template) => this.slugify(template.title) === this.currentSlug()
-              ) || this.templates[0]
-            document.title = `${this.templateTitle} | Kiwiform`
-            this.setCanonical()
-            this.loadRelatedTemplates()
+            const route = this.routeFromUrl()
+            this.isHome = route.isHome
+            this.activeCategory = route.categoryKey
+            this.activeSlug = route.slug
+            if (!this.isHome && !this.openCategories.includes(this.activeCategory)) {
+              this.openCategories = [this.activeCategory]
+            }
+            this.setPageMeta()
           },
-          latestTime(template) {
-            const rawDate =
-              template.createdAt ||
-              template.created_at ||
-              template.updatedAt ||
-              template.updated_at ||
-              template.publishedAt ||
-              template.published_at ||
-              template.date ||
-              ''
-            const parsedDate = rawDate ? Date.parse(rawDate) : 0
+          activeSlug: '',
+          get sidebarCategories() {
+            const query = this.searchTerm.trim().toLowerCase()
 
-            return Number.isNaN(parsedDate) ? 0 : parsedDate
-          },
-          latestTemplates(templates) {
-            return [...templates].sort((a, b) => this.latestTime(b) - this.latestTime(a))
-          },
-          slugify(value) {
-            return (value || 'template')
-              .trim()
-              .toLowerCase()
-              .replace(/[^a-z0-9\s-]/g, '')
-              .replace(/\s+/g, '-')
-          },
-          currentSlug() {
-            return window.location.pathname.split('/').filter(Boolean).pop() || ''
-          },
-          templateUrl(template) {
-            return `/templates/${this.slugify(template.title)}`
-          },
-          capitalize(value) {
-            return value.charAt(0).toUpperCase() + value.slice(1)
-          },
-          async loadRelatedTemplates() {
-            this.isLoadingRelatedTemplates = true
+            if (!query) {
+              return this.categories
+            }
 
-            try {
-              const params = new URLSearchParams({
-                workspaceName: this.category?.workspaceName || '',
-                limit: '1000'
+            return this.categories
+              .map((category) => {
+                const groups = category.groups
+                  .map((group) => ({
+                    ...group,
+                    articles: group.articles.filter((article) =>
+                      [article.title, article.slug, group.title, category.label]
+                        .join(' ')
+                        .toLowerCase()
+                        .includes(query)
+                    )
+                  }))
+                  .filter((group) => group.articles.length > 0)
+
+                return { ...category, groups }
               })
-              const response = await fetch(`${this.apiUrl}?${params.toString()}`)
-              const result = await response.json()
+              .filter((category) => category.groups.length > 0)
+          },
+          get activeCategoryData() {
+            return this.categories.find((category) => category.key === this.activeCategory)
+          },
+          get activeArticleData() {
+            return this.flattenArticles(this.activeCategoryData || {}).find(
+              (article) => article.slug === this.activeSlug
+            )
+          },
+          get pageType() {
+            if (this.isHome) {
+              return 'home'
+            }
 
-              if (!response.ok || !result.success) {
-                throw new Error(result.message || 'Unable to load related templates.')
+            return this.activeArticleData ? 'article' : 'category'
+          },
+          get activePageData() {
+            return this.pageType === 'article' ? this.activeArticleData : this.activeCategoryData
+          },
+          get eyebrow() {
+            return this.pageType === 'article'
+              ? this.activeCategoryData?.label || 'Help Center'
+              : 'Help Center'
+          },
+          get pageTitle() {
+            if (this.pageType === 'home') {
+              return 'Kiwiform Help Center'
+            }
+
+            return this.pageType === 'article'
+              ? this.activeArticleData.title === 'Overview'
+                ? 'Overview Of Kiwiform'
+                : this.activeArticleData.title
+              : this.activeCategoryData?.label || 'Kiwiform Help Center'
+          },
+          get pageDescription() {
+            if (this.pageType === 'home') {
+              return 'Find clear answers, step-by-step guides, and practical tips for building and managing forms with Kiwiform, a free Typeform alternative. Learn how to create forms, customize design, set up logic, collect responses, and keep everything running smoothly.'
+            }
+
+            if (this.pageType === 'article') {
+              if (this.activeSlug === 'overview') {
+                return 'Kiwiform helps you create forms, collect responses, and manage data in one place. As a free Typeform alternative, it offers conversational forms, flexible logic, and unlimited responses so you can start collecting information without limits or complexity.'
               }
 
-              const latestRelatedTemplates = this.latestTemplates(
-                Array.isArray(result.data) ? result.data : []
-              )
-                .filter(
-                  (template) => this.slugify(template.title) !== this.slugify(this.templateTitle)
-                )
-                .slice(0, 3)
+              return this.articleIntro
+            }
 
-              if (latestRelatedTemplates.length > 0) {
-                this.templates = [this.template, ...latestRelatedTemplates]
-              }
-            } catch (error) {
-              console.warn(error.message || 'Unable to load related templates.')
-            } finally {
-              this.isLoadingRelatedTemplates = false
+            return (
+              this.activeCategoryData?.description ||
+              'Find clear answers, step-by-step guides, and practical tips for building, customizing, sharing, and managing forms with Kiwiform.'
+            )
+          },
+          get articleIntro() {
+            return `Learn how to use ${this.activeArticleData?.title || 'this feature'} in Kiwiform with clear guidance and practical setup notes.`
+          },
+          toggleCategory(key) {
+            if (this.openCategories.includes(key)) {
+              this.openCategories = this.openCategories.filter((categoryKey) => categoryKey !== key)
+              return
+            }
+
+            this.openCategories = [...this.openCategories, key]
+          },
+          routeFromUrl() {
+            const page = window.location.pathname
+              .replace(/\/$/, '')
+              .split('/')
+              .filter(Boolean)
+              .pop()
+            const slug = (page || '').replace(/\.html$/, '')
+
+            if (!slug || slug === 'help') {
+              return { categoryKey: 'getting-started', slug: '', isHome: true }
+            }
+
+            const category = this.categories.find((item) => item.key === slug)
+            if (category) {
+              return { categoryKey: category.key, slug: category.key, isHome: false }
+            }
+
+            const categoryWithArticle = this.categories.find((item) =>
+              this.flattenArticles(item).some((article) => article.slug === slug)
+            )
+
+            return {
+              categoryKey: categoryWithArticle?.key || 'getting-started',
+              slug,
+              isHome: false
             }
           },
-          setCanonical() {
+          articleUrl(article) {
+            return `/${article.slug}.html`
+          },
+          categoryUrl(category) {
+            return category ? `/${category.key}.html` : '/help.html'
+          },
+          flattenArticles(category) {
+            return category?.groups?.flatMap((group) => group.articles) || []
+          },
+          setPageMeta() {
+            document.title = `${this.pageTitle} | Kiwiform Help Center`
+
             let canonical = document.querySelector('link[rel="canonical"]')
             if (!canonical) {
               canonical = document.createElement('link')
               canonical.rel = 'canonical'
               document.head.appendChild(canonical)
             }
-            canonical.href = `https://kiwiform.com/templates/${this.currentSlug()}`
+            canonical.href = `https://kiwiform.com${window.location.pathname.replace(/\/$/, '') || '/help.html'}`
           }
         }
       }
