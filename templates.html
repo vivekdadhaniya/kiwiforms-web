@@ -1,0 +1,1822 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Form Templates | Kiwiform</title>
+    <link rel="canonical" href="https://kiwiform.com/templates" />
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body class="bg-Theme-bg font-Inter text-Theme-Black" x-data="templatesPage()" x-init="init()">
+    <!-- navigation  -->
+    <header
+      x-data="{ open:false, open1:false, mobileMenu:false }"
+      class="fixed top-0 left-0 z-50 bg-Theme-bg w-full flex flex-col gap-px border-b border-Theme-bg"
+    >
+      <div class="flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div class="col-span-11 bg-white rounded-10px py-3 lg:px-5">
+            <div class="flex items-center justify-between max-lg:px-5">
+              <a href="/" class="flex items-center gap-3">
+                <svg
+                  width="143"
+                  height="32"
+                  viewBox="0 0 143 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M45.1923 20.5262C44.8292 19.8837 44.3263 19.8279 43.8235 20.3307L41.7005 22.5376V26.3088H38.3203V6.75425H41.7005V18.459L47.5947 12.2016H51.7291L47.7624 16.3918C47.2875 16.8947 47.2316 17.3696 47.5389 17.9283L52.1482 26.3088H48.2652L45.1923 20.5262Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M53.57 26.3088V12.1736H57.1457V26.3088H53.57ZM55.3579 10.1065C54.1008 10.1065 53.1789 9.24047 53.1789 8.06719C53.1789 6.92186 54.1008 6 55.3579 6C56.6149 6 57.5368 6.92186 57.5368 8.06719C57.5368 9.24047 56.6149 10.1065 55.3579 10.1065Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M62.8621 26.3088L58.6719 12.1736H62.3593L64.7058 21.4481H64.9293L67.3317 12.1736H70.8236L73.226 21.4481H73.4216L75.7681 12.1736H79.4835L75.2932 26.3088H71.4661L69.1196 17.3416H69.0078L66.6892 26.3088H62.8621Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M81.014 26.3088V12.1736H84.5897V26.3088H81.014ZM82.8019 10.1065C81.5448 10.1065 80.6229 9.24047 80.6229 8.06719C80.6229 6.92186 81.5448 6 82.8019 6C84.0589 6 84.9808 6.92186 84.9808 8.06719C84.9808 9.24047 84.0589 10.1065 82.8019 10.1065Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M88.6872 26.3088V15.1348H86.0892L86.0613 12.1736H87.8491C88.3799 12.1736 88.6313 11.8943 88.6872 11.3915V10.9166C88.9107 8.76557 90.3074 6.75425 93.6876 6.75425H95.224V9.71536H92.9613C92.3467 9.71536 92.0953 9.96678 92.0953 10.5534V12.1736H94.9726V15.1348H92.1511V26.3088H88.6872Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M102.969 26.7557C98.4433 26.7557 95.566 23.7667 95.566 19.2412C95.566 14.7157 98.4433 11.7267 102.969 11.7267C107.438 11.7267 110.316 14.7157 110.316 19.2412C110.316 23.7667 107.438 26.7557 102.969 26.7557ZM102.969 23.7108C105.204 23.7108 106.684 21.9509 106.684 19.2412C106.684 16.5315 105.204 14.7437 102.969 14.7437C100.706 14.7437 99.2255 16.5315 99.2255 19.2412C99.2255 21.9509 100.706 23.7108 102.969 23.7108Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M112.112 15.7493C112.112 13.4307 113.369 12.1736 115.771 12.1736H120.352V15.1906H115.687V26.3088H112.112V15.7493Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M121.744 26.3088V12.1736H124.984V14.2129C125.85 12.5647 127.331 11.7267 129.258 11.7267C131.381 11.7267 132.89 12.7323 133.644 14.4923C134.454 12.7044 136.018 11.7267 138.086 11.7267C141.13 11.7267 143.002 13.8218 143.002 17.2578V26.3088H139.426V17.8445C139.426 15.8052 138.672 14.8275 137.192 14.8275C135.571 14.8275 134.175 16.1125 134.175 19.1015V26.3088H130.599V17.8445C130.599 15.8052 129.845 14.8275 128.364 14.8275C126.66 14.8275 125.319 16.1963 125.319 19.1015V26.3088H121.744Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M16.0016 1.59961C17.0325 1.59961 18.038 1.70824 19.0075 1.9144C20.3067 2.19067 21.1216 3.41533 21.1216 4.74356V9.27961C21.1216 10.1633 21.8379 10.8796 22.7216 10.8796H27.2576C28.5858 10.8796 29.8105 11.6945 30.0868 12.9937C30.2929 13.9631 30.4016 14.9687 30.4016 15.9996C30.4016 23.9525 23.9545 30.3996 16.0016 30.3996C8.04866 30.3996 1.60156 23.9525 1.60156 15.9996C1.60156 8.04671 8.04866 1.59961 16.0016 1.59961Z"
+                    fill="#B8DD2F"
+                  />
+                  <path
+                    d="M21.5792 10.3996L30.4015 10.8796L30.6714 14.607C30.7154 15.214 30.6999 15.8237 30.6253 16.4277L30.5071 17.385C30.4368 17.9535 30.3145 18.5144 30.1415 19.0605L29.7935 20.1596L25.9215 15.3596L21.5792 10.3996Z"
+                    fill="url(#paint0_linear_12265_2027)"
+                  />
+                  <path
+                    d="M11.8984 15.8601C11.8984 13.5923 13.7369 11.7539 16.0046 11.7539C18.2724 11.7539 20.1109 13.5923 20.1109 15.8601C20.1109 18.1279 18.2724 19.9663 16.0046 19.9663C13.7369 19.9663 11.8984 18.1279 11.8984 15.8601Z"
+                    fill="#F2F3B5"
+                  />
+                  <ellipse cx="16.1464" cy="23.3642" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                  <ellipse cx="16.1464" cy="8.497" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                  <ellipse
+                    cx="19.8651"
+                    cy="22.3683"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-30 19.8651 22.3683)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="12.4276"
+                    cy="9.49329"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-30 12.4276 9.49329)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="22.5831"
+                    cy="19.6475"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-60 22.5831 19.6475)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="9.70808"
+                    cy="12.2139"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-60 9.70808 12.2139)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="23.5868"
+                    cy="15.9317"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-90 23.5868 15.9317)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="8.71184"
+                    cy="15.9317"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-90 8.71184 15.9317)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="9.71008"
+                    cy="19.6466"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-120 9.71008 19.6466)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="12.4249"
+                    cy="22.37"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-150 12.4249 22.37)"
+                    fill="#183C1A"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_12265_2027"
+                      x1="26.4011"
+                      y1="10.8796"
+                      x2="30.4011"
+                      y2="20.1596"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#183C1A" stop-opacity="0.25" />
+                      <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </a>
+
+              <nav class="hidden items-center gap-7 lg:flex">
+                <!-- PLATFORM -->
+                <div class="relative">
+                  <button
+                    @click="open = !open"
+                    class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                    :class="open ? 'text-Theme-Green' : 'text-Theme-Black'"
+                  >
+                    Platform
+                    <svg
+                      class="h-4 w-4 transition duration-300"
+                      :class="open ? 'rotate-180' : ''"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 8L10 12L6 8"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <a
+                  href="#"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Templates
+                </a>
+
+                <a
+                  href="#"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Pricing
+                </a>
+
+                <a
+                  href="#"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Blog
+                </a>
+              </nav>
+
+              <div class="flex items-center gap-4">
+                <!-- desktop button -->
+                <a
+                  href="#"
+                  class="hidden lg:inline-flex py-2 px-5 rounded-lg text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+                >
+                  Get Started
+                </a>
+
+                <!-- mobile hamburger -->
+                <button
+                  @click="mobileMenu = !mobileMenu"
+                  class="flex lg:hidden items-center justify-center w-10 h-10 text-Theme-Black"
+                >
+                  <!-- hamburger -->
+
+                  <svg
+                    x-show="!mobileMenu"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M4 6.66536C4 5.92899 4.59696 5.33203 5.33333 5.33203H18.6667C19.4031 5.33203 20 5.92899 20 6.66536C20 7.40175 19.4031 7.9987 18.6667 7.9987H5.33333C4.59696 7.9987 4 7.40174 4 6.66536Z"
+                      fill="black"
+                    />
+                    <path
+                      opacity="0.4"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M4 16.0013C4 15.2649 4.59696 14.668 5.33333 14.668H26.6667C27.4031 14.668 28 15.2649 28 16.0013C28 16.7377 27.4031 17.3346 26.6667 17.3346H5.33333C4.59696 17.3346 4 16.7377 4 16.0013Z"
+                      fill="black"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M4 25.3333C4 24.5969 4.59696 24 5.33333 24H26.6667C27.4031 24 28 24.5969 28 25.3333C28 26.0697 27.4031 26.6667 26.6667 26.6667H5.33333C4.59696 26.6667 4 26.0697 4 25.3333Z"
+                      fill="black"
+                    />
+                  </svg>
+
+                  <!-- close -->
+                  <svg
+                    x-show="mobileMenu"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M7.94293 7.94281C8.46365 7.4221 9.30786 7.42211 9.82855 7.94281L24.9135 23.0278C25.4342 23.5485 25.4342 24.3927 24.9135 24.9134C24.3928 25.4341 23.5486 25.4341 23.0279 24.9134L7.94293 9.82843C7.42224 9.30773 7.42222 8.46352 7.94293 7.94281Z"
+                      fill="black"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M7.94281 24.9116C7.4221 24.3908 7.42211 23.5466 7.94281 23.0259L23.0278 7.941C23.5485 7.42028 24.3927 7.42028 24.9134 7.941C25.4341 8.46171 25.4341 9.3059 24.9134 9.82661L9.82843 24.9116C9.30773 25.4323 8.46352 25.4323 7.94281 24.9116Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- MOBILE MENU -->
+            <div
+              x-show="mobileMenu"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 -translate-y-3"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-3"
+              class="lg:hidden gap-px w-full overflow-auto h-auto max-h-[calc(100vh-64px)]"
+              style="display: none"
+            >
+              <!-- left spacer -->
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+
+              <!-- center -->
+              <div class="w-full md:col-span-12 bg-white rounded-10px overflow-hidden">
+                <div class="flex flex-col items-center text-center">
+                  <div
+                    class="relative flex items-center justify-center flex-col gap-4 py-4 border-b border-Theme-bg w-full"
+                  >
+                    <button
+                      @click="open1 = !open1"
+                      class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                      :class="open1 ? 'text-Theme-Green' : 'text-Theme-Black'"
+                    >
+                      Platform
+                      <svg
+                        class="h-4 w-4 transition duration-300"
+                        :class="open1 ? 'rotate-180' : ''"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 8L10 12L6 8"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      x-show="open1"
+                      @click.outside="open1 = false"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 -translate-y-2"
+                      style="display: none"
+                      class="bg-transparent gap-px w-full col-span-full px-4"
+                    >
+                      <!-- main-container  -->
+
+                      <!-- place content here -->
+
+                      <div class="w-full grid grid-cols-1 gap-0 bg-white">
+                        <!-- LEFT -->
+                        <div class="col-span-1 px-px pt-px bg-Theme-bg">
+                          <!-- HEADING -->
+                          <div
+                            class="bg-white text-sm font-medium py-4 px-5 border-b border-Theme-bg"
+                          >
+                            Product
+                          </div>
+
+                          <!-- MENU GRID -->
+                          <div class="w-full flex flex-col gap-px">
+                            <div class="grid grid-cols-1 gap-px">
+                              <!-- ITEM -->
+                              <a
+                                href="#"
+                                class="bg-white flex items-center justify-left gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Overview
+                                  </h3>
+
+                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    A clear snapshot of all key features.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="#"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M7.22168 2.55469H8.77724"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M7.22168 7.22168H13.4439"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Responses & Analytics
+                                  </h3>
+
+                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Understand responses with clear insights.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="#"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="25"
+                                    viewBox="0 0 30 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1 17.7998H17.8"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1 23.4004H17.8"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Form Builder
+                                  </h3>
+
+                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Create and customize forms with ease.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="#"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <rect
+                                      x="13.25"
+                                      y="6.25"
+                                      width="6.99976"
+                                      height="6.99976"
+                                      rx="0.777751"
+                                      transform="rotate(90 13.25 6.25)"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M23.7397 18.5V28.9996"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M29.0005 23.7393L18.5008 23.7393"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Integrations
+                                  </h3>
+
+                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Connect forms with your essential tools.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="#"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="25"
+                                    viewBox="0 0 30 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1 6.06738H19.6672"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <rect
+                                      x="19.6553"
+                                      y="1"
+                                      width="9.34468"
+                                      height="9.34468"
+                                      rx="1.36115"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Logic & Flow
+                                  </h3>
+
+                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Build dynamic forms with smart logic.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="#"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                      fill="#E8F5B7"
+                                    />
+                                    <path
+                                      d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Languages & Translations
+                                  </h3>
+
+                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Create forms for a global audience.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <a
+                                href="#"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M9.40039 19.2025L9.41221 19.1992"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Design & Themes
+                                  </h3>
+
+                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Design branded forms that look great.
+                                  </p>
+                                </div>
+                              </a>
+                              <div class="w-full bg-white"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="col-span-1 bg-white border-x border-b border-Theme-bg">
+                          <div class="p-[5px] h-[calc(100%-50px)]">
+                            <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                              <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">
+                                FORM TEMPLATES
+                              </p>
+                              <svg
+                                class="mx-auto"
+                                width="254"
+                                height="78"
+                                viewBox="0 0 254 78"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect x="33" width="178" height="78" rx="10" fill="white" />
+                                <rect x="38" y="5" width="68" height="68" rx="5" fill="#E8F5B7" />
+                                <path
+                                  d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                                  fill="#183C1A"
+                                />
+                                <path
+                                  d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                                  fill="#B8DD2F"
+                                />
+                                <ellipse
+                                  cx="72.194"
+                                  cy="49.1233"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="72.194"
+                                  cy="28.6809"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="82.4156"
+                                  cy="38.9031"
+                                  rx="1.16814"
+                                  ry="1.75222"
+                                  transform="rotate(-90 82.4156 38.9031)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="61.9727"
+                                  cy="38.9031"
+                                  rx="1.16814"
+                                  ry="1.75222"
+                                  transform="rotate(-90 61.9727 38.9031)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                                  fill="#183C1A"
+                                />
+                                <path
+                                  d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                                  fill="url(#paint0_linear_7194_667)"
+                                />
+                                <path
+                                  d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
+                                  stroke="#183C1A"
+                                  stroke-width="2.11063"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <rect x="121" y="19" width="70" height="8" rx="4" fill="#E8F5B7" />
+                                <rect x="121" y="35" width="50" height="8" rx="4" fill="#E8F5B7" />
+                                <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
+                                <path
+                                  d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                                  fill="url(#paint1_linear_7194_667)"
+                                />
+                                <path
+                                  d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                                  fill="url(#paint2_linear_7194_667)"
+                                />
+                                <defs>
+                                  <linearGradient
+                                    id="paint0_linear_7194_667"
+                                    x1="86.2999"
+                                    y1="31.9588"
+                                    x2="91.7999"
+                                    y2="44.7188"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                    <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="paint1_linear_7194_667"
+                                    x1="28"
+                                    y1="39"
+                                    x2="-7.1631e-08"
+                                    y2="39"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="white" />
+                                    <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
+                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="paint2_linear_7194_667"
+                                    x1="216"
+                                    y1="39"
+                                    x2="254"
+                                    y2="39"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="white" />
+                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                  </linearGradient>
+                                </defs>
+                              </svg>
+                              <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                                Templates built for real use cases
+                              </h5>
+                              <p class="text-xs leading-5 text-Theme-Black mb-5">
+                                Start faster choose a template, customize it, and go live in
+                                minutes. Focus on collecting data.
+                              </p>
+                              <a
+                                href="#"
+                                class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
+                                >Kiwiform Templates</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a
+                    href="#"
+                    class="w-full border-b border-Theme-bg py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Templates
+                  </a>
+
+                  <a
+                    href="#"
+                    class="w-full border-b border-Theme-bg py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Pricing
+                  </a>
+
+                  <a
+                    href="#"
+                    class="w-full border-b border-Theme-bg py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Blog
+                  </a>
+
+                  <div class="py-5">
+                    <a
+                      href="#"
+                      class="inline-flex rounded-lg bg-[#B8DD2F] px-5 py-2 text-xs font-medium text-[#183C1A]"
+                    >
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- right spacer -->
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- dropdown  -->
+      <div
+        x-show="open"
+        @click.outside="open = false"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        style="display: none"
+        class="bg-transparent flex md:grid grid-cols-14 gap-px w-full col-span-full"
+      >
+        <div class="max-md:w-4 md:col-span-1 bg-white rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div
+          class="w-full md:col-span-12 bg-Theme-bg rounded-10px 2xl:grid 2xl:grid-cols-15 gap-px"
+        >
+          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div class="col-span-11 bg-white rounded-10px overflow-hidden">
+            <div class="w-full grid grid-cols-3 gap-5 bg-white">
+              <!-- LEFT -->
+              <div class="col-span-2 pr-px bg-Theme-bg">
+                <!-- HEADING -->
+                <div class="bg-white text-sm font-medium py-4 px-5 border-b border-Theme-bg">
+                  Product
+                </div>
+
+                <!-- MENU GRID -->
+                <div class="w-full flex flex-col gap-px">
+                  <div class="grid grid-cols-2 gap-px">
+                    <!-- ITEM -->
+                    <a
+                      href="#"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Overview</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          A clear snapshot of all key features.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="#"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.22168 2.55469H8.77724"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M7.22168 7.22168H13.4439"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Responses & Analytics</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Understand responses with clear insights.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="#"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="25"
+                          viewBox="0 0 30 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1 17.7998H17.8"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1 23.4004H17.8"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Form Builder</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Create and customize forms with ease.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="#"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <rect
+                            x="13.25"
+                            y="6.25"
+                            width="6.99976"
+                            height="6.99976"
+                            rx="0.777751"
+                            transform="rotate(90 13.25 6.25)"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M23.7397 18.5V28.9996"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M29.0005 23.7393L18.5008 23.7393"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Integrations</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Connect forms with your essential tools.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="#"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="25"
+                          viewBox="0 0 30 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 6.06738H19.6672"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <rect
+                            x="19.6553"
+                            y="1"
+                            width="9.34468"
+                            height="9.34468"
+                            rx="1.36115"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Logic & Flow</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Build dynamic forms with smart logic.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="#"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                          />
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">
+                          Languages & Translations
+                        </h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Create forms for a global audience.
+                        </p>
+                      </div>
+                    </a>
+
+                    <a
+                      href="#"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M9.40039 19.2025L9.41221 19.1992"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Design & Themes</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Design branded forms that look great.
+                        </p>
+                      </div>
+                    </a>
+                    <div class="w-full bg-white"></div>
+                  </div>
+                  <div class="w-full h-[50px] bg-white"></div>
+                </div>
+              </div>
+
+              <!-- RIGHT -->
+              <div class="col-span-1 bg-white border-l border-Theme-bg">
+                <div class="p-[5px] h-[calc(100%-50px)]">
+                  <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                    <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">FORM TEMPLATES</p>
+                    <svg
+                      width="254"
+                      height="78"
+                      viewBox="0 0 254 78"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect x="33" width="178" height="78" rx="10" fill="white" />
+                      <rect x="38" y="5" width="68" height="68" rx="5" fill="#E8F5B7" />
+                      <path
+                        d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                        fill="#B8DD2F"
+                      />
+                      <ellipse cx="72.194" cy="49.1233" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                      <ellipse cx="72.194" cy="28.6809" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="82.4156"
+                        cy="38.9031"
+                        rx="1.16814"
+                        ry="1.75222"
+                        transform="rotate(-90 82.4156 38.9031)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="61.9727"
+                        cy="38.9031"
+                        rx="1.16814"
+                        ry="1.75222"
+                        transform="rotate(-90 61.9727 38.9031)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                        fill="url(#paint0_linear_7194_667)"
+                      />
+                      <path
+                        d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
+                        stroke="#183C1A"
+                        stroke-width="2.11063"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <rect x="121" y="19" width="70" height="8" rx="4" fill="#E8F5B7" />
+                      <rect x="121" y="35" width="50" height="8" rx="4" fill="#E8F5B7" />
+                      <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
+                      <path
+                        d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                        fill="url(#paint1_linear_7194_667)"
+                      />
+                      <path
+                        d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                        fill="url(#paint2_linear_7194_667)"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_7194_667"
+                          x1="86.2999"
+                          y1="31.9588"
+                          x2="91.7999"
+                          y2="44.7188"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#183C1A" stop-opacity="0.25" />
+                          <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient
+                          id="paint1_linear_7194_667"
+                          x1="28"
+                          y1="39"
+                          x2="-7.1631e-08"
+                          y2="39"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="white" />
+                          <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
+                          <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient
+                          id="paint2_linear_7194_667"
+                          x1="216"
+                          y1="39"
+                          x2="254"
+                          y2="39"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="white" />
+                          <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                      Templates built for real use cases
+                    </h5>
+                    <p class="text-xs leading-5 text-Theme-Black mb-5">
+                      Start faster choose a template, customize it, and go live in minutes. Focus on
+                      collecting data.
+                    </p>
+                    <a
+                      href="#"
+                      class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
+                      >Kiwiform Templates</a
+                    >
+                  </div>
+                </div>
+                <div class="w-full h-[50px] bg-white border-t border-Theme-bg"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white mmax-2xl:rounded-l-10px"></div>
+      </div>
+    </header>
+
+    <main class="flex md:grid md:grid-cols-14 gap-px w-full pt-[61px]">
+      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+      <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+
+        <div
+          class="col-span-11 grid grid-cols-1 bg-Theme-bg gap-px lg:grid-cols-[245px_minmax(0,1fr)]"
+        >
+          <aside
+            class="order-2 flex gap-2 overflow-x-auto rounded-10px bg-white p-3 lg:order-1 lg:sticky lg:top-[61px] lg:block lg:h-[calc(100vh-61px)] lg:overflow-y-auto lg:rounded-r-none lg:p-6 lg:px-3"
+            aria-label="Template categories"
+          >
+            <template
+              x-for="category in categories"
+              :key="category.key"
+              class="flex flex-col gap-1.5"
+            >
+              <button
+                type="button"
+                class="whitespace-nowrap rounded-lg mb-1.5 px-3.5 py-1.5 text-left text-sm font-medium leading-[22px] transition-all duration-300 hover:bg-Theme-bg hover:text-Theme-Black lg:flex lg:w-full"
+                :class="activeCategory === category.key ? 'bg-Theme-bg text-Theme-Black' : 'bg-transparent text-[#8C8484]'"
+                @click="selectCategory(category.key, true)"
+                x-text="category.label"
+              ></button>
+            </template>
+          </aside>
+
+          <div class="order-1 flex min-w-0 flex-col gap-px lg:order-2">
+            <section class="rounded-10px bg-white px-5 py-9 sm:px-8 lg:px-10 lg:py-12">
+              <h1
+                class="font-Inter-disp text-[28px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
+              >
+                Free Form Templates For Every Use Case
+              </h1>
+              <p class="mt-2.5 text-sm leading-5 text-[#8C8484]">
+                Start faster with professionally designed templates you can customize in minutes.
+                Built on Kiwiform, a free Typeform alternative, every template supports logic,
+                personalization, embeds, and unlimited responses.
+              </p>
+
+              <label class="relative mt-5 block w-full" aria-label="Search templates">
+                <svg
+                  class="pointer-events-none absolute left-3.5 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-[#756F6F]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <input
+                  class="h-10 w-full rounded-lg border-0 bg-[#F4F4F4] py-0 pl-11 pr-4 text-sm leading-5 text-Theme-Black outline-none placeholder:text-[#7D7676]"
+                  type="search"
+                  placeholder="Search templates by use case and categories here..."
+                  x-model.debounce.300ms="searchTerm"
+                  @input="visibleCount = initialVisibleCount"
+                />
+              </label>
+            </section>
+
+            <section class="rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
+              <template x-if="isLoading">
+                <div class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]">
+                  Loading templates...
+                </div>
+              </template>
+
+              <template x-if="!isLoading && error">
+                <div
+                  class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]"
+                  x-text="error"
+                ></div>
+              </template>
+
+              <template x-if="!isLoading && !error && filteredTemplates.length === 0">
+                <div class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]">
+                  No templates found.
+                </div>
+              </template>
+
+              <div
+                class="grid grid-cols-1 gap-x-5 gap-y-7 sm:grid-cols-2 xl:grid-cols-3"
+                x-show="!isLoading && !error && filteredTemplates.length > 0"
+              >
+                <template x-for="template in visibleTemplates" :key="template.id || template.title">
+                  <a class="group block min-w-0" :href="templateUrl(template)">
+                    <div class="aspect-[1.24/1] overflow-hidden rounded-lg bg-[#F3F3F3]">
+                      <img
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.035]"
+                        :src="template.thumbnail || 'assets/images/template-cover-1.png'"
+                        :alt="`${template.title || 'Kiwiform'} template preview`"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h2
+                      class="mt-3.5 truncate text-lg font-semibold leading-[23px] text-Theme-Black"
+                      x-text="template.title || 'Untitled template'"
+                    ></h2>
+                    <p
+                      class="mt-2 line-clamp-2 text-sm leading-5 text-[#8C8484]"
+                      x-text="template.description || 'Explore this ready-made template and customize it for your workflow.'"
+                    ></p>
+                  </a>
+                </template>
+              </div>
+
+              <div class="mt-10 flex justify-center" x-show="!isLoading && !error && canLoadMore">
+                <button
+                  type="button"
+                  class="inline-flex h-11 items-center justify-center rounded-lg bg-[#B8DD2F] px-6 text-sm font-semibold text-[#183C1A] transition-all duration-300 hover:bg-Theme-Green hover:text-white"
+                  @click="loadMore()"
+                >
+                  Load More
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+      </div>
+      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+    </main>
+
+    <script>
+      function templatesPage() {
+        return {
+          apiUrl: 'https://pod-yukon-delight-lawyers.trycloudflare.com/api/templates',
+          activeCategory: 'all',
+          searchTerm: '',
+          templates: [],
+          visibleCount: 18,
+          initialVisibleCount: 18,
+          loadMoreCount: 6,
+          isLoading: true,
+          error: '',
+          categories: [
+            { key: 'all', label: 'All', workspaceName: '' },
+            { key: 'lead-generation', label: 'Lead Generation', workspaceName: 'Lead generation' },
+            { key: 'survey', label: 'Survey', workspaceName: 'Surveys' },
+            { key: 'request', label: 'Request', workspaceName: 'Request' },
+            { key: 'remote-work', label: 'Remote Work', workspaceName: 'Remote Work' },
+            { key: 'contact', label: 'Contact', workspaceName: 'Contact' },
+            { key: 'poll', label: 'Poll', workspaceName: 'Poll' },
+            { key: 'business', label: 'Business', workspaceName: 'Business' },
+            { key: 'event', label: 'Event', workspaceName: 'Event' },
+            {
+              key: 'banking-finance',
+              label: 'Banking & Finance',
+              workspaceName: 'Banking & Finance'
+            },
+            {
+              key: 'donations-fundraising',
+              label: 'Donations & Fundraising',
+              workspaceName: 'Donations & Fundraising'
+            },
+            { key: 'application', label: 'Application', workspaceName: 'Application' },
+            { key: 'common-use', label: 'Common Use', workspaceName: 'Common Use' },
+            { key: 'healthcare', label: 'Healthcare', workspaceName: 'Healthcare' },
+            {
+              key: 'questionnaires-quizzes',
+              label: 'Questionnaires & Quizzes',
+              workspaceName: 'Quizzes'
+            },
+            { key: 'it-requests', label: 'IT Requests', workspaceName: 'IT Requests' },
+            {
+              key: 'customer-support',
+              label: 'Customer Support',
+              workspaceName: 'Customer Support'
+            },
+            { key: 'feedback', label: 'Feedback', workspaceName: 'Feedback' },
+            { key: 'education', label: 'Education', workspaceName: 'Education' },
+            { key: 'registration', label: 'Registration', workspaceName: 'Registrations' },
+            { key: 'marketing', label: 'Marketing', workspaceName: 'Marketing' },
+            { key: 'booking-order', label: 'Booking & Order', workspaceName: 'Booking & Order' },
+            { key: 'hr-hiring', label: 'HR & Hiring', workspaceName: 'HR & Hiring' },
+            {
+              key: 'creators-templates',
+              label: 'Creators Templates',
+              workspaceName: 'Creators Templates'
+            },
+            {
+              key: 'miscellaneous-templates',
+              label: 'Miscellaneous Templates',
+              workspaceName: 'Miscellaneous Templates'
+            }
+          ],
+          get activeWorkspaceName() {
+            return (
+              this.categories.find((category) => category.key === this.activeCategory)
+                ?.workspaceName || ''
+            )
+          },
+          get filteredTemplates() {
+            const query = this.searchTerm.trim().toLowerCase()
+
+            if (!query) {
+              return this.templates
+            }
+
+            return this.templates.filter((template) => {
+              const searchable = [
+                template.title,
+                template.description,
+                template.workspaceName,
+                template.category
+              ]
+                .filter(Boolean)
+                .join(' ')
+                .toLowerCase()
+
+              return searchable.includes(query)
+            })
+          },
+          get visibleTemplates() {
+            return this.filteredTemplates.slice(0, this.visibleCount)
+          },
+          get canLoadMore() {
+            return this.visibleCount < this.filteredTemplates.length
+          },
+          init() {
+            this.activeCategory = this.categoryKeyFromUrl()
+            window.addEventListener('popstate', () => {
+              this.activeCategory = this.categoryKeyFromUrl()
+              this.visibleCount = this.initialVisibleCount
+              this.loadTemplates()
+            })
+            this.loadTemplates()
+          },
+          selectCategory(key, updateUrl = false) {
+            this.activeCategory = key
+            this.visibleCount = this.initialVisibleCount
+            if (updateUrl) {
+              window.history.pushState({}, '', this.categoryUrl(key))
+            }
+            this.loadTemplates()
+          },
+          categoryUrl(key) {
+            if (key === 'all') {
+              return '/templates'
+            }
+
+            return `/templates/categories/${key}`
+          },
+          categoryKeyFromUrl() {
+            const categoryMatch = window.location.pathname.match(
+              /\/templates\/categories\/([^/]+)\/?$/
+            )
+            const key = categoryMatch ? categoryMatch[1] : 'all'
+            const categoryExists = this.categories.some((category) => category.key === key)
+
+            return categoryExists ? key : 'all'
+          },
+          loadMore() {
+            this.visibleCount += this.loadMoreCount
+          },
+          templateUrl(template) {
+            const titleSlug = (template.title || 'template')
+              .trim()
+              .toLowerCase()
+              .replace(/[^a-z0-9\s-]/g, '')
+              .replace(/\s+/g, '-')
+
+            return `/templates/${titleSlug}`
+          },
+          async loadTemplates() {
+            this.isLoading = true
+            this.error = ''
+
+            try {
+              const params = new URLSearchParams({ limit: '1000' })
+
+              if (this.activeWorkspaceName) {
+                params.set('workspaceName', this.activeWorkspaceName)
+              }
+
+              const response = await fetch(`${this.apiUrl}?${params.toString()}`)
+              const result = await response.json()
+
+              if (!response.ok || !result.success) {
+                throw new Error(result.message || 'Unable to load templates.')
+              }
+
+              this.templates = Array.isArray(result.data) ? result.data : []
+              this.visibleCount = this.initialVisibleCount
+            } catch (error) {
+              this.error = error.message || 'Unable to load templates.'
+              this.templates = []
+            } finally {
+              this.isLoading = false
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

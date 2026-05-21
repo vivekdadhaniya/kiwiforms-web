@@ -2907,10 +2907,22 @@
               templates: [],
               isLoadingTemplates: true,
               templatesError: '',
+              latestTime(template) {
+                const rawDate = template.createdAt || template.created_at || template.updatedAt || template.updated_at || template.publishedAt || template.published_at || template.date || '';
+                const parsedDate = rawDate ? Date.parse(rawDate) : 0;
+
+                return Number.isNaN(parsedDate) ? 0 : parsedDate;
+              },
+              latestTemplates(templates) {
+                return [...templates]
+                  .sort((a, b) => this.latestTime(b) - this.latestTime(a))
+                  .slice(0, 6);
+              },
               templateUrl(template) {
                 const titleSlug = (template.title || '')
                   .trim()
                   .toLowerCase()
+                  .replace(/[^a-z0-9\s-]/g, '')
                   .replace(/\s+/g, '-');
 
                 return `/templates/${titleSlug}`;
@@ -2922,16 +2934,16 @@
                 try {
                   const params = new URLSearchParams({
                     workspaceName: this.tabWorkspaces[this.activeTab1],
-                    limit: '6',
+                    limit: '1000',
                   });
-                  const response = await fetch(`https://reflections-february-prefix-supposed.trycloudflare.com/api/templates?${params.toString()}`);
+                  const response = await fetch(`https://pod-yukon-delight-lawyers.trycloudflare.com/api/templates?${params.toString()}`);
                   const result = await response.json();
 
                   if (!response.ok || !result.success) {
                     throw new Error(result.message || 'Unable to load templates.');
                   }
 
-                  this.templates = Array.isArray(result.data) ? result.data : [];
+                  this.templates = Array.isArray(result.data) ? this.latestTemplates(result.data) : [];
                 } catch (error) {
                   this.templatesError = error.message || 'Unable to load templates.';
                 } finally {
