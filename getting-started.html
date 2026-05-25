@@ -1557,17 +1557,21 @@
             <nav class="p-4" aria-label="Help category list">
               <a
                 href="/help"
-                class="mb-3 flex rounded-lg px-3.5 py-2 text-sm font-semibold leading-5"
-                :class="pageType === 'home' ? 'bg-[#F2EFEF] text-Theme-Black' : 'bg-transparent text-Theme-Black'"
+                class="mb-3 flex rounded-lg px-3.5 py-2 text-sm font-semibold leading-5 transition-all duration-300 hover:bg-[#F6F6F6] hover:text-[#000A06]"
+                :class="pageType === 'home' ? 'bg-[#F6F6F6] text-[#000A06]' : 'bg-transparent text-[#000A06]'"
               >
                 Help Center
               </a>
               <template x-for="category in sidebarCategories" :key="category.key">
                 <div class="mb-1">
-                  <div class="flex items-center gap-2">
+                  <div
+                    class="group flex items-center gap-0 rounded-md p-1.5 transition-all duration-300 hover:bg-[#F6F6F6]"
+                    :class="pageType !== 'home' && activeCategory === category.key ? 'bg-[#F6F6F6]' : 'bg-transparent'"
+                  >
                     <button
                       type="button"
-                      class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[#7D7676] transition-all duration-300 hover:bg-[#F2EFEF] hover:text-Theme-Black"
+                      class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md transition-all duration-300 group-hover:text-[#000A06] hover:bg-Theme-bg hover:text-Theme-Black"
+                      :class="pageType !== 'home' && activeCategory === category.key ? 'text-[#000A06] bg-Theme-bg' : 'text-[#7D7676]'"
                       @click="toggleCategory(category.key)"
                       :aria-label="`Toggle ${category.label} articles`"
                     >
@@ -1583,18 +1587,18 @@
                       </svg>
                     </button>
                     <a
-                      class="min-w-0 flex-1 py-1.5 text-sm font-medium leading-5 transition-all duration-300 hover:text-Theme-Green"
-                      :class="pageType !== 'home' && activeCategory === category.key ? 'text-Theme-Green' : 'text-[#7D7676]'"
+                      class="min-w-0 flex-1 rounded-md px-2 text-sm font-medium leading-5 transition-all duration-300 group-hover:text-[#000A06]"
+                      :class="pageType !== 'home' && activeCategory === category.key ? 'text-[#000A06]' : 'text-[#7D7676]'"
                       :href="categoryUrl(category)"
                       x-text="category.label"
                     ></a>
                   </div>
                   <div x-show="openCategories.includes(category.key)" x-collapse>
-                    <div class="ml-9 flex flex-col gap-0.5 py-2">
+                    <div class="flex flex-col gap-0.5 py-2">
                       <template x-for="article in flattenArticles(category)" :key="article.slug">
                         <a
-                          class="rounded-md px-2 py-1.5 text-sm font-medium leading-5 transition-all duration-300 hover:text-Theme-Green"
-                          :class="activeSlug === article.slug ? 'text-Theme-Green' : 'text-[#7D7676]'"
+                          class="rounded-md px-2 py-1.5 pl-9 text-sm font-medium leading-5 transition-all duration-300 hover:bg-[#F6F6F6] hover:text-[#000A06]"
+                          :class="activeSlug === article.slug ? 'bg-[#F6F6F6] text-[#000A06]' : 'bg-transparent text-[#7D7676]'"
                           :href="articleUrl(article)"
                           x-text="article.title"
                         ></a>

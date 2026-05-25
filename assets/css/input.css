@@ -723,7 +723,7 @@
   }
 
   .help-table thead tr th {
-    @apply help-para py-2.5 px-[15px] pl-4
+    @apply py-2.5 px-[15px] pl-4
   }
 
   .help-table tbody tr td {
