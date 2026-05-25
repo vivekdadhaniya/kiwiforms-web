@@ -693,4 +693,40 @@
       line-height: 18px !important;
     }
   }
+
+  .help-h2 {
+    @apply text-[22px] leading-7 md:text-2xl md:leading-9 lg:text-[28px] lg:leading-[38px] text-Theme-Black font-Inter-disp
+  }
+
+  .help-para {
+    @apply text-sm leading-7 text-Theme-Black
+  }
+
+  .help-table-link {
+    @apply text-sm leading-5 text-Theme-Black transition-all duration-500 hover:text-Theme-Green hover:underline hover:underline-offset-2
+  }
+
+  .help-image {
+    @apply w-full h-auto rounded-lg
+  }
+
+  .help-list-disc {
+    @apply flex flex-col gap-2.5 list-disc list-outside pl-7
+  }
+
+  .help-table {
+    @apply w-full border-collapse text-left
+  }
+
+  .help-table thead tr {
+    @apply bg-[#F9F4F4]
+  }
+
+  .help-table thead tr th {
+    @apply help-para py-2.5 px-[15px] pl-4
+  }
+
+  .help-table tbody tr td {
+    @apply py-2.5 px-[15px] pl-4
+  }
 }
