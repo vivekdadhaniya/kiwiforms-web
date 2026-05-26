@@ -1597,7 +1597,7 @@
                     <div class="flex flex-col gap-0.5 py-2">
                       <template x-for="article in flattenArticles(category)" :key="article.slug">
                         <a
-                          class="rounded-md px-2 py-1.5 pl-9 text-sm font-medium leading-5 transition-all duration-300 hover:bg-[#F6F6F6] hover:text-[#000A06]"
+                          class="help-table-link block py-2.5 px-3"
                           :class="activeSlug === article.slug ? 'bg-[#F6F6F6] text-[#000A06]' : 'bg-transparent text-[#7D7676]'"
                           :href="articleUrl(article)"
                           x-text="article.title"
@@ -1645,13 +1645,13 @@
                     <template x-for="group in activePageData.groups" :key="group.title">
                       <div class="overflow-hidden rounded-lg border border-Theme-bg">
                         <h3
-                          class="bg-[#F7F7F7] px-4 py-3 text-sm font-semibold leading-5 text-Theme-Black"
+                          class="bg-[#F9F4F4] px-4 py-3 text-sm font-semibold leading-5 text-Theme-Black"
                           x-text="group.title"
                         ></h3>
                         <div class="divide-y divide-Theme-bg bg-white">
                           <template x-for="article in group.articles" :key="article.slug">
                             <a
-                              class="block px-4 py-3 text-sm font-medium leading-5 text-Theme-Black transition-all duration-300 hover:bg-[#F7F7F7] hover:text-Theme-Green"
+                              class="help-table-link block py-2.5 px-4"
                               :href="articleUrl(article)"
                               x-text="article.title"
                             ></a>
@@ -1664,7 +1664,7 @@
               </template>
 
               <template x-if="activePageData && pageType === 'article'">
-                <article>
+                <article class="help-article">
                   <div x-show="activeSlug === 'overview'">
                     <h2
                       class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"

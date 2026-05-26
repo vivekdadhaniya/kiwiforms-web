@@ -714,19 +714,71 @@
     @apply flex flex-col gap-2.5 list-disc list-outside pl-7
   }
 
+  .help-article table,
   .help-table {
-    @apply w-full border-collapse text-left
+    @apply w-full overflow-hidden rounded-10px border border-black/5 bg-white border-separate border-spacing-0 text-left
   }
 
+  .help-article table thead tr,
   .help-table thead tr {
     @apply bg-[#F9F4F4]
   }
 
+  .help-article table thead tr th,
   .help-table thead tr th {
-    @apply py-2.5 px-[15px] pl-4
+    @apply bg-transparent py-2.5 px-[15px] pl-4 text-sm font-normal leading-7 text-Theme-Black
   }
 
+  .help-article table tbody,
+  .help-table tbody {
+    @apply text-sm text-black/70
+  }
+
+  .help-article table tbody tr,
+  .help-table tbody tr {
+    @apply border-t border-black/5
+  }
+
+  .help-article table tbody tr td,
   .help-table tbody tr td {
-    @apply py-2.5 px-[15px] pl-4
+    @apply border-t border-black/5 py-2.5 px-[15px] pl-4
+  }
+
+  .help-article table a {
+    @apply text-sm leading-5 text-Theme-Black transition-all duration-500 hover:text-Theme-Green hover:underline hover:underline-offset-2
+  }
+
+
+  /* changlog css  */
+  .version {
+    @apply py-0.5 px-2.5 rounded-[5px] bg-Theme-bg font-medium text-base leading-5 text-[#635C5C] mb-5 !w-max
+  }
+
+  .version-title {
+    @apply font-medium text-xl leading-7 lg:text-2xl lg:leading-[30px] text-Theme-Black mb-1.5
+  }
+
+  .version-sort-desc {
+    @apply text-base leading-6 text-[#8C8484] mb-2.5
+  }
+
+  .version-date {
+    @apply flex items-center justify-start gap-2 text-sm leading-5 text-[#8C8484]
+  }
+
+  .version-detail {
+    @apply text-base leading-6 text-[#8C8484] mb-2.5 lg:mb-5 flex flex-col gap-5
+  }
+
+  .version-disc {
+    @apply flex flex-col gap-2.5 lg:gap-5 list-disc list-outside pl-5 text-base leading-6 text-[#8C8484]
+  }
+
+  .version-link {
+    @apply text-base leading-6 text-Theme-Green font-medium transition-all duration-300 hover:text-theme-Green-hover
+  }
+
+  .version-image {
+    @apply w-full h-auto rounded-[5px]
   }
 }

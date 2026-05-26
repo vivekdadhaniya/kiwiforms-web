@@ -1645,13 +1645,13 @@
                     <template x-for="group in activePageData.groups" :key="group.title">
                       <div class="overflow-hidden rounded-lg border border-Theme-bg">
                         <h3
-                          class="bg-[#F7F7F7] px-4 py-3 text-sm font-semibold leading-5 text-Theme-Black"
+                          class="bg-[#F9F4F4] px-4 py-3 text-sm font-semibold leading-5 text-Theme-Black"
                           x-text="group.title"
                         ></h3>
                         <div class="divide-y divide-Theme-bg bg-white">
                           <template x-for="article in group.articles" :key="article.slug">
                             <a
-                              class="block px-4 py-3 text-sm font-medium leading-5 text-Theme-Black transition-all duration-300 hover:bg-[#F7F7F7] hover:text-Theme-Green"
+                              class="help-table-link block py-2.5 px-4"
                               :href="articleUrl(article)"
                               x-text="article.title"
                             ></a>
@@ -1664,7 +1664,7 @@
               </template>
 
               <template x-if="activePageData && pageType === 'article'">
-                <article>
+                <article class="help-article">
                   <div x-show="activeSlug === 'overview'">
                     <h2
                       class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
@@ -1691,6 +1691,36 @@
                         alt="Kiwiform workspace overview"
                         loading="lazy"
                       />
+                    </div>
+
+                    <div class="mt-5 w-full overflow-x-auto p-0">
+                      <table class="help-table">
+                        <thead>
+                          <tr class="">
+                            <th class="help-para bg-transparent px-[15px] py-2.5 pl-4">Title</th>
+                          </tr>
+                        </thead>
+
+                        <tbody class="text-sm text-black/70">
+                          <tr class="border-t border-black/5">
+                            <td class="px-[15px] py-2.5 pl-4">
+                              <a href="#" class="help-table-link">overview</a>
+                            </td>
+                          </tr>
+
+                          <tr class="border-t border-black/5">
+                            <td class="px-[15px] py-2.5 pl-4">
+                              <a href="#" class="help-table-link">overview</a>
+                            </td>
+                          </tr>
+
+                          <tr class="border-t border-black/5">
+                            <td class="px-[15px] py-2.5 pl-4">
+                              <a href="#" class="help-table-link">overview</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
 
