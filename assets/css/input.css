@@ -771,8 +771,9 @@
   }
 
   .version-disc {
-    @apply flex flex-col gap-2.5 lg:gap-5 list-disc list-outside pl-5 text-base leading-6 text-[#8C8484]
+    @apply flex flex-col gap-1 lg:gap-1.5 list-disc list-outside pl-5 text-base leading-6 text-[#8C8484]
   }
+
 
   .version-link {
     @apply text-base leading-6 text-Theme-Green font-medium transition-all duration-300 hover:text-theme-Green-hover
