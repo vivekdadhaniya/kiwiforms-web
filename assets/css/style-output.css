@@ -4926,6 +4926,15 @@
       gap: calc(var(--spacing) * 1.5);
     }
   }
+  .version-list-title {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+    --tw-leading: calc(var(--spacing) * 6);
+    line-height: calc(var(--spacing) * 6);
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-Theme-Black);
+  }
   .version-link {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
