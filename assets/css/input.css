@@ -711,7 +711,7 @@
   }
 
   .help-list-disc {
-    @apply flex flex-col gap-2.5 list-disc list-outside pl-7
+    @apply flex flex-col gap-2.5 list-disc list-outside pl-7 text-sm leading-5
   }
 
   .help-article table,
@@ -784,5 +784,23 @@
 
   .version-image {
     @apply w-full h-auto rounded-[5px]
+  }
+
+
+  /* blog css typo  */
+  .blog-h1 {
+    @apply font-Inter-disp text-Theme-Black text-4xl leading-[42px] sm:text-[40px] sm:leading-[48px] md:text-[42px] md:leading-[50px]
+  }
+
+  .blog-h2 {
+    @apply font-Inter-disp text-Theme-Black text-[28px] leading-[34px] sm:text-[32px] sm:leading-[42px] md:text-[38px] md:leading-[48px]
+  }
+
+  .blog-h3 {
+    @apply font-Inter-disp text-Theme-Black text-2xl leading-[34px] sm:text-[26px] md:leading-[36px] md:text-[28px] md:leading-[38px]
+  }
+
+  .blog-para {
+    @apply font-Inter text-Theme-Black text-sm leading-[22px] sm:text-base sm:leading-7
   }
 }

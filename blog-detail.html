@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Help Center | Kiwiform</title>
-    <link rel="canonical" href="https://kiwiform.com/help" />
+    <title>7 Best Online Quiz Makers for Teachers in 2026 | Kiwiform Blog</title>
+    <link rel="canonical" href="https://kiwiform.com/blog/best-online-quiz-makers" />
     <link rel="stylesheet" href="assets/css/style-output.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
 
-  <body class="bg-Theme-bg font-Inter text-Theme-Black" x-data="helpPage()" x-init="init()">
+  <body
+    class="flex w-full flex-col gap-px bg-Theme-bg font-Inter text-Theme-Black"
+    x-data="{ mobileMenu: false, openFaq: 0 }"
+  >
     <!-- navigation  -->
     <header
       x-data="{ open:false, open1:false, mobileMenu:false }"
@@ -1519,707 +1522,1260 @@
       </div>
     </header>
 
-    <main class="flex md:grid md:grid-cols-14 gap-px w-full pt-[61px]">
-      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-      <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-        <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-
-        <div
-          class="col-span-11 grid grid-cols-1 bg-Theme-bg gap-px lg:grid-cols-[265px_minmax(0,1fr)]"
-        >
-          <div class="col-span-full border-b border-Theme-bg">
-            <label class="relative block w-full" aria-label="Search help articles">
-              <svg
-                class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#756F6F]"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <input
-                class="w-full h-10 rounded-10px border-0 bg-[#F6F6F6] py-2.5 pl-9 pr-2 text-sm leading-5 text-Theme-Black outline-none placeholder:text-[#7D7676]"
-                type="search"
-                placeholder="Search help articles, tutorials, features, and guides..."
-                x-model.debounce.200ms="searchTerm"
+    <main class="pt-[61px] flex flex-col gap-px">
+      <section class="flex w-full gap-px md:grid md:grid-cols-14">
+        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-r-10px"></div>
+        <div class="w-full bg-Theme-bg md:col-span-12 2xl:grid 2xl:grid-cols-15 2xl:gap-px">
+          <div class="col-span-2 hidden rounded-r-10px bg-white 2xl:block"></div>
+          <article class="col-span-11 rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-12 lg:py-12">
+            <div class="mx-auto max-w-[980px] items-center gap-8 flex flex-col lg:flex-row">
+              <div class="w-full block">
+                <h1 class="blog-h1">7 Best Online Quiz Makers for Teachers in 2026</h1>
+                <p class="blog-para mt-5 text-[#6F6767]">
+                  The right online quiz maker helps teachers build assessments, grade faster, and
+                  keep students engaged. This guide compares simple, classroom-friendly tools and
+                  shows where each one fits best.
+                </p>
+                <p class="mt-5 text-sm leading-5 text-[#8C8484]">Last Updated: April 2026</p>
+              </div>
+              <img
+                src="assets/images/template-cover-1.png"
+                alt="Teacher using an online quiz maker"
+                class="w-full rounded-lg h-auto"
               />
-            </label>
-          </div>
-          <aside
-            class="order-1 rounded-10px max-lg:max-h-[400px] overflow-y-auto bg-white lg:order-1 lg:sticky lg:top-[61px] lg:h-[calc(100vh-61px)] lg:overflow-y-auto"
-            aria-label="Help categories"
-          >
-            <nav class="p-4" aria-label="Help category list">
-              <a
-                href="/help"
-                class="mb-3 flex rounded-lg px-3.5 py-2 text-sm font-semibold leading-5 transition-all duration-300 hover:bg-[#F6F6F6] hover:text-[#000A06]"
-                :class="pageType === 'home' ? 'bg-[#F6F6F6] text-[#000A06]' : 'bg-transparent text-[#000A06]'"
-              >
-                Help Center
-              </a>
-              <template x-for="category in sidebarCategories" :key="category.key">
-                <div class="mb-1">
-                  <div
-                    class="group flex items-center gap-0 rounded-md p-1.5 transition-all duration-300 hover:bg-[#F6F6F6]"
-                    :class="pageType !== 'home' && activeCategory === category.key ? 'bg-[#F6F6F6]' : 'bg-transparent'"
-                  >
-                    <button
-                      type="button"
-                      class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md transition-all duration-300 group-hover:text-[#000A06] hover:bg-Theme-bg hover:text-Theme-Black"
-                      :class="pageType !== 'home' && activeCategory === category.key ? 'text-[#000A06] bg-Theme-bg' : 'text-[#7D7676]'"
-                      @click="toggleCategory(category.key)"
-                      :aria-label="`Toggle ${category.label} articles`"
-                    >
-                      <svg
-                        class="h-4 w-4 transition duration-300"
-                        :class="openCategories.includes(category.key) ? 'rotate-90' : ''"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                    <a
-                      class="min-w-0 flex-1 rounded-md px-2 text-sm font-medium leading-5 transition-all duration-300 group-hover:text-[#000A06]"
-                      :class="pageType !== 'home' && activeCategory === category.key ? 'text-[#000A06]' : 'text-[#7D7676]'"
-                      :href="categoryUrl(category)"
-                      x-text="category.label"
-                    ></a>
-                  </div>
-                  <div x-show="openCategories.includes(category.key)" x-collapse>
-                    <div class="flex flex-col gap-0.5 py-2">
-                      <template x-for="article in flattenArticles(category)" :key="article.slug">
-                        <a
-                          class="rounded-md px-2 py-1.5 pl-9 text-sm font-medium leading-5 transition-all duration-300 hover:bg-[#F6F6F6] hover:text-[#000A06]"
-                          :class="activeSlug === article.slug ? 'bg-[#F6F6F6] text-[#000A06]' : 'bg-transparent text-[#7D7676]'"
-                          :href="articleUrl(article)"
-                          x-text="article.title"
-                        ></a>
-                      </template>
-                    </div>
-                  </div>
-                </div>
-              </template>
-            </nav>
-          </aside>
-
-          <div class="order-1 flex min-w-0 flex-col gap-px lg:order-2">
-            <section class="rounded-10px bg-white px-5 py-9 sm:px-8 lg:px-10 lg:py-12">
-              <p class="mb-2 text-sm font-medium leading-5 text-Theme-Green" x-text="eyebrow"></p>
-              <h1
-                class="font-Inter-disp text-[28px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
-                x-text="pageTitle"
-              ></h1>
-              <p
-                class="mt-2.5 max-w-[760px] text-sm leading-5 text-[#8C8484]"
-                x-text="pageDescription"
-              ></p>
-            </section>
-
-            <section class="rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
-              <template x-if="!activePageData && pageType !== 'home'">
-                <div class="rounded-lg bg-[#F7F7F7] p-5 text-sm text-[#756F6F]">
-                  No help articles found.
-                </div>
-              </template>
-
-              <template x-if="activePageData && (pageType === 'home' || pageType === 'category')">
-                <article>
-                  <h2
-                    class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
-                    x-text="activePageData.label"
-                  ></h2>
-                  <p
-                    class="mt-3 max-w-[760px] text-sm leading-6 text-Theme-Black"
-                    x-text="activePageData.description"
-                  ></p>
-
-                  <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-                    <template x-for="group in activePageData.groups" :key="group.title">
-                      <div class="overflow-hidden rounded-lg border border-Theme-bg">
-                        <h3
-                          class="bg-[#F9F4F4] px-4 py-3 text-sm font-semibold leading-5 text-Theme-Black"
-                          x-text="group.title"
-                        ></h3>
-                        <div class="divide-y divide-Theme-bg bg-white">
-                          <template x-for="article in group.articles" :key="article.slug">
-                            <a
-                              class="help-table-link block py-2.5 px-4"
-                              :href="articleUrl(article)"
-                              x-text="article.title"
-                            ></a>
-                          </template>
-                        </div>
-                      </div>
-                    </template>
-                  </div>
-                </article>
-              </template>
-
-              <template x-if="activePageData && pageType === 'article'">
-                <article class="help-article">
-                  <div x-show="activeSlug === 'overview'">
-                    <h2
-                      class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
-                    >
-                      What Kiwiform is
-                    </h2>
-                    <div class="mt-7 space-y-3 text-sm leading-7 text-Theme-Black">
-                      <p>
-                        Kiwiform is a form-building platform that lets you create forms, surveys,
-                        applications, and workflows that are easy to build and simple for
-                        respondents to complete. You can customize design, apply logic, share forms
-                        anywhere, and view responses in real time.
-                      </p>
-                      <p>
-                        Everything happens inside a single workspace, from building and styling to
-                        sharing and analyzing results.
-                      </p>
-                    </div>
-
-                    <div class="mt-8 overflow-hidden rounded-lg bg-[#F2EFEF] p-8">
-                      <img
-                        class="w-full rounded-md object-cover"
-                        src="/assets/images/advanced%20forms%20made.webp"
-                        alt="Kiwiform workspace overview"
-                        loading="lazy"
-                      />
-                    </div>
-
-                    <div class="mt-5 w-full overflow-x-auto p-0">
-                      <table class="help-table">
-                        <thead>
-                          <tr class="">
-                            <th class="help-para bg-transparent px-[15px] py-2.5 pl-4">Title</th>
-                          </tr>
-                        </thead>
-
-                        <tbody class="text-sm text-black/70">
-                          <tr class="border-t border-black/5">
-                            <td class="px-[15px] py-2.5 pl-4">
-                              <a href="#" class="help-table-link">overview</a>
-                            </td>
-                          </tr>
-
-                          <tr class="border-t border-black/5">
-                            <td class="px-[15px] py-2.5 pl-4">
-                              <a href="#" class="help-table-link">overview</a>
-                            </td>
-                          </tr>
-
-                          <tr class="border-t border-black/5">
-                            <td class="px-[15px] py-2.5 pl-4">
-                              <a href="#" class="help-table-link">overview</a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div x-show="activeSlug !== 'overview'">
-                    <a
-                      class="mb-6 inline-flex text-sm font-semibold leading-5 text-Theme-Green transition-all duration-300 hover:text-theme-Green-hover"
-                      :href="categoryUrl(activeCategoryData)"
-                      x-text="activeCategoryData.label"
-                    ></a>
-                    <h2
-                      class="font-Inter-disp text-[30px] font-normal leading-[38px] tracking-[-0.56px] text-Theme-Black"
-                      x-text="activePageData.title"
-                    ></h2>
-                    <p
-                      class="mt-3 max-w-[760px] text-sm leading-6 text-Theme-Black"
-                      x-text="articleIntro"
-                    ></p>
-
-                    <div class="mt-8 rounded-lg bg-[#F7F7F7] p-5 text-sm leading-6 text-[#756F6F]">
-                      This guide is ready for detailed help content. Add step-by-step instructions,
-                      screenshots, examples, and notes for this Kiwiform workflow here.
-                    </div>
-                  </div>
-                </article>
-              </template>
-            </section>
-          </div>
+            </div>
+          </article>
+          <div class="col-span-2 hidden rounded-l-10px bg-white 2xl:block"></div>
         </div>
+        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-l-10px"></div>
+      </section>
 
-        <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+      <section class="flex w-full gap-px md:grid md:grid-cols-14">
+        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-r-10px"></div>
+        <div class="w-full bg-Theme-bg md:col-span-12 2xl:grid 2xl:grid-cols-15 2xl:gap-px">
+          <div class="col-span-2 hidden rounded-r-10px bg-white 2xl:block"></div>
+          <div class="col-span-11 rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-12 lg:py-12">
+            <article class="mx-auto max-w-[900px]">
+              <h2 class="blog-h2">What is an Online Quiz Maker?</h2>
+              <p class="blog-para mt-4">
+                An online quiz maker is a digital tool that helps educators create, assign, collect,
+                and grade quizzes. Teachers can use multiple-choice questions, short answers,
+                images, scoring rules, timers, and reports to create assessments that feel polished
+                without needing a technical setup.
+              </p>
+              <img
+                src="assets/images/help-sample.png"
+                alt="Student taking an online quiz"
+                class="mt-7 aspect-[1.75/1] w-full rounded-lg object-cover"
+              />
+
+              <h2 class="blog-h2 mt-12">How We Evaluated These Quiz Makers</h2>
+              <p class="blog-para mt-4">
+                To make this list useful for real classrooms, we looked at the details that matter
+                once a quiz leaves the draft stage.
+              </p>
+              <ul
+                class="mt-5 list-disc space-y-2 pl-6 text-sm leading-6 text-Theme-Black sm:text-base sm:leading-7"
+              >
+                <li>Ease of use for teachers and students</li>
+                <li>Question types, scoring, and feedback options</li>
+                <li>Classroom integrations and sharing formats</li>
+                <li>Reporting, review, and grading workflow</li>
+                <li>Free plan usefulness and upgrade limits</li>
+              </ul>
+
+              <div class="mt-8 overflow-hidden rounded-lg border border-Theme-bg">
+                <table class="w-full border-separate border-spacing-0 text-left text-sm">
+                  <thead class="bg-[#F7F4F4]">
+                    <tr>
+                      <th class="px-4 py-3 font-semibold">Quiz Maker</th>
+                      <th class="px-4 py-3 font-semibold">Best For</th>
+                      <th class="px-4 py-3 font-semibold">Key Strength</th>
+                      <th class="px-4 py-3 font-semibold">Pricing</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-[#6F6767]">
+                    <tr class="border-t border-Theme-bg">
+                      <td class="border-t border-Theme-bg px-4 py-3">Kiwiform</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Teachers</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">
+                        Simple builder and unlimited responses
+                      </td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Free</td>
+                    </tr>
+                    <tr>
+                      <td class="border-t border-Theme-bg px-4 py-3">Google Forms</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Basic quizzes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Google Classroom workflow</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Free</td>
+                    </tr>
+                    <tr>
+                      <td class="border-t border-Theme-bg px-4 py-3">Kahoot!</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Live games</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">High-energy class review</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Free/Paid</td>
+                    </tr>
+                    <tr>
+                      <td class="border-t border-Theme-bg px-4 py-3">Quizizz</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Homework</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Self-paced practice</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Free/Paid</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <a
+                href="https://app.kiwiform.com"
+                class="mt-5 flex items-center justify-between rounded-lg bg-Theme-Green px-4 py-3 text-sm font-semibold text-white"
+              >
+                Create a free quiz on Kiwiform
+                <span>+</span>
+              </a>
+
+              <h2 class="blog-h2 py-12 mt-14 border-y border-Theme-bg">
+                Best Online Quiz Makers for Teachers
+              </h2>
+
+              <section class="mt-10">
+                <h3 class="blog-h2">1. Kiwiform: Best Flexible Quiz Maker for Teachers</h3>
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                  <img
+                    src="assets/images/template-cover-1.png"
+                    alt="Kiwiform quiz maker"
+                    class="mt-5 aspect-[1.75/1] w-full rounded-lg object-cover"
+                  />
+                  <div class="w-full">
+                    <p class="blog-para mt-5">
+                      Kiwiform gives teachers a clean way to create quizzes, assessments, surveys,
+                      and feedback forms without adding extra friction for students. It works well
+                      when you want a simple quiz today and a more advanced workflow later.
+                    </p>
+                    <h4 class="mt-6 text-base font-semibold">Key features</h4>
+                    <ul class="mt-3 list-disc space-y-2 pl-6 text-sm leading-6">
+                      <li>Multiple question types for quick classroom checks</li>
+                      <li>Logic and personalization for adaptive experiences</li>
+                      <li>Unlimited forms and responses</li>
+                      <li>Clean sharing links and embeddable forms</li>
+                    </ul>
+                    <a
+                      href="https://app.kiwiform.com"
+                      class="mt-5 flex items-center justify-between rounded-lg bg-[#B8DD2F] px-4 py-3 text-sm font-semibold text-[#183C1A]"
+                    >
+                      Create a quiz using Kiwiform
+                      <span>+</span>
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="mt-16">
+                <h3 class="blog-h2">2. Kiwiform: Best Flexible Quiz Maker for Teachers</h3>
+                <div class="flex flex-col lg:flex-row-reverse gap-6 lg:gap-8">
+                  <img
+                    src="assets/images/template-cover-1.png"
+                    alt="Kiwiform quiz maker"
+                    class="mt-5 aspect-[1.75/1] w-full rounded-lg object-cover"
+                  />
+                  <div class="w-full">
+                    <p class="blog-para mt-5">
+                      Kiwiform gives teachers a clean way to create quizzes, assessments, surveys,
+                      and feedback forms without adding extra friction for students. It works well
+                      when you want a simple quiz today and a more advanced workflow later.
+                    </p>
+                    <h4 class="mt-6 text-base font-semibold">Key features</h4>
+                    <ul class="mt-3 list-disc space-y-2 pl-6 text-sm leading-6">
+                      <li>Multiple question types for quick classroom checks</li>
+                      <li>Logic and personalization for adaptive experiences</li>
+                      <li>Unlimited forms and responses</li>
+                      <li>Clean sharing links and embeddable forms</li>
+                    </ul>
+                    <a
+                      href="https://app.kiwiform.com"
+                      class="mt-5 flex items-center justify-between rounded-lg bg-[#B8DD2F] px-4 py-3 text-sm font-semibold text-[#183C1A]"
+                    >
+                      Create a quiz using Kiwiform
+                      <span>+</span>
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+              <h2 class="blog-h2 mt-16">Feature Comparison</h2>
+              <div class="mt-6 overflow-hidden rounded-lg border border-Theme-bg">
+                <table class="w-full border-separate border-spacing-0 text-left text-sm">
+                  <thead class="bg-[#F7F4F4]">
+                    <tr>
+                      <th class="px-4 py-3 font-semibold">Tool</th>
+                      <th class="px-4 py-3 font-semibold">Free Plan</th>
+                      <th class="px-4 py-3 font-semibold">Templates</th>
+                      <th class="px-4 py-3 font-semibold">Limits</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-[#6F6767]">
+                    <tr>
+                      <td class="border-t border-Theme-bg px-4 py-3">Kiwiform</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Yes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Yes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Unlimited</td>
+                    </tr>
+                    <tr>
+                      <td class="border-t border-Theme-bg px-4 py-3">Google Forms</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Yes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Basic</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Limited</td>
+                    </tr>
+                    <tr>
+                      <td class="border-t border-Theme-bg px-4 py-3">Kahoot!</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Yes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Yes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Limited</td>
+                    </tr>
+                    <tr>
+                      <td class="border-t border-Theme-bg px-4 py-3">Quizizz</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Yes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Yes</td>
+                      <td class="border-t border-Theme-bg px-4 py-3">Limited</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 class="blog-h2 mt-12">What to Look for in an Online Quiz Maker</h2>
+              <p class="blog-para mt-4">
+                Pick a tool that matches your teaching workflow. For most classrooms, the best quiz
+                maker is easy to share, simple for students, quick to review, and flexible enough to
+                support different question styles.
+              </p>
+
+              <h2 class="blog-h2 mt-12">Final Recommendation</h2>
+              <p class="blog-para mt-4">
+                If you want a flexible, free, and classroom-friendly quiz maker, Kiwiform is a great
+                place to start. Google Forms is strong for basic Google Classroom workflows, while
+                Kahoot!, Quizizz, Nearpod, Quizgecko, and Blooket each shine in more specific
+                classroom moments.
+              </p>
+              <a
+                href="https://app.kiwiform.com"
+                class="mt-5 flex items-center justify-between rounded-lg bg-Theme-Green px-4 py-3 text-sm font-semibold text-white"
+              >
+                Try Kiwiform free
+                <span>+</span>
+              </a>
+            </article>
+          </div>
+          <div class="col-span-2 hidden rounded-l-10px bg-white 2xl:block"></div>
+        </div>
+        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
-      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+
+      <!-- faqs  -->
+      <section class="flex w-full gap-px md:grid md:grid-cols-14">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 hidden bg-white rounded-r-10px 2xl:block"></div>
+          <div class="col-span-11 rounded-10px bg-white px-5 py-16 md:px-12 md:py-[120px]">
+            <div class="mx-auto max-w-[864px]">
+              <h2 class="heading-h2 text-center">Frequently Asked Questions</h2>
+              <p class="mt-2 text-center text-base leading-7 text-[#8C8484]">
+                Find quick answers about Kiwiform, forms, integrations, and more.
+              </p>
+
+              <div class="mt-14 flex flex-col gap-px overflow-hidden rounded-10px bg-Theme-bg p-px">
+                <div class="rounded-10px bg-white px-6 py-5">
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 text-left"
+                    @click="openFaq = openFaq === 0 ? null : 0"
+                  >
+                    <span class="text-base font-medium leading-7 text-Theme-Black"
+                      >Is Kiwiform really free?</span
+                    >
+                    <svg
+                      class="h-5 w-5 shrink-0 transition duration-300"
+                      :class="openFaq === 0 ? 'rotate-180' : ''"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div x-show="openFaq === 0" x-transition>
+                    <p class="pt-6 text-sm font-medium leading-6 text-[#8C8484]">
+                      Yes. Kiwiform lets you create unlimited forms and collect unlimited responses
+                      for free.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="rounded-10px bg-white px-6 py-5">
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 text-left"
+                    @click="openFaq = openFaq === 1 ? null : 1"
+                  >
+                    <span class="text-base font-medium leading-7 text-Theme-Black"
+                      >Are Kiwiform forms safe?</span
+                    >
+                    <svg
+                      class="h-5 w-5 shrink-0 transition duration-300"
+                      :class="openFaq === 1 ? 'rotate-180' : ''"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div x-show="openFaq === 1" x-transition>
+                    <p class="pt-6 text-sm font-medium leading-6 text-[#8C8484]">
+                      Yes. Kiwiform is designed to help you collect and manage form data securely,
+                      with privacy-focused workflows for creators and respondents.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="rounded-10px bg-white px-6 py-5">
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 text-left"
+                    @click="openFaq = openFaq === 2 ? null : 2"
+                  >
+                    <span class="text-base font-medium leading-7 text-Theme-Black"
+                      >How is Kiwiform different from other form builders?</span
+                    >
+                    <svg
+                      class="h-5 w-5 shrink-0 transition duration-300"
+                      :class="openFaq === 2 ? 'rotate-180' : ''"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div x-show="openFaq === 2" x-transition>
+                    <p class="pt-6 text-sm font-medium leading-6 text-[#8C8484]">
+                      Kiwiform combines a clean builder, unlimited forms, unlimited responses,
+                      logic, themes, integrations, and collaboration-friendly workflows in one
+                      simple platform.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="rounded-10px bg-white px-6 py-5">
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 text-left"
+                    @click="openFaq = openFaq === 3 ? null : 3"
+                  >
+                    <span class="text-base font-medium leading-7 text-Theme-Black"
+                      >How do I get started?</span
+                    >
+                    <svg
+                      class="h-5 w-5 shrink-0 transition duration-300"
+                      :class="openFaq === 3 ? 'rotate-180' : ''"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div x-show="openFaq === 3" x-transition>
+                    <p class="pt-6 text-sm font-medium leading-6 text-[#8C8484]">
+                      Start from scratch, use a template, or ask Kiwizard to generate a form draft.
+                      Then customize, publish, and share your form.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="rounded-10px bg-white px-6 py-5">
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 text-left"
+                    @click="openFaq = openFaq === 4 ? null : 4"
+                  >
+                    <span class="text-base font-medium leading-7 text-Theme-Black"
+                      >Can I connect Kiwiform to other apps?</span
+                    >
+                    <svg
+                      class="h-5 w-5 shrink-0 transition duration-300"
+                      :class="openFaq === 4 ? 'rotate-180' : ''"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div x-show="openFaq === 4" x-transition>
+                    <p class="pt-6 text-sm font-medium leading-6 text-[#8C8484]">
+                      Yes. Kiwiform supports integrations and automations such as Webhooks, Google
+                      Sheets, Zapier, Dropbox, and more.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="rounded-10px bg-white px-6 py-5">
+                  <button
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 text-left"
+                    @click="openFaq = openFaq === 5 ? null : 5"
+                  >
+                    <span class="text-base font-medium leading-7 text-Theme-Black"
+                      >Can I make my forms look my way?</span
+                    >
+                    <svg
+                      class="h-5 w-5 shrink-0 transition duration-300"
+                      :class="openFaq === 5 ? 'rotate-180' : ''"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div x-show="openFaq === 5" x-transition>
+                    <p class="pt-6 text-sm font-medium leading-6 text-[#8C8484]">
+                      Yes. You can customize form design, themes, branding, layouts, and sharing
+                      settings so each form fits your brand.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 hidden bg-white rounded-l-10px 2xl:block"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- related blogs  -->
+      <section class="flex w-full gap-px md:grid md:grid-cols-14">
+        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-r-10px"></div>
+        <div class="w-full bg-Theme-bg md:col-span-12 2xl:grid 2xl:grid-cols-15 2xl:gap-px">
+          <div class="col-span-2 hidden rounded-r-10px bg-white 2xl:block"></div>
+          <div class="col-span-11 rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-10">
+            <div class="mb-5 flex items-center justify-between">
+              <h2 class="text-xl font-semibold">Related Blogs</h2>
+              <a href="/blog" class="text-sm font-medium text-Theme-Green">View All</a>
+            </div>
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <a href="#" class="group block"
+                ><img
+                  class="aspect-[1.43/1] w-full rounded-lg object-cover transition group-hover:scale-[1.02]"
+                  src="assets/images/template-cover-1.png"
+                  alt="Help desk survey"
+                />
+                <h3 class="mt-3 truncate text-sm font-semibold">
+                  25 Help Desk Customer Satisfaction Survey...
+                </h3>
+                <p class="mt-1 text-xs text-[#8C8484]">Last Updated: April 2026</p></a
+              >
+              <a href="#" class="group block"
+                ><img
+                  class="aspect-[1.43/1] w-full rounded-lg object-cover transition group-hover:scale-[1.02]"
+                  src="assets/images/advanced forms made.webp"
+                  alt="IT help desk survey"
+                />
+                <h3 class="mt-3 truncate text-sm font-semibold">
+                  25 IT Help Desk Survey Questions to Improve...
+                </h3>
+                <p class="mt-1 text-xs text-[#8C8484]">Last Updated: April 2026</p></a
+              >
+              <a href="#" class="group block"
+                ><img
+                  class="aspect-[1.43/1] w-full rounded-lg object-cover transition group-hover:scale-[1.02]"
+                  src="assets/images/typeform-alt.png"
+                  alt="Virtual event survey"
+                />
+                <h3 class="mt-3 truncate text-sm font-semibold">
+                  25 Virtual Event Survey Questions to Improve...
+                </h3>
+                <p class="mt-1 text-xs text-[#8C8484]">Last Updated: April 2026</p></a
+              >
+            </div>
+          </div>
+          <div class="col-span-2 hidden rounded-l-10px bg-white 2xl:block"></div>
+        </div>
+        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-l-10px"></div>
+      </section>
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
     </main>
 
-    <script>
-      function helpPage() {
-        return {
-          activeCategory: 'getting-started',
-          searchTerm: '',
-          openCategories: [],
-          isHome: false,
-          categories: [
-            {
-              key: 'getting-started',
-              label: 'Getting Started',
-              description:
-                'Learn the basics of using Kiwiform, from creating your first form to understanding how the builder and templates work. This section helps you become familiar with the platform and move from setup to publishing quickly.',
-              groups: [
-                {
-                  title: 'Start Exploring Kiwiform',
-                  articles: [
-                    { title: 'Overview', slug: 'overview' },
-                    { title: 'Workspaces', slug: 'workspaces' },
-                    { title: 'Create a form', slug: 'create-a-form' },
-                    { title: 'Builder layout', slug: 'builder-layout' },
-                    { title: 'Form options', slug: 'form-options' },
-                    { title: 'Templates', slug: 'templates' },
-                    { title: 'Multi-page forms', slug: 'multi-page-forms' },
-                    { title: 'Progress bar', slug: 'progress-bar' },
-                    { title: 'Supported languages', slug: 'supported-languages' },
-                    { title: 'AI Form Builder', slug: 'ai-form-builder' },
-                    { title: 'Invite Members', slug: 'invite-members' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'form-building',
-              label: 'Form Building',
-              description:
-                'Understand how to structure forms using field types, layout elements, media, selection fields, and advanced inputs.',
-              groups: [
-                {
-                  title: 'First Steps of Form Building',
-                  articles: [{ title: 'Basics of Building', slug: 'basics-of-building' }]
-                },
-                {
-                  title: 'Media',
-                  articles: [
-                    { title: 'Image in Form', slug: 'image-in-form' },
-                    { title: 'Image Editor', slug: 'image-editor' },
-                    { title: 'Video in Form', slug: 'video-in-form' },
-                    { title: 'Answer Panel', slug: 'answer-panel' },
-                    { title: 'Endings', slug: 'endings' },
-                    { title: 'Add Content in form', slug: 'add-content-in-form' }
-                  ]
-                },
-                {
-                  title: 'Contact Information Fields',
-                  articles: [
-                    { title: 'Contact details', slug: 'contact-details' },
-                    { title: 'Email', slug: 'email' },
-                    { title: 'Phone', slug: 'phone' },
-                    { title: 'Address', slug: 'address' },
-                    { title: 'Website', slug: 'website' }
-                  ]
-                },
-                {
-                  title: 'Text & Media Fields',
-                  articles: [
-                    { title: 'Text Area [Long]', slug: 'text-area-long' },
-                    { title: 'Text Box [Short]', slug: 'text-box-short' },
-                    { title: 'Video & Audio', slug: 'video-audio' },
-                    { title: 'Date Picker', slug: 'date-picker' },
-                    { title: 'Quote', slug: 'quote' }
-                  ]
-                },
-                {
-                  title: 'Selection Fields',
-                  articles: [
-                    { title: 'Multiple Selection', slug: 'multiple-selection' },
-                    { title: 'Drop Down', slug: 'drop-down' },
-                    { title: 'Picture Selection', slug: 'picture-selection' },
-                    { title: 'Yes / No', slug: 'yes-no' },
-                    { title: 'Legal Text', slug: 'legal-text' },
-                    { title: 'Check Box', slug: 'check-box' }
-                  ]
-                },
-                {
-                  title: 'Advanced Fields',
-                  articles: [
-                    { title: 'Payment', slug: 'payment' },
-                    { title: 'File Upload', slug: 'file-upload' },
-                    { title: 'Number', slug: 'number' },
-                    { title: 'Partial Submission', slug: 'partial-submission' },
-                    { title: 'Redirect to Link', slug: 'redirect-to-link' },
-                    { title: 'Scheduler', slug: 'scheduler' }
-                  ]
-                },
-                {
-                  title: 'Rating & Ranking Fields',
-                  articles: [
-                    { title: 'Opinion Scale', slug: 'opinion-scale' },
-                    { title: 'Feedback Score', slug: 'feedback-score' },
-                    { title: 'Rating', slug: 'rating' },
-                    { title: 'Ranking Scale', slug: 'ranking-scale' },
-                    { title: 'Matrix', slug: 'matrix' }
-                  ]
-                },
-                {
-                  title: 'Layout Fields',
-                  articles: [{ title: 'Layout Fields', slug: 'layout-fields' }]
-                }
-              ]
-            },
-            {
-              key: 'form-settings',
-              label: 'Form Settings',
-              description:
-                'Control form behavior after publishing, including availability, access, translations, messages, and response handling.',
-              groups: [
-                {
-                  title: 'Manage Form Settings',
-                  articles: [
-                    { title: 'Form Details', slug: 'form-details' },
-                    { title: 'Setup Endings', slug: 'setup-endings' },
-                    { title: 'Form Accessibility', slug: 'form-accessibility' },
-                    { title: 'Form Version History', slug: 'form-version-history' },
-                    { title: 'Form Translations', slug: 'form-translations' },
-                    { title: 'General Settings', slug: 'general-settings' },
-                    {
-                      title: 'Access & Availability Settings',
-                      slug: 'access-availability-settings'
-                    },
-                    { title: 'Form Opening & Closure', slug: 'form-opening-closure' },
-                    { title: 'Duplicate prevention', slug: 'duplicate-prevention' },
-                    { title: 'Spam protection', slug: 'spam-protection' },
-                    { title: 'Form Languages', slug: 'form-languages' },
-                    { title: 'System Default Messages', slug: 'system-default-messages' },
-                    { title: 'Form Meta Settings', slug: 'form-meta-settings' },
-                    { title: 'Search visibility', slug: 'search-visibility' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'design-themes',
-              label: 'Design & Themes',
-              description:
-                'Customize fonts, colors, backgrounds, logos, and reusable themes to keep forms aligned with your brand.',
-              groups: [
-                {
-                  title: 'Customize Form Design',
-                  articles: [
-                    { title: 'Themes overview', slug: 'themes-overview' },
-                    { title: 'Create theme', slug: 'create-theme' },
-                    { title: 'Edit theme', slug: 'edit-theme' },
-                    { title: 'Theme library', slug: 'theme-library' },
-                    { title: 'Fonts', slug: 'fonts' },
-                    { title: 'Colors', slug: 'colors' },
-                    { title: 'Backgrounds', slug: 'backgrounds' },
-                    { title: 'Logo Upload', slug: 'logo-upload' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'logic-flow',
-              label: 'Logic & Flow',
-              description:
-                'Create dynamic form experiences using conditional logic, branching, scoring, variables, and respondent paths.',
-              groups: [
-                {
-                  title: 'Control Flow of The Form',
-                  articles: [
-                    { title: 'Logic basics', slug: 'logic-basics' },
-                    { title: 'Conditional logic', slug: 'conditional-logic' },
-                    { title: 'Branching', slug: 'branching' },
-                    { title: 'Show/hide fields', slug: 'show-hide-fields' },
-                    { title: 'Scoring', slug: 'scoring' },
-                    { title: 'Variables', slug: 'variables' },
-                    { title: 'Custom variables', slug: 'custom-variables' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'sharing-embeds',
-              label: 'Sharing & Embeds',
-              description:
-                'Share forms with links, QR codes, previews, emails, websites, and platform-specific embeds.',
-              groups: [
-                {
-                  title: 'Share Forms',
-                  articles: [
-                    { title: 'Share link', slug: 'share-link' },
-                    { title: 'Shareable QR Code', slug: 'shareable-qr-code' },
-                    { title: 'Embed basics', slug: 'embed-basics' },
-                    { title: 'Embed in email', slug: 'embed-in-email' },
-                    { title: 'Embed in website', slug: 'embed-in-website' },
-                    { title: 'Embed Modes', slug: 'embed-modes' },
-                    { title: 'Form preview', slug: 'form-preview' },
-                    { title: 'Custom embed', slug: 'custom-embed' },
-                    { title: 'Webflow embed', slug: 'webflow-embed' },
-                    { title: 'WordPress embed', slug: 'wordpress-embed' },
-                    { title: 'Shopify embed', slug: 'shopify-embed' },
-                    { title: 'Squarespace embed', slug: 'squarespace-embed' },
-                    { title: 'Customize Shareable Link', slug: 'customize-shareable-link' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'responses-analytics',
-              label: 'Responses & Analytics',
-              description:
-                'View submissions, filter response data, understand analytics, download results, and export reports.',
-              groups: [
-                {
-                  title: 'View Results',
-                  articles: [
-                    { title: 'Results Overview', slug: 'results-overview' },
-                    { title: 'Insights', slug: 'insights' },
-                    { title: 'Responses', slug: 'responses' },
-                    { title: 'Partial responses', slug: 'partial-responses' },
-                    { title: 'Filtering', slug: 'filtering' },
-                    { title: 'Download data', slug: 'download-data' },
-                    { title: 'Analytics report', slug: 'analytics-report' },
-                    { title: 'Export PDF', slug: 'export-pdf' },
-                    { title: 'Response metadata', slug: 'response-metadata' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'integrations-automations',
-              label: 'Integrations & Automations',
-              description:
-                'Connect Kiwiform with other tools, automate workflows, send notifications, and sync responses.',
-              groups: [
-                {
-                  title: 'Connect Tools and Apps',
-                  articles: [
-                    { title: 'Integrations Overview', slug: 'integrations-overview' },
-                    { title: 'Email Notifications', slug: 'email-notifications' },
-                    { title: 'Email To Respondents', slug: 'email-to-respondents' },
-                    { title: 'Webhooks', slug: 'webhooks' },
-                    { title: 'Zapier', slug: 'zapier' },
-                    { title: 'Stripe', slug: 'stripe' },
-                    { title: 'Google Sheets', slug: 'google-sheets' },
-                    { title: 'Google Drive', slug: 'google-drive' },
-                    { title: 'Google Analytics', slug: 'google-analytics' },
-                    { title: 'Google Tag Manager', slug: 'google-tag-manager' },
-                    { title: 'Slack', slug: 'slack' },
-                    { title: 'Notion', slug: 'notion' },
-                    { title: 'Airtable', slug: 'airtable' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'account-plans',
-              label: 'Account & Plans',
-              description:
-                'Manage account settings, sign-in methods, security, notifications, billing, plans, and custom domains.',
-              groups: [
-                {
-                  title: 'Manage Account',
-                  articles: [
-                    { title: 'Sign-in methods', slug: 'sign-in-methods' },
-                    { title: 'Account setup', slug: 'account-setup' },
-                    { title: 'Connected accounts', slug: 'connected-accounts' },
-                    { title: 'Security', slug: 'security' },
-                    { title: 'Two-factor Authentication', slug: 'two-factor-authentication' },
-                    { title: 'Notifications', slug: 'notifications' },
-                    { title: 'SMTP Settings', slug: 'smtp-settings' },
-                    { title: 'Plan overview', slug: 'plan-overview' },
-                    { title: 'Billing', slug: 'billing' },
-                    { title: 'Delete account', slug: 'delete-account' },
-                    { title: 'Custom Domains', slug: 'custom-domains' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'resources',
-              label: 'Resources',
-              description:
-                'Explore templates, best practices, policies, product updates, and additional guidance for better forms.',
-              groups: [
-                {
-                  title: 'Explore Resources',
-                  articles: [
-                    { title: 'Templates', slug: 'templates' },
-                    { title: 'Best practices', slug: 'best-practices' },
-                    { title: 'Privacy', slug: 'privacy' },
-                    { title: 'GDPR', slug: 'gdpr' },
-                    { title: 'Terms', slug: 'terms' },
-                    { title: 'Changelog', slug: 'changelog' }
-                  ]
-                }
-              ]
-            },
-            {
-              key: 'kiwiform-api',
-              label: 'Kiwiform API',
-              description:
-                'Find API references and developer guidance for working with Kiwiform programmatically.',
-              groups: [
-                {
-                  title: 'Developer Guides',
-                  articles: [
-                    { title: 'API Overview', slug: 'api-overview' },
-                    { title: 'Authentication', slug: 'api-authentication' },
-                    { title: 'Templates API', slug: 'templates-api' },
-                    { title: 'Responses API', slug: 'responses-api' }
-                  ]
-                }
-              ]
-            }
-          ],
-          init() {
-            const route = this.routeFromUrl()
-            this.isHome = route.isHome
-            this.activeCategory = route.categoryKey
-            this.activeSlug = route.slug
-            if (!this.isHome && !this.openCategories.includes(this.activeCategory)) {
-              this.openCategories = [this.activeCategory]
-            }
-            this.setPageMeta()
-          },
-          activeSlug: '',
-          get sidebarCategories() {
-            const query = this.searchTerm.trim().toLowerCase()
+    <footer class="flex md:grid grid-cols-14 gap-px w-full bg-Theme-bg">
+      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+      <!-- main-container  -->
+      <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="col-span-2 bg-white rounded-r-10px hidden 2xl:block"></div>
+        <!-- place content here -->
+        <div
+          class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+        >
+          <!-- CTA section  -->
+          <div
+            class="bg-[linear-gradient(61deg,rgb(168,255,196)_0%,rgb(141,255,141)_22%,rgb(180,255,161)_51%,rgb(238,255,177)_76%,rgb(239,255,182)_100%)] w-full h-auto rounded-10px"
+          >
+            <div
+              class="bg-white/75 rounded-10px py-[120px] px-2.5 flex flex-col items-center justify-center"
+            >
+              <div class="w-full flex items-center justify-center overflow-visible pb-9">
+                <svg
+                  width="168"
+                  height="176"
+                  viewBox="0 0 168 176"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_i_8003_4232)">
+                    <rect x="2.60156" y="2.60156" width="162" height="162" rx="81" fill="#183C1A" />
+                    <rect
+                      x="2.60156"
+                      y="2.60156"
+                      width="162"
+                      height="162"
+                      rx="81"
+                      fill="url(#paint0_linear_8003_4232)"
+                    />
+                    <rect
+                      x="2.60547"
+                      y="2.46484"
+                      width="162"
+                      height="162"
+                      rx="81"
+                      fill="black"
+                      fill-opacity="0.01"
+                    />
+                    <g filter="url(#filter2_ddi_8003_4232)">
+                      <path
+                        d="M83.5992 10.6992C88.8184 10.6992 93.9089 11.2491 98.8169 12.2928C105.394 13.6915 109.519 19.8913 109.519 26.6155V49.5792C109.519 54.0527 113.146 57.6792 117.619 57.6792H140.583C147.307 57.6792 153.507 61.8045 154.906 68.3816C155.949 73.2896 156.499 78.3801 156.499 83.5992C156.499 123.861 123.861 156.499 83.5992 156.499C43.3377 156.499 10.6992 123.861 10.6992 83.5992C10.6992 43.3377 43.3377 10.6992 83.5992 10.6992Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M83.5992 10.6992C88.8184 10.6992 93.9089 11.2491 98.8169 12.2928C105.394 13.6915 109.519 19.8913 109.519 26.6155V49.5792C109.519 54.0527 113.146 57.6792 117.619 57.6792H140.583C147.307 57.6792 153.507 61.8045 154.906 68.3816C155.949 73.2896 156.499 78.3801 156.499 83.5992C156.499 123.861 123.861 156.499 83.5992 156.499C43.3377 156.499 10.6992 123.861 10.6992 83.5992C10.6992 43.3377 43.3377 10.6992 83.5992 10.6992Z"
+                        fill="url(#paint1_linear_8003_4232)"
+                      />
+                    </g>
+                    <g filter="url(#filter3_d_8003_4232)">
+                      <path
+                        d="M88.6123 120.873C88.6123 124.436 86.6867 127.325 84.3114 127.325C81.9361 127.325 80.0105 124.436 80.0105 120.873C80.0105 117.31 81.9361 114.422 84.3114 114.422C86.6867 114.422 88.6123 117.31 88.6123 120.873Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M88.6123 45.6115C88.6123 49.1745 86.6867 52.0629 84.3114 52.0629C81.9361 52.0629 80.0105 49.1745 80.0105 45.6115C80.0105 42.0485 81.9361 39.1602 84.3114 39.1602C86.6867 39.1602 88.6123 42.0485 88.6123 45.6115Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M106.856 113.683C108.637 116.769 108.414 120.233 106.357 121.421C104.3 122.608 101.188 121.07 99.4064 117.984C97.6249 114.898 97.8483 111.434 99.9054 110.246C101.963 109.059 105.074 110.597 106.856 113.683Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M69.2238 48.5101C71.0053 51.5958 70.7819 55.06 68.7248 56.2476C66.6677 57.4353 63.5559 55.8967 61.7744 52.811C59.9929 49.7254 60.2163 46.2612 62.2734 45.0735C64.3305 43.8859 67.4423 45.4245 69.2238 48.5101Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M119.053 98.333C122.138 100.114 123.677 103.226 122.489 105.283C121.302 107.34 117.837 107.564 114.752 105.782C111.666 104.001 110.127 100.889 111.315 98.832C112.503 96.7749 115.967 96.5515 119.053 98.333Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M53.873 60.7077C56.9586 62.4892 58.4972 65.601 57.3095 67.6581C56.1219 69.7152 52.6577 69.9386 49.5721 68.1571C46.4864 66.3756 44.9478 63.2638 46.1355 61.2068C47.3231 59.1497 50.7873 58.9262 53.873 60.7077Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M121.949 78.9414C125.512 78.9414 128.4 80.867 128.4 83.2423C128.4 85.6176 125.512 87.5432 121.949 87.5432C118.386 87.5432 115.497 85.6176 115.497 83.2423C115.497 80.867 118.386 78.9414 121.949 78.9414Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M46.6779 78.9414C50.2409 78.9414 53.1293 80.867 53.1293 83.2423C53.1293 85.6176 50.2409 87.5432 46.6779 87.5432C43.1149 87.5432 40.2266 85.6176 40.2266 83.2423C40.2266 80.867 43.1149 78.9414 46.6779 78.9414Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M49.5743 98.3431C52.6599 96.5616 56.1241 96.785 57.3118 98.8421C58.4994 100.899 56.9608 104.011 53.8752 105.792C50.7895 107.574 47.3254 107.351 46.1377 105.293C44.95 103.236 46.4886 100.125 49.5743 98.3431Z"
+                        fill="#265829"
+                      />
+                      <path
+                        d="M61.77 113.689C63.5515 110.604 66.6633 109.065 68.7204 110.253C70.7775 111.44 71.0009 114.905 69.2194 117.99C67.4379 121.076 64.3261 122.615 62.269 121.427C60.2119 120.239 59.9885 116.775 61.77 113.689Z"
+                        fill="#265829"
+                      />
+                    </g>
+                  </g>
+                  <g filter="url(#filter4_d_8003_4232)">
+                    <path
+                      d="M62.7734 83.5611C62.7734 72.0804 72.0804 62.7734 83.5611 62.7734C95.0419 62.7734 104.349 72.0804 104.349 83.5611C104.349 95.0419 95.0419 104.349 83.5611 104.349C72.0804 104.349 62.7734 95.0419 62.7734 83.5611Z"
+                      fill="#F2F3B5"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_i_8003_4232"
+                      x="-6.65558"
+                      y="-6.7923"
+                      width="171.261"
+                      height="171.394"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape"
+                      />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dx="-64.8" dy="-64.8" />
+                      <feGaussianBlur stdDeviation="4.62857" />
+                      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.537255 0 0 0 0 0.780392 0 0 0 0 0.0509804 0 0 0 0.1 0"
+                      />
+                      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_8003_4232" />
+                    </filter>
+                    <filter
+                      id="filter2_ddi_8003_4232"
+                      x="-0.000781059"
+                      y="-0.000781059"
+                      width="167.201"
+                      height="175.015"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="5.35" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.0941176 0 0 0 0 0.235294 0 0 0 0 0.101961 0 0 0 1 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_8003_4232"
+                      />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="9.25714" />
+                      <feGaussianBlur stdDeviation="4.62857" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="effect1_dropShadow_8003_4232"
+                        result="effect2_dropShadow_8003_4232"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect2_dropShadow_8003_4232"
+                        result="shape"
+                      />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="8.7" />
+                      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"
+                      />
+                      <feBlend mode="normal" in2="shape" result="effect3_innerShadow_8003_4232" />
+                    </filter>
+                    <filter
+                      id="filter3_d_8003_4232"
+                      x="35.598"
+                      y="34.5316"
+                      width="102.06"
+                      height="102.05"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dx="2.31429" dy="2.31429" />
+                      <feGaussianBlur stdDeviation="3.47143" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.141176 0 0 0 0 0.290196 0 0 0 0 0.0941176 0 0 0 0.3 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_8003_4232"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_8003_4232"
+                        result="shape"
+                      />
+                    </filter>
+                    <filter
+                      id="filter4_d_8003_4232"
+                      x="53.5163"
+                      y="53.5163"
+                      width="60.0905"
+                      height="60.0905"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset />
+                      <feGaussianBlur stdDeviation="4.62857" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_8003_4232"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_8003_4232"
+                        result="shape"
+                      />
+                    </filter>
+                    <linearGradient
+                      id="paint0_linear_8003_4232"
+                      x1="27.1016"
+                      y1="25.6016"
+                      x2="140.102"
+                      y2="140.602"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#599D02" />
+                      <stop offset="0.35829" stop-color="#688D39" />
+                      <stop offset="0.737303" stop-color="#75C500" />
+                      <stop offset="1" stop-color="#183C1A" />
+                    </linearGradient>
+                    <linearGradient
+                      id="paint1_linear_8003_4232"
+                      x1="31.5323"
+                      y1="31.3922"
+                      x2="164.604"
+                      y2="164.464"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#B8DD2F" stop-opacity="0.7" />
+                      <stop offset="0.504808" stop-color="#90C60B" />
+                      <stop offset="1" stop-color="#6EB102" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <h2
+                class="text-[38px] leading-[48px] tracking-[-0.76px] font-Inter-disp capitalize text-Theme-Black text-center mb-2.5"
+              >
+                Start building forms without limits!
+              </h2>
+              <p
+                class="text-base leading-7 text-Theme-Black text-center mb-[26px] w-full max-w-[537px] mx-auto"
+              >
+                Kiwiform is a clean, flexible form builder you can start using right away. Create
+                unlimited forms, collect unlimited responses!
+              </p>
+              <a
+                href="https://app.kiwiform.com"
+                target="_blank"
+                class="btn-kiwi-green w-max mx-auto"
+                >Start Building Now</a
+              >
+              <div
+                class="flex flex-col min-[370px]:flex-row items-center justify-center mt-3.5 gap-5"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 17 17"
+                    fill="none"
+                  >
+                    <path
+                      d="M15.1992 8.19922C15.1992 8.79655 14.4654 9.28889 14.3184 9.83955C14.1667 10.4089 14.5506 11.2022 14.2624 11.7004C13.9696 12.2067 13.0887 12.2674 12.6781 12.6781C12.2674 13.0887 12.2067 13.9696 11.7004 14.2624C11.2022 14.5506 10.4089 14.1667 9.83955 14.3184C9.28889 14.4654 8.79655 15.1992 8.19922 15.1992C7.60189 15.1992 7.10955 14.4654 6.55889 14.3184C5.98955 14.1667 5.19622 14.5506 4.69805 14.2624C4.19172 13.9696 4.13105 13.0887 3.72039 12.6781C3.30972 12.2674 2.42889 12.2067 2.13605 11.7004C1.84789 11.2022 2.23172 10.4089 2.08005 9.83955C1.93305 9.28889 1.19922 8.79655 1.19922 8.19922C1.19922 7.60189 1.93305 7.10955 2.08005 6.55889C2.23172 5.98955 1.84789 5.19622 2.13605 4.69805C2.42889 4.19172 3.30972 4.13105 3.72039 3.72039C4.13105 3.30972 4.19172 2.42889 4.69805 2.13605C5.19622 1.84789 5.98955 2.23172 6.55889 2.08005C7.10955 1.93305 7.60189 1.19922 8.19922 1.19922C8.79655 1.19922 9.28889 1.93305 9.83955 2.08005C10.4089 2.23172 11.2022 1.84789 11.7004 2.13605C12.2067 2.42889 12.2674 3.30972 12.6781 3.72039C13.0887 4.13105 13.9696 4.19172 14.2624 4.69805C14.5506 5.19622 14.1667 5.98955 14.3184 6.55889C14.4654 7.10955 15.1992 7.60189 15.1992 8.19922Z"
+                      fill="#B8DD2F"
+                    />
+                    <path
+                      d="M6.01123 7.56271L7.55762 9.1078L10.3872 6.27821C10.5959 6.0695 10.9335 6.0695 11.1422 6.27821C11.3509 6.48692 11.3509 6.82568 11.1422 7.03439L7.91989 10.2567C7.71935 10.4573 7.39342 10.4573 7.19288 10.2567L5.25504 8.31889C5.04633 8.11018 5.04633 7.77142 5.25504 7.56271C5.46375 7.354 5.80251 7.354 6.01123 7.56271Z"
+                      fill="#183C1A"
+                    />
+                    <path
+                      d="M8.19922 0.599609C8.72629 0.599609 9.15111 0.918448 9.39941 1.10645C9.5505 1.22084 9.65524 1.30587 9.76953 1.38281C9.8794 1.45676 9.94978 1.48811 9.99414 1.5L10.0977 1.51562C10.1416 1.51823 10.1958 1.51785 10.2627 1.51367C10.4008 1.50503 10.5374 1.48383 10.7227 1.46094C11.0239 1.42373 11.5519 1.3565 12.001 1.61621C12.4533 1.87781 12.6592 2.36865 12.7783 2.65137C12.8512 2.82452 12.901 2.95244 12.9619 3.07617C13.0206 3.19527 13.067 3.26033 13.1025 3.2959C13.1381 3.33147 13.2032 3.37784 13.3223 3.43652C13.446 3.49745 13.5739 3.54719 13.7471 3.62012C14.0298 3.7392 14.5206 3.94513 14.7822 4.39746C15.0419 4.84652 14.9747 5.37452 14.9375 5.67578C14.9146 5.86107 14.8934 5.99763 14.8848 6.13574C14.8764 6.26908 14.8845 6.35176 14.8984 6.4043L14.9336 6.49121C14.9523 6.52806 14.9785 6.57369 15.0156 6.62891C15.0926 6.7432 15.1776 6.84794 15.292 6.99902C15.48 7.24733 15.7988 7.67215 15.7988 8.19922C15.7988 8.72629 15.48 9.15111 15.292 9.39941C15.1776 9.5505 15.0926 9.65524 15.0156 9.76953C14.9785 9.82474 14.9523 9.87038 14.9336 9.90723L14.8984 9.99414C14.8845 10.0467 14.8764 10.1294 14.8848 10.2627C14.8934 10.4008 14.9146 10.5374 14.9375 10.7227C14.9747 11.0239 15.0419 11.5519 14.7822 12.001C14.5206 12.4533 14.0298 12.6592 13.7471 12.7783C13.5739 12.8512 13.446 12.901 13.3223 12.9619C13.2032 13.0206 13.1381 13.067 13.1025 13.1025C13.067 13.1381 13.0206 13.2032 12.9619 13.3223C12.901 13.446 12.8512 13.5739 12.7783 13.7471C12.6592 14.0298 12.4533 14.5206 12.001 14.7822C11.5519 15.0419 11.0239 14.9747 10.7227 14.9375C10.5374 14.9146 10.4008 14.8934 10.2627 14.8848C10.1958 14.8806 10.1416 14.8802 10.0977 14.8828L9.99414 14.8984C9.94978 14.9103 9.8794 14.9417 9.76953 15.0156C9.65524 15.0926 9.5505 15.1776 9.39941 15.292C9.15111 15.48 8.72629 15.7988 8.19922 15.7988C7.67215 15.7988 7.24733 15.48 6.99902 15.292C6.84794 15.1776 6.7432 15.0926 6.62891 15.0156C6.57369 14.9785 6.52806 14.9523 6.49121 14.9336L6.4043 14.8984C6.35176 14.8845 6.26908 14.8764 6.13574 14.8848C5.99763 14.8934 5.86107 14.9146 5.67578 14.9375C5.37452 14.9747 4.84652 15.0419 4.39746 14.7822C3.94513 14.5206 3.7392 14.0298 3.62012 13.7471C3.54719 13.5739 3.49745 13.446 3.43652 13.3223C3.37784 13.2032 3.33147 13.1381 3.2959 13.1025C3.26033 13.067 3.19527 13.0206 3.07617 12.9619C2.95244 12.901 2.82452 12.8512 2.65137 12.7783C2.36865 12.6592 1.87781 12.4533 1.61621 12.001C1.3565 11.5519 1.42373 11.0239 1.46094 10.7227C1.48383 10.5374 1.50503 10.4008 1.51367 10.2627C1.51785 10.1958 1.51823 10.1416 1.51562 10.0977L1.5 9.99414C1.48811 9.94978 1.45676 9.8794 1.38281 9.76953C1.30587 9.65524 1.22084 9.5505 1.10645 9.39941C0.918448 9.15111 0.599609 8.72629 0.599609 8.19922C0.599609 7.67215 0.918448 7.24733 1.10645 6.99902C1.22084 6.84794 1.30587 6.7432 1.38281 6.62891C1.45676 6.51904 1.48811 6.44866 1.5 6.4043L1.51562 6.30078C1.51823 6.25679 1.51785 6.20261 1.51367 6.13574C1.50503 5.99763 1.48383 5.86107 1.46094 5.67578C1.42373 5.37452 1.3565 4.84652 1.61621 4.39746C1.87781 3.94513 2.36865 3.7392 2.65137 3.62012C2.82452 3.54719 2.95244 3.49745 3.07617 3.43652C3.19527 3.37784 3.26033 3.33147 3.2959 3.2959C3.33147 3.26033 3.37784 3.19527 3.43652 3.07617C3.49745 2.95244 3.54719 2.82452 3.62012 2.65137C3.7392 2.36865 3.94513 1.87781 4.39746 1.61621C4.84652 1.3565 5.37452 1.42373 5.67578 1.46094C5.86107 1.48383 5.99763 1.50503 6.13574 1.51367C6.26908 1.522 6.35176 1.51398 6.4043 1.5L6.49121 1.46484C6.52806 1.44615 6.57369 1.41997 6.62891 1.38281C6.7432 1.30587 6.84794 1.22084 6.99902 1.10645C7.24733 0.918448 7.67215 0.599609 8.19922 0.599609Z"
+                      stroke="#183C1A"
+                      stroke-width="1.2"
+                    />
+                  </svg>
+                  <p class="text-sm leading-5 font-medium text-[#183C1A]">No trials</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 17 17"
+                    fill="none"
+                  >
+                    <path
+                      d="M15.1992 8.19922C15.1992 8.79655 14.4654 9.28889 14.3184 9.83955C14.1667 10.4089 14.5506 11.2022 14.2624 11.7004C13.9696 12.2067 13.0887 12.2674 12.6781 12.6781C12.2674 13.0887 12.2067 13.9696 11.7004 14.2624C11.2022 14.5506 10.4089 14.1667 9.83955 14.3184C9.28889 14.4654 8.79655 15.1992 8.19922 15.1992C7.60189 15.1992 7.10955 14.4654 6.55889 14.3184C5.98955 14.1667 5.19622 14.5506 4.69805 14.2624C4.19172 13.9696 4.13105 13.0887 3.72039 12.6781C3.30972 12.2674 2.42889 12.2067 2.13605 11.7004C1.84789 11.2022 2.23172 10.4089 2.08005 9.83955C1.93305 9.28889 1.19922 8.79655 1.19922 8.19922C1.19922 7.60189 1.93305 7.10955 2.08005 6.55889C2.23172 5.98955 1.84789 5.19622 2.13605 4.69805C2.42889 4.19172 3.30972 4.13105 3.72039 3.72039C4.13105 3.30972 4.19172 2.42889 4.69805 2.13605C5.19622 1.84789 5.98955 2.23172 6.55889 2.08005C7.10955 1.93305 7.60189 1.19922 8.19922 1.19922C8.79655 1.19922 9.28889 1.93305 9.83955 2.08005C10.4089 2.23172 11.2022 1.84789 11.7004 2.13605C12.2067 2.42889 12.2674 3.30972 12.6781 3.72039C13.0887 4.13105 13.9696 4.19172 14.2624 4.69805C14.5506 5.19622 14.1667 5.98955 14.3184 6.55889C14.4654 7.10955 15.1992 7.60189 15.1992 8.19922Z"
+                      fill="#B8DD2F"
+                    />
+                    <path
+                      d="M6.01123 7.56271L7.55762 9.1078L10.3872 6.27821C10.5959 6.0695 10.9335 6.0695 11.1422 6.27821C11.3509 6.48692 11.3509 6.82568 11.1422 7.03439L7.91989 10.2567C7.71935 10.4573 7.39342 10.4573 7.19288 10.2567L5.25504 8.31889C5.04633 8.11018 5.04633 7.77142 5.25504 7.56271C5.46375 7.354 5.80251 7.354 6.01123 7.56271Z"
+                      fill="#183C1A"
+                    />
+                    <path
+                      d="M8.19922 0.599609C8.72629 0.599609 9.15111 0.918448 9.39941 1.10645C9.5505 1.22084 9.65524 1.30587 9.76953 1.38281C9.8794 1.45676 9.94978 1.48811 9.99414 1.5L10.0977 1.51562C10.1416 1.51823 10.1958 1.51785 10.2627 1.51367C10.4008 1.50503 10.5374 1.48383 10.7227 1.46094C11.0239 1.42373 11.5519 1.3565 12.001 1.61621C12.4533 1.87781 12.6592 2.36865 12.7783 2.65137C12.8512 2.82452 12.901 2.95244 12.9619 3.07617C13.0206 3.19527 13.067 3.26033 13.1025 3.2959C13.1381 3.33147 13.2032 3.37784 13.3223 3.43652C13.446 3.49745 13.5739 3.54719 13.7471 3.62012C14.0298 3.7392 14.5206 3.94513 14.7822 4.39746C15.0419 4.84652 14.9747 5.37452 14.9375 5.67578C14.9146 5.86107 14.8934 5.99763 14.8848 6.13574C14.8764 6.26908 14.8845 6.35176 14.8984 6.4043L14.9336 6.49121C14.9523 6.52806 14.9785 6.57369 15.0156 6.62891C15.0926 6.7432 15.1776 6.84794 15.292 6.99902C15.48 7.24733 15.7988 7.67215 15.7988 8.19922C15.7988 8.72629 15.48 9.15111 15.292 9.39941C15.1776 9.5505 15.0926 9.65524 15.0156 9.76953C14.9785 9.82474 14.9523 9.87038 14.9336 9.90723L14.8984 9.99414C14.8845 10.0467 14.8764 10.1294 14.8848 10.2627C14.8934 10.4008 14.9146 10.5374 14.9375 10.7227C14.9747 11.0239 15.0419 11.5519 14.7822 12.001C14.5206 12.4533 14.0298 12.6592 13.7471 12.7783C13.5739 12.8512 13.446 12.901 13.3223 12.9619C13.2032 13.0206 13.1381 13.067 13.1025 13.1025C13.067 13.1381 13.0206 13.2032 12.9619 13.3223C12.901 13.446 12.8512 13.5739 12.7783 13.7471C12.6592 14.0298 12.4533 14.5206 12.001 14.7822C11.5519 15.0419 11.0239 14.9747 10.7227 14.9375C10.5374 14.9146 10.4008 14.8934 10.2627 14.8848C10.1958 14.8806 10.1416 14.8802 10.0977 14.8828L9.99414 14.8984C9.94978 14.9103 9.8794 14.9417 9.76953 15.0156C9.65524 15.0926 9.5505 15.1776 9.39941 15.292C9.15111 15.48 8.72629 15.7988 8.19922 15.7988C7.67215 15.7988 7.24733 15.48 6.99902 15.292C6.84794 15.1776 6.7432 15.0926 6.62891 15.0156C6.57369 14.9785 6.52806 14.9523 6.49121 14.9336L6.4043 14.8984C6.35176 14.8845 6.26908 14.8764 6.13574 14.8848C5.99763 14.8934 5.86107 14.9146 5.67578 14.9375C5.37452 14.9747 4.84652 15.0419 4.39746 14.7822C3.94513 14.5206 3.7392 14.0298 3.62012 13.7471C3.54719 13.5739 3.49745 13.446 3.43652 13.3223C3.37784 13.2032 3.33147 13.1381 3.2959 13.1025C3.26033 13.067 3.19527 13.0206 3.07617 12.9619C2.95244 12.901 2.82452 12.8512 2.65137 12.7783C2.36865 12.6592 1.87781 12.4533 1.61621 12.001C1.3565 11.5519 1.42373 11.0239 1.46094 10.7227C1.48383 10.5374 1.50503 10.4008 1.51367 10.2627C1.51785 10.1958 1.51823 10.1416 1.51562 10.0977L1.5 9.99414C1.48811 9.94978 1.45676 9.8794 1.38281 9.76953C1.30587 9.65524 1.22084 9.5505 1.10645 9.39941C0.918448 9.15111 0.599609 8.72629 0.599609 8.19922C0.599609 7.67215 0.918448 7.24733 1.10645 6.99902C1.22084 6.84794 1.30587 6.7432 1.38281 6.62891C1.45676 6.51904 1.48811 6.44866 1.5 6.4043L1.51562 6.30078C1.51823 6.25679 1.51785 6.20261 1.51367 6.13574C1.50503 5.99763 1.48383 5.86107 1.46094 5.67578C1.42373 5.37452 1.3565 4.84652 1.61621 4.39746C1.87781 3.94513 2.36865 3.7392 2.65137 3.62012C2.82452 3.54719 2.95244 3.49745 3.07617 3.43652C3.19527 3.37784 3.26033 3.33147 3.2959 3.2959C3.33147 3.26033 3.37784 3.19527 3.43652 3.07617C3.49745 2.95244 3.54719 2.82452 3.62012 2.65137C3.7392 2.36865 3.94513 1.87781 4.39746 1.61621C4.84652 1.3565 5.37452 1.42373 5.67578 1.46094C5.86107 1.48383 5.99763 1.50503 6.13574 1.51367C6.26908 1.522 6.35176 1.51398 6.4043 1.5L6.49121 1.46484C6.52806 1.44615 6.57369 1.41997 6.62891 1.38281C6.7432 1.30587 6.84794 1.22084 6.99902 1.10645C7.24733 0.918448 7.67215 0.599609 8.19922 0.599609Z"
+                      stroke="#183C1A"
+                      stroke-width="1.2"
+                    />
+                  </svg>
+                  <p class="text-sm leading-5 font-medium text-[#183C1A]">No caps</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 17 17"
+                    fill="none"
+                  >
+                    <path
+                      d="M15.1992 8.19922C15.1992 8.79655 14.4654 9.28889 14.3184 9.83955C14.1667 10.4089 14.5506 11.2022 14.2624 11.7004C13.9696 12.2067 13.0887 12.2674 12.6781 12.6781C12.2674 13.0887 12.2067 13.9696 11.7004 14.2624C11.2022 14.5506 10.4089 14.1667 9.83955 14.3184C9.28889 14.4654 8.79655 15.1992 8.19922 15.1992C7.60189 15.1992 7.10955 14.4654 6.55889 14.3184C5.98955 14.1667 5.19622 14.5506 4.69805 14.2624C4.19172 13.9696 4.13105 13.0887 3.72039 12.6781C3.30972 12.2674 2.42889 12.2067 2.13605 11.7004C1.84789 11.2022 2.23172 10.4089 2.08005 9.83955C1.93305 9.28889 1.19922 8.79655 1.19922 8.19922C1.19922 7.60189 1.93305 7.10955 2.08005 6.55889C2.23172 5.98955 1.84789 5.19622 2.13605 4.69805C2.42889 4.19172 3.30972 4.13105 3.72039 3.72039C4.13105 3.30972 4.19172 2.42889 4.69805 2.13605C5.19622 1.84789 5.98955 2.23172 6.55889 2.08005C7.10955 1.93305 7.60189 1.19922 8.19922 1.19922C8.79655 1.19922 9.28889 1.93305 9.83955 2.08005C10.4089 2.23172 11.2022 1.84789 11.7004 2.13605C12.2067 2.42889 12.2674 3.30972 12.6781 3.72039C13.0887 4.13105 13.9696 4.19172 14.2624 4.69805C14.5506 5.19622 14.1667 5.98955 14.3184 6.55889C14.4654 7.10955 15.1992 7.60189 15.1992 8.19922Z"
+                      fill="#B8DD2F"
+                    />
+                    <path
+                      d="M6.01123 7.56271L7.55762 9.1078L10.3872 6.27821C10.5959 6.0695 10.9335 6.0695 11.1422 6.27821C11.3509 6.48692 11.3509 6.82568 11.1422 7.03439L7.91989 10.2567C7.71935 10.4573 7.39342 10.4573 7.19288 10.2567L5.25504 8.31889C5.04633 8.11018 5.04633 7.77142 5.25504 7.56271C5.46375 7.354 5.80251 7.354 6.01123 7.56271Z"
+                      fill="#183C1A"
+                    />
+                    <path
+                      d="M8.19922 0.599609C8.72629 0.599609 9.15111 0.918448 9.39941 1.10645C9.5505 1.22084 9.65524 1.30587 9.76953 1.38281C9.8794 1.45676 9.94978 1.48811 9.99414 1.5L10.0977 1.51562C10.1416 1.51823 10.1958 1.51785 10.2627 1.51367C10.4008 1.50503 10.5374 1.48383 10.7227 1.46094C11.0239 1.42373 11.5519 1.3565 12.001 1.61621C12.4533 1.87781 12.6592 2.36865 12.7783 2.65137C12.8512 2.82452 12.901 2.95244 12.9619 3.07617C13.0206 3.19527 13.067 3.26033 13.1025 3.2959C13.1381 3.33147 13.2032 3.37784 13.3223 3.43652C13.446 3.49745 13.5739 3.54719 13.7471 3.62012C14.0298 3.7392 14.5206 3.94513 14.7822 4.39746C15.0419 4.84652 14.9747 5.37452 14.9375 5.67578C14.9146 5.86107 14.8934 5.99763 14.8848 6.13574C14.8764 6.26908 14.8845 6.35176 14.8984 6.4043L14.9336 6.49121C14.9523 6.52806 14.9785 6.57369 15.0156 6.62891C15.0926 6.7432 15.1776 6.84794 15.292 6.99902C15.48 7.24733 15.7988 7.67215 15.7988 8.19922C15.7988 8.72629 15.48 9.15111 15.292 9.39941C15.1776 9.5505 15.0926 9.65524 15.0156 9.76953C14.9785 9.82474 14.9523 9.87038 14.9336 9.90723L14.8984 9.99414C14.8845 10.0467 14.8764 10.1294 14.8848 10.2627C14.8934 10.4008 14.9146 10.5374 14.9375 10.7227C14.9747 11.0239 15.0419 11.5519 14.7822 12.001C14.5206 12.4533 14.0298 12.6592 13.7471 12.7783C13.5739 12.8512 13.446 12.901 13.3223 12.9619C13.2032 13.0206 13.1381 13.067 13.1025 13.1025C13.067 13.1381 13.0206 13.2032 12.9619 13.3223C12.901 13.446 12.8512 13.5739 12.7783 13.7471C12.6592 14.0298 12.4533 14.5206 12.001 14.7822C11.5519 15.0419 11.0239 14.9747 10.7227 14.9375C10.5374 14.9146 10.4008 14.8934 10.2627 14.8848C10.1958 14.8806 10.1416 14.8802 10.0977 14.8828L9.99414 14.8984C9.94978 14.9103 9.8794 14.9417 9.76953 15.0156C9.65524 15.0926 9.5505 15.1776 9.39941 15.292C9.15111 15.48 8.72629 15.7988 8.19922 15.7988C7.67215 15.7988 7.24733 15.48 6.99902 15.292C6.84794 15.1776 6.7432 15.0926 6.62891 15.0156C6.57369 14.9785 6.52806 14.9523 6.49121 14.9336L6.4043 14.8984C6.35176 14.8845 6.26908 14.8764 6.13574 14.8848C5.99763 14.8934 5.86107 14.9146 5.67578 14.9375C5.37452 14.9747 4.84652 15.0419 4.39746 14.7822C3.94513 14.5206 3.7392 14.0298 3.62012 13.7471C3.54719 13.5739 3.49745 13.446 3.43652 13.3223C3.37784 13.2032 3.33147 13.1381 3.2959 13.1025C3.26033 13.067 3.19527 13.0206 3.07617 12.9619C2.95244 12.901 2.82452 12.8512 2.65137 12.7783C2.36865 12.6592 1.87781 12.4533 1.61621 12.001C1.3565 11.5519 1.42373 11.0239 1.46094 10.7227C1.48383 10.5374 1.50503 10.4008 1.51367 10.2627C1.51785 10.1958 1.51823 10.1416 1.51562 10.0977L1.5 9.99414C1.48811 9.94978 1.45676 9.8794 1.38281 9.76953C1.30587 9.65524 1.22084 9.5505 1.10645 9.39941C0.918448 9.15111 0.599609 8.72629 0.599609 8.19922C0.599609 7.67215 0.918448 7.24733 1.10645 6.99902C1.22084 6.84794 1.30587 6.7432 1.38281 6.62891C1.45676 6.51904 1.48811 6.44866 1.5 6.4043L1.51562 6.30078C1.51823 6.25679 1.51785 6.20261 1.51367 6.13574C1.50503 5.99763 1.48383 5.86107 1.46094 5.67578C1.42373 5.37452 1.3565 4.84652 1.61621 4.39746C1.87781 3.94513 2.36865 3.7392 2.65137 3.62012C2.82452 3.54719 2.95244 3.49745 3.07617 3.43652C3.19527 3.37784 3.26033 3.33147 3.2959 3.2959C3.33147 3.26033 3.37784 3.19527 3.43652 3.07617C3.49745 2.95244 3.54719 2.82452 3.62012 2.65137C3.7392 2.36865 3.94513 1.87781 4.39746 1.61621C4.84652 1.3565 5.37452 1.42373 5.67578 1.46094C5.86107 1.48383 5.99763 1.50503 6.13574 1.51367C6.26908 1.522 6.35176 1.51398 6.4043 1.5L6.49121 1.46484C6.52806 1.44615 6.57369 1.41997 6.62891 1.38281C6.7432 1.30587 6.84794 1.22084 6.99902 1.10645C7.24733 0.918448 7.67215 0.599609 8.19922 0.599609Z"
+                      stroke="#183C1A"
+                      stroke-width="1.2"
+                    />
+                  </svg>
+                  <p class="text-sm leading-5 font-medium text-[#183C1A]">No surprises</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            if (!query) {
-              return this.categories
-            }
-
-            return this.categories
-              .map((category) => {
-                const groups = category.groups
-                  .map((group) => ({
-                    ...group,
-                    articles: group.articles.filter((article) =>
-                      [article.title, article.slug, group.title, category.label]
-                        .join(' ')
-                        .toLowerCase()
-                        .includes(query)
-                    )
-                  }))
-                  .filter((group) => group.articles.length > 0)
-
-                return { ...category, groups }
-              })
-              .filter((category) => category.groups.length > 0)
-          },
-          get activeCategoryData() {
-            return this.categories.find((category) => category.key === this.activeCategory)
-          },
-          get activeArticleData() {
-            return this.flattenArticles(this.activeCategoryData || {}).find(
-              (article) => article.slug === this.activeSlug
-            )
-          },
-          get pageType() {
-            if (this.isHome) {
-              return 'home'
-            }
-
-            return this.activeArticleData ? 'article' : 'category'
-          },
-          get activePageData() {
-            return this.pageType === 'article' ? this.activeArticleData : this.activeCategoryData
-          },
-          get eyebrow() {
-            return this.pageType === 'article'
-              ? this.activeCategoryData?.label || 'Help Center'
-              : 'Help Center'
-          },
-          get pageTitle() {
-            if (this.pageType === 'home') {
-              return 'Kiwiform Help Center'
-            }
-
-            return this.pageType === 'article'
-              ? this.activeArticleData.title === 'Overview'
-                ? 'Overview Of Kiwiform'
-                : this.activeArticleData.title
-              : this.activeCategoryData?.label || 'Kiwiform Help Center'
-          },
-          get pageDescription() {
-            if (this.pageType === 'home') {
-              return 'Find clear answers, step-by-step guides, and practical tips for building and managing forms with Kiwiform, a free Typeform alternative. Learn how to create forms, customize design, set up logic, collect responses, and keep everything running smoothly.'
-            }
-
-            if (this.pageType === 'article') {
-              if (this.activeSlug === 'overview') {
-                return 'Kiwiform helps you create forms, collect responses, and manage data in one place. As a free Typeform alternative, it offers conversational forms, flexible logic, and unlimited responses so you can start collecting information without limits or complexity.'
-              }
-
-              return this.articleIntro
-            }
-
-            return (
-              this.activeCategoryData?.description ||
-              'Find clear answers, step-by-step guides, and practical tips for building, customizing, sharing, and managing forms with Kiwiform.'
-            )
-          },
-          get articleIntro() {
-            return `Learn how to use ${this.activeArticleData?.title || 'this feature'} in Kiwiform with clear guidance and practical setup notes.`
-          },
-          toggleCategory(key) {
-            if (this.openCategories.includes(key)) {
-              this.openCategories = this.openCategories.filter((categoryKey) => categoryKey !== key)
-              return
-            }
-
-            this.openCategories = [...this.openCategories, key]
-          },
-          routeFromUrl() {
-            const page = window.location.pathname
-              .replace(/\/$/, '')
-              .split('/')
-              .filter(Boolean)
-              .pop()
-            const slug = (page || '').replace(/\.html$/, '')
-
-            if (!slug || slug === 'help') {
-              return { categoryKey: 'getting-started', slug: '', isHome: true }
-            }
-
-            const category = this.categories.find((item) => item.key === slug)
-            if (category) {
-              return { categoryKey: category.key, slug: category.key, isHome: false }
-            }
-
-            const categoryWithArticle = this.categories.find((item) =>
-              this.flattenArticles(item).some((article) => article.slug === slug)
-            )
-
-            return {
-              categoryKey: categoryWithArticle?.key || 'getting-started',
-              slug,
-              isHome: false
-            }
-          },
-          articleUrl(article) {
-            return `/${article.slug}.html`
-          },
-          categoryUrl(category) {
-            return category ? `/${category.key}.html` : '/help.html'
-          },
-          flattenArticles(category) {
-            return category?.groups?.flatMap((group) => group.articles) || []
-          },
-          setPageMeta() {
-            document.title = `${this.pageTitle} | Kiwiform Help Center`
-
-            let canonical = document.querySelector('link[rel="canonical"]')
-            if (!canonical) {
-              canonical = document.createElement('link')
-              canonical.rel = 'canonical'
-              document.head.appendChild(canonical)
-            }
-            canonical.href = `https://kiwiform.com${window.location.pathname.replace(/\/$/, '') || '/help.html'}`
-          }
-        }
-      }
-    </script>
+          <!-- footer content start here  -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg w-full">
+            <div class="p-6 rounded-10px bg-white">
+              <svg
+                width="135"
+                height="30"
+                viewBox="0 0 135 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M42.3663 19.2433C42.0259 18.641 41.5545 18.5886 41.0831 19.06L39.0927 21.129V24.6645H35.9238V6.33211H39.0927V17.3053L44.6186 11.439H48.4946L44.7757 15.3673C44.3305 15.8388 44.2781 16.284 44.5662 16.8078L48.8874 24.6645H45.2471L42.3663 19.2433Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M50.2204 24.6645V11.4128H53.5726V24.6645H50.2204ZM51.8965 9.4748C50.718 9.4748 49.8538 8.66294 49.8538 7.56299C49.8538 6.48924 50.718 5.625 51.8965 5.625C53.075 5.625 53.9393 6.48924 53.9393 7.56299C53.9393 8.66294 53.075 9.4748 51.8965 9.4748Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M58.9317 24.6645L55.0034 11.4128H58.4603L60.6602 20.1076H60.8697L63.122 11.4128H66.3956L68.6479 20.1076H68.8312L71.0311 11.4128H74.5143L70.5859 24.6645H66.998L64.7981 16.2578H64.6933L62.5197 24.6645H58.9317Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M75.9491 24.6645V11.4128H79.3013V24.6645H75.9491ZM77.6252 9.4748C76.4467 9.4748 75.5825 8.66294 75.5825 7.56299C75.5825 6.48924 76.4467 5.625 77.6252 5.625C78.8037 5.625 79.668 6.48924 79.668 7.56299C79.668 8.66294 78.8037 9.4748 77.6252 9.4748Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M83.1427 24.6645V14.1888H80.7071L80.681 11.4128H82.3571C82.8546 11.4128 83.0904 11.1509 83.1427 10.6795V10.2343C83.3522 8.21772 84.6617 6.33211 87.8306 6.33211H89.271V9.10815H87.1497C86.5735 9.10815 86.3378 9.34385 86.3378 9.89383V11.4128H89.0353V14.1888H86.3902V24.6645H83.1427Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M96.5317 25.0835C92.2891 25.0835 89.5916 22.2813 89.5916 18.0386C89.5916 13.796 92.2891 10.9938 96.5317 10.9938C100.722 10.9938 103.419 13.796 103.419 18.0386C103.419 22.2813 100.722 25.0835 96.5317 25.0835ZM96.5317 22.2289C98.6268 22.2289 100.015 20.579 100.015 18.0386C100.015 15.4983 98.6268 13.8222 96.5317 13.8222C94.4104 13.8222 93.0224 15.4983 93.0224 18.0386C93.0224 20.579 94.4104 22.2289 96.5317 22.2289Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M105.103 14.765C105.103 12.5913 106.282 11.4128 108.534 11.4128H112.829V14.2412H108.455V24.6645H105.103V14.765Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M114.133 24.6645V11.4128H117.171V13.3246C117.983 11.7794 119.371 10.9938 121.178 10.9938C123.168 10.9938 124.582 11.9366 125.29 13.5865C126.049 11.9104 127.516 10.9938 129.454 10.9938C132.308 10.9938 134.063 12.958 134.063 16.1792V24.6645H130.711V16.7292C130.711 14.8174 130.004 13.9008 128.616 13.9008C127.097 13.9008 125.787 15.1055 125.787 17.9077V24.6645H122.435V16.7292C122.435 14.8174 121.728 13.9008 120.34 13.9008C118.742 13.9008 117.485 15.184 117.485 17.9077V24.6645H114.133Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M0 15C0 6.71573 6.71572 0 15 0C23.2842 0 30 6.71573 30 15C30 23.2843 23.2842 30 15 30C6.71572 30 0 23.2843 0 15Z"
+                  fill="#183C1A"
+                />
+                <path
+                  d="M15 1.49805C15.9665 1.49805 16.9092 1.59988 17.8181 1.79316C19.036 2.05216 19.8 3.20029 19.8 4.4455V8.69805C19.8 9.52647 20.4715 10.198 21.3 10.198H25.5525C26.7977 10.198 27.9459 10.962 28.2049 12.18C28.3981 13.0889 28.5 14.0315 28.5 14.998C28.5 22.4539 22.4558 28.4981 15 28.4981C7.54415 28.4981 1.5 22.4539 1.5 14.998C1.5 7.5422 7.54415 1.49805 15 1.49805Z"
+                  fill="#B8DD2F"
+                />
+                <path
+                  d="M20.229 9.74805L28.4999 10.198L28.753 13.6925C28.7942 14.2615 28.7797 14.8332 28.7098 15.3994L28.5989 16.2969C28.533 16.8299 28.4183 17.3557 28.2562 17.8677L27.9299 18.898L24.2999 14.398L20.229 9.74805Z"
+                  fill="url(#paint0_linear_8003_4174)"
+                />
+                <path
+                  d="M11.1523 14.8672C11.1523 12.7411 12.8759 11.0176 15.0019 11.0176C17.128 11.0176 18.8515 12.7411 18.8515 14.8672C18.8515 16.9932 17.128 18.7167 15.0019 18.7167C12.8759 18.7167 11.1523 16.9932 11.1523 14.8672Z"
+                  fill="#F2F3B5"
+                />
+                <ellipse cx="15.1324" cy="21.9037" rx="0.796463" ry="1.1947" fill="#183C1A" />
+                <ellipse cx="15.1324" cy="7.95837" rx="0.796463" ry="1.1947" fill="#183C1A" />
+                <ellipse
+                  cx="0.796463"
+                  cy="1.19469"
+                  rx="0.796463"
+                  ry="1.19469"
+                  transform="matrix(0.866025 -0.5 0.5 0.866026 17.3301 20.332)"
+                  fill="#183C1A"
+                />
+                <ellipse
+                  cx="0.796463"
+                  cy="1.19469"
+                  rx="0.796463"
+                  ry="1.19469"
+                  transform="matrix(0.866025 -0.5 0.5 0.866026 10.3613 8.26172)"
+                  fill="#183C1A"
+                />
+                <ellipse
+                  cx="0.796463"
+                  cy="1.19469"
+                  rx="0.796463"
+                  ry="1.19469"
+                  transform="matrix(0.5 -0.866026 0.866025 0.5 19.7363 18.5098)"
+                  fill="#183C1A"
+                />
+                <ellipse
+                  cx="0.796463"
+                  cy="1.19469"
+                  rx="0.796463"
+                  ry="1.19469"
+                  transform="matrix(0.499999 -0.866026 0.866025 0.5 7.66602 11.541)"
+                  fill="#183C1A"
+                />
+                <ellipse
+                  cx="22.1029"
+                  cy="14.9321"
+                  rx="0.796464"
+                  ry="1.19469"
+                  transform="rotate(-90 22.1029 14.9321)"
+                  fill="#183C1A"
+                />
+                <ellipse
+                  cx="8.16344"
+                  cy="14.9399"
+                  rx="0.796464"
+                  ry="1.19469"
+                  transform="rotate(-90 8.16344 14.9399)"
+                  fill="#183C1A"
+                />
+                <ellipse
+                  cx="0.796463"
+                  cy="1.19469"
+                  rx="0.796463"
+                  ry="1.19469"
+                  transform="matrix(-0.5 -0.866026 0.866025 -0.5 8.46094 19.707)"
+                  fill="#183C1A"
+                />
+                <ellipse
+                  cx="0.796463"
+                  cy="1.19469"
+                  rx="0.796463"
+                  ry="1.19469"
+                  transform="matrix(-0.866025 -0.5 0.499999 -0.866026 11.7402 22.4043)"
+                  fill="#183C1A"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_8003_4174"
+                    x1="24.7496"
+                    y1="10.198"
+                    x2="28.4996"
+                    y2="18.898"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#183C1A" stop-opacity="0.25" />
+                    <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <p
+                class="mt-5 text-xl leading-[26px] tracking-[-0.4px] font-Inter-disp text-Theme-Black max-w-[280px]"
+              >
+                Create unlimited forms for free! No Response limits, No stress.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-px">
+              <a
+                href="https://x.com/kiwiformhq"
+                target="_blank"
+                class="w-full py-[22px] px-2.5 flex items-center bg-white rounded-10px justify-center gap-3 text-sm leading-5 text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  overflow="visible"
+                >
+                  <path
+                    d="M 10.712 7.622 L 17.413 0 L 15.825 0 L 10.007 6.618 L 5.36 0 L 0 0 L 7.027 10.007 L 0 18 L 1.588 18 L 7.732 11.011 L 12.64 18 L 18 18 Z M 8.537 10.096 L 7.825 9.099 L 2.16 1.17 L 4.6 1.17 L 9.171 7.57 L 9.883 8.566 L 15.826 16.885 L 13.387 16.885 L 8.537 10.097 Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <span>X (Twitter)</span>
+              </a>
+              <a
+                href="https://discord.gg/gS5VZBD37c"
+                target="_blank"
+                class="w-full py-[22px] px-2.5 flex items-center bg-white rounded-10px justify-center gap-3 text-sm leading-5 text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="15"
+                  fill="none"
+                  overflow="visible"
+                >
+                  <path
+                    d="M 17.523 1.9 C 16.147 0.7 14.495 0.1 12.753 0 L 12.477 0.3 C 14.037 0.7 15.413 1.5 16.697 2.6 C 15.137 1.7 13.395 1.1 11.56 0.9 C 11.01 0.8 10.55 0.8 10 0.8 C 9.45 0.8 8.99 0.8 8.44 0.9 C 6.605 1.1 4.862 1.7 3.303 2.6 C 4.587 1.5 5.963 0.7 7.523 0.3 L 7.248 0 C 5.505 0.1 3.853 0.7 2.478 1.9 C 0.917 5.1 0.091 8.7 0 12.4 C 1.376 14 3.303 15 5.321 15 C 5.321 15 5.963 14.2 6.422 13.5 C 5.229 13.2 4.128 12.5 3.394 11.4 C 4.037 11.8 4.679 12.2 5.321 12.5 C 6.147 12.9 6.972 13.1 7.798 13.3 C 8.532 13.4 9.266 13.5 10 13.5 C 10.734 13.5 11.468 13.4 12.202 13.3 C 13.027 13.1 13.853 12.9 14.679 12.5 C 15.321 12.2 15.963 11.8 16.606 11.4 C 15.872 12.5 14.771 13.2 13.578 13.5 C 14.037 14.2 14.678 15 14.678 15 C 16.698 15 18.624 14 20 12.4 C 19.908 8.7 19.083 5.1 17.523 1.9 Z M 6.973 10.6 C 6.055 10.6 5.229 9.7 5.229 8.6 C 5.229 7.5 6.055 6.6 6.972 6.6 C 7.89 6.6 8.716 7.5 8.716 8.6 C 8.716 9.7 7.89 10.6 6.972 10.6 Z M 13.027 10.6 C 12.11 10.6 11.284 9.7 11.284 8.6 C 11.284 7.5 12.11 6.6 13.027 6.6 C 13.945 6.6 14.771 7.5 14.771 8.6 C 14.771 9.7 13.945 10.6 13.027 10.6 Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <span>Discord</span>
+              </a>
+              <a
+                href="https://www.facebook.com/people/Kiwiform/61588443824723/"
+                target="_blank"
+                class="w-full py-[22px] px-2.5 flex items-center bg-white rounded-10px justify-center gap-3 text-sm leading-5 text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8.379"
+                  height="15.26"
+                  fill="none"
+                  overflow="visible"
+                >
+                  <path
+                    d="M 7.81 8.583 L 8.25 5.823 L 5.534 5.823 L 5.534 4.028 C 5.534 3.274 5.914 2.536 7.126 2.536 L 8.379 2.536 L 8.379 0.186 C 7.649 0.071 6.913 0.009 6.174 0 C 3.938 0 2.478 1.324 2.478 3.718 L 2.478 5.823 L 0 5.823 L 0 8.583 L 2.478 8.583 L 2.478 15.26 L 5.534 15.26 L 5.534 8.583 Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a
+                href="https://www.youtube.com/@kiwiformhq"
+                target="_blank"
+                class="w-full py-[22px] px-2.5 flex items-center bg-white rounded-10px justify-center gap-3 text-sm leading-5 text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17.641"
+                  height="12.379"
+                  fill="none"
+                  overflow="visible"
+                >
+                  <path
+                    d="M 15.714 0.367 C 16.474 0.573 17.072 1.172 17.274 1.932 C 17.641 3.311 17.641 6.189 17.641 6.189 C 17.641 6.189 17.641 9.067 17.274 10.446 C 17.069 11.208 16.475 11.803 15.714 12.01 C 14.338 12.379 8.821 12.379 8.821 12.379 C 8.821 12.379 3.306 12.379 1.928 12.01 C 1.167 11.803 0.573 11.208 0.368 10.446 C 0 9.067 0 6.189 0 6.189 C 0 6.189 0 3.311 0.367 1.932 C 0.571 1.17 1.165 0.574 1.927 0.367 C 3.307 0 8.822 0 8.822 0 C 8.822 0 14.339 0 15.714 0.368 Z M 7.058 3.536 L 7.058 8.842 L 11.641 6.189 Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <span>Youtube</span>
+              </a>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px w-full">
+            <!-- Platform -->
+            <div class="w-full flex flex-col gap-px">
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
+              >
+                Platform
+              </div>
+              <div class="py-6 px-5 lg:px-9 bg-white rounded-10px flex flex-col gap-[26px]">
+                <a href="./help/overview" class="footer-link">Overview</a>
+                <a href="./help/form-building" class="footer-link">Form Builder</a>
+                <a href="./help/logic-flow" class="footer-link">Logic & Flow</a>
+                <a href="./help/design-themes" class="footer-link">Design & Themes</a>
+                <a href="./help/responses" class="footer-link">Responses</a>
+                <a href="./help/integrations-automations" class="footer-link">Integrations</a>
+                <a href="./pricing" class="footer-link">Pricing</a>
+              </div>
+            </div>
+            <!-- Resources -->
+            <div class="w-full flex flex-col gap-px">
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
+              >
+                Resources
+              </div>
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px flex flex-col gap-[26px] h-full w-full"
+              >
+                <a href="./help" class="footer-link">Help Center</a>
+                <a href="./blog" class="footer-link">Blog</a>
+                <a href="./changelog" class="footer-link">Changelog</a>
+                <a href="./affiliate" class="footer-link">Affiliate</a>
+              </div>
+            </div>
+            <!-- Legal -->
+            <div class="w-full flex flex-col gap-px">
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
+              >
+                Legal
+              </div>
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px flex flex-col gap-[26px] h-full w-full"
+              >
+                <a href="./privacy-policy" class="footer-link">Privacy Policy</a>
+                <a href="./terms-conditions" class="footer-link">Terms of Service</a>
+                <a href="./cookie-policy" class="footer-link">Cookie Policy</a>
+                <a href="./fair-use-policy" class="footer-link">Fair Use</a>
+                <a href="./gdpr" class="footer-link">GDPR</a>
+                <a href="./security" class="footer-link">Security</a>
+              </div>
+            </div>
+            <!-- Alternatives -->
+            <div class="w-full flex flex-col gap-px">
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
+              >
+                Alternatives
+              </div>
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px flex flex-col gap-[26px] h-full w-full"
+              >
+                <a href="./typeform-alternative" class="footer-link">Typeform Alternative</a>
+                <a href="./jotform-alternative" class="footer-link">Jotform Alternative</a>
+                <a href="./tally-alternative" class="footer-link">Tally Alternative</a>
+                <a href="./google-forms-alternative" class="footer-link"
+                  >Google Forms Alternative</a
+                >
+                <a href="./youform-alternative" class="footer-link">Youform Alternative</a>
+              </div>
+            </div>
+            <!-- Company -->
+            <div
+              class="col-span-1 sm:col-span-2 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
+            >
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
+              >
+                Company
+              </div>
+              <div
+                class="col-span-1 lg:col-span-3 rounded-10px bg-white grid grid-cols-1 lg:grid-cols-3 gap-px"
+              >
+                <a href="./about-us" class="footer-link py-6 px-5 lg:px-9">About Us</a>
+                <a href="./contact-us" class="footer-link pb-6 md:py-6 px-5 lg:px-9">Contact Us</a>
+              </div>
+            </div>
+            <!-- copyright  -->
+            <div
+              class="col-span-1 sm:col-span-2 lg:col-span-4 w-full py-5 px-2.5 text-center bg-white rounded-10px text-sm text-Theme-Black font-medium"
+            >
+              ©2026 Kiwiform. Powered By Creativity, Not Complexity.
+            </div>
+          </div>
+        </div>
+        <div class="col-span-2 bg-white rounded-l-10px hidden 2xl:block"></div>
+      </div>
+      <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+    </footer>
   </body>
 </html>
