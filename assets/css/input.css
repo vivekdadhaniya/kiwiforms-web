@@ -803,4 +803,20 @@
   .blog-para {
     @apply font-Inter text-Theme-Black text-sm leading-[22px] sm:text-base sm:leading-7
   }
+
+  .layout-grid-row {
+    @apply flex flex-col lg:flex-row items-center justify-center gap-8
+  }
+
+  .layout-grid-column {
+    @apply w-full h-auto order-2 lg:order-none
+  }
+
+  .layout-grid-column img {
+    @apply w-full h-auto rounded-lg order-1 lg:order-none
+  }
+
+  .layout-grid-column:has(img) {
+    @apply order-1 lg:order-none;
+  }
 }
