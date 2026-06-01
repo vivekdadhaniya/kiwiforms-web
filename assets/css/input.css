@@ -819,4 +819,12 @@
   .layout-grid-column:has(img) {
     @apply order-1 lg:order-none;
   }
+
+  .template-content h2 {
+    @apply font-Inter-disp text-Theme-Black text-[22px] leading-[28px] sm:text-[24px] sm:leading-[36px] md:text-[28px] md:leading-[38px]
+  }
+
+  .template-content p {
+    @apply font-Inter text-Theme-Black text-sm leading-[24px] sm:text-base sm:leading-7
+  }
 }
