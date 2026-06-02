@@ -15,7 +15,7 @@
 
   <body class="min-h-screen bg-[#f5f5f5] font-Inter">
     <div
-      x-data="{ open:false, open1:false, mobileMenu:false, profileMenu:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false; this.profileMenu = false } }"
+      x-data="{ open:false, open1:false, mobileMenu:false, profileMenu:false, profileMenu1:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false; this.profileMenu = false } }"
       class="fixed top-0 z-50 bg-[#E2DCDC] pb-px w-full flex flex-col gap-px"
     >
       <div class="flex md:grid grid-cols-14 gap-px w-full">
@@ -1194,13 +1194,284 @@
                     Blog
                   </a>
 
-                  <div class="py-5">
+                  <div class="py-5 flex flex-col gap-3 items-center justify-center">
                     <a
-                      href="https://app.kiwiform.com/"
-                      class="inline-flex rounded-lg bg-[#B8DD2F] px-5 py-2 text-xs font-medium text-[#183C1A]"
+                      href="https://app.kiwiform.com/signin"
+                      target="_blank"
+                      class="py-2 px-5 rounded-lg hover:text-Theme-Black text-Theme-Black bg-[#F2EFEF] transition-all duration-500 hover:bg-Theme-bg text-sm font-medium"
                     >
-                      Get Started
+                      Sign In
                     </a>
+
+                    <a
+                      href="https://app.kiwiform.com/sign-up"
+                      target="_blank"
+                      class="py-2 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+                    >
+                      Sign Up
+                    </a>
+                    <div class="relative flex flex-col gap-2 items-center justify-center">
+                      <button
+                        @click="profileMenu1 = !profileMenu"
+                        type="button"
+                        class="btn-white-square w-9 h-9 aspect-square"
+                        :class="profileMenu1 ? 'border-[#B8DD2F]' : ''"
+                        aria-label="Open profile menu"
+                        :aria-expanded="profileMenu1.toString()"
+                      >
+                        BD
+                      </button>
+
+                      <div
+                        x-show="profileMenu1"
+                        @click.outside="profileMenu1 = false"
+                        @click="if ($event.target.closest('a, button')) profileMenu = false"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                        x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                        x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+                        style="display: none"
+                        class="relative top-[calc(100%+18px)] z-50 w-[250px] overflow-hidden rounded-10px border border-[#E2DCDC] bg-white text-Theme-Black shadow-[0_18px_35px_rgba(0,0,0,0.14)]"
+                      >
+                        <div class="flex items-center gap-2.5 p-2.5 border-b border-[#E2DCDC]">
+                          <div
+                            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#E2DCDC] bg-white text-sm font-medium"
+                          >
+                            BD
+                          </div>
+                          <div class="min-w-0">
+                            <p
+                              class="truncate text-sm leading-3.5 font-medium text-Theme-Black mb-2.5"
+                            >
+                              John Doe
+                            </p>
+                            <p class="truncate text-xs leading-3 text-[#8C8484]">
+                              john.doe@email.com
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="profile-menu-list p-2.5">
+                          <a
+                            href="https://app.kiwiform.com"
+                            target="_blank"
+                            class="profile-menu-link flex items-center justify-between"
+                          >
+                            <span>Open Kiwiform App</span>
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z"
+                                fill="#183C1A"
+                              />
+                              <path
+                                d="M10.001 1.00098C10.6453 1.00098 11.2738 1.06887 11.8797 1.19772C12.6917 1.37039 13.201 2.1358 13.201 2.96595V5.80098C13.201 6.35326 13.6487 6.80098 14.201 6.80098H17.036C17.8661 6.80098 18.6316 7.31027 18.8042 8.12226C18.9331 8.72818 19.001 9.35664 19.001 10.001C19.001 14.9715 14.9715 19.001 10.001 19.001C5.03041 19.001 1.00098 14.9715 1.00098 10.001C1.00098 5.03041 5.03041 1.00098 10.001 1.00098Z"
+                                fill="#B8DD2F"
+                              />
+                              <path
+                                d="M13.487 6.50098L19.0009 6.80098L19.1696 9.13061C19.1971 9.50995 19.1875 9.89106 19.1408 10.2685L19.0669 10.8668C19.023 11.2222 18.9466 11.5727 18.8385 11.9141L18.6209 12.601L16.2009 9.60098L13.487 6.50098Z"
+                                fill="url(#paint0_linear_12941_1900)"
+                              />
+                              <path
+                                d="M7.43652 9.91257C7.43652 8.4952 8.58553 7.34619 10.0029 7.34619C11.4203 7.34619 12.5693 8.4952 12.5693 9.91257C12.5693 11.3299 11.4203 12.479 10.0029 12.479C8.58553 12.479 7.43652 11.3299 7.43652 9.91257Z"
+                                fill="#F2F3B5"
+                              />
+                              <ellipse
+                                cx="10.0915"
+                                cy="14.6029"
+                                rx="0.530976"
+                                ry="0.796464"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="10.0915"
+                                cy="5.31087"
+                                rx="0.530976"
+                                ry="0.796464"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="12.4157"
+                                cy="13.979"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-30 12.4157 13.979)"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="7.76725"
+                                cy="5.93208"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-30 7.76725 5.93208)"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="14.1144"
+                                cy="12.2799"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-60 14.1144 12.2799)"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="6.06755"
+                                cy="7.63395"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-60 6.06755 7.63395)"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="14.7418"
+                                cy="9.95731"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-90 14.7418 9.95731)"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="5.4449"
+                                cy="9.95731"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-90 5.4449 9.95731)"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="6.0688"
+                                cy="12.2791"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-120 6.0688 12.2791)"
+                                fill="#183C1A"
+                              />
+                              <ellipse
+                                cx="7.76554"
+                                cy="13.9813"
+                                rx="0.530976"
+                                ry="0.796464"
+                                transform="rotate(-150 7.76554 13.9813)"
+                                fill="#183C1A"
+                              />
+                              <defs>
+                                <linearGradient
+                                  id="paint0_linear_12941_1900"
+                                  x1="16.5007"
+                                  y1="6.80098"
+                                  x2="19.0007"
+                                  y2="12.601"
+                                  gradientUnits="userSpaceOnUse"
+                                >
+                                  <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                  <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                </linearGradient>
+                              </defs>
+                            </svg>
+                          </a>
+
+                          <div class="profile-menu-divider"></div>
+
+                          <a
+                            href="https://app.kiwiform.com"
+                            target="_blank"
+                            class="profile-menu-link flex items-center justify-between"
+                          >
+                            <span
+                              >Build with <span class="text-Theme-Green">Kiwizard AI</span></span
+                            >
+                            <span
+                              class="flex items-center justify-center rounded-full"
+                              aria-hidden="true"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle cx="10" cy="10" r="10" fill="#F6FFD5" />
+                                <g clip-path="url(#clip0_12941_1954)">
+                                  <path
+                                    d="M8.80374 6.55957C8.61598 6.55957 8.44807 6.67648 8.38291 6.85257L8.07429 7.68662C7.65535 8.81878 7.4851 9.25122 7.17188 9.56449C6.85866 9.87769 6.42621 10.0479 5.29404 10.4669L4.45999 10.7755C4.2839 10.8406 4.16699 11.0086 4.16699 11.1963C4.16699 11.3841 4.2839 11.552 4.45999 11.6172L5.29404 11.9258C6.42621 12.3447 6.85866 12.515 7.17188 12.8282C7.4851 13.1414 7.65535 13.5739 8.07429 14.706L8.38291 15.5401C8.44807 15.7162 8.61598 15.8331 8.80374 15.8331C8.99149 15.8331 9.15943 15.7162 9.22458 15.5401L9.53318 14.706C9.95216 13.5739 10.1224 13.1414 10.4356 12.8282C10.7488 12.515 11.1813 12.3447 12.3134 11.9258L13.1475 11.6172C13.3236 11.552 13.4405 11.3841 13.4405 11.1963C13.4405 11.0086 13.3236 10.8406 13.1475 10.7755L12.3134 10.4669C11.1813 10.0479 10.7488 9.87769 10.4356 9.56449C10.1224 9.25122 9.95216 8.81878 9.53318 7.68662L9.22458 6.85257C9.15943 6.67648 8.99149 6.55957 8.80374 6.55957Z"
+                                    fill="#B8DD2F"
+                                  />
+                                  <path
+                                    d="M13.5893 4.16675C13.4015 4.16675 13.2336 4.28365 13.1685 4.45974L13.0362 4.81719C12.8485 5.32441 12.7939 5.44439 12.7086 5.52965C12.6234 5.61493 12.5034 5.66955 11.9962 5.85724L11.6387 5.98951C11.4626 6.05467 11.3457 6.22258 11.3457 6.41034C11.3457 6.5981 11.4626 6.76601 11.6387 6.83117L11.9962 6.96344C12.5034 7.15112 12.6234 7.20575 12.7086 7.29102C12.7939 7.37629 12.8485 7.49627 13.0362 8.00348L13.1685 8.36093C13.2336 8.53702 13.4015 8.65393 13.5893 8.65393C13.777 8.65393 13.945 8.53702 14.0101 8.36093L14.1424 8.00348C14.3301 7.49627 14.3847 7.37629 14.47 7.29102C14.5552 7.20575 14.6752 7.15112 15.1824 6.96344L15.5399 6.83117C15.716 6.76601 15.8329 6.5981 15.8329 6.41034C15.8329 6.22258 15.716 6.05467 15.5399 5.98951L15.1824 5.85724C14.6752 5.66955 14.5552 5.61493 14.47 5.52965C14.3847 5.44439 14.3301 5.32441 14.1424 4.81719L14.0101 4.45974C13.945 4.28365 13.777 4.16675 13.5893 4.16675Z"
+                                    fill="#007D47"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_12941_1954">
+                                    <rect
+                                      width="11.6667"
+                                      height="11.6667"
+                                      fill="white"
+                                      transform="translate(4.16699 4.16675)"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </span>
+                          </a>
+
+                          <div class="profile-menu-divider"></div>
+
+                          <a href="./changelog" class="profile-menu-link block"> What’s New </a>
+
+                          <div class="profile-menu-divider"></div>
+
+                          <a href="./help" class="profile-menu-link block"> Help Center </a>
+
+                          <div class="profile-menu-divider"></div>
+
+                          <a
+                            href="https://app.kiwiform.com/signin"
+                            target="_blank"
+                            class="profile-menu-link flex items-center justify-between"
+                          >
+                            <span>Sign Out</span>
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.00078 1.80029H5.40078C3.70373 1.80029 2.8552 1.80029 2.32799 2.3275C1.80078 2.85471 1.80078 3.70324 1.80078 5.40029V12.6003C1.80078 14.2973 1.80078 15.1459 2.32799 15.6731C2.8552 16.2003 3.70373 16.2003 5.40078 16.2003H9.00078"
+                                stroke="#000A06"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12.476 13.05L16.2021 9L12.476 4.95"
+                                stroke="#000A06"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M7.20215 9L9.89629 9L11.6904 9L16.2021 9"
+                                stroke="#000A06"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
