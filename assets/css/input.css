@@ -138,6 +138,29 @@
     @apply w-full rounded-10px cursor-pointer flex items-center justify-center gap-2.5 py-2.5 border border-[#E2DCDC] bg-white text-sm font-medium leading-[140%] text-Theme-Black transition-all duration-500 hover:border-[#ccc6c6]
   }
 
+  .profile-menu-link {
+    @apply rounded-lg border border-transparent bg-white p-2.5 text-sm leading-5 text-Theme-Black transition-all duration-300
+  }
+
+  .profile-menu-link:hover,
+  .profile-menu-link.active,
+  .profile-menu-link[aria-current="page"] {
+    @apply border-[#E2DCDC] bg-[#F2EFEF] text-Theme-Black
+  }
+
+  .profile-menu-divider {
+    @apply h-px bg-[#E2DCDC] transition-all duration-300
+  }
+
+  .profile-menu-link:hover+.profile-menu-divider,
+  .profile-menu-link.active+.profile-menu-divider,
+  .profile-menu-link[aria-current="page"]+.profile-menu-divider,
+  .profile-menu-divider:has(+ .profile-menu-link:hover),
+  .profile-menu-divider:has(+ .profile-menu-link.active),
+  .profile-menu-divider:has(+ .profile-menu-link[aria-current="page"]) {
+    @apply bg-transparent
+  }
+
   .btn-kiwi-green {
     @apply py-2.5 cursor-pointer px-[15px] rounded-10px bg-Theme-Green w-full text-center text-sm font-medium leading-[140%] text-white transition-all duration-500 hover:bg-theme-Green-hover
   }
