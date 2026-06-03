@@ -1525,7 +1525,10 @@
       </div>
     </header>
 
-   <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px"  x-data="{ plan: 'yearly', lifetime:false }">
+    <div
+      class="pt-[61px] bg-Theme-bg flex flex-col gap-px"
+      x-data="{ plan: 'yearly', lifetime:false }"
+    >
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-auto">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
@@ -1535,15 +1538,17 @@
           <div
             class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
-            <div class="w-full py-[50px] px-6 bg-white rounded-10px">
+            <div class="w-full pb-9 pt-[50px] px-6 bg-white rounded-10px">
               <h1
-                class="font-Inter text-[48px] leading-[60px] tracking-[0.96px] text-Theme-Black mb-2.5 text-center w-full max-w-[500px] mx-auto"
+                class="font-Inter text-[52px] leading-[62px] tracking-[-1.04px] text-Theme-Black mb-2.5 text-center w-full max-w-[500px] mx-auto"
               >
                 No Tiers. No Limits. Just One Price
               </h1>
-              <p class="text-base leading-7 text-[#8C8484] text-center max-w-[800px] mx-auto">
-                Create unlimited forms for free. No Response limits, No stress. A free Typeform
-                alternative designed for logic, personalization, and effortless data collection.
+              <p
+                class="text-base leading-6 font-medium text-[#8C8484] text-center max-w-[544px] mx-auto"
+              >
+                Kiwiform lets you create unlimited forms for free No limits, No stress. Add logic,
+                embed anywhere, and collect answers with ease
               </p>
             </div>
             <div class="perspective bg-Theme-bg w-full h-auto flex items-center gap-px">
@@ -1551,7 +1556,7 @@
 
               <div
                 :class="lifetime ? 'bg-[#FEF9F3]' : 'bg-[#F3FAF2]'"
-                class="w-full h-full relative rounded-10px p-3.5 lg:min-w-[598px] flex items-center justify-center flex-col gap-2.5"
+                class="w-full h-full relative rounded-10px lg:min-w-[598px] flex items-center justify-center flex-col gap-2.5"
               >
                 <div class="perspective w-full">
                   <div
@@ -1631,7 +1636,7 @@
 
                             <a
                               href="https://app.kiwiform.com/"
-                                target="_blank"
+                              target="_blank"
                               class="bg-white text-base leading-5 text-Theme-Black font-medium px-6 py-3.5 rounded-lg hover:bg-gray-100 transition w-full text-center md:w-max"
                             >
                               Upgrade to Pro
@@ -1678,7 +1683,7 @@
                 </h4>
                 <p class="text-sm leading-[140%] text-Theme-Black">Everything Kiwiform offers.</p>
               </div>
-              <div class="w-full lg:max-w-[300px] py-6 px-8 rounded-10px h-full bg-white">
+              <div class="w-full lg:max-w-[300px] py-6 px-8 rounded-10px h-full bg-[#F6F6F6]">
                 <h4 class="text-2xl leading-[120%] font-medium text-Theme-Black mb-[5px]">Free</h4>
                 <p class="text-sm leading-[140%] text-Theme-Black mb-[18px]">
                   Perfect for beginners ideas.
@@ -1689,7 +1694,12 @@
                     /month
                   </span>
                 </div>
-                <a href="https://app.kiwiform.com/" target="_blank" class="btn-white-icon-text">Get Started</a>
+                <a
+                  href="https://app.kiwiform.com/"
+                  target="_blank"
+                  class="btn-white-icon-text border-none hover:text-white hover:bg-Theme-Green"
+                  >Get Started</a
+                >
               </div>
               <div class="bg-[#13B871] w-full lg:max-w-[300px] rounded-10px overflow-visible">
                 <div
@@ -1709,7 +1719,12 @@
                     >
                     </span>
                   </div>
-                  <a href="https://app.kiwiform.com/" target="_blank" class="btn-white-icon-text">Upgrade to Pro</a>
+                  <a
+                    href="https://app.kiwiform.com/"
+                    target="_blank"
+                    class="btn-white-icon-text border-none hover:text-white hover:bg-Theme-Green"
+                    >Upgrade to Pro</a
+                  >
                 </div>
               </div>
             </div>
@@ -2026,6 +2041,231 @@
                       stroke-linejoin="round"
                     />
                   </svg>
+                </div>
+              </div>
+              <div class="flex items-center gap-px w-full">
+                <div
+                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                >
+                  <div class="flex items-center gap-1.5 w-full">
+                    <svg
+                      width="110"
+                      height="30"
+                      viewBox="0 0 110 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="15" cy="15" r="15" fill="#F6FFD5" />
+                      <g clip-path="url(#clip0_10654_1847)">
+                        <path
+                          d="M13.2919 10.085C13.0237 10.085 12.7838 10.252 12.6907 10.5035L12.2498 11.695C11.6513 13.3124 11.4081 13.9302 10.9607 14.3777C10.5132 14.8251 9.89542 15.0683 8.27804 15.6668L7.08653 16.1077C6.83498 16.2008 6.66797 16.4407 6.66797 16.7089C6.66797 16.9771 6.83498 17.217 7.08653 17.3101L8.27804 17.7509C9.89542 18.3495 10.5132 18.5927 10.9607 19.0401C11.4081 19.4876 11.6513 20.1054 12.2498 21.7227L12.6907 22.9143C12.7838 23.1658 13.0237 23.3328 13.2919 23.3328C13.5601 23.3328 13.8 23.1658 13.8931 22.9143L14.334 21.7227C14.9325 20.1054 15.1757 19.4876 15.6231 19.0401C16.0706 18.5927 16.6884 18.3495 18.3057 17.7509L19.4973 17.3101C19.7488 17.217 19.9158 16.9771 19.9158 16.7089C19.9158 16.4407 19.7488 16.2008 19.4973 16.1077L18.3057 15.6668C16.6884 15.0683 16.0706 14.8251 15.6231 14.3777C15.1757 13.9302 14.9325 13.3124 14.334 11.695L13.8931 10.5035C13.8 10.252 13.5601 10.085 13.2919 10.085Z"
+                          fill="#B8DD2F"
+                        />
+                        <path
+                          d="M20.127 6.66699C19.8588 6.66699 19.6189 6.834 19.5258 7.08556L19.3368 7.5962C19.0687 8.3208 18.9907 8.49219 18.8689 8.614C18.7471 8.73582 18.5757 8.81386 17.8511 9.08197L17.3404 9.27093C17.0889 9.36402 16.9219 9.60389 16.9219 9.87212C16.9219 10.1404 17.0889 10.3802 17.3404 10.4733L17.8511 10.6623C18.5757 10.9304 18.7471 11.0084 18.8689 11.1302C18.9907 11.2521 19.0687 11.4234 19.3368 12.148L19.5258 12.6587C19.6189 12.9102 19.8588 13.0772 20.127 13.0772C20.3952 13.0772 20.6351 12.9102 20.7282 12.6587L20.9172 12.148C21.1853 11.4234 21.2633 11.2521 21.3851 11.1302C21.5069 11.0084 21.6784 10.9304 22.4029 10.6623L22.9136 10.4733C23.1651 10.3802 23.3321 10.1404 23.3321 9.87212C23.3321 9.60389 23.1651 9.36402 22.9136 9.27093L22.4029 9.08197C21.6784 8.81386 21.5069 8.73582 21.3851 8.614C21.2633 8.49219 21.1853 8.3208 20.9172 7.5962L20.7282 7.08556C20.6351 6.834 20.3952 6.66699 20.127 6.66699Z"
+                          fill="#007D47"
+                        />
+                      </g>
+                      <path
+                        d="M45.8612 15.9139C45.6365 15.5182 45.2807 15.4616 44.9998 15.8008L42.528 18.6083V21.6985H40V8.50875H42.528V15.179L48.127 8.50875H51.1794L47.6589 12.5976C47.3218 12.9933 47.3031 13.3136 47.5278 13.747L51.8348 21.6985H48.9322L45.8612 15.9139Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M52.7643 21.6985V12.1642H55.1612V21.6985H52.7643ZM53.9628 10.7699C53.1201 10.7699 52.5022 10.1857 52.5022 9.39435C52.5022 8.6218 53.1201 8 53.9628 8C54.8054 8 55.4234 8.6218 55.4234 9.39435C55.4234 10.1857 54.8054 10.7699 53.9628 10.7699Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M58.9932 21.6985L56.1843 12.1642H58.6561L60.2291 18.4199H60.3789L61.9893 12.1642H64.33L65.9405 18.4199H66.0716L67.6445 12.1642H70.1351L67.3262 21.6985H64.7607L63.1878 15.6501H63.1129L61.5586 21.6985H58.9932Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M71.161 21.6985V12.1642H73.558V21.6985H71.161ZM72.3595 10.7699C71.5168 10.7699 70.8989 10.1857 70.8989 9.39435C70.8989 8.6218 71.5168 8 72.3595 8C73.2022 8 73.8201 8.6218 73.8201 9.39435C73.8201 10.1857 73.2022 10.7699 72.3595 10.7699Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M74.7705 21.6985V19.7577L79.7703 14.1992H75.0326V12.1642H82.9349V14.105L77.9351 19.6635H83.1222V21.6985H74.7705Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M87.3042 22C85.2257 22 83.971 20.7564 83.971 19.0229C83.971 17.3459 85.1133 16.2719 87.2855 16.1023L89.4952 15.9515C89.9446 15.9139 90.2067 15.7066 90.2067 15.179C90.2067 14.218 89.4764 13.7847 88.4278 13.7847C87.2293 13.7847 86.6114 14.3499 86.4803 15.2355H84.177C84.4017 13.1063 85.8436 11.8627 88.4465 11.8627C91.0307 11.8627 92.5662 13.1063 92.5662 15.6878V19.6635H93.334V21.6985H92.3789C91.2554 21.6985 90.6562 21.1144 90.5813 20.0215C89.982 21.397 88.7461 22 87.3042 22ZM87.7911 20.0781C89.2143 20.0781 90.2255 19.0983 90.2255 17.817V17.4401L87.7911 17.6285C86.7612 17.7039 86.3679 18.2127 86.3679 18.891C86.3679 19.6447 86.8923 20.0781 87.7911 20.0781Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M94.4757 14.576C94.4757 13.0121 95.3183 12.1642 96.9287 12.1642H99.9998V14.1992H96.8726V21.6985H94.4757V14.576Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M104.569 22C102.042 22 100.3 20.0592 100.3 16.9314C100.3 13.7847 102.042 11.8627 104.569 11.8627C105.862 11.8627 106.929 12.3903 107.622 13.3324V8.50875H110V21.6985H107.828V20.2853C107.135 21.3782 105.993 22 104.569 22ZM105.187 19.9462C106.667 19.9462 107.678 18.7591 107.678 16.9314C107.678 15.1036 106.667 13.8977 105.187 13.8977C103.689 13.8977 102.753 15.1036 102.753 16.9314C102.753 18.7591 103.689 19.9462 105.187 19.9462Z"
+                        fill="#183C1A"
+                      />
+                      <defs>
+                        <clipPath id="clip0_10654_1847">
+                          <rect
+                            width="16.6667"
+                            height="16.6667"
+                            fill="white"
+                            transform="translate(6.66797 6.66699)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p
+                      class="text-base leading-[140%] text-Theme-Black w-full flex itcems-center gap-2"
+                    >
+                      AI Form Builder
+                    </p>
+                  </div>
+
+                  <div
+                    x-data="{ open: false }"
+                    class="relative h-max w-[18px] aspect-square max-h-[18px]"
+                  >
+                    <button
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @focus="open = true"
+                      @blur="open = false"
+                      class="text-[#8C8484] transition-all duration-300 hover:text-Theme-Black"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2" />
+                        <path
+                          d="M9 8.14062V12.6274"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 5.5L8.992 5.5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-1"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-1"
+                      class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
+                    >
+                      Generate a structured form draft from a prompt, with editable fields, options,
+                      and order.
+                      <!-- Arrow -->
+                      <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <p
+                    class="text-base leading-[140%] text-center text-Theme-Black whitespace-nowrap"
+                  >
+                    5 Forms
+                  </p>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <p
+                    class="text-base leading-[140%] text-center text-[#A2C92A] font-semibold whitespace-nowrap"
+                  >
+                    Unlimited Forms
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-px w-full">
+                <div
+                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                >
+                  <p class="text-base leading-[140%] text-Theme-Black w-full">Team Members</p>
+                  <div
+                    x-data="{ open: false }"
+                    class="relative h-max w-[18px] aspect-square max-h-[18px]"
+                  >
+                    <button
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @focus="open = true"
+                      @blur="open = false"
+                      class="text-[#8C8484] transition-all duration-300 hover:text-Theme-Black"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2" />
+                        <path
+                          d="M9 8.14062V12.6274"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 5.5L8.992 5.5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-1"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-1"
+                      class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
+                    >
+                      Invite team members to your workspace to collaborate on forms and responses.
+                      <!-- Arrow -->
+                      <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <p
+                    class="text-base leading-[140%] text-center text-Theme-Black whitespace-nowrap"
+                  >
+                    1
+                  </p>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <p
+                    class="text-base leading-[140%] text-center text-[#A2C92A] font-semibold whitespace-nowrap"
+                  >
+                    3
+                  </p>
                 </div>
               </div>
               <div class="flex items-center gap-px w-full">
@@ -3721,6 +3961,210 @@
                       class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
                     >
                       Guide respondents through different paths based on their inputs.
+                      <!-- Arrow -->
+                      <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="1" y="1" width="22" height="22" rx="11" fill="#A2C92A" />
+                    <path
+                      d="M7.25 11.8969L10.5833 15.2469L17.25 8.54688"
+                      stroke="white"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="1" y="1" width="22" height="22" rx="11" fill="#A2C92A" />
+                    <path
+                      d="M7.25 11.8969L10.5833 15.2469L17.25 8.54688"
+                      stroke="white"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex items-center gap-px w-full">
+                <div
+                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                >
+                  <p class="text-base leading-[140%] text-Theme-Black w-full">
+                    Smart Field Visibility (Show/Hide Form Fields)
+                  </p>
+                  <div
+                    x-data="{ open: false }"
+                    class="relative h-max w-[18px] aspect-square max-h-[18px]"
+                  >
+                    <button
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @focus="open = true"
+                      @blur="open = false"
+                      class="text-[#8C8484] transition-all duration-300 hover:text-Theme-Black"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2" />
+                        <path
+                          d="M9 8.14062V12.6274"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 5.5L8.992 5.5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-1"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-1"
+                      class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
+                    >
+                      Show or hide form fields dynamically using logic rules.
+                      <!-- Arrow -->
+                      <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="1" y="1" width="22" height="22" rx="11" fill="#A2C92A" />
+                    <path
+                      d="M7.25 11.8969L10.5833 15.2469L17.25 8.54688"
+                      stroke="white"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="1" y="1" width="22" height="22" rx="11" fill="#A2C92A" />
+                    <path
+                      d="M7.25 11.8969L10.5833 15.2469L17.25 8.54688"
+                      stroke="white"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex items-center gap-px w-full">
+                <div
+                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                >
+                  <p class="text-base leading-[140%] text-Theme-Black w-full">
+                    Smart Scoring & Calculations
+                  </p>
+                  <div
+                    x-data="{ open: false }"
+                    class="relative h-max w-[18px] aspect-square max-h-[18px]"
+                  >
+                    <button
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @focus="open = true"
+                      @blur="open = false"
+                      class="text-[#8C8484] transition-all duration-300 hover:text-Theme-Black"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2" />
+                        <path
+                          d="M9 8.14062V12.6274"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 5.5L8.992 5.5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-1"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-1"
+                      class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
+                    >
+                      Calculate scores or totals automatically based on responses.
                       <!-- Arrow -->
                       <div
                         class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
@@ -6266,6 +6710,124 @@
                       class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
                     >
                       Trigger scheduling flows based on form submissions.
+                      <!-- Arrow -->
+                      <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="1" y="1" width="22" height="22" rx="11" fill="#A2C92A" />
+                    <path
+                      d="M7.25 11.8969L10.5833 15.2469L17.25 8.54688"
+                      stroke="white"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="1" y="1" width="22" height="22" rx="11" fill="#A2C92A" />
+                    <path
+                      d="M7.25 11.8969L10.5833 15.2469L17.25 8.54688"
+                      stroke="white"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex items-center gap-px w-full">
+                <div
+                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                >
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 3.75C0 1.67893 1.67893 0 3.75 0H26.25C28.3211 0 30 1.67893 30 3.75V26.25C30 28.3211 28.3211 30 26.25 30H3.75C1.67893 30 0 28.3211 0 26.25V3.75Z"
+                      fill="#0061FE"
+                    />
+                    <path d="M28.125 1.875H1.875V28.125H28.125V1.875Z" fill="#0061FE" />
+                    <path
+                      d="M15.0112 10.3293L10.6306 13.1254L15.0112 15.9216L10.6306 18.7177L6.25 15.8983L10.6306 13.1021L6.25 10.3293L10.6306 7.5332L15.0112 10.3293ZM10.6073 19.6031L14.9879 16.807L19.3685 19.6031L14.9879 22.3993L10.6073 19.6031ZM15.0112 15.8983L19.3918 13.1021L15.0112 10.3293L19.3685 7.5332L23.7491 10.3293L19.3685 13.1254L23.7491 15.9216L19.3685 18.7177L15.0112 15.8983Z"
+                      fill="#F6F3F0"
+                    />
+                  </svg>
+
+                  <p class="text-base leading-[140%] text-Theme-Black w-full">Dropbox</p>
+                  <div
+                    x-data="{ open: false }"
+                    class="relative h-max w-[18px] aspect-square max-h-[18px]"
+                  >
+                    <button
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @focus="open = true"
+                      @blur="open = false"
+                      class="text-[#8C8484] transition-all duration-300 hover:text-Theme-Black"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2" />
+                        <path
+                          d="M9 8.14062V12.6274"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 5.5L8.992 5.5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-1"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-1"
+                      class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
+                    >
+                      Store form submissions, files, and PDFs in Dropbox automatically.
                       <!-- Arrow -->
                       <div
                         class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
@@ -9463,6 +10025,111 @@
                       class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
                     >
                       Allow respondents to submit video or audio as responses.
+                      <!-- Arrow -->
+                      <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                      fill="#E2DCDC"
+                    />
+                    <path
+                      d="M8 12C14 12 16.1667 12 16.5 12"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect x="1" y="1" width="22" height="22" rx="11" fill="#A2C92A" />
+                    <path
+                      d="M7.25 11.8969L10.5833 15.2469L17.25 8.54688"
+                      stroke="white"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex items-center gap-px w-full">
+                <div
+                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                >
+                  <p class="text-base leading-[140%] text-Theme-Black w-full">
+                    Custom Domains + SSL
+                  </p>
+                  <div
+                    x-data="{ open: false }"
+                    class="relative h-max w-[18px] aspect-square max-h-[18px]"
+                  >
+                    <button
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @focus="open = true"
+                      @blur="open = false"
+                      class="text-[#8C8484] transition-all duration-300 hover:text-Theme-Black"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2" />
+                        <path
+                          d="M9 8.14062V12.6274"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 5.5L8.992 5.5"
+                          stroke="currentColor"
+                          stroke-width="1.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div
+                      x-show="open"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-1"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-1"
+                      class="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#F2EFEF] text-xs leading-[140%] text-center text-Theme-Black px-2.5 py-2.5 rounded-10px shadow-strong w-max max-w-[280px] pointer-events-none"
+                    >
+                      Use your own domain for form links with secure SSL-enabled access.
                       <!-- Arrow -->
                       <div
                         class="absolute left-1/2 -translate-x-1/2 top-full -translate-y-[4px] w-2 h-2 bg-[#F2EFEF] rotate-45"
