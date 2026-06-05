@@ -13,10 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
 
-  <body
-    class="bg-Theme-bg font-Inter flex flex-col gap-px"
-    x-data="{ plan: 'yearly', lifetime:false }"
-  >
+  <body class="bg-Theme-bg font-Inter flex flex-col gap-px" x-data="{ mobileMenu: false }">
     <header
       x-data="{ open:false, open1:false, mobileMenu:false }"
       class="fixed top-0 left-0 z-50 bg-Theme-bg w-full flex flex-col gap-px border-b border-Theme-bg"
@@ -1525,10 +1522,7 @@
       </div>
     </header>
 
-    <div
-      class="pt-[61px] bg-Theme-bg flex flex-col gap-px"
-      x-data="{ plan: 'yearly', lifetime:false }"
-    >
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px" x-data="pricingComponent()">
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-auto">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
@@ -1564,7 +1558,7 @@
                   >
                     <!-- FRONT CARD -->
 
-                    <div class="backface-hidden w-full h-auto">
+                    <div class="backface-hidden w-full h-auto pricingComponent">
                       <div class="bg-[#13B871] w-full rounded-[16px] overflow-visible">
                         <div
                           class="w-full rounded-[16px] bg-[radial-gradient(162.21%_129.71%_at_93.68%_89.71%,#B8DD2F_0%,rgba(92,173,59,0.60)_49.99%,rgba(0,125,71,0.20)_100%)] p-5 shadow-[0_40px_48px_-20px_rgba(0,0,0,0.06),0_32px_32px_-20px_rgba(0,0,0,0.04),0_16px_24px_-12px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.06)]"
@@ -1635,11 +1629,17 @@
                             </div>
 
                             <a
-                              href="https://app.kiwiform.com/"
+                              href="/api/checkout?plan=yearly"
+                              :href="plan === 'monthly' ? '/api/checkout?plan=monthly' : '/api/checkout?plan=yearly'"
+                              :aria-disabled="loading || isCurrentPlanSelected()"
                               target="_blank"
+                              @click="if (loading || isCurrentPlanSelected()) $event.preventDefault()"
                               class="bg-white text-base leading-5 text-Theme-Black font-medium px-6 py-3.5 rounded-lg hover:bg-gray-100 transition w-full text-center md:w-max"
+                              :class="(loading || isCurrentPlanSelected()) ? 'pointer-events-none opacity-70 cursor-default' : ''"
                             >
-                              Upgrade to Pro
+                              <span
+                                x-text="loading ? 'Checking...' : (isCurrentPlanSelected() ? 'Current Plan' : 'Upgrade to Pro')"
+                              ></span>
                             </a>
                           </div>
                         </div>
@@ -1720,11 +1720,17 @@
                     </span>
                   </div>
                   <a
-                    href="https://app.kiwiform.com/"
+                    href="/api/checkout?plan=yearly"
+                    :href="plan === 'monthly' ? '/api/checkout?plan=monthly' : '/api/checkout?plan=yearly'"
+                    :aria-disabled="loading || isCurrentPlanSelected()"
                     target="_blank"
+                    @click="if (loading || isCurrentPlanSelected()) $event.preventDefault()"
                     class="btn-white-icon-text border-none hover:text-white hover:bg-Theme-Green"
-                    >Upgrade to Pro</a
-                  >
+                    :class="(loading || isCurrentPlanSelected()) ? 'pointer-events-none opacity-70 cursor-default' : ''"
+                    ><span
+                      x-text="loading ? 'Checking...' : (isCurrentPlanSelected() ? 'Current Plan' : 'Upgrade to Pro')"
+                    ></span
+                  ></a>
                 </div>
               </div>
             </div>
@@ -1741,7 +1747,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Unlimited Forms</p>
                   <div
@@ -1799,7 +1805,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1819,7 +1825,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1841,7 +1847,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Unlimited Form Fields
@@ -1901,7 +1907,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1921,7 +1927,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1943,7 +1949,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Unlimited Responses
@@ -2003,7 +2009,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2023,7 +2029,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2045,10 +2051,11 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <div class="flex items-center gap-1.5 w-full">
                     <svg
+                      class="hidden sm:block"
                       width="110"
                       height="30"
                       viewBox="0 0 110 30"
@@ -2172,19 +2179,19 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p
                     class="text-base leading-[140%] text-center text-Theme-Black whitespace-nowrap"
                   >
-                    5 Forms
+                    5 <span class="hidden lg:block">Forms</span>
                   </p>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-24"
                 >
                   <p
-                    class="text-base leading-[140%] text-center text-[#A2C92A] font-semibold whitespace-nowrap"
+                    class="text-base leading-[140%] text-center text-[#A2C92A] max-lg:max-w-[80px] font-semibold lg:whitespace-nowrap"
                   >
                     Unlimited Forms
                   </p>
@@ -2192,7 +2199,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Team Members</p>
                   <div
@@ -2250,7 +2257,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p
                     class="text-base leading-[140%] text-center text-Theme-Black whitespace-nowrap"
@@ -2259,7 +2266,7 @@
                   </p>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p
                     class="text-base leading-[140%] text-center text-[#A2C92A] font-semibold whitespace-nowrap"
@@ -2270,7 +2277,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Conversational Forms
@@ -2330,7 +2337,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2350,7 +2357,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2372,7 +2379,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Essential Form Fields
@@ -2432,7 +2439,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2452,7 +2459,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2474,7 +2481,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Ratings, Rankings, Score & Scales
@@ -2534,7 +2541,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2554,7 +2561,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2576,7 +2583,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Matrix & Selection Fields
@@ -2636,7 +2643,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2656,7 +2663,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2678,7 +2685,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Customizable Form Templates
@@ -2738,7 +2745,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2758,7 +2765,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2780,7 +2787,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">File Upload Fields</p>
                   <div
@@ -2838,19 +2845,19 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p
-                    class="text-base leading-[140%] text-center text-Theme-Black whitespace-nowrap"
+                    class="text-base leading-[140%] text-center text-Theme-Black md:whitespace-nowrap"
                   >
                     Up to 20MB
                   </p>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-20"
                 >
                   <p
-                    class="text-base leading-[140%] text-center text-Theme-Black whitespace-nowrap"
+                    class="text-base leading-[140%] text-center text-Theme-Black md:whitespace-nowrap"
                   >
                     200MB
                   </p>
@@ -2873,7 +2880,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Brand Logo Upload</p>
                   <div
@@ -2931,7 +2938,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2951,7 +2958,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2973,7 +2980,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Google Font Library
@@ -3033,7 +3040,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3053,7 +3060,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3075,7 +3082,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Font Size & Alignment
@@ -3135,7 +3142,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3155,7 +3162,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3177,7 +3184,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Color Customization
@@ -3237,7 +3244,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3257,7 +3264,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3279,7 +3286,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Button Styling</p>
                   <div
@@ -3337,7 +3344,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3357,7 +3364,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3379,7 +3386,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Background Images</p>
                   <div
@@ -3437,7 +3444,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -3460,7 +3467,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3482,7 +3489,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Theme Library</p>
                   <div
@@ -3540,7 +3547,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -3563,7 +3570,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3585,7 +3592,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Remove Kiwiform Branding
@@ -3647,7 +3654,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -3670,7 +3677,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3707,7 +3714,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Conditional Logic</p>
                   <div
@@ -3765,7 +3772,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3785,7 +3792,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3807,7 +3814,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Recall / Pull Data Information
@@ -3867,7 +3874,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3887,7 +3894,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3909,7 +3916,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Branching Form Paths
@@ -3969,7 +3976,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3989,7 +3996,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4011,7 +4018,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Smart Field Visibility (Show/Hide Form Fields)
@@ -4071,7 +4078,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4091,7 +4098,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4113,7 +4120,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Smart Scoring & Calculations
@@ -4173,7 +4180,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4193,7 +4200,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4215,7 +4222,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Multiple Endings (Per Form)
@@ -4275,7 +4282,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4295,7 +4302,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4317,7 +4324,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Essential Variables
@@ -4377,7 +4384,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4397,7 +4404,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4419,7 +4426,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Create Custom Variables
@@ -4479,7 +4486,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4499,7 +4506,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4521,7 +4528,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Quiz Variables</p>
                   <div
@@ -4579,7 +4586,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4602,7 +4609,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4639,7 +4646,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Shareable Form links
@@ -4699,7 +4706,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4719,7 +4726,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4741,7 +4748,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Embed Forms</p>
                   <div
@@ -4799,7 +4806,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4819,7 +4826,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4841,7 +4848,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Embed Forms In Email
@@ -4901,7 +4908,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4921,7 +4928,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4943,7 +4950,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Website Embeds (Custom,Webflow, Wordpress, Shopify, Squarespace)
@@ -5003,7 +5010,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5023,7 +5030,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5045,7 +5052,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Sharable QR Code For Form
@@ -5105,7 +5112,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5125,7 +5132,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5147,7 +5154,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Customizable Form Thumbnail
@@ -5207,7 +5214,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -5227,7 +5234,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5249,7 +5256,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Responsive Embed Modes
@@ -5309,7 +5316,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -5329,7 +5336,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5351,7 +5358,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Customizable Form Meta Data
@@ -5414,7 +5421,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -5437,7 +5444,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5459,7 +5466,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Customizable Form links
@@ -5522,7 +5529,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -5545,7 +5552,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5567,7 +5574,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Search Engine Visibility
@@ -5630,7 +5637,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -5653,7 +5660,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5690,7 +5697,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     width="30"
@@ -5787,7 +5794,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5807,7 +5814,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5829,7 +5836,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5913,7 +5920,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5933,7 +5940,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5955,7 +5962,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6049,7 +6056,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6069,7 +6076,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6091,7 +6098,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6192,7 +6199,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6212,7 +6219,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6234,7 +6241,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6336,7 +6343,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6356,7 +6363,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6378,7 +6385,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6458,7 +6465,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -6478,7 +6485,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6500,7 +6507,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6586,7 +6593,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -6606,7 +6613,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6628,7 +6635,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6718,7 +6725,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6738,7 +6745,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6760,7 +6767,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     width="30"
@@ -6836,7 +6843,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6856,7 +6863,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6878,7 +6885,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -6960,7 +6967,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -6983,7 +6990,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7005,7 +7012,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7091,7 +7098,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -7114,7 +7121,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7136,7 +7143,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7212,7 +7219,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -7235,7 +7242,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7257,7 +7264,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7341,7 +7348,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -7364,7 +7371,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7386,7 +7393,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-3 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-3 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px] min-h-[55px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7468,7 +7475,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -7491,7 +7498,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7526,7 +7533,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Form Accessibility Overview
@@ -7586,7 +7593,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7606,7 +7613,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7628,7 +7635,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Form Version History
@@ -7688,7 +7695,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7708,7 +7715,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7730,7 +7737,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Fully Responsive Forms
@@ -7790,7 +7797,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7810,7 +7817,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7832,7 +7839,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Autosave Progress</p>
                   <div
@@ -7890,7 +7897,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7910,7 +7917,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7932,7 +7939,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Autosave Responses</p>
                   <div
@@ -7990,7 +7997,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8010,7 +8017,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8032,7 +8039,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Customizable System Defaults
@@ -8092,7 +8099,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -8112,7 +8119,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8134,7 +8141,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Multilingual Forms</p>
                   <div
@@ -8192,7 +8199,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -8212,7 +8219,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8234,7 +8241,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Language Translations
@@ -8296,7 +8303,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -8319,7 +8326,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8341,7 +8348,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Send Automated Messages (Post-submit Emails)
@@ -8401,7 +8408,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -8424,7 +8431,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8446,7 +8453,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Redirect Respondents to Webpage (Link)
@@ -8506,7 +8513,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -8529,7 +8536,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8551,7 +8558,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Schedule Form Opening & Closure
@@ -8611,7 +8618,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -8634,7 +8641,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8656,7 +8663,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Customizable Form Opening & Closure
@@ -8716,7 +8723,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -8739,7 +8746,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8776,7 +8783,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">View Responses</p>
                   <div
@@ -8834,7 +8841,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8854,7 +8861,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8876,7 +8883,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Performance Insights
@@ -8936,7 +8943,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8956,7 +8963,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -8978,7 +8985,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Detailed Analytics Report
@@ -9038,7 +9045,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9058,7 +9065,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9080,7 +9087,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Download Responses</p>
                   <div
@@ -9138,7 +9145,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -9161,7 +9168,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9183,7 +9190,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Partial Submissions
@@ -9243,7 +9250,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -9266,7 +9273,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9288,7 +9295,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Export PDF of Analytics Report
@@ -9348,7 +9355,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -9371,7 +9378,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9393,7 +9400,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Advanced Response Filtering
@@ -9453,7 +9460,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -9476,7 +9483,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9498,7 +9505,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Enhanced Analytics Dashboard
@@ -9558,7 +9565,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -9581,7 +9588,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9619,7 +9626,7 @@
 
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Collect Partial Responses
@@ -9679,7 +9686,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -9702,7 +9709,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9724,7 +9731,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Partial Submission Points (Per Form)
@@ -9784,19 +9791,19 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p class="text-base leading-[140%] text-center text-Theme-Black">0</p>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p class="text-base leading-[140%] font-semibold text-center text-[#A2C92A]">3</p>
                 </div>
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Collect File Uploads
@@ -9856,12 +9863,12 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p class="text-base leading-[140%] text-center text-Theme-Black">1GB</p>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <p class="text-base leading-[140%] font-semibold text-center text-[#A2C92A]">
                     20GB
@@ -9870,7 +9877,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Collect Payments</p>
                   <div
@@ -9928,7 +9935,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -9951,7 +9958,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -9973,7 +9980,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Collect Video & Audio Responses
@@ -10033,7 +10040,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -10056,7 +10063,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10078,7 +10085,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Custom Domains + SSL
@@ -10138,7 +10145,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -10161,7 +10168,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10198,7 +10205,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">GDPR Compliance</p>
                   <div
@@ -10256,7 +10263,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10276,7 +10283,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10298,7 +10305,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Secure Data Handling
@@ -10358,7 +10365,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10378,7 +10385,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10400,7 +10407,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Cookie Consent Notice
@@ -10460,7 +10467,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10480,7 +10487,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10502,7 +10509,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Enhanced Spam Protection
@@ -10562,7 +10569,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -10585,7 +10592,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10607,7 +10614,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Duplicate Submission Prevention
@@ -10667,7 +10674,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -10690,7 +10697,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10727,7 +10734,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Connected Accounts (Easier Sign-ins)
@@ -10787,7 +10794,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10807,7 +10814,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10829,7 +10836,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     View Sign In Activity
@@ -10889,7 +10896,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10909,7 +10916,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -10931,7 +10938,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">
                     Two-factor Authentication
@@ -10991,7 +10998,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -11011,7 +11018,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -11046,7 +11053,7 @@
               <!-- list  -->
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Standard Support</p>
                   <div
@@ -11104,7 +11111,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -11124,7 +11131,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -11146,7 +11153,7 @@
               </div>
               <div class="flex items-center gap-px w-full">
                 <div
-                  class="flex items-center gap-2.5 py-4 px-8 bg-white rounded-10px w-full min-h-[55px]"
+                  class="flex items-center gap-2.5 py-4 px-4 lg:px-8 bg-white rounded-10px w-full min-h-[55px]"
                 >
                   <p class="text-base leading-[140%] text-Theme-Black w-full">Priority Support</p>
                   <div
@@ -11205,7 +11212,7 @@
                   </div>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     width="24"
@@ -11228,7 +11235,7 @@
                   </svg>
                 </div>
                 <div
-                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center"
+                  class="md:w-full w-max max-md:px-1.5 md:max-w-[110px] lg:max-w-[300px] bg-white rounded-10px h-full flex items-center justify-center max-md:min-w-8"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -11633,7 +11640,48 @@
       </div>
     </div>
     <!-- JS LIBRARIES -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('pricingComponent', () => ({
+          session: null,
+          plan: 'yearly', // Selected billing toggle
+          lifetime: false,
+          loading: true,
+
+          async init() {
+            try {
+              const APP_URL = 'https://blocked-britney-throws-unavailable.trycloudflare.com'
+
+              const res = await fetch(`${APP_URL}/api/auth/session`, { credentials: 'include' })
+              if (res.ok) {
+                const data = await res.json()
+                if (data && data.user) {
+                  this.session = data.user
+                }
+              }
+            } catch (e) {
+              console.error('Session error:', e)
+            } finally {
+              this.loading = false
+            }
+          },
+
+          isPro() {
+            return (
+              this.session &&
+              this.session.planLevel === 'PRO' &&
+              this.session.subscriptionStatus === 'active'
+            )
+          },
+
+          isCurrentPlanSelected() {
+            if (!this.isPro()) return false
+            return this.session.billingCycle?.toLowerCase() === this.plan.toLowerCase()
+          }
+        }))
+      })
+    </script>
   </body>
 </html>

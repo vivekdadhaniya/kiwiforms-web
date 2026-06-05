@@ -15,7 +15,7 @@
 
   <body class="min-h-screen bg-[#f5f5f5] font-Inter">
     <div
-      x-data="{ open:false, open1:false, mobileMenu:false, profileMenu:false, profileMenu1:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false; this.profileMenu = false } }"
+      x-data="{ open:false, open1:false, mobileMenu:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false } }"
       class="fixed top-0 z-50 bg-[#E2DCDC] pb-px w-full flex flex-col gap-px"
     >
       <div class="flex md:grid grid-cols-14 gap-px w-full">
@@ -194,21 +194,21 @@
                 </div>
 
                 <a
-                  href="./templates"
+                  href="/templates"
                   class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
                 >
                   Templates
                 </a>
 
                 <a
-                  href="./pricing"
+                  href="/pricing"
                   class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
                 >
                   Pricing
                 </a>
 
                 <a
-                  href="./blog"
+                  href="/blog"
                   class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
                 >
                   Blog
@@ -217,277 +217,7 @@
 
               <div class="flex items-center gap-4">
                 <!-- desktop button -->
-                <a
-                  href="https://app.kiwiform.com/signin"
-                  target="_blank"
-                  class="hidden lg:inline-flex py-2 px-5 rounded-lg hover:text-Theme-Black text-Theme-Black bg-[#F2EFEF] transition-all duration-500 hover:bg-Theme-bg text-sm font-medium"
-                >
-                  Sign In
-                </a>
-
-                <a
-                  href="https://app.kiwiform.com/sign-up"
-                  target="_blank"
-                  class="hidden lg:inline-flex py-2 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
-                >
-                  Sign Up
-                </a>
-                <div class="relative">
-                  <button
-                    @click="profileMenu = !profileMenu"
-                    type="button"
-                    class="btn-white-square w-9 h-9 aspect-square"
-                    :class="profileMenu ? 'border-[#B8DD2F]' : ''"
-                    aria-label="Open profile menu"
-                    :aria-expanded="profileMenu.toString()"
-                  >
-                    BD
-                  </button>
-
-                  <div
-                    x-show="profileMenu"
-                    @click.outside="profileMenu = false"
-                    @click="if ($event.target.closest('a, button')) profileMenu = false"
-                    x-transition:enter="transition ease-out duration-200"
-                    x-transition:enter-start="opacity-0 translate-y-2 scale-95"
-                    x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-                    x-transition:leave="transition ease-in duration-150"
-                    x-transition:leave-start="opacity-100 translate-y-0 scale-100"
-                    x-transition:leave-end="opacity-0 translate-y-2 scale-95"
-                    style="display: none"
-                    class="absolute right-0 top-[calc(100%+18px)] z-50 w-[250px] overflow-hidden rounded-10px border border-[#E2DCDC] bg-white text-Theme-Black shadow-soft"
-                  >
-                    <div class="flex items-center gap-2.5 p-2.5 border-b border-[#E2DCDC]">
-                      <div
-                        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#E2DCDC] bg-white text-sm font-medium"
-                      >
-                        BD
-                      </div>
-                      <div class="min-w-0">
-                        <p class="truncate text-sm leading-3.5 font-medium text-Theme-Black mb-2.5">
-                          John Doe
-                        </p>
-                        <p class="truncate text-xs leading-3 text-[#8C8484]">john.doe@email.com</p>
-                      </div>
-                    </div>
-
-                    <div class="profile-menu-list p-2.5">
-                      <a
-                        href="https://app.kiwiform.com"
-                        target="_blank"
-                        class="profile-menu-link flex items-center justify-between"
-                      >
-                        <span>Open Kiwiform App</span>
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z"
-                            fill="#183C1A"
-                          />
-                          <path
-                            d="M10.001 1.00098C10.6453 1.00098 11.2738 1.06887 11.8797 1.19772C12.6917 1.37039 13.201 2.1358 13.201 2.96595V5.80098C13.201 6.35326 13.6487 6.80098 14.201 6.80098H17.036C17.8661 6.80098 18.6316 7.31027 18.8042 8.12226C18.9331 8.72818 19.001 9.35664 19.001 10.001C19.001 14.9715 14.9715 19.001 10.001 19.001C5.03041 19.001 1.00098 14.9715 1.00098 10.001C1.00098 5.03041 5.03041 1.00098 10.001 1.00098Z"
-                            fill="#B8DD2F"
-                          />
-                          <path
-                            d="M13.487 6.50098L19.0009 6.80098L19.1696 9.13061C19.1971 9.50995 19.1875 9.89106 19.1408 10.2685L19.0669 10.8668C19.023 11.2222 18.9466 11.5727 18.8385 11.9141L18.6209 12.601L16.2009 9.60098L13.487 6.50098Z"
-                            fill="url(#paint0_linear_12941_1900)"
-                          />
-                          <path
-                            d="M7.43652 9.91257C7.43652 8.4952 8.58553 7.34619 10.0029 7.34619C11.4203 7.34619 12.5693 8.4952 12.5693 9.91257C12.5693 11.3299 11.4203 12.479 10.0029 12.479C8.58553 12.479 7.43652 11.3299 7.43652 9.91257Z"
-                            fill="#F2F3B5"
-                          />
-                          <ellipse
-                            cx="10.0915"
-                            cy="14.6029"
-                            rx="0.530976"
-                            ry="0.796464"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="10.0915"
-                            cy="5.31087"
-                            rx="0.530976"
-                            ry="0.796464"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="12.4157"
-                            cy="13.979"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-30 12.4157 13.979)"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="7.76725"
-                            cy="5.93208"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-30 7.76725 5.93208)"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="14.1144"
-                            cy="12.2799"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-60 14.1144 12.2799)"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="6.06755"
-                            cy="7.63395"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-60 6.06755 7.63395)"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="14.7418"
-                            cy="9.95731"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-90 14.7418 9.95731)"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="5.4449"
-                            cy="9.95731"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-90 5.4449 9.95731)"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="6.0688"
-                            cy="12.2791"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-120 6.0688 12.2791)"
-                            fill="#183C1A"
-                          />
-                          <ellipse
-                            cx="7.76554"
-                            cy="13.9813"
-                            rx="0.530976"
-                            ry="0.796464"
-                            transform="rotate(-150 7.76554 13.9813)"
-                            fill="#183C1A"
-                          />
-                          <defs>
-                            <linearGradient
-                              id="paint0_linear_12941_1900"
-                              x1="16.5007"
-                              y1="6.80098"
-                              x2="19.0007"
-                              y2="12.601"
-                              gradientUnits="userSpaceOnUse"
-                            >
-                              <stop stop-color="#183C1A" stop-opacity="0.25" />
-                              <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                      </a>
-
-                      <div class="profile-menu-divider"></div>
-
-                      <a
-                        href="https://app.kiwiform.com"
-                        target="_blank"
-                        class="profile-menu-link flex items-center justify-between"
-                      >
-                        <span>Build with <span class="text-Theme-Green">Kiwizard AI</span></span>
-                        <span
-                          class="flex items-center justify-center rounded-full"
-                          aria-hidden="true"
-                        >
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <circle cx="10" cy="10" r="10" fill="#F6FFD5" />
-                            <g clip-path="url(#clip0_12941_1954)">
-                              <path
-                                d="M8.80374 6.55957C8.61598 6.55957 8.44807 6.67648 8.38291 6.85257L8.07429 7.68662C7.65535 8.81878 7.4851 9.25122 7.17188 9.56449C6.85866 9.87769 6.42621 10.0479 5.29404 10.4669L4.45999 10.7755C4.2839 10.8406 4.16699 11.0086 4.16699 11.1963C4.16699 11.3841 4.2839 11.552 4.45999 11.6172L5.29404 11.9258C6.42621 12.3447 6.85866 12.515 7.17188 12.8282C7.4851 13.1414 7.65535 13.5739 8.07429 14.706L8.38291 15.5401C8.44807 15.7162 8.61598 15.8331 8.80374 15.8331C8.99149 15.8331 9.15943 15.7162 9.22458 15.5401L9.53318 14.706C9.95216 13.5739 10.1224 13.1414 10.4356 12.8282C10.7488 12.515 11.1813 12.3447 12.3134 11.9258L13.1475 11.6172C13.3236 11.552 13.4405 11.3841 13.4405 11.1963C13.4405 11.0086 13.3236 10.8406 13.1475 10.7755L12.3134 10.4669C11.1813 10.0479 10.7488 9.87769 10.4356 9.56449C10.1224 9.25122 9.95216 8.81878 9.53318 7.68662L9.22458 6.85257C9.15943 6.67648 8.99149 6.55957 8.80374 6.55957Z"
-                                fill="#B8DD2F"
-                              />
-                              <path
-                                d="M13.5893 4.16675C13.4015 4.16675 13.2336 4.28365 13.1685 4.45974L13.0362 4.81719C12.8485 5.32441 12.7939 5.44439 12.7086 5.52965C12.6234 5.61493 12.5034 5.66955 11.9962 5.85724L11.6387 5.98951C11.4626 6.05467 11.3457 6.22258 11.3457 6.41034C11.3457 6.5981 11.4626 6.76601 11.6387 6.83117L11.9962 6.96344C12.5034 7.15112 12.6234 7.20575 12.7086 7.29102C12.7939 7.37629 12.8485 7.49627 13.0362 8.00348L13.1685 8.36093C13.2336 8.53702 13.4015 8.65393 13.5893 8.65393C13.777 8.65393 13.945 8.53702 14.0101 8.36093L14.1424 8.00348C14.3301 7.49627 14.3847 7.37629 14.47 7.29102C14.5552 7.20575 14.6752 7.15112 15.1824 6.96344L15.5399 6.83117C15.716 6.76601 15.8329 6.5981 15.8329 6.41034C15.8329 6.22258 15.716 6.05467 15.5399 5.98951L15.1824 5.85724C14.6752 5.66955 14.5552 5.61493 14.47 5.52965C14.3847 5.44439 14.3301 5.32441 14.1424 4.81719L14.0101 4.45974C13.945 4.28365 13.777 4.16675 13.5893 4.16675Z"
-                                fill="#007D47"
-                              />
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_12941_1954">
-                                <rect
-                                  width="11.6667"
-                                  height="11.6667"
-                                  fill="white"
-                                  transform="translate(4.16699 4.16675)"
-                                />
-                              </clipPath>
-                            </defs>
-                          </svg>
-                        </span>
-                      </a>
-
-                      <div class="profile-menu-divider"></div>
-
-                      <a href="./changelog" class="profile-menu-link block"> What’s New </a>
-
-                      <div class="profile-menu-divider"></div>
-
-                      <a href="./help" class="profile-menu-link block"> Help Center </a>
-
-                      <div class="profile-menu-divider"></div>
-
-                      <a
-                        href="https://app.kiwiform.com/signin"
-                        target="_blank"
-                        class="profile-menu-link flex items-center justify-between"
-                      >
-                        <span>Sign Out</span>
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M9.00078 1.80029H5.40078C3.70373 1.80029 2.8552 1.80029 2.32799 2.3275C1.80078 2.85471 1.80078 3.70324 1.80078 5.40029V12.6003C1.80078 14.2973 1.80078 15.1459 2.32799 15.6731C2.8552 16.2003 3.70373 16.2003 5.40078 16.2003H9.00078"
-                            stroke="#000A06"
-                            stroke-width="1.2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                          <path
-                            d="M12.476 13.05L16.2021 9L12.476 4.95"
-                            stroke="#000A06"
-                            stroke-width="1.2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                          <path
-                            d="M7.20215 9L9.89629 9L11.6904 9L16.2021 9"
-                            stroke="#000A06"
-                            stroke-width="1.2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <div id="auth-button-root"></div>
 
                 <!-- mobile hamburger -->
                 <button
@@ -600,7 +330,7 @@
                       x-transition:leave-start="opacity-100 translate-y-0"
                       x-transition:leave-end="opacity-0 -translate-y-2"
                       style="display: none"
-                      class="bg-transparent gap-px w-full col-span-full px-4"
+                      class="bg-Theme-bg gap-px w-full col-span-full px-4"
                     >
                       <!-- main-container  -->
 
@@ -621,7 +351,7 @@
                             <div class="grid grid-cols-1 gap-px">
                               <!-- ITEM -->
                               <a
-                                href="./help/overview"
+                                href="/help/overview"
                                 class="bg-white flex items-center justify-left gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -678,7 +408,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="./help/responses-analytics"
+                                href="/help/responses-analytics"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -730,7 +460,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="./help/form-building"
+                                href="/help/form-building"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -786,7 +516,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="./help/integrations-automations"
+                                href="/help/integrations-automations"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -844,7 +574,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="./help/logic-flow"
+                                href="/help/logic-flow"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -898,7 +628,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="./help/supported-languages"
+                                href="/help/supported-languages"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -941,7 +671,7 @@
                               </a>
 
                               <a
-                                href="./help/design-themes"
+                                href="/help/design-themes"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -1162,8 +892,8 @@
                                 minutes. Focus on collecting data.
                               </p>
                               <a
-                                href="./templates"
-                                class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
+                                href="/templates"
+                                class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green hover:text-white"
                                 >Kiwiform Templates</a
                               >
                             </div>
@@ -1174,305 +904,27 @@
                   </div>
 
                   <a
-                    href="./templates"
+                    href="/templates"
                     class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
                   >
                     Templates
                   </a>
 
                   <a
-                    href="./pricing"
+                    href="/pricing"
                     class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
                   >
                     Pricing
                   </a>
 
                   <a
-                    href="./blog"
+                    href="/blog"
                     class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
                   >
                     Blog
                   </a>
 
-                  <div class="py-5 flex flex-col gap-3 items-center justify-center">
-                    <a
-                      href="https://app.kiwiform.com/signin"
-                      target="_blank"
-                      class="py-2 px-5 rounded-lg hover:text-Theme-Black text-Theme-Black bg-[#F2EFEF] transition-all duration-500 hover:bg-Theme-bg text-sm font-medium"
-                    >
-                      Sign In
-                    </a>
-
-                    <a
-                      href="https://app.kiwiform.com/sign-up"
-                      target="_blank"
-                      class="py-2 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
-                    >
-                      Sign Up
-                    </a>
-                    <div class="relative flex flex-col gap-2 items-center justify-center">
-                      <button
-                        @click="profileMenu1 = !profileMenu"
-                        type="button"
-                        class="btn-white-square w-9 h-9 aspect-square"
-                        :class="profileMenu1 ? 'border-[#B8DD2F]' : ''"
-                        aria-label="Open profile menu"
-                        :aria-expanded="profileMenu1.toString()"
-                      >
-                        BD
-                      </button>
-
-                      <div
-                        x-show="profileMenu1"
-                        @click.outside="profileMenu1 = false"
-                        @click="if ($event.target.closest('a, button')) profileMenu = false"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 translate-y-2 scale-95"
-                        x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 translate-y-0 scale-100"
-                        x-transition:leave-end="opacity-0 translate-y-2 scale-95"
-                        style="display: none"
-                        class="relative top-[calc(100%+18px)] z-50 w-[250px] overflow-hidden rounded-10px border border-[#E2DCDC] bg-white text-Theme-Black shadow-[0_18px_35px_rgba(0,0,0,0.14)]"
-                      >
-                        <div class="flex items-center gap-2.5 p-2.5 border-b border-[#E2DCDC]">
-                          <div
-                            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#E2DCDC] bg-white text-sm font-medium"
-                          >
-                            BD
-                          </div>
-                          <div class="min-w-0">
-                            <p
-                              class="truncate text-sm leading-3.5 font-medium text-Theme-Black mb-2.5"
-                            >
-                              John Doe
-                            </p>
-                            <p class="truncate text-xs leading-3 text-[#8C8484]">
-                              john.doe@email.com
-                            </p>
-                          </div>
-                        </div>
-
-                        <div class="profile-menu-list p-2.5">
-                          <a
-                            href="https://app.kiwiform.com"
-                            target="_blank"
-                            class="profile-menu-link flex items-center justify-between"
-                          >
-                            <span>Open Kiwiform App</span>
-                            <svg
-                              width="20"
-                              height="20"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z"
-                                fill="#183C1A"
-                              />
-                              <path
-                                d="M10.001 1.00098C10.6453 1.00098 11.2738 1.06887 11.8797 1.19772C12.6917 1.37039 13.201 2.1358 13.201 2.96595V5.80098C13.201 6.35326 13.6487 6.80098 14.201 6.80098H17.036C17.8661 6.80098 18.6316 7.31027 18.8042 8.12226C18.9331 8.72818 19.001 9.35664 19.001 10.001C19.001 14.9715 14.9715 19.001 10.001 19.001C5.03041 19.001 1.00098 14.9715 1.00098 10.001C1.00098 5.03041 5.03041 1.00098 10.001 1.00098Z"
-                                fill="#B8DD2F"
-                              />
-                              <path
-                                d="M13.487 6.50098L19.0009 6.80098L19.1696 9.13061C19.1971 9.50995 19.1875 9.89106 19.1408 10.2685L19.0669 10.8668C19.023 11.2222 18.9466 11.5727 18.8385 11.9141L18.6209 12.601L16.2009 9.60098L13.487 6.50098Z"
-                                fill="url(#paint0_linear_12941_1900)"
-                              />
-                              <path
-                                d="M7.43652 9.91257C7.43652 8.4952 8.58553 7.34619 10.0029 7.34619C11.4203 7.34619 12.5693 8.4952 12.5693 9.91257C12.5693 11.3299 11.4203 12.479 10.0029 12.479C8.58553 12.479 7.43652 11.3299 7.43652 9.91257Z"
-                                fill="#F2F3B5"
-                              />
-                              <ellipse
-                                cx="10.0915"
-                                cy="14.6029"
-                                rx="0.530976"
-                                ry="0.796464"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="10.0915"
-                                cy="5.31087"
-                                rx="0.530976"
-                                ry="0.796464"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="12.4157"
-                                cy="13.979"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-30 12.4157 13.979)"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="7.76725"
-                                cy="5.93208"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-30 7.76725 5.93208)"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="14.1144"
-                                cy="12.2799"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-60 14.1144 12.2799)"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="6.06755"
-                                cy="7.63395"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-60 6.06755 7.63395)"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="14.7418"
-                                cy="9.95731"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-90 14.7418 9.95731)"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="5.4449"
-                                cy="9.95731"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-90 5.4449 9.95731)"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="6.0688"
-                                cy="12.2791"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-120 6.0688 12.2791)"
-                                fill="#183C1A"
-                              />
-                              <ellipse
-                                cx="7.76554"
-                                cy="13.9813"
-                                rx="0.530976"
-                                ry="0.796464"
-                                transform="rotate(-150 7.76554 13.9813)"
-                                fill="#183C1A"
-                              />
-                              <defs>
-                                <linearGradient
-                                  id="paint0_linear_12941_1900"
-                                  x1="16.5007"
-                                  y1="6.80098"
-                                  x2="19.0007"
-                                  y2="12.601"
-                                  gradientUnits="userSpaceOnUse"
-                                >
-                                  <stop stop-color="#183C1A" stop-opacity="0.25" />
-                                  <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
-                                </linearGradient>
-                              </defs>
-                            </svg>
-                          </a>
-
-                          <div class="profile-menu-divider"></div>
-
-                          <a
-                            href="https://app.kiwiform.com"
-                            target="_blank"
-                            class="profile-menu-link flex items-center justify-between"
-                          >
-                            <span
-                              >Build with <span class="text-Theme-Green">Kiwizard AI</span></span
-                            >
-                            <span
-                              class="flex items-center justify-center rounded-full"
-                              aria-hidden="true"
-                            >
-                              <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <circle cx="10" cy="10" r="10" fill="#F6FFD5" />
-                                <g clip-path="url(#clip0_12941_1954)">
-                                  <path
-                                    d="M8.80374 6.55957C8.61598 6.55957 8.44807 6.67648 8.38291 6.85257L8.07429 7.68662C7.65535 8.81878 7.4851 9.25122 7.17188 9.56449C6.85866 9.87769 6.42621 10.0479 5.29404 10.4669L4.45999 10.7755C4.2839 10.8406 4.16699 11.0086 4.16699 11.1963C4.16699 11.3841 4.2839 11.552 4.45999 11.6172L5.29404 11.9258C6.42621 12.3447 6.85866 12.515 7.17188 12.8282C7.4851 13.1414 7.65535 13.5739 8.07429 14.706L8.38291 15.5401C8.44807 15.7162 8.61598 15.8331 8.80374 15.8331C8.99149 15.8331 9.15943 15.7162 9.22458 15.5401L9.53318 14.706C9.95216 13.5739 10.1224 13.1414 10.4356 12.8282C10.7488 12.515 11.1813 12.3447 12.3134 11.9258L13.1475 11.6172C13.3236 11.552 13.4405 11.3841 13.4405 11.1963C13.4405 11.0086 13.3236 10.8406 13.1475 10.7755L12.3134 10.4669C11.1813 10.0479 10.7488 9.87769 10.4356 9.56449C10.1224 9.25122 9.95216 8.81878 9.53318 7.68662L9.22458 6.85257C9.15943 6.67648 8.99149 6.55957 8.80374 6.55957Z"
-                                    fill="#B8DD2F"
-                                  />
-                                  <path
-                                    d="M13.5893 4.16675C13.4015 4.16675 13.2336 4.28365 13.1685 4.45974L13.0362 4.81719C12.8485 5.32441 12.7939 5.44439 12.7086 5.52965C12.6234 5.61493 12.5034 5.66955 11.9962 5.85724L11.6387 5.98951C11.4626 6.05467 11.3457 6.22258 11.3457 6.41034C11.3457 6.5981 11.4626 6.76601 11.6387 6.83117L11.9962 6.96344C12.5034 7.15112 12.6234 7.20575 12.7086 7.29102C12.7939 7.37629 12.8485 7.49627 13.0362 8.00348L13.1685 8.36093C13.2336 8.53702 13.4015 8.65393 13.5893 8.65393C13.777 8.65393 13.945 8.53702 14.0101 8.36093L14.1424 8.00348C14.3301 7.49627 14.3847 7.37629 14.47 7.29102C14.5552 7.20575 14.6752 7.15112 15.1824 6.96344L15.5399 6.83117C15.716 6.76601 15.8329 6.5981 15.8329 6.41034C15.8329 6.22258 15.716 6.05467 15.5399 5.98951L15.1824 5.85724C14.6752 5.66955 14.5552 5.61493 14.47 5.52965C14.3847 5.44439 14.3301 5.32441 14.1424 4.81719L14.0101 4.45974C13.945 4.28365 13.777 4.16675 13.5893 4.16675Z"
-                                    fill="#007D47"
-                                  />
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_12941_1954">
-                                    <rect
-                                      width="11.6667"
-                                      height="11.6667"
-                                      fill="white"
-                                      transform="translate(4.16699 4.16675)"
-                                    />
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                            </span>
-                          </a>
-
-                          <div class="profile-menu-divider"></div>
-
-                          <a href="./changelog" class="profile-menu-link block"> What’s New </a>
-
-                          <div class="profile-menu-divider"></div>
-
-                          <a href="./help" class="profile-menu-link block"> Help Center </a>
-
-                          <div class="profile-menu-divider"></div>
-
-                          <a
-                            href="https://app.kiwiform.com/signin"
-                            target="_blank"
-                            class="profile-menu-link flex items-center justify-between"
-                          >
-                            <span>Sign Out</span>
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M9.00078 1.80029H5.40078C3.70373 1.80029 2.8552 1.80029 2.32799 2.3275C1.80078 2.85471 1.80078 3.70324 1.80078 5.40029V12.6003C1.80078 14.2973 1.80078 15.1459 2.32799 15.6731C2.8552 16.2003 3.70373 16.2003 5.40078 16.2003H9.00078"
-                                stroke="#000A06"
-                                stroke-width="1.2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M12.476 13.05L16.2021 9L12.476 4.95"
-                                stroke="#000A06"
-                                stroke-width="1.2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M7.20215 9L9.89629 9L11.6904 9L16.2021 9"
-                                stroke="#000A06"
-                                stroke-width="1.2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <div id="auth-button-root"></div>
                 </div>
               </div>
 
@@ -1515,7 +967,7 @@
           <div class="col-span-11 bg-white rounded-[10px] overflow-hidden">
             <div class="w-full grid grid-cols-3 gap-5 bg-white">
               <!-- LEFT -->
-              <div class="col-span-2 pr-px bg-Theme-bg">
+              <div class="col-span-2 pr-px bg-[#E2DCDC]">
                 <!-- HEADING -->
                 <div
                   class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC] text-[#B2A8A8] uppercase"
@@ -1528,8 +980,8 @@
                   <div class="grid grid-cols-2 gap-px">
                     <!-- ITEM -->
                     <a
-                      href="./help/overview"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/overview"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1573,7 +1025,7 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Overview</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Overview</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           A clear snapshot of all key features.
@@ -1583,8 +1035,8 @@
 
                     <!-- ITEM -->
                     <a
-                      href="./help/ai-form-builder"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/ai-form-builder"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1625,7 +1077,7 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Kiwizard AI</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Kiwizard AI</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           Build forms faster with Kiwizard AI
@@ -1635,8 +1087,8 @@
 
                     <!-- ITEM -->
                     <a
-                      href="./help/form-building"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/form-building"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1679,7 +1131,7 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Form Builder</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Form Builder</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           Create and customize forms with ease.
@@ -1689,8 +1141,8 @@
 
                     <!-- ITEM -->
                     <a
-                      href="./help/responses-analytics"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/responses-analytics"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1729,7 +1181,7 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Responses & Analytics</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Responses & Analytics</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           Understand responses with clear insights.
@@ -1739,8 +1191,8 @@
 
                     <!-- ITEM -->
                     <a
-                      href="./help/logic-flow"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/logic-flow"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1781,7 +1233,7 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Logic & Flow</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Logic & Flow</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           Build dynamic forms with smart logic.
@@ -1791,8 +1243,8 @@
 
                     <!-- ITEM -->
                     <a
-                      href="./help/integrations-automations"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/integrations-automations"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1837,7 +1289,7 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Integrations</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Integrations</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           Connect forms with your essential tools.
@@ -1846,8 +1298,8 @@
                     </a>
 
                     <a
-                      href="./help/design-themes"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/design-themes"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1884,7 +1336,7 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Design & Themes</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Design & Themes</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           Design branded forms that look great.
@@ -1894,8 +1346,8 @@
 
                     <!-- ITEM -->
                     <a
-                      href="./help/supported-languages"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB] text-Theme-Black hover:text-theme-Green-hover"
+                      href="/help/supported-languages"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
                         <svg
@@ -1926,7 +1378,9 @@
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium">Languages & Translations</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">
+                          Languages & Translations
+                        </h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                           Create forms for a global audience.
@@ -1983,7 +1437,7 @@
                         cy="1.75222"
                         rx="1.16815"
                         ry="1.75222"
-                        transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9441 44.1484)"
+                        transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
                         fill="#183C1A"
                       />
                       <ellipse
@@ -1991,7 +1445,7 @@
                         cy="1.75222"
                         rx="1.16815"
                         ry="1.75222"
-                        transform="matrix(0.5 -0.866025 0.866026 0.499999 61.2412 33.9277)"
+                        transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
                         fill="#183C1A"
                       />
                       <ellipse
@@ -2028,7 +1482,7 @@
                       />
                       <path
                         d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
-                        fill="url(#paint0_linear_7194_816)"
+                        fill="url(#paint0_linear_7194_667)"
                       />
                       <path
                         d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
@@ -2042,15 +1496,15 @@
                       <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
                       <path
                         d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
-                        fill="url(#paint1_linear_7194_816)"
+                        fill="url(#paint1_linear_7194_667)"
                       />
                       <path
                         d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
-                        fill="url(#paint2_linear_7194_816)"
+                        fill="url(#paint2_linear_7194_667)"
                       />
                       <defs>
                         <linearGradient
-                          id="paint0_linear_7194_816"
+                          id="paint0_linear_7194_667"
                           x1="86.2999"
                           y1="31.9588"
                           x2="91.7999"
@@ -2061,7 +1515,7 @@
                           <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
                         </linearGradient>
                         <linearGradient
-                          id="paint1_linear_7194_816"
+                          id="paint1_linear_7194_667"
                           x1="28"
                           y1="39"
                           x2="-7.1631e-08"
@@ -2073,7 +1527,7 @@
                           <stop offset="1" stop-color="white" stop-opacity="0" />
                         </linearGradient>
                         <linearGradient
-                          id="paint2_linear_7194_816"
+                          id="paint2_linear_7194_667"
                           x1="216"
                           y1="39"
                           x2="254"
@@ -2085,17 +1539,16 @@
                         </linearGradient>
                       </defs>
                     </svg>
-
-                    <h5 class="text-xl font-Inter-disp leading-6 text-Theme-Black mt-5 mb-2.5">
+                    <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
                       Templates built for real use cases
                     </h5>
-                    <p class="text-sm leading-5 text-Theme-Black mb-5">
+                    <p class="text-xs leading-5 text-Theme-Black mb-5">
                       Start faster choose a template, customize it, and go live in minutes. Focus on
                       collecting data.
                     </p>
                     <a
-                      href="./templates"
-                      class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:text-white hover:bg-Theme-Green"
+                      href="/templates"
+                      class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green hover:text-white"
                       >Kiwiform Templates</a
                     >
                   </div>
