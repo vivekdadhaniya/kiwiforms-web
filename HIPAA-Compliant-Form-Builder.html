@@ -1694,7 +1694,7 @@
               </div>
               <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
                 <img
-                  src="/images/uploads/Understanding-HIPAA-Form-Builder.png"
+                  src="/images/uploads/image.png"
                   alt="form fields image"
                   class="w-full h-full"
                 />
@@ -2107,7 +2107,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
               <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
                 <div class="p-2.5">
-                  <img src="/images/uploads/Patient-Intake-Workflows.png" alt="form img" />
+                  <img src="/images/uploads/patient-intake-workflows.png" alt="form img" />
                 </div>
                 <div class="">
                   <h4 class="card-title mt-0 mb-2.5">Patient Intake Workflows</h4>
@@ -2120,7 +2120,7 @@
 
               <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
                 <div class="p-2.5">
-                  <img src="/images/uploads/Healthcare-Consent-Forms.png" alt="form img" />
+                  <img src="/images/uploads/healthcare-consent-forms.png" alt="form img" />
                 </div>
                 <div class="">
                   <h4 class="card-title mt-0 mb-2.5">Healthcare Consent Forms</h4>
@@ -2133,7 +2133,7 @@
 
               <div class="card-Theme px-0! pt-0! pb-10! gap-5">
                 <div class="p-2.5">
-                  <img src="/images/uploads/Medical-Questionnaires.png" alt="form img" />
+                  <img src="/images/uploads/medical-questionnaires.png" alt="form img" />
                 </div>
                 <div class="">
                   <h4 class="card-title mt-0 mb-2.5">Medical Questionnaires</h4>
@@ -2146,7 +2146,7 @@
 
               <div class="card-Theme px-0! pt-0! pb-10! gap-5">
                 <div class="p-2.5">
-                  <img src="/images/uploads/Telehealth-Onboarding.png" alt="form img" />
+                  <img src="/images/uploads/telehealth-onboarding.png" alt="form img" />
                 </div>
                 <div class="">
                   <h4 class="card-title mt-0 mb-2.5">Telehealth Onboarding</h4>
@@ -2158,7 +2158,7 @@
               </div>
               <div class="card-Theme px-0! pt-0! pb-10! gap-5">
                 <div class="p-2.5">
-                  <img src="/images/uploads/Healthcare-Registration-Forms.png" alt="form img" />
+                  <img src="/images/uploads/healthcare-registration-forms.png" alt="form img" />
                 </div>
                 <div class="">
                   <h4 class="card-title mt-0 mb-2.5">Healthcare Registration Forms</h4>
@@ -2170,7 +2170,7 @@
               </div>
               <div class="card-Theme px-0! pt-0! pb-10! gap-5">
                 <div class="p-2.5">
-                  <img src="/images/uploads/Internal-Operational-Workflows.png" alt="form img" />
+                  <img src="/images/uploads/internal-operational-workflows.png" alt="form img" />
                 </div>
                 <div class="">
                   <h4 class="card-title mt-0 mb-2.5">Internal Operational Workflows</h4>
@@ -2554,13 +2554,12 @@
               </div>
               <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
                 <img
-                  src="/images/uploads/Healthcare-Form-Templates.png"
+                  src="/images/uploads/healthcare-form-templates.png"
                   alt="form fields image"
                   class="w-full h-full"
                 />
               </div>
             </div>
-            <!-- helthcare templates  -->
             <div
               x-data="{
                 templates: [],
@@ -2577,7 +2576,8 @@
                 },
                 async loadTemplates() {
                   try {
-                    const response = await fetch('https://kiwiform.com/api/templates?limit=3&page=1&search=&workspaceName=Healthcare');
+                    const locale = document.documentElement.lang || 'en';
+                   const response = await fetch(`https://kiwiform.com/api/templates?limit=3&page=1&search=&workspaceName=Healthcare&locale=${locale}`);
                     const result = await response.json();
 
                     if (!response.ok || !result.success) {
@@ -2639,7 +2639,7 @@
             </div>
             <div class="bg-white w-full py-10 flex items-center justify-center rounded-[10px] px-2">
               <a
-                href="https://app.kiwiform.com"
+                href="/templates/categories/healthcare"
                 class="inline-flex py-2.5 px-5 rounded-md hover:text-white bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
               >
                 Browse HIPAA Compliant Form Templates
@@ -3043,6 +3043,21 @@
           <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
         </div>
         <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
     </div>
   </body>

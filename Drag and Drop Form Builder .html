@@ -13,21 +13,23 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
 
-  <body class="font-inter bg-[#E2DCDC] w-full flex flex-col gap-px">
+  <body
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    x-data="templateDetailPage()"
+    x-init="init()"
+  >
     <!-- navigation  -->
-    <header
-      x-data="{ open:false, open1:false, mobileMenu:false }"
-      class="fixed top-0 left-0 z-50 bg-Theme-bg w-full flex flex-col gap-px border-b border-Theme-bg"
+    <div
+      x-data="{ open:false, open1:false, mobileMenu:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false } }"
+      class="fixed top-0 z-50 bg-[#E2DCDC] pb-px w-full flex flex-col gap-px"
     >
       <div class="flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:w-4 md:col-span-1 bg-white rounded-r-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div
-          class="w-full md:col-span-12 bg-Theme-bg rounded-10px 2xl:grid 2xl:grid-cols-15 gap-px"
-        >
-          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
           <!-- place content here -->
-          <div class="col-span-11 bg-white rounded-10px py-3 lg:px-5">
+          <div class="col-span-11 bg-white rounded-[10px] py-3 lg:px-5">
             <div class="flex items-center justify-between max-lg:px-5">
               <a href="/" class="flex items-center gap-3">
                 <svg
@@ -197,21 +199,21 @@
                 </div>
 
                 <a
-                  href="#"
+                  href="./templates"
                   class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
                 >
                   Templates
                 </a>
 
                 <a
-                  href="#"
+                  href="./pricing"
                   class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
                 >
                   Pricing
                 </a>
 
                 <a
-                  href="#"
+                  href="./blog"
                   class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
                 >
                   Blog
@@ -221,8 +223,9 @@
               <div class="flex items-center gap-4">
                 <!-- desktop button -->
                 <a
-                  href="#"
-                  class="hidden lg:inline-flex py-2 px-5 rounded-lg text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+                  href="https://app.kiwiform.com"
+                  target="_blank"
+                  class="hidden lg:inline-flex py-2 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
                 >
                   Get Started
                 </a>
@@ -233,56 +236,49 @@
                   class="flex lg:hidden items-center justify-center w-10 h-10 text-Theme-Black"
                 >
                   <!-- hamburger -->
-
                   <svg
                     x-show="!mobileMenu"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
+                    x-transition
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M4 6.66536C4 5.92899 4.59696 5.33203 5.33333 5.33203H18.6667C19.4031 5.33203 20 5.92899 20 6.66536C20 7.40175 19.4031 7.9987 18.6667 7.9987H5.33333C4.59696 7.9987 4 7.40174 4 6.66536Z"
-                      fill="black"
+                      d="M4 7H20"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
                     />
                     <path
-                      opacity="0.4"
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M4 16.0013C4 15.2649 4.59696 14.668 5.33333 14.668H26.6667C27.4031 14.668 28 15.2649 28 16.0013C28 16.7377 27.4031 17.3346 26.6667 17.3346H5.33333C4.59696 17.3346 4 16.7377 4 16.0013Z"
-                      fill="black"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M4 25.3333C4 24.5969 4.59696 24 5.33333 24H26.6667C27.4031 24 28 24.5969 28 25.3333C28 26.0697 27.4031 26.6667 26.6667 26.6667H5.33333C4.59696 26.6667 4 26.0697 4 25.3333Z"
-                      fill="black"
+                      d="M4 12H20"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
                     />
                   </svg>
 
                   <!-- close -->
                   <svg
                     x-show="mobileMenu"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
+                    x-transition
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    style="display: none"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.94293 7.94281C8.46365 7.4221 9.30786 7.42211 9.82855 7.94281L24.9135 23.0278C25.4342 23.5485 25.4342 24.3927 24.9135 24.9134C24.3928 25.4341 23.5486 25.4341 23.0279 24.9134L7.94293 9.82843C7.42224 9.30773 7.42222 8.46352 7.94293 7.94281Z"
-                      fill="black"
+                      d="M6 6L18 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.94281 24.9116C7.4221 24.3908 7.42211 23.5466 7.94281 23.0259L23.0278 7.941C23.5485 7.42028 24.3927 7.42028 24.9134 7.941C25.4341 8.46171 25.4341 9.3059 24.9134 9.82661L9.82843 24.9116C9.30773 25.4323 8.46352 25.4323 7.94281 24.9116Z"
-                      fill="black"
+                      d="M18 6L6 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
                     />
                   </svg>
                 </button>
@@ -297,17 +293,17 @@
               x-transition:leave="transition ease-in duration-200"
               x-transition:leave-start="opacity-100 translate-y-0"
               x-transition:leave-end="opacity-0 -translate-y-3"
-              class="lg:hidden gap-px w-full overflow-auto h-auto max-h-[calc(100vh-64px)]"
+              class="lg:hidden gap-px w-full"
               style="display: none"
             >
               <!-- left spacer -->
-              <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
 
               <!-- center -->
-              <div class="w-full md:col-span-12 bg-white rounded-10px overflow-hidden">
+              <div class="w-full md:col-span-12 bg-white rounded-[10px] overflow-hidden">
                 <div class="flex flex-col items-center text-center">
                   <div
-                    class="relative flex items-center justify-center flex-col gap-4 py-4 border-b border-Theme-bg w-full"
+                    class="relative flex items-center justify-center flex-col gap-4 py-4 border-b border-[#E2DCDC] w-full"
                   >
                     <button
                       @click="open1 = !open1"
@@ -337,6 +333,7 @@
                     <div
                       x-show="open1"
                       @click.outside="open1 = false"
+                      @click="if ($event.target.closest('a')) closeMenus()"
                       x-transition:enter="transition ease-out duration-200"
                       x-transition:enter-start="opacity-0 -translate-y-2"
                       x-transition:enter-end="opacity-100 translate-y-0"
@@ -352,10 +349,10 @@
 
                       <div class="w-full grid grid-cols-1 gap-0 bg-white">
                         <!-- LEFT -->
-                        <div class="col-span-1 px-px pt-px bg-Theme-bg">
+                        <div class="col-span-1 px-px pt-px bg-[#E2DCDC]">
                           <!-- HEADING -->
                           <div
-                            class="bg-white text-sm font-medium py-4 px-5 border-b border-Theme-bg"
+                            class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]"
                           >
                             Product
                           </div>
@@ -365,7 +362,7 @@
                             <div class="grid grid-cols-1 gap-px">
                               <!-- ITEM -->
                               <a
-                                href="#"
+                                href="./help/overview"
                                 class="bg-white flex items-center justify-left gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -414,7 +411,7 @@
                                     Overview
                                   </h3>
 
-                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                                     A clear snapshot of all key features.
                                   </p>
                                 </div>
@@ -422,7 +419,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="#"
+                                href="./help/responses-analytics"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -466,7 +463,7 @@
                                     Responses & Analytics
                                   </h3>
 
-                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                                     Understand responses with clear insights.
                                   </p>
                                 </div>
@@ -474,7 +471,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="#"
+                                href="./help/form-building"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -522,7 +519,7 @@
                                     Form Builder
                                   </h3>
 
-                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                                     Create and customize forms with ease.
                                   </p>
                                 </div>
@@ -530,7 +527,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="#"
+                                href="./help/integrations-automations"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -580,7 +577,7 @@
                                     Integrations
                                   </h3>
 
-                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                                     Connect forms with your essential tools.
                                   </p>
                                 </div>
@@ -588,7 +585,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="#"
+                                href="./help/logic-flow"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -634,7 +631,7 @@
                                     Logic & Flow
                                   </h3>
 
-                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                                     Build dynamic forms with smart logic.
                                   </p>
                                 </div>
@@ -642,7 +639,7 @@
 
                               <!-- ITEM -->
                               <a
-                                href="#"
+                                href="./help/supported-languages"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -678,14 +675,14 @@
                                     Languages & Translations
                                   </h3>
 
-                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                                     Create forms for a global audience.
                                   </p>
                                 </div>
                               </a>
 
                               <a
-                                href="#"
+                                href="./help/design-themes"
                                 class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                               >
                                 <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -727,7 +724,7 @@
                                     Design & Themes
                                   </h3>
 
-                                  <p class="text-left mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
                                     Design branded forms that look great.
                                   </p>
                                 </div>
@@ -738,14 +735,13 @@
                         </div>
 
                         <!-- RIGHT -->
-                        <div class="col-span-1 bg-white border-x border-b border-Theme-bg">
+                        <div class="col-span-1 bg-white border-x border-b border-[#E2DCDC]">
                           <div class="p-[5px] h-[calc(100%-50px)]">
                             <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
                               <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">
                                 FORM TEMPLATES
                               </p>
                               <svg
-                                class="mx-auto"
                                 width="254"
                                 height="78"
                                 viewBox="0 0 254 78"
@@ -907,7 +903,7 @@
                                 minutes. Focus on collecting data.
                               </p>
                               <a
-                                href="#"
+                                href="./templates"
                                 class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
                                 >Kiwiform Templates</a
                               >
@@ -919,29 +915,29 @@
                   </div>
 
                   <a
-                    href="#"
-                    class="w-full border-b border-Theme-bg py-4 text-sm font-medium text-Theme-Black"
+                    href="./templates"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
                   >
                     Templates
                   </a>
 
                   <a
-                    href="#"
-                    class="w-full border-b border-Theme-bg py-4 text-sm font-medium text-Theme-Black"
+                    href="./pricing"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
                   >
                     Pricing
                   </a>
 
                   <a
-                    href="#"
-                    class="w-full border-b border-Theme-bg py-4 text-sm font-medium text-Theme-Black"
+                    href="./blog"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
                   >
                     Blog
                   </a>
 
                   <div class="py-5">
                     <a
-                      href="#"
+                      href="https://app.kiwiform.com/"
                       class="inline-flex rounded-lg bg-[#B8DD2F] px-5 py-2 text-xs font-medium text-[#183C1A]"
                     >
                       Get Started
@@ -951,18 +947,27 @@
               </div>
 
               <!-- right spacer -->
-              <div class="max-md:w-4 md:col-span-1 bg-white rounded-10px"></div>
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
             </div>
           </div>
-          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
         </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white rounded-l-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
+
+      <div
+        x-show="open"
+        @click="open = false"
+        x-transition.opacity
+        style="display: none"
+        class="fixed inset-x-0 top-[61px] bottom-0 bg-black/30 z-0"
+      ></div>
 
       <!-- dropdown  -->
       <div
         x-show="open"
         @click.outside="open = false"
+        @click="if ($event.target.closest('a')) closeMenus()"
         x-transition:enter="transition ease-out duration-200"
         x-transition:enter-start="opacity-0 -translate-y-2"
         x-transition:enter-end="opacity-100 translate-y-0"
@@ -970,21 +975,19 @@
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-2"
         style="display: none"
-        class="bg-transparent flex md:grid grid-cols-14 gap-px w-full col-span-full"
+        class="relative z-10 bg-transparent flex md:grid grid-cols-14 gap-px w-full col-span-full"
       >
-        <div class="max-md:w-4 md:col-span-1 bg-white rounded-r-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div
-          class="w-full md:col-span-12 bg-Theme-bg rounded-10px 2xl:grid 2xl:grid-cols-15 gap-px"
-        >
-          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+        <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
           <!-- place content here -->
-          <div class="col-span-11 bg-white rounded-10px overflow-hidden">
+          <div class="col-span-11 bg-white rounded-[10px] overflow-hidden">
             <div class="w-full grid grid-cols-3 gap-5 bg-white">
               <!-- LEFT -->
-              <div class="col-span-2 pr-px bg-Theme-bg">
+              <div class="col-span-2 pr-px bg-[#E2DCDC]">
                 <!-- HEADING -->
-                <div class="bg-white text-sm font-medium py-4 px-5 border-b border-Theme-bg">
+                <div class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]">
                   Product
                 </div>
 
@@ -993,7 +996,7 @@
                   <div class="grid grid-cols-2 gap-px">
                     <!-- ITEM -->
                     <a
-                      href="#"
+                      href="./help/overview"
                       class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -1048,7 +1051,7 @@
 
                     <!-- ITEM -->
                     <a
-                      href="#"
+                      href="./help/ai-form-builder"
                       class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -1060,45 +1063,47 @@
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M7.22168 2.55469H8.77724"
-                            stroke="#B8DD2F"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                          />
-                          <path
-                            d="M7.22168 7.22168H13.4439"
-                            stroke="#B8DD2F"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                          />
-                          <path
-                            d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                            d="M22 1H23C26.3137 1 29 3.68629 29 7V8"
                             stroke="#B8DD2F"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
                           />
                           <path
-                            d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                            d="M15 1H7C3.68629 1 1 3.68629 1 7V23C1 26.3137 3.68629 29 7 29H23C26.3137 29 29 26.3137 29 23V15"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.5 11C12.2368 11 12.0014 11.1639 11.9101 11.4107L11.4774 12.5799C10.8901 14.1671 10.6515 14.7733 10.2124 15.2124C9.7733 15.6515 9.16707 15.8901 7.57994 16.4774L6.41073 16.9101C6.16388 17.0014 6 17.2368 6 17.5C6 17.7632 6.16388 17.9986 6.41073 18.0899L7.57994 18.5226C9.16707 19.1099 9.7733 19.3485 10.2124 19.7876C10.6515 20.2267 10.8901 20.8329 11.4774 22.42L11.9101 23.5893C12.0014 23.8361 12.2368 24 12.5 24C12.7632 24 12.9986 23.8361 13.0899 23.5893L13.5226 22.42C14.1099 20.8329 14.3485 20.2267 14.7876 19.7876C15.2267 19.3485 15.8329 19.1099 17.42 18.5226L18.5893 18.0899C18.8361 17.9986 19 17.7632 19 17.5C19 17.2368 18.8361 17.0014 18.5893 16.9101L17.42 16.4774C15.8329 15.8901 15.2267 15.6515 14.7876 15.2124C14.3485 14.7733 14.1099 14.1671 13.5226 12.5799L13.0899 11.4107C12.9986 11.1639 12.7632 11 12.5 11Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M20.5 6C20.2071 6 19.9451 6.18237 19.8435 6.45707L19.6371 7.01469C19.3443 7.80595 19.2591 7.99311 19.1261 8.12613C18.9931 8.25916 18.806 8.34437 18.0147 8.63716L17.4571 8.8435C17.1824 8.94515 17 9.20709 17 9.5C17 9.79291 17.1824 10.0548 17.4571 10.1565L18.0147 10.3628C18.806 10.6556 18.9931 10.7408 19.1261 10.8739C19.2591 11.0069 19.3443 11.194 19.6371 11.9853L19.8435 12.5429C19.9451 12.8176 20.2071 13 20.5 13C20.7929 13 21.0549 12.8176 21.1565 12.5429L21.3629 11.9853C21.6557 11.194 21.7409 11.0069 21.8739 10.8739C22.0069 10.7408 22.1941 10.6556 22.9853 10.3628L23.5429 10.1565C23.8176 10.0548 24 9.79291 24 9.5C24 9.20709 23.8176 8.94515 23.5429 8.8435L22.9853 8.63716C22.1941 8.34437 22.0069 8.25916 21.8739 8.12613C21.7409 7.99311 21.6557 7.80595 21.3629 7.01469L21.1565 6.45707C21.0549 6.18237 20.7929 6 20.5 6Z"
                             stroke="#183C1A"
                             stroke-width="2"
                             stroke-linecap="round"
+                            stroke-linejoin="round"
                           />
                         </svg>
                       </div>
 
                       <div>
-                        <h3 class="text-sm font-medium text-Theme-Black">Responses & Analytics</h3>
+                        <h3 class="text-sm font-medium text-Theme-Black">Kiwizard AI</h3>
 
                         <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
-                          Understand responses with clear insights.
+                          Build forms faster with Kiwizard AI
                         </p>
                       </div>
                     </a>
 
                     <!-- ITEM -->
                     <a
-                      href="#"
+                      href="./help/form-building"
                       class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -1152,7 +1157,109 @@
 
                     <!-- ITEM -->
                     <a
-                      href="#"
+                      href="./help/responses-analytics"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.22168 2.55469H8.77724"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M7.22168 7.22168H13.4439"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Responses & Analytics</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Understand responses with clear insights.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/logic-flow"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="25"
+                          viewBox="0 0 30 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 6.06738H19.6672"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <rect
+                            x="19.6553"
+                            y="1"
+                            width="9.34468"
+                            height="9.34468"
+                            rx="1.36115"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Logic & Flow</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Build dynamic forms with smart logic.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/integrations-automations"
                       class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -1206,104 +1313,8 @@
                       </div>
                     </a>
 
-                    <!-- ITEM -->
                     <a
-                      href="#"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
-                    >
-                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
-                        <svg
-                          width="30"
-                          height="25"
-                          viewBox="0 0 30 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1 6.06738H19.6672"
-                            stroke="#183C1A"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                          />
-                          <path
-                            d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
-                            stroke="#183C1A"
-                            stroke-width="2"
-                          />
-                          <rect
-                            x="19.6553"
-                            y="1"
-                            width="9.34468"
-                            height="9.34468"
-                            rx="1.36115"
-                            fill="#E8F5B7"
-                            stroke="#B8DD2F"
-                            stroke-width="2"
-                          />
-                          <path
-                            d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
-                            fill="#E8F5B7"
-                            stroke="#B8DD2F"
-                            stroke-width="2"
-                          />
-                        </svg>
-                      </div>
-
-                      <div>
-                        <h3 class="text-sm font-medium text-Theme-Black">Logic & Flow</h3>
-
-                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
-                          Build dynamic forms with smart logic.
-                        </p>
-                      </div>
-                    </a>
-
-                    <!-- ITEM -->
-                    <a
-                      href="#"
-                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
-                    >
-                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
-                        <svg
-                          width="30"
-                          height="30"
-                          viewBox="0 0 30 30"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
-                            fill="#E8F5B7"
-                          />
-                          <path
-                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
-                            fill="#E8F5B7"
-                            stroke="#B8DD2F"
-                            stroke-width="2"
-                          />
-                          <path
-                            d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
-                            stroke="#183C1A"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </div>
-
-                      <div>
-                        <h3 class="text-sm font-medium text-Theme-Black">
-                          Languages & Translations
-                        </h3>
-
-                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
-                          Create forms for a global audience.
-                        </p>
-                      </div>
-                    </a>
-
-                    <a
-                      href="#"
+                      href="./help/design-themes"
                       class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
                     >
                       <div class="flex h-10 w-10 items-center justify-center rounded-lg">
@@ -1348,14 +1359,57 @@
                         </p>
                       </div>
                     </a>
-                    <div class="w-full bg-white"></div>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/supported-languages"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                          />
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">
+                          Languages & Translations
+                        </h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Create forms for a global audience.
+                        </p>
+                      </div>
+                    </a>
                   </div>
                   <div class="w-full h-[50px] bg-white"></div>
                 </div>
               </div>
 
               <!-- RIGHT -->
-              <div class="col-span-1 bg-white border-l border-Theme-bg">
+              <div class="col-span-1 bg-white border-l border-[#E2DCDC]">
                 <div class="p-[5px] h-[calc(100%-50px)]">
                   <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
                     <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">FORM TEMPLATES</p>
@@ -1509,48 +1563,81 @@
                       collecting data.
                     </p>
                     <a
-                      href="#"
+                      href="./templates"
                       class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
                       >Kiwiform Templates</a
                     >
                   </div>
                 </div>
-                <div class="w-full h-[50px] bg-white border-t border-Theme-bg"></div>
+                <div class="w-full h-[50px] bg-white border-t border-[#E2DCDC]"></div>
               </div>
             </div>
           </div>
-          <div class="col-span-2 bg-white rounded-10px max-2xl:hidden"></div>
+          <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
         </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white rounded-l-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
-    </header>
+    </div>
 
     <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
-      <!-- Page Title  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-auto">
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
         <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-transparent"
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
           >
-            <div class="pt-[55px] px-4 md:px-12 pb-16 rounded-10px bg-[#F6F6F6] w-full">
-              <h1
-                class="text-center text-[52px] tracking-[-1.04px] leading-[62px] font-Inter-disp text-Theme-Black mb-4"
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px] lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4"
+            >
+              <!-- badge -->
+              <div
+                class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green"
               >
-                Privacy Policy
+                Visual Form Creation
+              </div>
+              <h1
+                class="mt-6 mb-2.5 text-center w-full max-w-[634px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                Drag and Drop Form Builder for Faster Form Creation
               </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter"
+              >
+                Build forms, surveys, quizzes, and workflows visually with Kiwiform's Drag and Drop
+                Form Builder. Create professional forms without coding and publish them in minutes.
+              </p>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter"
+              >
+                Kiwiform helps teams create forms using a simple drag-and-drop interface. Add
+                fields, rearrange questions, customize layouts, and build complete form experiences
+                without writing code.  <br />
+                Whether you're collecting leads, registrations, applications, feedback, or survey
+                responses, Kiwiform makes form creation faster and easier through visual editing,
+                Conditional Logic, and AI-powered assistance from Kiwizard.  <br />
+                Create forms that look professional, work across devices, and adapt to your
+                workflow—all from a single no-code platform.
+              </p>
+
+              <a
+                href="https://app.kiwiform.com"
+                class="inline-flex py-2.5 px-5 rounded-md text-white bg-Theme-Green transition-all duration-500 hover:bg-[#B8DD2F] hover:text-Theme-Black text-sm font-medium"
+              >
+                Start Building Forms
+              </a>
             </div>
           </div>
           <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
         </div>
         <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
-      </div>
+      </section>
 
       <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px] md:h-[100px]">
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
         <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
@@ -1564,271 +1651,154 @@
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
 
-      <!-- Page desc  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-auto">
+      <!-- Drag and Drop Form Builder  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
         <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-transparent"
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
-            <div
-              class="py-[120px] bg-white rounded-10px flex flex-col gap-[34px] w-full px-3 md:px-6 lg:px-9"
-            >
-              <div class="flex flex-col gap-2.5 w-full">
-                <h2 class="legal-title">Privacy Policy: Kiwiform</h2>
-                <p class="legal-para text-[#8C8484] font-medium">
-                  Effective Date: February 24, 2026
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                >
+                  Drag and Drop Form Builder
                 </p>
-                <p class="legal-para">
-                  At <span>Kiwiform</span>, we believe that privacy isn't just a legal checkbox—it’s
-                  a feature. We’ve built this platform to be a "privacy-first" alternative to
-                  traditional form builders. This policy explains what data we collect, why we
-                  collect it, and how we protect it.
+                <h2 class="heading-h2 text-center lg:text-left">
+                  Create and Customize Forms Using a Visual Builder
+                </h2>
+
+                <p
+                  class="w-full text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Replace complex form setup with a simple drag-and-drop workflow using Kiwiform.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  A Drag and Drop Form Builder allows you to create forms visually by placing fields
+                  exactly where you want them. Instead of relying on developers or manually editing
+                  code, questions, layouts, and form sections can be added and organized directly
+                  within the builder.  <br />
+                  This makes form creation more accessible, easier to manage, and significantly
+                  faster to update. Whether you're building a simple contact form or a multi-step
+                  application workflow, changes can be made in seconds without disrupting the
+                  overall form experience.
                 </p>
               </div>
-              <div class="flex flex-col gap-5 w-full">
-                <h2 class="legal-title">The "Plain English" Summary</h2>
-                <ul class="legal-disc">
-                  <li class="legal-para">
-                    <span>No Tracking:</span> We do not use third-party tracking pixels (like
-                    Facebook or LinkedIn).
-                  </li>
-                  <li class="legal-para">
-                    <span>Payments via Polar:</span> We use Polar.sh to handle billing. They act as
-                    our Merchant of Record, ensuring your tax and payment data are handled with
-                    elite security.
-                  </li>
-                  <li class="legal-para">
-                    <span>Your Choice of Home:</span> We offer data hosting in the EU for those who
-                    need to meet strict residency requirements.
-                  </li>
-                  <li class="legal-para">
-                    <span>Partial Submissions:</span> We capture data as users type to prevent loss,
-                    but we encourage you to tell your respondents about this.
-                  </li>
-                </ul>
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
+                <img
+                  src="/images/uploads/drag-and-drop-form-builder.png"
+                  alt="form fields image"
+                  class="w-full h-full"
+                />
               </div>
-              <ul class="flex flex-col gap-[34px] w-full list-decimal list-inside pl-0">
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">1. Data We Collect</h2>
-                  <p class="legal-para">
-                    We collect the minimum amount of data necessary to provide a high-quality
-                    service.
-                  </p>
-                  <ul class="list-inside pl-6 list-[upper-alpha] flex flex-col gap-5 w-full">
-                    <li class="flex flex-col gap-2.5 w-full">
-                      <h5 class="legal-title">A. Account Information</h5>
-                      <p class="legal-para">
-                        When you sign up, we collect your <span>Name</span> and
-                        <span>Email Address</span>. This allows us to manage your account and send
-                        essential system updates.
-                      </p>
-                    </li>
-                    <li class="flex flex-col gap-2.5 w-full">
-                      <h5 class="legal-title">B. Billing & Payment Data (via Polar.sh)</h5>
-                      <p class="legal-para">
-                        Payment processing is handled by <span>Polar.sh.</span>
-                      </p>
-                      <ul class="legal-disc">
-                        <li class="legal-para">
-                          As our Merchant of Record, Polar collects your billing address and payment
-                          details to process transactions and handle global tax (VAT/Sales Tax)
-                          compliance.
-                        </li>
-                        <li class="legal-para">
-                          Kiwiform does <span>not</span> store your full credit card details or
-                          sensitive financial data on our own servers.
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="flex flex-col gap-2.5 w-full">
-                      <h5 class="legal-title">C. Form Response Data (Partial Submissions)</h5>
-                      <p class="legal-para">
-                        To help you understand where users drop off and to prevent data loss,
-                        Kiwiform captures data entered into form fields
-                        <span>even if the user does not click the final "Submit" button.</span>
-                      </p>
-                      <p class="legal-para">
-                        <span>Important:</span> As the "Data Controller," you should ensure your own
-                        privacy notice informs respondents that their progress is saved
-                        automatically.
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">2. How We Use AI (OpenAI API)</h2>
-                  <p class="legal-para">
-                    We use the <span>OpenAI API</span> specifically for our
-                    <span>Form Translation</span> feature.
-                  </p>
-                  <ul class="legal-disc">
-                    <li class="legal-para">
-                      <span>Purpose:</span> To translate your form questions into different
-                      languages instantly.
-                    </li>
-                    <li class="legal-para">
-                      <span>Privacy:</span> We only send the text of your questions/labels to
-                      OpenAI. We do not send respondent data or personal information to the API.
-                    </li>
-                    <li class="legal-para">
-                      <span>Training:</span> Per our agreement with OpenAI, data sent via their API
-                      is not used to train their global models.
-                    </li>
-                  </ul>
-                </li>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
 
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">3. Google API Services User Data Policy Compliance</h2>
-                  <p class="legal-para">
-                    Kiwiform's use and transfer of information received from Google APIs to any
-                    other app will adhere to the
-                    <a
-                      href="https://developers.google.com/terms/api-services-user-data-policy"
-                      class="legal-link"
-                      >Google API Services User Data Policy</a
-                    >, including the Limited Use requirements
-                  </p>
-                </li>
-
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">4. Data Hosting & Sovereignty</h2>
-                  <p class="legal-para">We understand that where your data lives matters.</p>
-                  <ul class="legal-disc">
-                    <li class="legal-para">
-                      <span>EU Hosting:</span> For our users in Europe or those with strict
-                      compliance needs, we provide the option to host data on servers located within
-                      the <span>European Union.</span>
-                    </li>
-                    <li class="legal-para">
-                      <span>Global Infrastructure:</span> Our default infrastructure is managed by
-                      industry-leading providers with high-tier security certifications (SOC2, ISO
-                      27001).
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">5. Third-Party Sub-processors</h2>
-                  <p class="legal-para">
-                    We only share data with service providers necessary for the app to function.
-                  </p>
-
-                  <div
-                    class="w-full overflow-x-auto rounded-2xl border border-black/5 bg-[#f5f5f5] p-4"
+      <!--   -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-[10px] flex items-center bg-white justify-center flex-col p-4 lg:px-6 lg:py-10"
+              >
+                <p
+                  class="w-full text-base leading-7 text-Theme-Black mt-2.5 text-center max-w-[1006px] mx-auto w-full"
+                >
+                  Kiwiform's Drag and Drop Form Builder combines visual editing with modern
+                  form-building capabilities, helping teams launch forms quickly while maintaining
+                  complete control over structure, design, and data collection.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme px-0! pt-0! gap-5 lg:gap-10 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/visual-drag-and-drop-editor.png" alt="form img" />
+                </div>
+                <div class="flex flex-col gap-2.5 px-6 w-full">
+                  <h4
+                    class="text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center"
                   >
-                    <table class="w-full border-collapse text-left">
-                      <thead>
-                        <tr class="text-sm font-normal text-black">
-                          <th class="pb-4 text-base">Provider</th>
-                          <th class="pb-4 text-base">Purpose</th>
-                          <th class="pb-4 text-base">Data Shared</th>
-                        </tr>
-                      </thead>
-
-                      <tbody class="text-sm text-black/70">
-                        <tr class="border-t border-black/5">
-                          <td class="py-3 text-base font-semibold text-black">Polar.sh</td>
-
-                          <td class="py-3 text-base">Payments & Tax Compliance</td>
-
-                          <td class="py-3 text-base">Billing info, Email, Transaction data</td>
-                        </tr>
-
-                        <tr class="border-t border-black/5">
-                          <td class="py-3 text-base font-semibold text-black">OpenAI</td>
-
-                          <td class="py-3 text-base">Form Translation</td>
-
-                          <td class="py-3 text-base">Form text (Questions/Labels)</td>
-                        </tr>
-
-                        <tr class="border-t border-black/5">
-                          <td class="py-3 text-base font-semibold text-black">AWS/DigitalOcean</td>
-
-                          <td class="py-3 text-base">Cloud Infrastructure</td>
-
-                          <td class="py-3 text-base">Encrypted database storage</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </li>
-
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">6. Your Rights (GDPR & CCPA)</h2>
-                  <p class="legal-para">
-                    Regardless of where you live, we honor your right to control your data:
+                    Visual Drag-and-Drop Editor
+                  </h4>
+                  <p
+                    class="text-base font-normal text-[#7D7676] text-center max-w-[553px] mx-auto w-full"
+                  >
+                    Add, move, and organize fields with simple drag-and-drop controls.
                   </p>
-                  <ul class="legal-disc">
-                    <li class="legal-para">
-                      <span>Access & Portability:</span> Export your form data at any time.
-                    </li>
-                    <li class="legal-para">
-                      <span>Right to be Forgotten:</span> Delete your account and all associated
-                      data permanently.
-                    </li>
-                    <li class="legal-para">
-                      <span>No Selling:</span> We do not, and will never, sell your data to third
-                      parties.
-                    </li>
-                  </ul>
-                </li>
+                </div>
+              </div>
 
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">7. Data Retention</h2>
-                  <p class="legal-para">
-                    We retain your personal information, including account data, form responses, and
-                    billing information, only for as long as is necessary for the purposes set out
-                    in this Privacy Policy.
+              <div class="card-Theme px-0! pt-0! gap-5 lg:gap-10 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/30+-form-fields.png" alt="form img" />
+                </div>
+                <div class="flex flex-col gap-2.5 px-6">
+                  <h4
+                    class="text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center"
+                  >
+                    30+ Form Fields
+                  </h4>
+                  <p
+                    class="text-base font-normal text-[#7D7676] text-center max-w-[553px] mx-auto w-full"
+                  >
+                    Collect text, files, ratings, selections, signatures, and more.
                   </p>
-                  <ul class="legal-disc">
-                    <li class="legal-para">
-                      <span>Account Information:</span> Retained for as long as your account is
-                      active. If you choose to delete your account, your data (including workspaces
-                      and profile info) is <span>permanently and instantly deleted</span> from our
-                      active servers.
-                    </li>
-                    <li class="legal-para">
-                      <span>Form Response Data:</span> Retained indefinitely until you (the account
-                      owner) actively delete the responses from your workspace, or until your
-                      account is deleted (which triggers an instant deletion of all associated form
-                      data).
-                    </li>
-                    <li class="legal-para">
-                      <span>Billing Information:</span> Retained for up to 7 years to comply with
-                      legal, tax, and accounting obligations. If you have any questions about how
-                      your data is retained, or if you wish to request immediate data deletion,
-                      please contact our support team.
-                    </li>
-                  </ul>
-                </li>
+                </div>
+              </div>
 
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">8. Security</h2>
-                  <p class="legal-para">
-                    We use <span>AES-256 encryption</span> at rest and <span>SSL/TLS</span> for all
-                    data in transit. We treat your data with the same level of security we’d want
-                    for our own.
+              <div class="card-Theme px-0! pt-0! gap-5 lg:gap-10 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/real-time-preview.png" alt="form img" />
+                </div>
+                <div class="flex flex-col gap-2.5 px-6">
+                  <h4
+                    class="text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center"
+                  >
+                    Real-Time Preview
+                  </h4>
+                  <p
+                    class="text-base font-normal text-[#7D7676] text-center max-w-[553px] mx-auto w-full"
+                  >
+                    See exactly how your form will appear while you build.
                   </p>
-                </li>
-                <li class="flex flex-col w-full gap-3.5">
-                  <h2 class="legal-title">9. Contact Us</h2>
-                  <p class="legal-para">
-                    If you have questions about this policy or want to exercise your data rights,
-                    please reach out:
-                  </p>
-                </li>
-              </ul>
-              <div class="flex flex-col gap-2.5 w-full">
-                <h2 class="legal-title">Entity: <span class="font-medium">Kiwiform</span></h2>
+                </div>
+              </div>
 
-                <div class="flex items-center gap-2.5">
-                  <p class="legal-para">Email:</p>
-                  <a href="mailto:mail@kiwiform.com" class="legal-link">mail@kiwiform.com</a>
+              <div class="card-Theme px-0! pt-0! gap-5 lg:gap-10 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/custom-themes.png" alt="form img" />
+                </div>
+                <div class="flex flex-col gap-2.5 px-6">
+                  <h4
+                    class="text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center"
+                  >
+                    Custom Themes
+                  </h4>
+                  <p
+                    class="text-base font-normal text-[#7D7676] text-center max-w-[553px] mx-auto w-full"
+                  >
+                    Match forms to your brand with colors, fonts, and layouts.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1836,10 +1806,10 @@
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
+      </section>
 
       <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[100px]">
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
         <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
@@ -1851,6 +1821,766 @@
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!--   Advanced Form Building  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20"
+              >
+                <p
+                  class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5"
+                >
+                  Advanced Form Building
+                </p>
+                <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                  Create Dynamic Forms for Real-World Workflows
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                  Combine drag-and-drop form creation with Conditional Logic, Branching, and
+                  AI-powered form building.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto"
+                >
+                  Modern forms often require more than collecting basic information. Applications,
+                  registrations, onboarding workflows, lead qualification forms, and surveys
+                  frequently need different questions for different respondents.  <br />
+                  Kiwiform's Drag and Drop Form Builder helps teams create dynamic forms that adapt
+                  automatically. Using Conditional Logic, Branching Paths, and Skip Logic, forms can
+                  display relevant questions, guide respondents through personalized journeys, and
+                  streamline data collection.  <br />
+                  Kiwizard, the AI Form Builder inside Kiwiform, can generate a complete form draft
+                  from a simple prompt. Once generated, every question, field, and workflow remains
+                  fully editable inside the visual drag-and-drop builder.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9878 15.0005L15.0215 11.1113"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.9863 28.4784V24.624"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10.8613 28.5H19.1113"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M22.1656 1.5H10.8082C10.2582 1.5 9.73563 1.69251 9.30938 2.02251L6.29813 4.42876C5.08812 5.39126 5.08812 7.21998 6.29813 8.18248L9.30938 10.5887C9.73563 10.9325 10.2719 11.1112 10.8082 11.1112H22.1656C23.4993 11.1112 24.5718 10.0387 24.5718 8.70499V3.89249C24.5718 2.57249 23.4993 1.5 22.1656 1.5Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.83594 15H19.1935C19.7435 15 20.266 15.1925 20.6922 15.5225L23.7035 17.9288C24.9135 18.8913 24.9135 20.72 23.7035 21.6825L20.6922 24.0887C20.266 24.4325 19.7297 24.6112 19.1935 24.6112H7.83594C6.50219 24.6112 5.42969 23.5387 5.42969 22.205V17.3925C5.42969 16.0725 6.50219 15 7.83594 15Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Multi-Step Forms</h4>
+                <p class="card-para">
+                  uild multi-step forms that guide respondents through longer workflows without
+                  overwhelming them.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.5 19.05V5.5C25.5 3.61438 25.5 2.67157 24.9142 2.08579C24.3284 1.5 23.3856 1.5 21.5 1.5H8.5C6.61438 1.5 5.67157 1.5 5.08579 2.08579C4.5 2.67157 4.5 3.61438 4.5 5.5V24.5C4.5 26.3856 4.5 27.3284 5.08579 27.9142C5.67157 28.5 6.61438 28.5 8.5 28.5H16.3125L25.5 19.05Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.3125 28.4998V23.0498C16.3125 21.1642 16.3125 20.2214 16.8983 19.6356C17.4841 19.0498 18.4269 19.0498 20.3125 19.0498H25.5"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9.89844 8.24805H20.6984"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M9.89844 13.6504H15.2984"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">AI Form Generation</h4>
+                <p class="card-para">
+                  Generate complete form drafts with Kiwizard and continue editing them in the Drag
+                  and Drop Form Builder.
+                </p>
+              </div>
+
+              <div class="card-Theme sm:col-span-2 lg:col-span-1">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M28.5 13.65V21.75C28.5 27.15 27.15 28.5 21.75 28.5H8.25C2.85 28.5 1.5 27.15 1.5 21.75V8.25C1.5 2.85 2.85 1.5 8.25 1.5H10.275C12.3 1.5 12.7455 2.094 13.515 3.12L15.54 5.82C16.053 6.495 16.35 6.9 17.7 6.9H21.75C27.15 6.9 28.5 8.25 28.5 13.65Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 22.5L15 12.8997M19 16.9497L15 12.8997L11 16.9497"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">File Upload Collection</h4>
+                <p class="card-para">
+                  Add file upload fields to your drag and drop forms for documents, images, and
+                  attachments.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Why Kiwiform -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                >
+                  Why Kiwiform
+                </p>
+                <h2 class="heading-h2 text-center lg:text-left">
+                  Drag and Drop Form Builder for Modern Teams
+                </h2>
+
+                <p
+                  class="w-full text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Build forms faster, manage them easily, and collect unlimited responses with
+                  Kiwiform.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Kiwiform combines visual form building, advanced form logic, AI-powered form
+                  creation, and unlimited usage in a single platform. Teams can create forms without
+                  code, customize workflows with Conditional Logic, and generate form drafts using
+                  Kiwizard.  <br />
+                  Unlike many traditional form builders that restrict usage through response limits
+                  and feature gates, Kiwiform allows teams to create unlimited forms and collect
+                  unlimited responses without artificial limits.  <br />
+                  Kiwiform provides the flexibility and scalability needed to support growing teams
+                  and evolving business processes.
+                </p>
+              </div>
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
+                <img
+                  src="/images/uploads/why-kiwiform.png"
+                  alt="form fields image"
+                  class="w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Form Builder for Every Use Case  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20"
+              >
+                <p
+                  class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5"
+                >
+                  Form Builder for Every Use Case
+                </p>
+                <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                  One Form Builder <br />
+                  for Forms, Surveys, Quizzes, and Workflows
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                  Create forms for lead generation, registrations, applications, feedback
+                  collection, and more.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto"
+                >
+                  The flexibility of a Drag and Drop Form Builder allows teams to create forms for
+                  almost any workflow. Instead of using different tools for different projects,
+                  Kiwiform provides a single platform for building, managing, and sharing forms
+                  across departments and use cases. Whether you're collecting customer information,
+                  running surveys, processing applications, or creating interactive quizzes,
+                  Kiwiform helps you build professional forms that are easy to create, customize,
+                  and maintain.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Lead Generation Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">Contact Forms</h5>
+              </div>
+
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Event Registration Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Job Application Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Customer Feedback Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">Survey Forms</h5>
+              </div>
+
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Quiz and Assessment Forms
+                </h5>
+              </div>
+              <div class="card-Theme px-3! py-10!">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Customer Onboarding Forms
+                </h5>
+              </div>
+              <div class="card-Theme px-3! py-10! sm:col-span-2 lg:col-span-1">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Internal Request Forms
+                </h5>
+              </div>
+            </div>
+
+            <div class="bg-white w-full py-10 flex items-center justify-center rounded-[10px] px-2">
+              <a
+                href="https://app.kiwiform.com"
+                class="inline-flex py-2.5 px-5 rounded-md hover:text-white bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+              >
+                Build Forms with Drag and Drop
+              </a>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Frequently Asked Questions -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-[#F6F6F6]"
+          >
+            <div class="p-4 lg:pt-20 w-full flex flex-col gap-2.5">
+              <p class="text-center text-base font-normal text-Theme-Green leading-7">
+                Everything You Need to Know
+              </p>
+              <h2 class="heading-h2 text-center">Frequently Asked Questions</h2>
+              <p class="text-base leading-7 text-[#8C8484] text-center">
+                Frequently Asked Questions About Kiwiform Drag and Drop Form Builder
+              </p>
+            </div>
+            <div class="py-5 lg:pt-10 lg:pb-20 w-full rounded-lg px-4">
+              <div
+                class="flex flex-col gap-px w-full max-w-[1004px] mx-auto p-px rounded-10px bg-Theme-bg overflow-hidden"
+              >
+                <div x-data="{ active: 0 }" class="flex flex-col gap-px w-full">
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 0 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 0 ? null : 0"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What is a Drag and Drop Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 0 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 0" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Drag and Drop Form Builder is a tool that allows you to create forms
+                          visually without coding. You can add, arrange, and customize form fields
+                          using a simple interface, making form creation faster and more accessible.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 1 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 1 ? null : 1"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        How does Form Builder work?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 1 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 1" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Drag and Drop Form Builder uses a visual editor where you can build
+                          forms by selecting fields, adjusting layouts, and configuring settings.
+                          Changes can be made directly in the editor without technical knowledge.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 2 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 2 ? null : 2"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can I create forms without coding?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 2 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 2" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform's Drag and Drop Form Builder is designed for no-code form
+                          creation, allowing individuals and teams to build professional forms
+                          without writing code.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 3 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 3 ? null : 3"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What types of forms can I build?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 3 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 3" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          You can create lead generation forms, contact forms, surveys, quizzes,
+                          registration forms, application forms, onboarding forms, and internal
+                          workflow forms using a Drag and Drop Form Builder.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 4 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 4 ? null : 4"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can I customize my forms?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 4 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 4" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform's Drag and Drop Form Builder allows you to customize colors,
+                          branding, layouts, fonts, and other visual elements to create forms that
+                          match your organization.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 5 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 5 ? null : 5"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Does it support multi-step forms?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 5 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 5" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. You can create multi-step forms that break longer forms into smaller
+                          sections, helping respondents complete forms more easily and improving the
+                          overall experience.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 6 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 6 ? null : 6"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can I collect files through my forms?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 6 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 6" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. The Drag and Drop Form Builder includes file upload fields that allow
+                          respondents to submit documents, images, and other attachments as part of
+                          their responses.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 7 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 7 ? null : 7"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can workflows be automated after submissions?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 7 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 7" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform's Drag and Drop Form Builder can connect with integrations
+                          and automation tools to streamline follow-ups, notifications, approvals,
+                          and other processes after submission.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 8 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 8 ? null : 8"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Why choose Kiwiform's Drag and Drop Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 8 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 8" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform's Drag and Drop Form Builder combines visual form creation,
+                          AI-powered form generation, unlimited forms, unlimited responses,
+                          customization options, and workflow capabilities in a single platform.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
       </div>
     </div>
   </body>

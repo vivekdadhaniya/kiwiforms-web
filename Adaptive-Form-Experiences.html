@@ -1,0 +1,2212 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="assets/css/output.css"> -->
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px" x-data="templateDetailPage()" x-init="init()">
+    <!-- navigation  -->
+    <div x-data="{ open:false, open1:false, mobileMenu:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false } }"
+        class="fixed top-0 z-50 bg-[#E2DCDC] pb-px w-full flex flex-col gap-px">
+        <div class="flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
+                <!-- place content here -->
+                <div class="col-span-11 bg-white rounded-[10px] py-3 lg:px-5">
+                    <div class="flex items-center justify-between max-lg:px-5">
+                        <a href="/" class="flex items-center gap-3">
+                            <svg width="143" height="32" viewBox="0 0 143 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M45.1923 20.5262C44.8292 19.8837 44.3263 19.8279 43.8235 20.3307L41.7005 22.5376V26.3088H38.3203V6.75425H41.7005V18.459L47.5947 12.2016H51.7291L47.7624 16.3918C47.2875 16.8947 47.2316 17.3696 47.5389 17.9283L52.1482 26.3088H48.2652L45.1923 20.5262Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M53.57 26.3088V12.1736H57.1457V26.3088H53.57ZM55.3579 10.1065C54.1008 10.1065 53.1789 9.24047 53.1789 8.06719C53.1789 6.92186 54.1008 6 55.3579 6C56.6149 6 57.5368 6.92186 57.5368 8.06719C57.5368 9.24047 56.6149 10.1065 55.3579 10.1065Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M62.8621 26.3088L58.6719 12.1736H62.3593L64.7058 21.4481H64.9293L67.3317 12.1736H70.8236L73.226 21.4481H73.4216L75.7681 12.1736H79.4835L75.2932 26.3088H71.4661L69.1196 17.3416H69.0078L66.6892 26.3088H62.8621Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M81.014 26.3088V12.1736H84.5897V26.3088H81.014ZM82.8019 10.1065C81.5448 10.1065 80.6229 9.24047 80.6229 8.06719C80.6229 6.92186 81.5448 6 82.8019 6C84.0589 6 84.9808 6.92186 84.9808 8.06719C84.9808 9.24047 84.0589 10.1065 82.8019 10.1065Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M88.6872 26.3088V15.1348H86.0892L86.0613 12.1736H87.8491C88.3799 12.1736 88.6313 11.8943 88.6872 11.3915V10.9166C88.9107 8.76557 90.3074 6.75425 93.6876 6.75425H95.224V9.71536H92.9613C92.3467 9.71536 92.0953 9.96678 92.0953 10.5534V12.1736H94.9726V15.1348H92.1511V26.3088H88.6872Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M102.969 26.7557C98.4433 26.7557 95.566 23.7667 95.566 19.2412C95.566 14.7157 98.4433 11.7267 102.969 11.7267C107.438 11.7267 110.316 14.7157 110.316 19.2412C110.316 23.7667 107.438 26.7557 102.969 26.7557ZM102.969 23.7108C105.204 23.7108 106.684 21.9509 106.684 19.2412C106.684 16.5315 105.204 14.7437 102.969 14.7437C100.706 14.7437 99.2255 16.5315 99.2255 19.2412C99.2255 21.9509 100.706 23.7108 102.969 23.7108Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M112.112 15.7493C112.112 13.4307 113.369 12.1736 115.771 12.1736H120.352V15.1906H115.687V26.3088H112.112V15.7493Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M121.744 26.3088V12.1736H124.984V14.2129C125.85 12.5647 127.331 11.7267 129.258 11.7267C131.381 11.7267 132.89 12.7323 133.644 14.4923C134.454 12.7044 136.018 11.7267 138.086 11.7267C141.13 11.7267 143.002 13.8218 143.002 17.2578V26.3088H139.426V17.8445C139.426 15.8052 138.672 14.8275 137.192 14.8275C135.571 14.8275 134.175 16.1125 134.175 19.1015V26.3088H130.599V17.8445C130.599 15.8052 129.845 14.8275 128.364 14.8275C126.66 14.8275 125.319 16.1963 125.319 19.1015V26.3088H121.744Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16Z"
+                                    fill="#183C1A" />
+                                <path
+                                    d="M16.0016 1.59961C17.0325 1.59961 18.038 1.70824 19.0075 1.9144C20.3067 2.19067 21.1216 3.41533 21.1216 4.74356V9.27961C21.1216 10.1633 21.8379 10.8796 22.7216 10.8796H27.2576C28.5858 10.8796 29.8105 11.6945 30.0868 12.9937C30.2929 13.9631 30.4016 14.9687 30.4016 15.9996C30.4016 23.9525 23.9545 30.3996 16.0016 30.3996C8.04866 30.3996 1.60156 23.9525 1.60156 15.9996C1.60156 8.04671 8.04866 1.59961 16.0016 1.59961Z"
+                                    fill="#B8DD2F" />
+                                <path
+                                    d="M21.5792 10.3996L30.4015 10.8796L30.6714 14.607C30.7154 15.214 30.6999 15.8237 30.6253 16.4277L30.5071 17.385C30.4368 17.9535 30.3145 18.5144 30.1415 19.0605L29.7935 20.1596L25.9215 15.3596L21.5792 10.3996Z"
+                                    fill="url(#paint0_linear_12265_2027)" />
+                                <path
+                                    d="M11.8984 15.8601C11.8984 13.5923 13.7369 11.7539 16.0046 11.7539C18.2724 11.7539 20.1109 13.5923 20.1109 15.8601C20.1109 18.1279 18.2724 19.9663 16.0046 19.9663C13.7369 19.9663 11.8984 18.1279 11.8984 15.8601Z"
+                                    fill="#F2F3B5" />
+                                <ellipse cx="16.1464" cy="23.3642" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                                <ellipse cx="16.1464" cy="8.497" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                                <ellipse cx="19.8651" cy="22.3683" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-30 19.8651 22.3683)" fill="#183C1A" />
+                                <ellipse cx="12.4276" cy="9.49329" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-30 12.4276 9.49329)" fill="#183C1A" />
+                                <ellipse cx="22.5831" cy="19.6475" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-60 22.5831 19.6475)" fill="#183C1A" />
+                                <ellipse cx="9.70808" cy="12.2139" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-60 9.70808 12.2139)" fill="#183C1A" />
+                                <ellipse cx="23.5868" cy="15.9317" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-90 23.5868 15.9317)" fill="#183C1A" />
+                                <ellipse cx="8.71184" cy="15.9317" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-90 8.71184 15.9317)" fill="#183C1A" />
+                                <ellipse cx="9.71008" cy="19.6466" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-120 9.71008 19.6466)" fill="#183C1A" />
+                                <ellipse cx="12.4249" cy="22.37" rx="0.849561" ry="1.27434"
+                                    transform="rotate(-150 12.4249 22.37)" fill="#183C1A" />
+                                <defs>
+                                    <linearGradient id="paint0_linear_12265_2027" x1="26.4011" y1="10.8796" x2="30.4011"
+                                        y2="20.1596" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                        <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </a>
+
+                        <nav class="hidden items-center gap-7 lg:flex">
+                            <!-- PLATFORM -->
+                            <div class="relative">
+                                <button @click="open = !open"
+                                    class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                                    :class="open ? 'text-Theme-Green' : 'text-Theme-Black'">
+                                    Platform
+                                    <svg class="h-4 w-4 transition duration-300" :class="open ? 'rotate-180' : ''"
+                                        width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 8L10 12L6 8" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <a href="./templates"
+                                class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green">
+                                Templates
+                            </a>
+
+                            <a href="./pricing"
+                                class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green">
+                                Pricing
+                            </a>
+
+                            <a href="./blog"
+                                class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green">
+                                Blog
+                            </a>
+                        </nav>
+
+                        <div class="flex items-center gap-4">
+                            <!-- desktop button -->
+                            <a href="https://app.kiwiform.com" target="_blank"
+                                class="hidden lg:inline-flex py-2 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium">
+                                Get Started
+                            </a>
+
+                            <!-- mobile hamburger -->
+                            <button @click="mobileMenu = !mobileMenu"
+                                class="flex lg:hidden items-center justify-center w-10 h-10 text-Theme-Black">
+                                <!-- hamburger -->
+                                <svg x-show="!mobileMenu" x-transition width="22" height="22" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+
+                                <!-- close -->
+                                <svg x-show="mobileMenu" x-transition width="22" height="22" viewBox="0 0 24 24"
+                                    fill="none" style="display: none">
+                                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- MOBILE MENU -->
+                    <div x-show="mobileMenu" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 -translate-y-3"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 -translate-y-3" class="lg:hidden gap-px w-full"
+                        style="display: none">
+                        <!-- left spacer -->
+                        <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
+
+                        <!-- center -->
+                        <div class="w-full md:col-span-12 bg-white rounded-[10px] overflow-hidden">
+                            <div class="flex flex-col items-center text-center">
+                                <div
+                                    class="relative flex items-center justify-center flex-col gap-4 py-4 border-b border-[#E2DCDC] w-full">
+                                    <button @click="open1 = !open1"
+                                        class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                                        :class="open1 ? 'text-Theme-Green' : 'text-Theme-Black'">
+                                        Platform
+                                        <svg class="h-4 w-4 transition duration-300" :class="open1 ? 'rotate-180' : ''"
+                                            width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14 8L10 12L6 8" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+
+                                    <div x-show="open1" @click.outside="open1 = false"
+                                        @click="if ($event.target.closest('a')) closeMenus()"
+                                        x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 -translate-y-2"
+                                        x-transition:enter-end="opacity-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        x-transition:leave-start="opacity-100 translate-y-0"
+                                        x-transition:leave-end="opacity-0 -translate-y-2" style="display: none"
+                                        class="bg-transparent gap-px w-full col-span-full px-4">
+                                        <!-- main-container  -->
+
+                                        <!-- place content here -->
+
+                                        <div class="w-full grid grid-cols-1 gap-0 bg-white">
+                                            <!-- LEFT -->
+                                            <div class="col-span-1 px-px pt-px bg-[#E2DCDC]">
+                                                <!-- HEADING -->
+                                                <div
+                                                    class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]">
+                                                    Product
+                                                </div>
+
+                                                <!-- MENU GRID -->
+                                                <div class="w-full flex flex-col gap-px">
+                                                    <div class="grid grid-cols-1 gap-px">
+                                                        <!-- ITEM -->
+                                                        <a href="./help/overview"
+                                                            class="bg-white flex items-center justify-left gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                                            <div
+                                                                class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                                                <svg width="30" height="30" viewBox="0 0 30 30"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                                                                        stroke="#183C1A" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path
+                                                                        d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                                                                        fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path
+                                                                        d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                                                                        stroke="#183C1A" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path
+                                                                        d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                                                                        fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                </svg>
+                                                            </div>
+
+                                                            <div>
+                                                                <h3
+                                                                    class="text-left text-sm font-medium text-Theme-Black">
+                                                                    Overview
+                                                                </h3>
+
+                                                                <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                                    A clear snapshot of all key features.
+                                                                </p>
+                                                            </div>
+                                                        </a>
+
+                                                        <!-- ITEM -->
+                                                        <a href="./help/responses-analytics"
+                                                            class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                                            <div
+                                                                class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                                                <svg width="30" height="30" viewBox="0 0 30 30"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M7.22168 2.55469H8.77724" stroke="#B8DD2F"
+                                                                        stroke-width="2" stroke-linecap="round" />
+                                                                    <path d="M7.22168 7.22168H13.4439" stroke="#B8DD2F"
+                                                                        stroke-width="2" stroke-linecap="round" />
+                                                                    <path
+                                                                        d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                                                                        stroke="#B8DD2F" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path
+                                                                        d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                                                                        stroke="#183C1A" stroke-width="2"
+                                                                        stroke-linecap="round" />
+                                                                </svg>
+                                                            </div>
+
+                                                            <div>
+                                                                <h3
+                                                                    class="text-left text-sm font-medium text-Theme-Black">
+                                                                    Responses & Analytics
+                                                                </h3>
+
+                                                                <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                                    Understand responses with clear insights.
+                                                                </p>
+                                                            </div>
+                                                        </a>
+
+                                                        <!-- ITEM -->
+                                                        <a href="./help/form-building"
+                                                            class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                                            <div
+                                                                class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                                                <svg width="30" height="25" viewBox="0 0 30 25"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                                                                        fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path
+                                                                        d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                                                                        stroke="#183C1A" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path d="M1 17.7998H17.8" stroke="#183C1A"
+                                                                        stroke-width="2" stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path d="M1 23.4004H17.8" stroke="#183C1A"
+                                                                        stroke-width="2" stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                </svg>
+                                                            </div>
+
+                                                            <div>
+                                                                <h3
+                                                                    class="text-left text-sm font-medium text-Theme-Black">
+                                                                    Form Builder
+                                                                </h3>
+
+                                                                <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                                    Create and customize forms with ease.
+                                                                </p>
+                                                            </div>
+                                                        </a>
+
+                                                        <!-- ITEM -->
+                                                        <a href="./help/integrations-automations"
+                                                            class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                                            <div
+                                                                class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                                                <svg width="30" height="30" viewBox="0 0 30 30"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                                                                        stroke="#B8DD2F" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <rect x="13.25" y="6.25" width="6.99976"
+                                                                        height="6.99976" rx="0.777751"
+                                                                        transform="rotate(90 13.25 6.25)"
+                                                                        stroke="#183C1A" stroke-width="2" />
+                                                                    <path d="M23.7397 18.5V28.9996" stroke="#183C1A"
+                                                                        stroke-width="2" stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path d="M29.0005 23.7393L18.5008 23.7393"
+                                                                        stroke="#B8DD2F" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                </svg>
+                                                            </div>
+
+                                                            <div>
+                                                                <h3
+                                                                    class="text-left text-sm font-medium text-Theme-Black">
+                                                                    Integrations
+                                                                </h3>
+
+                                                                <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                                    Connect forms with your essential tools.
+                                                                </p>
+                                                            </div>
+                                                        </a>
+
+                                                        <!-- ITEM -->
+                                                        <a href="./help/logic-flow"
+                                                            class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                                            <div
+                                                                class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                                                <svg width="30" height="25" viewBox="0 0 30 25"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M1 6.06738H19.6672" stroke="#183C1A"
+                                                                        stroke-width="2" stroke-linecap="round" />
+                                                                    <path
+                                                                        d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                                                                        stroke="#183C1A" stroke-width="2" />
+                                                                    <rect x="19.6553" y="1" width="9.34468"
+                                                                        height="9.34468" rx="1.36115" fill="#E8F5B7"
+                                                                        stroke="#B8DD2F" stroke-width="2" />
+                                                                    <path
+                                                                        d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                                                                        fill="#E8F5B7" stroke="#B8DD2F"
+                                                                        stroke-width="2" />
+                                                                </svg>
+                                                            </div>
+
+                                                            <div>
+                                                                <h3
+                                                                    class="text-left text-sm font-medium text-Theme-Black">
+                                                                    Logic & Flow
+                                                                </h3>
+
+                                                                <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                                    Build dynamic forms with smart logic.
+                                                                </p>
+                                                            </div>
+                                                        </a>
+
+                                                        <!-- ITEM -->
+                                                        <a href="./help/supported-languages"
+                                                            class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                                            <div
+                                                                class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                                                <svg width="30" height="30" viewBox="0 0 30 30"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                                                        fill="#E8F5B7" />
+                                                                    <path
+                                                                        d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                                                        fill="#E8F5B7" stroke="#B8DD2F"
+                                                                        stroke-width="2" />
+                                                                    <path
+                                                                        d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                                                                        stroke="#183C1A" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                </svg>
+                                                            </div>
+
+                                                            <div>
+                                                                <h3
+                                                                    class="text-left text-sm font-medium text-Theme-Black">
+                                                                    Languages & Translations
+                                                                </h3>
+
+                                                                <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                                    Create forms for a global audience.
+                                                                </p>
+                                                            </div>
+                                                        </a>
+
+                                                        <a href="./help/design-themes"
+                                                            class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                                            <div
+                                                                class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                                                <svg width="30" height="30" viewBox="0 0 30 30"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                                                                        fill="#E8F5B7" stroke="#B8DD2F"
+                                                                        stroke-width="2" />
+                                                                    <path d="M9.40039 19.2025L9.41221 19.1992"
+                                                                        stroke="#183C1A" stroke-width="2"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round" />
+                                                                    <path
+                                                                        d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                                                                        stroke="#183C1A" stroke-width="2" />
+                                                                    <path
+                                                                        d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                                                                        stroke="#183C1A" stroke-width="2" />
+                                                                </svg>
+                                                            </div>
+
+                                                            <div>
+                                                                <h3
+                                                                    class="text-left text-sm font-medium text-Theme-Black">
+                                                                    Design & Themes
+                                                                </h3>
+
+                                                                <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                                    Design branded forms that look great.
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <div class="w-full bg-white"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- RIGHT -->
+                                            <div class="col-span-1 bg-white border-x border-b border-[#E2DCDC]">
+                                                <div class="p-[5px] h-[calc(100%-50px)]">
+                                                    <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                                                        <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">
+                                                            FORM TEMPLATES
+                                                        </p>
+                                                        <svg width="254" height="78" viewBox="0 0 254 78" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="33" width="178" height="78" rx="10" fill="white" />
+                                                            <rect x="38" y="5" width="68" height="68" rx="5"
+                                                                fill="#E8F5B7" />
+                                                            <path
+                                                                d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                                                                fill="#183C1A" />
+                                                            <path
+                                                                d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                                                                fill="#B8DD2F" />
+                                                            <ellipse cx="72.194" cy="49.1233" rx="1.16815" ry="1.75222"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="72.194" cy="28.6809" rx="1.16815" ry="1.75222"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                                                transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                                                transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                                                transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                                                transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="82.4156" cy="38.9031" rx="1.16814" ry="1.75222"
+                                                                transform="rotate(-90 82.4156 38.9031)"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="61.9727" cy="38.9031" rx="1.16814" ry="1.75222"
+                                                                transform="rotate(-90 61.9727 38.9031)"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                                                transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                                                                fill="#183C1A" />
+                                                            <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                                                transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                                                                fill="#183C1A" />
+                                                            <path
+                                                                d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                                                                fill="url(#paint0_linear_7194_667)" />
+                                                            <path d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
+                                                                stroke="#183C1A" stroke-width="2.11063"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <rect x="121" y="19" width="70" height="8" rx="4"
+                                                                fill="#E8F5B7" />
+                                                            <rect x="121" y="35" width="50" height="8" rx="4"
+                                                                fill="#E8F5B7" />
+                                                            <rect x="121" y="51" width="30" height="8" rx="4"
+                                                                fill="#E8F5B7" />
+                                                            <path
+                                                                d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                                                                fill="url(#paint1_linear_7194_667)" />
+                                                            <path
+                                                                d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                                                                fill="url(#paint2_linear_7194_667)" />
+                                                            <defs>
+                                                                <linearGradient id="paint0_linear_7194_667" x1="86.2999"
+                                                                    y1="31.9588" x2="91.7999" y2="44.7188"
+                                                                    gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                                                    <stop offset="1" stop-color="#183C1A"
+                                                                        stop-opacity="0" />
+                                                                </linearGradient>
+                                                                <linearGradient id="paint1_linear_7194_667" x1="28"
+                                                                    y1="39" x2="-7.1631e-08" y2="39"
+                                                                    gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="white" />
+                                                                    <stop offset="0.5" stop-color="white"
+                                                                        stop-opacity="0.75" />
+                                                                    <stop offset="1" stop-color="white"
+                                                                        stop-opacity="0" />
+                                                                </linearGradient>
+                                                                <linearGradient id="paint2_linear_7194_667" x1="216"
+                                                                    y1="39" x2="254" y2="39"
+                                                                    gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="white" />
+                                                                    <stop offset="1" stop-color="white"
+                                                                        stop-opacity="0" />
+                                                                </linearGradient>
+                                                            </defs>
+                                                        </svg>
+                                                        <h5
+                                                            class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                                                            Templates built for real use cases
+                                                        </h5>
+                                                        <p class="text-xs leading-5 text-Theme-Black mb-5">
+                                                            Start faster choose a template, customize it, and go live in
+                                                            minutes. Focus on collecting data.
+                                                        </p>
+                                                        <a href="./templates"
+                                                            class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green">Kiwiform
+                                                            Templates</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="./templates"
+                                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black">
+                                    Templates
+                                </a>
+
+                                <a href="./pricing"
+                                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black">
+                                    Pricing
+                                </a>
+
+                                <a href="./blog"
+                                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black">
+                                    Blog
+                                </a>
+
+                                <div class="py-5">
+                                    <a href="https://app.kiwiform.com/"
+                                        class="inline-flex rounded-lg bg-[#B8DD2F] px-5 py-2 text-xs font-medium text-[#183C1A]">
+                                        Get Started
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- right spacer -->
+                        <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <div x-show="open" @click="open = false" x-transition.opacity style="display: none"
+            class="fixed inset-x-0 top-[61px] bottom-0 bg-black/30 z-0"></div>
+
+        <!-- dropdown  -->
+        <div x-show="open" @click.outside="open = false" @click="if ($event.target.closest('a')) closeMenus()"
+            x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
+            style="display: none"
+            class="relative z-10 bg-transparent flex md:grid grid-cols-14 gap-px w-full col-span-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
+                <!-- place content here -->
+                <div class="col-span-11 bg-white rounded-[10px] overflow-hidden">
+                    <div class="w-full grid grid-cols-3 gap-5 bg-white">
+                        <!-- LEFT -->
+                        <div class="col-span-2 pr-px bg-[#E2DCDC]">
+                            <!-- HEADING -->
+                            <div class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]">
+                                Product
+                            </div>
+
+                            <!-- MENU GRID -->
+                            <div class="w-full flex flex-col gap-px">
+                                <div class="grid grid-cols-2 gap-px">
+                                    <!-- ITEM -->
+                                    <a href="./help/overview"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                                                    stroke="#183C1A" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                                                    stroke="#183C1A" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">Overview</h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                A clear snapshot of all key features.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <!-- ITEM -->
+                                    <a href="./help/ai-form-builder"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M22 1H23C26.3137 1 29 3.68629 29 7V8" stroke="#B8DD2F"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M15 1H7C3.68629 1 1 3.68629 1 7V23C1 26.3137 3.68629 29 7 29H23C26.3137 29 29 26.3137 29 23V15"
+                                                    stroke="#B8DD2F" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12.5 11C12.2368 11 12.0014 11.1639 11.9101 11.4107L11.4774 12.5799C10.8901 14.1671 10.6515 14.7733 10.2124 15.2124C9.7733 15.6515 9.16707 15.8901 7.57994 16.4774L6.41073 16.9101C6.16388 17.0014 6 17.2368 6 17.5C6 17.7632 6.16388 17.9986 6.41073 18.0899L7.57994 18.5226C9.16707 19.1099 9.7733 19.3485 10.2124 19.7876C10.6515 20.2267 10.8901 20.8329 11.4774 22.42L11.9101 23.5893C12.0014 23.8361 12.2368 24 12.5 24C12.7632 24 12.9986 23.8361 13.0899 23.5893L13.5226 22.42C14.1099 20.8329 14.3485 20.2267 14.7876 19.7876C15.2267 19.3485 15.8329 19.1099 17.42 18.5226L18.5893 18.0899C18.8361 17.9986 19 17.7632 19 17.5C19 17.2368 18.8361 17.0014 18.5893 16.9101L17.42 16.4774C15.8329 15.8901 15.2267 15.6515 14.7876 15.2124C14.3485 14.7733 14.1099 14.1671 13.5226 12.5799L13.0899 11.4107C12.9986 11.1639 12.7632 11 12.5 11Z"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2" />
+                                                <path
+                                                    d="M20.5 6C20.2071 6 19.9451 6.18237 19.8435 6.45707L19.6371 7.01469C19.3443 7.80595 19.2591 7.99311 19.1261 8.12613C18.9931 8.25916 18.806 8.34437 18.0147 8.63716L17.4571 8.8435C17.1824 8.94515 17 9.20709 17 9.5C17 9.79291 17.1824 10.0548 17.4571 10.1565L18.0147 10.3628C18.806 10.6556 18.9931 10.7408 19.1261 10.8739C19.2591 11.0069 19.3443 11.194 19.6371 11.9853L19.8435 12.5429C19.9451 12.8176 20.2071 13 20.5 13C20.7929 13 21.0549 12.8176 21.1565 12.5429L21.3629 11.9853C21.6557 11.194 21.7409 11.0069 21.8739 10.8739C22.0069 10.7408 22.1941 10.6556 22.9853 10.3628L23.5429 10.1565C23.8176 10.0548 24 9.79291 24 9.5C24 9.20709 23.8176 8.94515 23.5429 8.8435L22.9853 8.63716C22.1941 8.34437 22.0069 8.25916 21.8739 8.12613C21.7409 7.99311 21.6557 7.80595 21.3629 7.01469L21.1565 6.45707C21.0549 6.18237 20.7929 6 20.5 6Z"
+                                                    stroke="#183C1A" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">Kiwizard AI</h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                Build forms faster with Kiwizard AI
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <!-- ITEM -->
+                                    <a href="./help/form-building"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="25" viewBox="0 0 30 25" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                                                    stroke="#183C1A" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M1 17.7998H17.8" stroke="#183C1A" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M1 23.4004H17.8" stroke="#183C1A" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">Form Builder</h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                Create and customize forms with ease.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <!-- ITEM -->
+                                    <a href="./help/responses-analytics"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.22168 2.55469H8.77724" stroke="#B8DD2F" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                                <path d="M7.22168 7.22168H13.4439" stroke="#B8DD2F" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                                <path
+                                                    d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                                                    stroke="#B8DD2F" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                                                    stroke="#183C1A" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">Responses & Analytics</h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                Understand responses with clear insights.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <!-- ITEM -->
+                                    <a href="./help/logic-flow"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="25" viewBox="0 0 30 25" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6.06738H19.6672" stroke="#183C1A" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                                <path
+                                                    d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                                                    stroke="#183C1A" stroke-width="2" />
+                                                <rect x="19.6553" y="1" width="9.34468" height="9.34468" rx="1.36115"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2" />
+                                                <path
+                                                    d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">Logic & Flow</h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                Build dynamic forms with smart logic.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <!-- ITEM -->
+                                    <a href="./help/integrations-automations"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                                                    stroke="#B8DD2F" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <rect x="13.25" y="6.25" width="6.99976" height="6.99976" rx="0.777751"
+                                                    transform="rotate(90 13.25 6.25)" stroke="#183C1A"
+                                                    stroke-width="2" />
+                                                <path d="M23.7397 18.5V28.9996" stroke="#183C1A" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M29.0005 23.7393L18.5008 23.7393" stroke="#B8DD2F"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">Integrations</h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                Connect forms with your essential tools.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <a href="./help/design-themes"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2" />
+                                                <path d="M9.40039 19.2025L9.41221 19.1992" stroke="#183C1A"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                                                    stroke="#183C1A" stroke-width="2" />
+                                                <path
+                                                    d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                                                    stroke="#183C1A" stroke-width="2" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">Design & Themes</h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                Design branded forms that look great.
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                    <!-- ITEM -->
+                                    <a href="./help/supported-languages"
+                                        class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]">
+                                        <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                                    fill="#E8F5B7" />
+                                                <path
+                                                    d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                                    fill="#E8F5B7" stroke="#B8DD2F" stroke-width="2" />
+                                                <path
+                                                    d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                                                    stroke="#183C1A" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-sm font-medium text-Theme-Black">
+                                                Languages & Translations
+                                            </h3>
+
+                                            <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                                Create forms for a global audience.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="w-full h-[50px] bg-white"></div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="col-span-1 bg-white border-l border-[#E2DCDC]">
+                            <div class="p-[5px] h-[calc(100%-50px)]">
+                                <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                                    <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">FORM TEMPLATES</p>
+                                    <svg width="254" height="78" viewBox="0 0 254 78" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="33" width="178" height="78" rx="10" fill="white" />
+                                        <rect x="38" y="5" width="68" height="68" rx="5" fill="#E8F5B7" />
+                                        <path
+                                            d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                                            fill="#183C1A" />
+                                        <path
+                                            d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                                            fill="#B8DD2F" />
+                                        <ellipse cx="72.194" cy="49.1233" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                                        <ellipse cx="72.194" cy="28.6809" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                                        <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                            transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                                            fill="#183C1A" />
+                                        <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                            transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                                            fill="#183C1A" />
+                                        <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                            transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                                            fill="#183C1A" />
+                                        <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                            transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                                            fill="#183C1A" />
+                                        <ellipse cx="82.4156" cy="38.9031" rx="1.16814" ry="1.75222"
+                                            transform="rotate(-90 82.4156 38.9031)" fill="#183C1A" />
+                                        <ellipse cx="61.9727" cy="38.9031" rx="1.16814" ry="1.75222"
+                                            transform="rotate(-90 61.9727 38.9031)" fill="#183C1A" />
+                                        <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                            transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                                            fill="#183C1A" />
+                                        <ellipse cx="1.16815" cy="1.75222" rx="1.16815" ry="1.75222"
+                                            transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                                            fill="#183C1A" />
+                                        <path
+                                            d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                                            fill="url(#paint0_linear_7194_667)" />
+                                        <path d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248" stroke="#183C1A"
+                                            stroke-width="2.11063" stroke-linecap="round" stroke-linejoin="round" />
+                                        <rect x="121" y="19" width="70" height="8" rx="4" fill="#E8F5B7" />
+                                        <rect x="121" y="35" width="50" height="8" rx="4" fill="#E8F5B7" />
+                                        <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
+                                        <path d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                                            fill="url(#paint1_linear_7194_667)" />
+                                        <path
+                                            d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                                            fill="url(#paint2_linear_7194_667)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_7194_667" x1="86.2999" y1="31.9588"
+                                                x2="91.7999" y2="44.7188" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                                <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_7194_667" x1="28" y1="39" x2="-7.1631e-08"
+                                                y2="39" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="white" />
+                                                <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
+                                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                            </linearGradient>
+                                            <linearGradient id="paint2_linear_7194_667" x1="216" y1="39" x2="254"
+                                                y2="39" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="white" />
+                                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                                        Templates built for real use cases
+                                    </h5>
+                                    <p class="text-xs leading-5 text-Theme-Black mb-5">
+                                        Start faster choose a template, customize it, and go live in minutes. Focus on
+                                        collecting data.
+                                    </p>
+                                    <a href="./templates"
+                                        class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green">Kiwiform
+                                        Templates</a>
+                                </div>
+                            </div>
+                            <div class="w-full h-[50px] bg-white border-t border-[#E2DCDC]"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+    </div>
+
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px">
+                    <!-- hero top  -->
+                    <div
+                        class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px]  lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4">
+                        <!-- badge -->
+                        <div
+                            class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green">
+                            Adaptive Form Experiences
+                        </div>
+                        <h1
+                            class="mt-6 mb-2.5 text-center w-full max-w-[634px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:eading-[60px] tracking-[-0.96px] text-Theme-Black">
+                            Conditional Form Builder for Dynamic Forms
+                        </h1>
+                        <p
+                            class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter">
+                            Create personalized form experiences that adapt to every response using Conditional Logic,
+                            Branching, and Skip Logic.
+                        </p>
+                        <p
+                            class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter">
+                            Not every respondent should answer the same questions. <br>
+                            Kiwiform's Conditional Form Builder helps you create dynamic forms that automatically adapt
+                            based on responses. Show relevant questions, skip unnecessary sections, personalize
+                            respondent journeys, and guide respondents through experiences tailored to their
+                            answers. <br> Whether you're qualifying leads, collecting applications, managing
+                            registrations,
+                            onboarding customers, conducting assessments, or gathering feedback, Kiwiform helps you
+                            create smarter forms that collect more relevant information while improving completion
+                            rates.
+                        </p>
+
+                        <a href="https://app.kiwiform.com"
+                            class="inline-flex py-2.5 px-5 rounded-md text-white bg-Theme-Green  transition-all duration-500 hover:bg-[#B8DD2F] hover:text-Theme-Black text-sm font-medium">
+                            Build Conditional Forms
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+        </section>
+
+        <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+        <!-- Understanding Conditional Form Builders  -->
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
+                        <div
+                            class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-9">
+                            <p class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5">
+                                Understanding Conditional Form Builders
+                            </p>
+                            <h2 class="heading-h2 text-center lg:text-left">
+                                Forms That Adapt
+                                to Every Response
+                            </h2>
+
+                            <p
+                                class="w-full text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left">
+                                Conditional Form Fundamentals: Display the right questions to the right respondents at
+                                the right time.
+                            </p>
+                            <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left">
+                                Kiwiform Conditional Form Builder allows forms to change based on a respondent's
+                                answers. Instead of showing every question to every person, Conditional Logic enables
+                                forms to reveal, hide, skip, or route questions according to previous responses. This
+                                creates dynamic form experiences where respondents only see questions that are relevant
+                                to them. A customer, applicant, employee, student, or partner can all begin with the
+                                same form while following different paths based on their answers. <br> Conditional forms
+                                help
+                                organizations reduce unnecessary questions, simplify data collection, and create more
+                                personalized experiences without requiring multiple forms.
+                            </p>
+                        </div>
+                        <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
+                            <img src="/images/uploads/forms-that-adapt.png" alt="form fields image"
+                                class="w-full h-full" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </section>
+
+        <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <!-- Smarter Data Collection  -->
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full">
+                    <div class=" bg-Theme-bg w-full">
+                        <div
+                            class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 lg:px-6 lg:py-20">
+                            <p class="text-center w-full text-base leading-7 text-Theme-Green mb-2.5">
+                                Smarter Data Collection
+                            </p>
+                            <h2 class="heading-h2 text-center">
+                                Static Forms Create Unnecessary Friction
+                            </h2>
+
+                            <p class="w-full text-base leading-7 text-[#7D7676] mt-2.5 text-center">
+                                Traditional forms ask everyone the same questions, even when they shouldn't.
+                            </p>
+                            <p
+                                class="text-base leading-7 text-[#7D7676] mt-5 text-center max-w-[1006px] mx-auto w-full">
+                                Most forms follow a fixed path where every respondent sees the same questions regardless
+                                of their goals, qualifications, preferences, or circumstances. <br> This often creates
+                                longer
+                                forms, unnecessary steps, lower completion rates, and less relevant responses.
+                                Dynamic forms solve this by adapting automatically as respondents answer questions.
+                                Instead of forcing everyone through the same experience, forms become more relevant,
+                                efficient, and easier to complete.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div
+                        class="col-span-11 bg-white rounded-10px py-[22px] w-full flex items-center justify-center flex-col gap-px h-full text-center px-2.5 text-lg sm:text-xl lg:text-2xl font-normal text-Theme-Green font-Inter-disp">
+                        Why Dynamic Forms Outperform Traditional Forms
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-px bg-Theme-bg w-full">
+                        <div class="flex flex-col gap-px">
+                            <div
+                                class="bg-white font-Inter-disp rounded-10px py-[17px] w-full flex items-center justify-center flex-col text-center text-xl font-normal text-Theme-Black">
+                                Traditional Forms
+                            </div>
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/traditional-1.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,246,246,0)_0%,_rgba(248,246,246,0.75)_10%,_#F8F6F6_50%,_rgba(248,246,246,0.75)_90%,_rgba(248,246,246,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Black capitalize font-Inter-disp">Same
+                                        questions for everyone</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/traditional-2.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,246,246,0)_0%,_rgba(248,246,246,0.75)_10%,_#F8F6F6_50%,_rgba(248,246,246,0.75)_90%,_rgba(248,246,246,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Black capitalize font-Inter-disp">Longer
+                                        experiences</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/traditional-3.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,246,246,0)_0%,_rgba(248,246,246,0.75)_10%,_#F8F6F6_50%,_rgba(248,246,246,0.75)_90%,_rgba(248,246,246,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Black capitalize font-Inter-disp">Multiple
+                                        forms often required</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/traditional-4.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,246,246,0)_0%,_rgba(248,246,246,0.75)_10%,_#F8F6F6_50%,_rgba(248,246,246,0.75)_90%,_rgba(248,246,246,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Black capitalize font-Inter-disp">More
+                                        drop-offs</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/traditional-5.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,246,246,0)_0%,_rgba(248,246,246,0.75)_10%,_#F8F6F6_50%,_rgba(248,246,246,0.75)_90%,_rgba(248,246,246,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Black capitalize font-Inter-disp">Generic
+                                        experiences</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-px">
+                            <div
+                                class="bg-white font-Inter-disp rounded-10px py-[17px] w-full flex items-center justify-center flex-col gap-px text-center text-xl font-normal text-Theme-Black">
+                                Dynamic Forms
+                            </div>
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/dynamic-1.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,255,223,0)_0%,_rgba(248,255,223,0.75)_10%,_#F8FFDF_50%,_rgba(248,255,223,0.75)_90%,_rgba(248,255,223,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Green capitalize font-Inter-disp">Questions
+                                        adapt to responses</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/dynamic-2.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,255,223,0)_0%,_rgba(248,255,223,0.75)_10%,_#F8FFDF_50%,_rgba(248,255,223,0.75)_90%,_rgba(248,255,223,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Green capitalize font-Inter-disp">Shorter,
+                                        more relevant journeys</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/dynamic-3.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,255,223,0)_0%,_rgba(248,255,223,0.75)_10%,_#F8FFDF_50%,_rgba(248,255,223,0.75)_90%,_rgba(248,255,223,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Green capitalize font-Inter-disp">One
+                                        form supports many paths</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/dynamic-4.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,255,223,0)_0%,_rgba(248,255,223,0.75)_10%,_#F8FFDF_50%,_rgba(248,255,223,0.75)_90%,_rgba(248,255,223,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Green capitalize font-Inter-disp">Better
+                                        completion rates</button>
+                                </div>
+                            </div>
+
+                            <div class="card-Theme px-0! pt-0! gap-2.5 pb-5!">
+                                <div class="p-2.5">
+                                    <img src="/images/uploads/dynamic-5.png" alt="form img"
+                                        class="h-[297.60px]">
+                                </div>
+                                <div class="px-3.5 w-full">
+                                    <button
+                                        class="bg-[linear-gradient(90deg,_rgba(248,255,223,0)_0%,_rgba(248,255,223,0.75)_10%,_#F8FFDF_50%,_rgba(248,255,223,0.75)_90%,_rgba(248,255,223,0)_100%)] p-3 w-full text-center text-xl font-normal text-Theme-Green capitalize font-Inter-disp">Personalized
+                                        experiences</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </section>
+
+        <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <!-- Better Experiences for Respondents  -->
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full">
+                    <div class=" bg-Theme-bg w-full">
+                        <div
+                            class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20">
+                            <p
+                                class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5">
+                                Better Experiences for Respondents
+                            </p>
+                            <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                                Personalized Forms Feel Faster and More Relevant
+                            </h2>
+                            <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                                Forms built on Kiwiform help respondents complete forms without unnecessary questions.
+                            </p>
+                            <p
+                                class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto">
+                                People are more likely to complete forms when the experience feels relevant to them.
+                                <br> Kiwiform Conditional Form Builder helps teams create personalized form experiences
+                                using Conditional Logic. Questions that don't apply can be skipped automatically, form
+                                journeys become shorter, and respondents can focus only on information that matters.
+                                Instead of navigating through irrelevant sections, respondents move naturally through
+                                questions tailored to their answers. <br> This reduces friction, improves engagement,
+                                and creates a smoother experience from start to finish.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M28.4996 16.1606C28.4996 19.2521 26.9066 21.9926 24.4496 23.7206L22.6406 27.7031C22.2221 28.6075 21.0071 28.7831 20.3726 28.0136L18.3746 25.6106C15.1076 25.6106 12.1916 24.1661 10.3691 21.9116L11.6246 20.3996C17.2136 20.3996 21.7496 16.1741 21.7496 10.9496C21.7496 9.53213 21.4121 8.19564 20.8046 6.99414C25.2191 8.00664 28.4996 11.7326 28.4996 16.1606Z"
+                                        stroke="#183C1A" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M21.75 10.95C21.75 16.1745 17.214 20.4 11.625 20.4L10.3695 21.912L9.62699 22.803C8.99249 23.559 7.77748 23.3969 7.35898 22.4924L5.54999 18.5099C3.093 16.7819 1.5 14.0415 1.5 10.95C1.5 5.72549 6.03599 1.5 11.625 1.5C15.702 1.5 19.2255 3.75451 20.805 6.9945C21.4125 8.196 21.75 9.53248 21.75 10.95Z"
+                                        stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M11.3603 12.3908V12.0898C11.3603 11.1149 11.9624 10.5988 12.5645 10.183C13.1523 9.78162 13.74 9.26553 13.74 8.31933C13.74 7.00039 12.6792 5.93945 11.3603 5.93945C10.0413 5.93945 8.98047 7.00039 8.98047 8.31933"
+                                        stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M11.3529 15.6738H11.3658" stroke="#B8DD2F" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+
+                            </span>
+                            <h4 class="card-title">Relevant Questions Only</h4>
+                            <p class="card-para">
+                                Show respondents questions that apply to their situation.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.6032 19.7927L14.9993 15.0183L15 8.48633" stroke="#183C1A"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M15 28.5C22.4558 28.5 28.5 22.4558 28.5 15C28.5 7.54416 22.4558 1.5 15 1.5C7.54416 1.5 1.5 7.54416 1.5 15"
+                                        stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" />
+                                    <path d="M1.5 19.5H5.86377" stroke="#183C1A" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                    <path d="M1.5 24H9" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" />
+                                    <path d="M1.5 28.5H10.5" stroke="#183C1A" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                </svg>
+
+                            </span>
+                            <h4 class="card-title">Faster Completion</h4>
+                            <p class="card-para">
+                                Reduce unnecessary steps and shorten form journeys.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.75 17.5H15" stroke="#183C1A" stroke-width="1.8" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8.75 7.4502L4.0625 2.7627" stroke="#183C1A" stroke-width="1.8"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8.70117 2.8125L4.01367 7.5" stroke="#183C1A" stroke-width="1.8"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8.75 12.5H18.75" stroke="#183C1A" stroke-width="1.8"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12.5 2.5H20C24.1625 2.725 26.25 4.2625 26.25 9.9875V20" stroke="#B8DD2F"
+                                        stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M3.75 11.2617V19.9742C3.75 24.9867 5 27.4992 11.25 27.4992H15C15.2125 27.4992 18.55 27.4992 18.75 27.4992"
+                                        stroke="#B8DD2F" stroke-width="1.8" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M26.25 20L18.75 27.5V23.75C18.75 21.25 20 20 22.5 20H26.25Z"
+                                        stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                            </span>
+                            <h4 class="card-title">Less Form Fatigue</h4>
+                            <p class="card-para">
+                                Avoid overwhelming respondents with irrelevant questions.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.25781 12.7471C7.20062 12.7471 7.67203 12.7471 7.96492 13.04C8.25781 13.3329 8.25781 13.8043 8.25781 14.7471V24.2493C8.25781 25.1921 8.25781 25.6635 7.96492 25.9564C7.67203 26.2493 7.20062 26.2493 6.25781 26.2493H5.50671C3.62109 26.2493 2.67828 26.2493 2.09249 25.6635C1.50671 25.0777 1.50671 24.1349 1.50671 22.2493V16.7471C1.50671 14.8615 1.50671 13.9186 2.09249 13.3329C2.67828 12.7471 3.62109 12.7471 5.50671 12.7471H6.25781Z"
+                                        stroke="#183C1A" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M9.45921 11.8382C8.86666 12.4184 8.57038 12.7086 8.41409 13.0803C8.25781 13.4521 8.25781 13.8668 8.25781 14.6961V22.24C8.25781 24.1242 8.25781 25.0663 8.84302 25.652C9.42823 26.2377 10.3703 26.2385 12.2545 26.24L21.4947 26.2476C22.9237 26.2487 23.6381 26.2493 24.1691 25.8563C24.7 25.4634 24.9082 24.7799 25.3245 23.413L26.9199 18.1746C27.6399 15.8103 28 14.6282 27.4003 13.8187C26.8006 13.0092 25.5649 13.0092 23.0934 13.0092H18.3845L19.9861 7.77375C20.0505 7.56334 20.0827 7.45814 20.1025 7.35767C20.2185 6.76879 20.064 6.15891 19.6814 5.69638C19.6162 5.61747 19.5378 5.54029 19.381 5.38595C19.1365 5.14533 19.0143 5.02502 18.8965 4.93882C18.1947 4.4252 17.2414 4.42396 16.5383 4.93578C16.4203 5.02167 16.2978 5.14166 16.0527 5.38165L9.45921 11.8382Z"
+                                        stroke="#B8DD2F" stroke-width="1.8" stroke-linejoin="round" />
+                                </svg>
+
+                            </span>
+                            <h4 class="card-title">Better Engagement</h4>
+                            <p class="card-para">
+                                Keep respondents focused throughout the experience.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.71094 27.9872C7.00794 24.4772 10.6125 21.7096 15 21.7096C19.3876 21.7096 22.9921 24.4772 23.2891 27.9872M15 17.9296C12.327 17.9296 10.167 15.7561 10.167 13.0831C10.167 10.41 12.327 8.25 15 8.25C17.6731 8.25 19.8331 10.41 19.8331 13.0831C19.8331 15.7561 17.6731 17.9296 15 17.9296Z"
+                                        stroke="#183C1A" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M19.0502 1.5H10.9501C4.20003 1.5 1.5 4.20003 1.5 10.9501V19.0502C1.5 24.1533 3.03902 26.9478 6.71106 27.9873C6.71106 27.9873 10.6224 28.514 15.01 28.514C19.3975 28.514 23.2893 27.9873 23.2893 27.9873C26.9613 26.9478 28.5003 24.1533 28.5003 19.0502V10.9501C28.5003 4.20003 25.8003 1.5 19.0502 1.5Z"
+                                        stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            <h4 class="card-title">Personalized Experiences</h4>
+                            <p class="card-para">
+                                Adapt forms to different audiences automatically.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="27" height="27" rx="2" stroke="#B8DD2F" stroke-width="1.8"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M13.5489 8.42705C13.9408 7.22104 14.1367 6.61803 14.5 6.61803C14.8633 6.61803 15.0592 7.22104 15.4511 8.42705L16.2961 11.0279C16.4044 11.3612 16.4586 11.5279 16.59 11.6234C16.7214 11.7188 16.8967 11.7188 17.2472 11.7188H19.9818C21.2499 11.7188 21.8839 11.7188 21.9962 12.0643C22.1085 12.4098 21.5955 12.7825 20.5696 13.5279L18.3572 15.1353C18.0737 15.3413 17.9319 15.4443 17.8817 15.5988C17.8315 15.7533 17.8856 15.92 17.994 16.2533L18.839 18.8541C19.2309 20.0601 19.4268 20.6631 19.1329 20.8766C18.839 21.0902 18.3261 20.7175 17.3002 19.9721L15.0878 18.3647C14.8042 18.1587 14.6625 18.0557 14.5 18.0557C14.3375 18.0557 14.1958 18.1587 13.9122 18.3647L11.6998 19.9721C10.6739 20.7175 10.161 21.0902 9.8671 20.8766C9.5732 20.6631 9.76913 20.0601 10.161 18.8541L11.006 16.2533C11.1144 15.92 11.1685 15.7533 11.1183 15.5988C11.0681 15.4443 10.9263 15.3413 10.6428 15.1353L8.43039 13.5279C7.4045 12.7825 6.89155 12.4098 7.00381 12.0643C7.11606 11.7188 7.7501 11.7188 9.01818 11.7188H11.7528C12.1033 11.7188 12.2786 11.7188 12.41 11.6234C12.5414 11.5279 12.5956 11.3612 12.7039 11.0279L13.5489 8.42705Z"
+                                        stroke="#183C1A" stroke-width="1.8" />
+                                </svg>
+
+                            </span>
+                            <h4 class="card-title">Higher Completion Rates</h4>
+                            <p class="card-para">
+                                Create smoother journeys that encourage participation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"> </div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"> </div>
+        </section>
+
+        <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <!-- Conditional Logic in Real Workflows -->
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full">
+                    <div class=" bg-Theme-bg w-full">
+                        <div
+                            class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 lg:px-6 lg:py-20">
+                            <p class="text-center w-full text-base leading-7 text-Theme-Green mb-2.5">
+                                Conditional Logic in Real Workflows
+                            </p>
+                            <h2 class="heading-h2 text-center">
+                                One Form, Multiple Respondent Journeys
+                            </h2>
+
+                            <p class="w-full text-base leading-7 text-[#7D7676] mt-2.5 text-center">
+                                Use Conditional Logic to support different paths within a single form.
+                            </p>
+                            <p
+                                class="text-base leading-7 text-[#7D7676] mt-5 text-center max-w-[1006px] mx-auto w-full">
+                                Conditional forms can adapt to different audiences, workflows, and scenarios without
+                                requiring separate forms.  <br> Conditional Logic becomes most valuable when forms need
+                                to
+                                support multiple audiences, outcomes, or processes within a single experience. Instead
+                                of creating separate forms for different scenarios, teams can use Kiwiform's Conditional
+                                Form Builder to build dynamic forms that automatically adapt based on respondent
+                                answers.  <br> Whether you're qualifying leads, processing applications, managing event
+                                registrations, collecting support requests, or onboarding new customers, Conditional
+                                Logic helps ensure respondents only see questions that are relevant to their situation.
+                                This creates a more personalized experience while helping teams collect cleaner, more
+                                accurate data.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-px bg-Theme-bg w-full">
+                        <div class="card-Theme px-0! pt-0! gap-5 lg:gap-4 pb-6!">
+                            <div class="p-2.5">
+                                <img src="/images/uploads/conditional-logic-1.png" alt="form img">
+                            </div>
+                            <div class="w-full">
+                                <h4
+                                    class="px-3 w-full text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center">
+                                    Lead Qualification</h4>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="card-Theme px-0! pt-0! gap-5 lg:gap-4 pb-6!">
+                            <div class="p-2.5">
+                                <img src="/images/uploads/conditional-logic-2.png" alt="form img">
+                            </div>
+                            <div class="w-full">
+                                <h4
+                                    class="px-3 w-full text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center">
+                                    Job Applications</h4>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card-Theme px-0! pt-0! gap-5 lg:gap-4 pb-6!">
+                            <div class="p-2.5">
+                                <img src="/images/uploads/conditional-logic-3.png" alt="form img">
+                            </div>
+                            <div class="w-full">
+                                <h4
+                                    class="px-3 w-full text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center">
+                                    Event Registration</h4>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-Theme px-0! pt-0! gap-5 lg:gap-4 pb-6!">
+                            <div class="p-2.5">
+                                <img src="/images/uploads/conditional-logic-4.png" alt="form img">
+                            </div>
+                            <div class="w-full">
+                                <h4
+                                    class="px-3 w-full text-xl font-normal text-Theme-Black font-Inter-disp leading-[26px] text-center">
+                                    Customer Support</h4>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </section>
+
+        <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <!-- Simple Setup Workflow -->
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full">
+                    <div class=" bg-Theme-bg w-full">
+                        <div
+                            class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20">
+                            <p
+                                class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5">
+                                Simple Setup Workflow
+                            </p>
+                            <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                                Build Conditional Forms Without Code
+                            </h2>
+                            <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                                Create dynamic forms with Conditional Logic, Branching, and Skip Logic without writing
+                                code.
+                            </p>
+                            <p
+                                class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto">
+                                Kiwiform makes it easy to build conditional forms that adapt to different respondents
+                                and workflows. Using the visual form builder, you can create questions, define
+                                Conditional Logic rules, and control how respondents move through a form based on their
+                                answers. From simple conditional logic forms to more advanced multi-path workflows,
+                                Kiwiform provides the flexibility to create adaptive forms without the complexity of
+                                custom development.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+
+                        <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                            <div class="p-2.5">
+                                <img src="/images/uploads/simple-setup-1.png"
+                                    alt="form img">
+                            </div>
+                            <div class="">
+                                <h4 class="card-title mt-0 mb-2.5">Create Your Form</h4>
+                                <p class="card-para">
+                                    Add questions, sections, and answer choices to your form.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card-Theme px-0! pt-0! gap-5 pb-10! ">
+                            <div class="p-2.5">
+                                <img src="/images/uploads/simple-setup-2.png"
+                                    alt="form img">
+                            </div>
+                            <div class="">
+                                <h4 class="card-title mt-0 mb-2.5">Configure Conditional Logic</h4>
+                                <p class="card-para">
+                                    Set up branching paths and logic rules based on responses.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card-Theme px-0! pt-0!  pb-10! gap-5">
+                            <div class="p-2.5">
+                                <img src="/images/uploads/simple-setup-3.png"
+                                    alt="form img">
+                            </div>
+                            <div class="">
+                                <h4 class="card-title mt-0 mb-2.5">Publish Your Form</h4>
+                                <p class="card-para">
+                                    Share your form and collect responses through personalized journeys.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="bg-white w-full py-10 flex items-center justify-center rounded-[10px] px-2">
+                        <a href="https://app.kiwiform.com"
+                            class="inline-flex py-2.5 px-5 rounded-md hover:text-white bg-[#B8DD2F]   transition-all duration-500 hover:bg-Theme-Green text-sm font-medium">
+                            Start Building Conditional Forms
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"> </div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"> </div>
+        </section>
+
+        <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <!-- Logic Controls & Routing  -->
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full">
+                    <div class=" bg-Theme-bg w-full">
+                        <div
+                            class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20">
+                            <p
+                                class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5">
+                                Logic Controls & Routing
+                            </p>
+                            <h2 class="heading-h2 text-center font-Inter-disp max-w-[540px] mx-auto">
+                                Powerful Logic Controls for Adaptive Form Experiences
+                            </h2>
+                            <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                                Build dynamic forms that adapt automatically and guide respondents through personalized
+                                paths.
+                            </p>
+                            <p
+                                class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto">
+                                Kiwiform's Conditional Form Builder includes powerful logic controls that help forms
+                                respond intelligently to every answer. Whether you're building conditional logic forms,
+                                branching forms, or adaptive workflows, you can control what questions appear, which
+                                sections are skipped, and how respondents move through the form experience.  <br> These
+                                features help reduce unnecessary questions, simplify data collection, and allow a single
+                                form to support multiple respondent journeys. From basic show-and-hide rules to advanced
+                                routing and workflow automation, Kiwiform provides the tools needed to create dynamic
+                                forms that feel more relevant and personalized.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 6.50391H19.0143" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M19.0151 21.5158H11.0802C9.18515 21.5158 7.6489 19.9796 7.6489 18.0845V8.21956C7.6489 7.27203 6.11266 6.50391 4.2176 6.50391H2.50195" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round"/>
+<rect x="19.0137" y="2" width="9.00716" height="9.00716" rx="1" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8"/>
+<rect x="19.0137" y="17.0117" width="9.00716" height="9.00716" rx="1" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8"/>
+</svg>
+                            </span>
+                            <h4 class="card-title">Conditional Logic</h4>
+                            <p class="card-para">
+                               Show or hide questions automatically based on previous answers.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                               <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4012 9V10.35M14.4012 10.35C14.4012 11.608 14.4012 12.237 14.6409 12.7333C14.9606 13.3948 15.5739 13.9205 16.3457 14.1945C16.9246 14.4 17.6585 14.4 19.1262 14.4H19.8512C21.7368 14.4 22.6796 14.4 23.2654 14.9858C23.8512 15.5716 23.8512 16.5144 23.8512 18.4V19.8M14.4012 10.35C14.4012 11.608 14.4012 12.237 14.1614 12.7333C13.8417 13.3948 13.2284 13.9205 12.4566 14.1945C11.8778 14.4 11.1439 14.4 9.67617 14.4H8.95117C7.06555 14.4 6.12274 14.4 5.53696 14.9858C4.95117 15.5716 4.95117 16.5144 4.95117 18.4V19.8" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.4496 9.00039C16.3352 9.00039 17.278 9.00039 17.8638 8.4146C18.4496 7.82882 18.4496 6.88601 18.4496 5.00039V4.90039C18.4496 3.01477 18.4496 2.07196 17.8638 1.48618C17.278 0.900391 16.3352 0.900391 14.4496 0.900391H14.3496C12.464 0.900391 11.5212 0.900391 10.9354 1.48618C10.3496 2.07196 10.3496 3.01477 10.3496 4.90039V5.00039C10.3496 6.88601 10.3496 7.82882 10.9354 8.4146C11.5212 9.00039 12.464 9.00039 14.3496 9.00039H14.4496Z" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.00039 27.9008C6.88601 27.9008 7.82882 27.9008 8.4146 27.315C9.00039 26.7292 9.00039 25.7864 9.00039 23.9008V23.8008C9.00039 21.9152 9.00039 20.9724 8.4146 20.3866C7.82882 19.8008 6.88601 19.8008 5.00039 19.8008H4.90039C3.01477 19.8008 2.07196 19.8008 1.48618 20.3866C0.900391 20.9724 0.900391 21.9152 0.900391 23.8008V23.9008C0.900391 25.7864 0.900391 26.7292 1.48618 27.315C2.07196 27.9008 3.01477 27.9008 4.90039 27.9008H5.00039Z" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.9008 27.9008C25.7864 27.9008 26.7292 27.9008 27.315 27.315C27.9008 26.7292 27.9008 25.7864 27.9008 23.9008V23.8008C27.9008 21.9152 27.9008 20.9724 27.315 20.3866C26.7292 19.8008 25.7864 19.8008 23.9008 19.8008H23.8008C21.9152 19.8008 20.9724 19.8008 20.3866 20.3866C19.8008 20.9724 19.8008 21.9152 19.8008 23.8008V23.9008C19.8008 25.7864 19.8008 26.7292 20.3866 27.315C20.9724 27.9008 21.9152 27.9008 23.8008 27.9008H23.9008Z" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </span>
+                            <h4 class="card-title">Branching Paths</h4>
+                            <p class="card-para">
+                                Direct respondents to different sections based on their responses.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.1875 9.8225C3.1875 6.20983 3.1875 4.40349 4.32112 3.85864C5.45475 3.3138 6.86526 4.44221 9.68628 6.69902L16.1582 11.8765C17.96 13.318 18.8609 14.0388 18.8609 15C18.8609 15.9612 17.96 16.682 16.1582 18.1235L9.68628 23.301C6.86526 25.5578 5.45475 26.6862 4.32112 26.1414C3.1875 25.5965 3.1875 23.7902 3.1875 20.1775V9.8225Z" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26.8125 3.1875V26.8125" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </span>
+                            <h4 class="card-title">Skip Logic</h4>
+                            <p class="card-para">
+                                Automatically skip questions and sections that are not relevant.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5511 28.6364C15.9026 28.9879 16.4724 28.9879 16.8239 28.6364C17.1754 28.2849 17.1754 27.7151 16.8239 27.3636L16.1875 28L15.5511 28.6364ZM12.8125 24.625L12.1761 23.9886C11.8246 24.3401 11.8246 24.9099 12.1761 25.2614L12.8125 24.625ZM16.8239 21.8864C17.1754 21.5349 17.1754 20.9651 16.8239 20.6136C16.4724 20.2621 15.9026 20.2621 15.5511 20.6136L16.1875 21.25L16.8239 21.8864ZM16.1875 28L16.8239 27.3636L13.4489 23.9886L12.8125 24.625L12.1761 25.2614L15.5511 28.6364L16.1875 28ZM12.8125 24.625L13.4489 25.2614L16.8239 21.8864L16.1875 21.25L15.5511 20.6136L12.1761 23.9886L12.8125 24.625ZM12.8125 24.625V25.525H22.625V24.625V23.725H12.8125V24.625ZM24.625 22.625H25.525V7.75H24.625H23.725V22.625H24.625ZM22.625 24.625V25.525C24.2266 25.525 25.525 24.2266 25.525 22.625H24.625H23.725C23.725 23.2325 23.2325 23.725 22.625 23.725V24.625Z" fill="#183C1A"/>
+<path d="M24.625 1C26.489 1 28 2.51104 28 4.375C28 6.23896 26.489 7.75 24.625 7.75C22.761 7.75 21.25 6.23896 21.25 4.375C21.25 2.51104 22.761 1 24.625 1Z" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.4489 0.363604C13.0974 0.012132 12.5276 0.012132 12.1761 0.363604C11.8246 0.715076 11.8246 1.28492 12.1761 1.6364L12.8125 1L13.4489 0.363604ZM16.1875 4.375L16.8239 5.0114C17.1754 4.65992 17.1754 4.09008 16.8239 3.7386L16.1875 4.375ZM12.1761 7.1136C11.8246 7.46508 11.8246 8.03492 12.1761 8.3864C12.5276 8.73787 13.0974 8.73787 13.4489 8.3864L12.8125 7.75L12.1761 7.1136ZM12.8125 1L12.1761 1.6364L15.5511 5.0114L16.1875 4.375L16.8239 3.7386L13.4489 0.363604L12.8125 1ZM16.1875 4.375L15.5511 3.7386L12.1761 7.1136L12.8125 7.75L13.4489 8.3864L16.8239 5.0114L16.1875 4.375ZM16.1875 4.375V3.475H6.375V4.375V5.275H16.1875V4.375ZM4.375 6.375H3.475V21.25H4.375H5.275V6.375H4.375ZM6.375 4.375V3.475C4.77337 3.475 3.475 4.77337 3.475 6.375H4.375H5.275C5.275 5.76749 5.76749 5.275 6.375 5.275V4.375Z" fill="#183C1A"/>
+<path d="M4.375 21.25C6.23896 21.25 7.75 22.761 7.75 24.625C7.75 26.489 6.23896 28 4.375 28C2.51104 28 1 26.489 1 24.625C1 22.761 2.51104 21.25 4.375 21.25Z" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                            </span>
+                            <h4 class="card-title">Dynamic Sections</h4>
+                            <p class="card-para">
+                                Reveal groups of questions when specific conditions are met.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.89453 16.3496H14.9945" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.89453 21.75H20.3945" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.9693 1.5H5.50786C3.62222 1.5 2.6794 1.5 2.09361 2.08579C1.50783 2.67159 1.50784 3.61441 1.50786 5.50005L1.50808 24.5C1.5081 26.3856 1.50812 27.3284 2.0939 27.9142C2.67969 28.5 3.62248 28.5 5.50808 28.5H21.7945C23.6802 28.5 24.623 28.5 25.2088 27.9142C25.7946 27.3284 25.7946 26.3855 25.7945 24.4999L25.7943 18.1963" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.7441 15C25.472 15 28.4941 11.9779 28.4941 8.25C28.4941 4.52208 25.472 1.5 21.7441 1.5C18.0163 1.5 14.9941 4.52208 14.9941 8.25C14.9941 11.9779 18.0163 15 21.7441 15Z" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.707 8.24961L20.732 10.2746L24.782 6.22461" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </span>
+                            <h4 class="card-title">Answer-Based Outcomes</h4>
+                            <p class="card-para">
+                                Display different results, recommendations, or next steps.
+                            </p>
+                        </div>
+
+                        <div class="card-Theme">
+                            <span class="w-[50px] h-[50px] flex items-center justify-center">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.9375 11.9688V5C22.9375 3.11438 22.9375 2.17157 22.3517 1.58579C21.7659 1 20.8231 1 18.9375 1H5C3.11438 1 2.17157 1 1.58579 1.58579C1 2.17157 1 3.11438 1 5V18.9375C1 20.8231 1 21.7659 1.58579 22.3517C2.17157 22.9375 3.11438 22.9375 5 22.9375H11.9688" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="12.8125" y="6.0625" width="6.75" height="6.75" rx="0.5" transform="rotate(90 12.8125 6.0625)" stroke="#183C1A" stroke-width="1.8"/>
+<path d="M22.9297 17.875V28" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 22.9277L17.875 22.9277" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            </span>
+                            <h4 class="card-title">Integrations and Automation</h4>
+                            <p class="card-para">
+                               Trigger actions and workflows from form responses.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </section>
+
+        <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
+                        <div class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-9">
+                            <p class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5">
+                                Conditional Form Builder
+                            </p>
+                            <h2 class="heading-h2 text-center lg:text-left">
+                                Start Building Conditional Forms with Kiwiform
+                            </h2>
+
+                            <p class="w-full text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left">
+                               Create dynamic forms with Conditional Logic, Branching, and Skip Logic from a single visual builder.
+                            </p>
+                            <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left">
+                               Whether you're building lead qualification forms, application forms, registration workflows, onboarding experiences, or feedback surveys, Kiwiform gives you the tools to create forms that adapt to every response. Build personalized respondent journeys, manage multiple workflows from a single form, and configure Conditional Logic without code. From simple question routing to advanced conditional workflows, Kiwiform helps teams create dynamic forms that are flexible, scalable, and easy to manage.
+                            </p>
+                            <a href="https://app.kiwiform.com" class="inline-flex py-2.5 px-5 rounded-md hover:text-white bg-[#B8DD2F] mt-5 mr-auto transition-all duration-500 hover:bg-Theme-Green text-sm font-medium">
+                            Create a Conditional Form
+                        </a>
+                        </div>
+                        <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
+                            <img src="/images/uploads/new.png" alt="form fields image" class="w-full h-full">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </section>
+
+         <!-- Blank line  -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white">
+                </div>
+                <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        </div>
+
+        <!-- Frequently Asked Questions -->
+        <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+            <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+            <!-- main-container  -->
+            <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+                <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+                <!-- place content here -->
+                <div
+                    class="col-span-11 rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-[#F6F6F6]">
+                    <div class="p-4 lg:pt-20 w-full flex flex-col gap-2.5">
+                        <p class="text-center text-base font-normal text-Theme-Green leading-7">Everything You Need to
+                            Know</p>
+                        <h2 class="heading-h2 text-center">Frequently Asked Questions</h2>
+                        <p class="text-base leading-7 text-[#8C8484] text-center">
+                            Frequently Asked Questions About Kiwiform Quiz Funnel Builder
+                        </p>
+                    </div>
+                    <div class="py-5 lg:pt-10 lg:pb-20 w-full rounded-lg px-4">
+                        <div
+                            class="flex flex-col gap-px w-full max-w-[1004px] mx-auto p-px rounded-10px bg-Theme-bg overflow-hidden ">
+
+                            <div x-data="{ active: 0 }" class="flex flex-col gap-px w-full">
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 0 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 0 ? null : 0"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            What is a Conditional Form Builder?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 0 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 0" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                A Conditional Form Builder allows forms to adapt based on respondent
+                                                answers. Using Conditional Logic, forms can show, hide, skip, or route
+                                                questions dynamically, creating personalized experiences that display
+                                                only relevant questions to each respondent.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 1 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 1 ? null : 1"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            How does Conditional Logic work in forms?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 1" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Conditional Logic uses rules that determine what happens after a
+                                                respondent answers a question. Depending on the selected answer, a form
+                                                can display different questions, reveal sections, skip unnecessary
+                                                fields, or direct respondents to different paths within the same form.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 2 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 2 ? null : 2"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            What is the difference between Conditional Logic and Skip Logic?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 2" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Conditional Logic is a broader feature that controls how forms behave
+                                                based on responses. Skip Logic is a specific type of Conditional Logic
+                                                that allows respondents to bypass questions or sections that are not
+                                                relevant to them.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 3 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 3 ? null : 3"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            What are branching forms?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 3" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Branching forms use Conditional Logic to route respondents through
+                                                different paths based on their answers. Instead of following a single
+                                                sequence of questions, respondents are guided through personalized
+                                                journeys that match their situation, interests, or requirements.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 4 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 4 ? null : 4"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            What are dynamic forms?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 4" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Dynamic forms automatically adapt as respondents interact with them.
+                                                Questions, sections, and outcomes can change based on previous answers,
+                                                creating a more relevant and personalized experience than traditional
+                                                static forms.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 5 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 5 ? null : 5"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            What types of forms benefit from Conditional Logic?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 5 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 5" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Conditional Logic is commonly used in lead qualification forms, job
+                                                application forms, onboarding forms, event registration forms, customer
+                                                feedback forms, support request forms, assessments, surveys, and
+                                                membership applications where different respondents require different
+                                                questions.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 6 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 6 ? null : 6"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            Can I create conditional forms without coding?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 6 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 6" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Yes. Kiwiform allows you to create conditional forms using a visual
+                                                no-code form builder. You can configure Conditional Logic, Branching
+                                                Paths, and Skip Logic without writing code or using complex workflows.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 7 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 7 ? null : 7"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            Do conditional forms improve completion rates?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 7 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 7" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Conditional forms often improve completion rates because respondents
+                                                only see questions that apply to them. By removing irrelevant questions
+                                                and reducing form length, the overall experience becomes faster,
+                                                simpler, and easier to complete.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ITEM -->
+                                <div class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                                    :class="active === 8 ? 'bg-white' : 'bg-[#F6F6F6]'">
+                                    <!-- HEADER -->
+                                    <button @click="active = active === 8 ? null : 8"
+                                        class="flex w-full items-center justify-between text-left">
+                                        <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                                            Can one conditional form support multiple workflows?
+                                        </span>
+
+                                        <svg class="h-5 w-5 text-[#111] transition duration-300"
+                                            :class="active === 8 ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- CONTENT -->
+                                    <div x-show="active === 8" x-collapse style="display: none">
+                                        <div class="pt-2.5">
+                                            <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                                                Yes. A single conditional form can support multiple respondent journeys
+                                                using Conditional Logic, Branching, and Skip Logic. This allows
+                                                organizations to manage different audiences, workflows, and outcomes
+                                                within one form instead of maintaining multiple separate forms.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+            </div>
+            <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

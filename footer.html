@@ -10,7 +10,7 @@
     <!-- Alpine -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <title>Kiwiform Navigation</title>
+    <title>Kiwiform footer</title>
   </head>
 
   <body class="min-h-screen bg-[#E2DCDC] font-Inter">
@@ -378,23 +378,60 @@
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px w-full">
-            <!-- Platform -->
-            <div class="w-full flex flex-col gap-px">
+            <!-- Products -->
+            <div class="w-full flex flex-col gap-px col-span-2">
               <div
                 class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
               >
-                Platform
+                Products
               </div>
-              <div class="py-6 px-5 lg:px-9 bg-white rounded-10px flex flex-col gap-[26px]">
-                <a href="/help/overview" class="footer-link">Overview</a>
-                <a href="/help/form-building" class="footer-link">Form Builder</a>
-                <a href="/help/logic-flow" class="footer-link">Logic & Flow</a>
-                <a href="/help/design-themes" class="footer-link">Design & Themes</a>
-                <a href="/help/responses" class="footer-link">Responses</a>
-                <a href="/help/integrations-automations" class="footer-link">Integrations</a>
-                <a href="/pricing" class="footer-link">Pricing</a>
+              <div class="py-3 bg-white rounded-10px grid grid-cols-1 sm:grid-cols-2 gap-px">
+                <a href="/help/overview" class="footer-link py-3 px5 lg:px-9">Overview</a>
+                <a href="/help/form-building" class="footer-link py-3 px5 lg:px-9">Form Builder</a>
+                <a href="/help/logic-flow" class="footer-link py-3 px5 lg:px-9">Logic & Flow</a>
+                <a href="/help/design-themes" class="footer-link py-3 px5 lg:px-9"
+                  >Design & Themes</a
+                >
+                <a href="/help/responses" class="footer-link py-3 px5 lg:px-9">Responses</a>
+                <a href="/help/integrations-automations" class="footer-link py-3 px5 lg:px-9"
+                  >Integrations</a
+                >
+                <a href="/pricing" class="footer-link py-3 px5 lg:px-9">Pricing</a>
               </div>
             </div>
+
+            <!-- Solutions -->
+            <div class="w-full flex flex-col gap-px col-span-2">
+              <div
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
+              >
+                Solutions
+              </div>
+              <div class="py-3 bg-white rounded-10px grid grid-cols-1 sm:grid-cols-2 gap-px">
+                <a href="/help/overview" class="footer-link footer-link py-3 px5 lg:px-9"
+                  >Overview</a
+                >
+                <a href="/help/form-building" class="footer-link footer-link py-3 px5 lg:px-9"
+                  >Form Builder</a
+                >
+                <a href="/help/logic-flow" class="footer-link footer-link py-3 px5 lg:px-9"
+                  >Logic & Flow</a
+                >
+                <a href="/help/design-themes" class="footer-link footer-link py-3 px5 lg:px-9"
+                  >Design & Themes</a
+                >
+                <a href="/help/responses" class="footer-link footer-link py-3 px5 lg:px-9"
+                  >Responses</a
+                >
+                <a
+                  href="/help/integrations-automations"
+                  class="footer-link footer-link py-3 px5 lg:px-9"
+                  >Integrations</a
+                >
+                <a href="/pricing" class="footer-link footer-link py-3 px5 lg:px-9">Pricing</a>
+              </div>
+            </div>
+
             <!-- Resources -->
             <div class="w-full flex flex-col gap-px">
               <div
@@ -447,19 +484,17 @@
               </div>
             </div>
             <!-- Company -->
-            <div
-              class="col-span-1 sm:col-span-2 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
-            >
+            <div class="w-full flex flex-col gap-px">
               <div
                 class="py-6 px-5 lg:px-9 bg-white rounded-10px text-sm font-semibold text-Theme-Black"
               >
                 Company
               </div>
               <div
-                class="col-span-1 lg:col-span-3 rounded-10px bg-white grid grid-cols-1 lg:grid-cols-3 gap-px"
+                class="py-6 px-5 lg:px-9 bg-white rounded-10px flex flex-col gap-[26px] h-full w-full"
               >
-                <a href="/about-us" class="footer-link py-6 px-5 lg:px-9">About Us</a>
-                <a href="/contact-us" class="footer-link pb-6 md:py-6 px-5 lg:px-9">Contact Us</a>
+                <a href="/about-us" class="footer-link">About Us</a>
+                <a href="/contact-us" class="footer-link">Contact Us</a>
               </div>
             </div>
             <!-- copyright  -->
