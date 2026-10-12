@@ -1,0 +1,1984 @@
+<!doctype html>
+<html lang="" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  </head>
+
+  <body class="font-inter bg-[#E2DCDC] w-full flex flex-col gap-px">
+    <!-- navigation  -->
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+          >
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] pt-[60px] pb-[0px] flex flex-col items-center justify-center rounded-10px"
+            >
+              <!-- badge -->
+              <a
+                href="/changelog"
+                class="flex items-center gap-2.5 border border-Theme-bg bg-white rounded-full p-1.5 pr-3.5 font-normal text-sm leading-5 text-[#183C1A]"
+              >
+                <span
+                  class="py-[5px] px-1.5 rounded-full bg-[#B8DD2F] text-xs font-medium leading-3 text-Theme-Black tracking-[0.6px]"
+                  >V 1.1.28</span
+                >
+                <p>
+                  <span class="font-medium text-Theme-Green">Kiwiform MCP Server</span> Bring
+                  Kiwiform into Your AI Assistant is Live!
+                </p>
+              </a>
+              <h1
+                class="mt-5 mb-2.5 text-center w-full max-w-[634px] mx-auto font-Inter-disp text-[48px] leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                Free No-Code Form Builder with Drag & Drop Editor
+              </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[750px] mx-auto mb-[30px]"
+              >
+                Create unlimited forms, surveys, quizzes, and more for free without coding. Drag and
+                drop fields, customize your form, and publish it in minutes. No Response limits, No
+                stress.
+              </p>
+              <div class="flex w-full items-center justify-center gap-[15px]">
+                <a
+                  href="https://app.kiwiform.com/"
+                  target="_blank"
+                  class="btn-kiwi-green w-max text-sm lead5ing-[22px] font-medium py-2.5 px-6"
+                  >Start Kiwiform Free</a
+                >
+                <a
+                  href="/ai-form-builder"
+                  target="_blank"
+                  class="btn-white-icon-text flex items-center gap-6 w-max text-sm lead5ing-[22px] text-Theme-Green font-medium py-[9px] px-[15px]"
+                  >Try Kiwizard AI
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.94873 4.10156C7.62685 4.10156 7.339 4.30197 7.2273 4.60384L6.69823 6.03365C5.98005 7.97449 5.68819 8.71582 5.15124 9.25285C4.61429 9.78977 3.87295 10.0816 1.93208 10.7998L0.502278 11.3289C0.200411 11.4405 0 11.7284 0 12.0503C0 12.3721 0.200411 12.66 0.502278 12.7717L1.93208 13.3008C3.87295 14.019 4.61429 14.3108 5.15124 14.8477C5.68819 15.3848 5.98005 16.1261 6.69823 18.0669L7.2273 19.4968C7.339 19.7986 7.62685 19.999 7.94873 19.999C8.27057 19.999 8.55847 19.7986 8.67016 19.4968L9.19919 18.0669C9.91745 16.1261 10.2092 15.3848 10.7462 14.8477C11.2832 14.3108 12.0245 14.019 13.9654 13.3008L15.3952 12.7717C15.697 12.66 15.8975 12.3721 15.8975 12.0503C15.8975 11.7284 15.697 11.4405 15.3952 11.3289L13.9654 10.7998C12.0245 10.0816 11.2832 9.78977 10.7462 9.25285C10.2092 8.71582 9.91745 7.97449 9.19919 6.03365L8.67016 4.60384C8.55847 4.30197 8.27057 4.10156 7.94873 4.10156Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M7.94873 4.10156C7.62685 4.10156 7.339 4.30197 7.2273 4.60384L6.69823 6.03365C5.98005 7.97449 5.68819 8.71582 5.15124 9.25285C4.61429 9.78977 3.87295 10.0816 1.93208 10.7998L0.502278 11.3289C0.200411 11.4405 0 11.7284 0 12.0503C0 12.3721 0.200411 12.66 0.502278 12.7717L1.93208 13.3008C3.87295 14.019 4.61429 14.3108 5.15124 14.8477C5.68819 15.3848 5.98005 16.1261 6.69823 18.0669L7.2273 19.4968C7.339 19.7986 7.62685 19.999 7.94873 19.999C8.27057 19.999 8.55847 19.7986 8.67016 19.4968L9.19919 18.0669C9.91745 16.1261 10.2092 15.3848 10.7462 14.8477C11.2832 14.3108 12.0245 14.019 13.9654 13.3008L15.3952 12.7717C15.697 12.66 15.8975 12.3721 15.8975 12.0503C15.8975 11.7284 15.697 11.4405 15.3952 11.3289L13.9654 10.7998C12.0245 10.0816 11.2832 9.78977 10.7462 9.25285C10.2092 8.71582 9.91745 7.97449 9.19919 6.03365L8.67016 4.60384C8.55847 4.30197 8.27057 4.10156 7.94873 4.10156Z"
+                      fill="url(#paint0_radial_10793_3594)"
+                    />
+                    <path
+                      d="M16.1508 0C15.829 0 15.5411 0.200411 15.4294 0.502278L15.2026 1.11505C14.8809 1.98457 14.7873 2.19024 14.6411 2.33641C14.4949 2.4826 14.2893 2.57624 13.4198 2.89798L12.8069 3.12473C12.5051 3.23643 12.3047 3.52428 12.3047 3.84616C12.3047 4.16804 12.5051 4.45588 12.8069 4.56759L13.4198 4.79433C14.2893 5.11608 14.4949 5.20972 14.6411 5.35589C14.7873 5.50208 14.8809 5.70775 15.2026 6.57727L15.4294 7.19004C15.5411 7.49191 15.829 7.69232 16.1508 7.69232C16.4727 7.69232 16.7606 7.49191 16.8723 7.19004L17.0991 6.57727C17.4208 5.70775 17.5144 5.50208 17.6606 5.35589C17.8067 5.20972 18.0125 5.11608 18.8819 4.79433L19.4947 4.56759C19.7966 4.45588 19.997 4.16804 19.997 3.84616C19.997 3.52428 19.7966 3.23643 19.4947 3.12473L18.8819 2.89798C18.0125 2.57624 17.8067 2.4826 17.6606 2.33641C17.5144 2.19024 17.4208 1.98457 17.0991 1.11505L16.8723 0.502278C16.7606 0.200411 16.4727 0 16.1508 0Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M16.1508 0C15.829 0 15.5411 0.200411 15.4294 0.502278L15.2026 1.11505C14.8809 1.98457 14.7873 2.19024 14.6411 2.33641C14.4949 2.4826 14.2893 2.57624 13.4198 2.89798L12.8069 3.12473C12.5051 3.23643 12.3047 3.52428 12.3047 3.84616C12.3047 4.16804 12.5051 4.45588 12.8069 4.56759L13.4198 4.79433C14.2893 5.11608 14.4949 5.20972 14.6411 5.35589C14.7873 5.50208 14.8809 5.70775 15.2026 6.57727L15.4294 7.19004C15.5411 7.49191 15.829 7.69232 16.1508 7.69232C16.4727 7.69232 16.7606 7.49191 16.8723 7.19004L17.0991 6.57727C17.4208 5.70775 17.5144 5.50208 17.6606 5.35589C17.8067 5.20972 18.0125 5.11608 18.8819 4.79433L19.4947 4.56759C19.7966 4.45588 19.997 4.16804 19.997 3.84616C19.997 3.52428 19.7966 3.23643 19.4947 3.12473L18.8819 2.89798C18.0125 2.57624 17.8067 2.4826 17.6606 2.33641C17.5144 2.19024 17.4208 1.98457 17.0991 1.11505L16.8723 0.502278C16.7606 0.200411 16.4727 0 16.1508 0Z"
+                      fill="url(#paint1_radial_10793_3594)"
+                    />
+                    <defs>
+                      <radialGradient
+                        id="paint0_radial_10793_3594"
+                        cx="0"
+                        cy="0"
+                        r="1"
+                        gradientTransform="matrix(0.180653 55.6411 -46.6866 93.6341 8.96039 4.10156)"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#007D47" />
+                        <stop offset="0.5" stop-color="#B8DD2F" />
+                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                      </radialGradient>
+                      <radialGradient
+                        id="paint1_radial_10793_3594"
+                        cx="0"
+                        cy="0"
+                        r="1"
+                        gradientTransform="matrix(0.0874127 26.9231 -22.5903 45.3068 16.6404 -2.56425e-06)"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#007D47" />
+                        <stop offset="0.5" stop-color="#B8DD2F" />
+                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                  </svg>
+                </a>
+              </div>
+              <div class="flex items-center gap-2 mt-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 17 17"
+                  fill="none"
+                >
+                  <path
+                    d="M15.2031 8.19922C15.2031 8.79655 14.4693 9.28889 14.3223 9.83955C14.1706 10.4089 14.5545 11.2022 14.2663 11.7004C13.9735 12.2067 13.0926 12.2674 12.682 12.6781C12.2713 13.0887 12.2106 13.9696 11.7043 14.2624C11.2061 14.5506 10.4128 14.1667 9.84346 14.3184C9.29279 14.4654 8.80046 15.1992 8.20313 15.1992C7.60579 15.1992 7.11346 14.4654 6.56279 14.3184C5.99346 14.1667 5.20013 14.5506 4.70196 14.2624C4.19563 13.9696 4.13496 13.0887 3.72429 12.6781C3.31363 12.2674 2.43279 12.2067 2.13996 11.7004C1.85179 11.2022 2.23563 10.4089 2.08396 9.83955C1.93696 9.28889 1.20312 8.79655 1.20312 8.19922C1.20312 7.60189 1.93696 7.10955 2.08396 6.55889C2.23563 5.98955 1.85179 5.19622 2.13996 4.69805C2.43279 4.19172 3.31363 4.13105 3.72429 3.72039C4.13496 3.30972 4.19563 2.42889 4.70196 2.13605C5.20013 1.84789 5.99346 2.23172 6.56279 2.08005C7.11346 1.93305 7.60579 1.19922 8.20313 1.19922C8.80046 1.19922 9.29279 1.93305 9.84346 2.08005C10.4128 2.23172 11.2061 1.84789 11.7043 2.13605C12.2106 2.42889 12.2713 3.30972 12.682 3.72039C13.0926 4.13105 13.9735 4.19172 14.2663 4.69805C14.5545 5.19622 14.1706 5.98955 14.3223 6.55889C14.4693 7.10955 15.2031 7.60189 15.2031 8.19922Z"
+                    fill="#B8DD2F"
+                  />
+                  <path
+                    d="M6.01513 7.56271L7.56153 9.1078L10.3911 6.27821C10.5998 6.0695 10.9374 6.0695 11.1461 6.27821C11.3548 6.48692 11.3548 6.82568 11.1461 7.03439L7.9238 10.2567C7.72325 10.4573 7.39733 10.4573 7.19678 10.2567L5.25895 8.31889C5.05024 8.11018 5.05024 7.77142 5.25895 7.56271C5.46766 7.354 5.80642 7.354 6.01513 7.56271Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M8.20312 0.599609C8.73019 0.599609 9.15501 0.918448 9.40332 1.10645C9.5544 1.22084 9.65915 1.30587 9.77344 1.38281C9.88331 1.45676 9.95369 1.48811 9.99805 1.5L10.1016 1.51562C10.1456 1.51823 10.1997 1.51785 10.2666 1.51367C10.4047 1.50503 10.5413 1.48383 10.7266 1.46094C11.0278 1.42373 11.5558 1.3565 12.0049 1.61621C12.4572 1.87781 12.6631 2.36865 12.7822 2.65137C12.8552 2.82452 12.9049 2.95244 12.9658 3.07617C13.0245 3.19527 13.0709 3.26033 13.1064 3.2959C13.142 3.33147 13.2071 3.37784 13.3262 3.43652C13.4499 3.49745 13.5778 3.54719 13.751 3.62012C14.0337 3.7392 14.5245 3.94513 14.7861 4.39746C15.0458 4.84652 14.9786 5.37452 14.9414 5.67578C14.9185 5.86107 14.8973 5.99763 14.8887 6.13574C14.8803 6.26908 14.8884 6.35176 14.9023 6.4043L14.9375 6.49121C14.9562 6.52806 14.9824 6.57369 15.0195 6.62891C15.0965 6.7432 15.1815 6.84794 15.2959 6.99902C15.4839 7.24733 15.8027 7.67215 15.8027 8.19922C15.8027 8.72629 15.4839 9.15111 15.2959 9.39941C15.1815 9.5505 15.0965 9.65524 15.0195 9.76953C14.9824 9.82474 14.9562 9.87038 14.9375 9.90723L14.9023 9.99414C14.8884 10.0467 14.8803 10.1294 14.8887 10.2627C14.8973 10.4008 14.9185 10.5374 14.9414 10.7227C14.9786 11.0239 15.0458 11.5519 14.7861 12.001C14.5245 12.4533 14.0337 12.6592 13.751 12.7783C13.5778 12.8512 13.4499 12.901 13.3262 12.9619C13.2071 13.0206 13.142 13.067 13.1064 13.1025C13.0709 13.1381 13.0245 13.2032 12.9658 13.3223C12.9049 13.446 12.8552 13.5739 12.7822 13.7471C12.6631 14.0298 12.4572 14.5206 12.0049 14.7822C11.5558 15.0419 11.0278 14.9747 10.7266 14.9375C10.5413 14.9146 10.4047 14.8934 10.2666 14.8848C10.1997 14.8806 10.1456 14.8802 10.1016 14.8828L9.99805 14.8984C9.95369 14.9103 9.88331 14.9417 9.77344 15.0156C9.65915 15.0926 9.5544 15.1776 9.40332 15.292C9.15501 15.48 8.73019 15.7988 8.20312 15.7988C7.67606 15.7988 7.25124 15.48 7.00293 15.292C6.85185 15.1776 6.7471 15.0926 6.63281 15.0156C6.5776 14.9785 6.53197 14.9523 6.49512 14.9336L6.4082 14.8984C6.35567 14.8845 6.27299 14.8764 6.13965 14.8848C6.00153 14.8934 5.86498 14.9146 5.67969 14.9375C5.37842 14.9747 4.85043 15.0419 4.40137 14.7822C3.94904 14.5206 3.74311 14.0298 3.62402 13.7471C3.55109 13.5739 3.50135 13.446 3.44043 13.3223C3.38174 13.2032 3.33537 13.1381 3.2998 13.1025C3.26424 13.067 3.19918 13.0206 3.08008 12.9619C2.95635 12.901 2.82843 12.8512 2.65527 12.7783C2.37255 12.6592 1.88172 12.4533 1.62012 12.001C1.3604 11.5519 1.42763 11.0239 1.46484 10.7227C1.48774 10.5374 1.50893 10.4008 1.51758 10.2627C1.52175 10.1958 1.52214 10.1416 1.51953 10.0977L1.50391 9.99414C1.49202 9.94978 1.46067 9.8794 1.38672 9.76953C1.30978 9.65524 1.22475 9.5505 1.11035 9.39941C0.922354 9.15111 0.603516 8.72629 0.603516 8.19922C0.603516 7.67215 0.922354 7.24733 1.11035 6.99902C1.22475 6.84794 1.30978 6.7432 1.38672 6.62891C1.46067 6.51904 1.49202 6.44866 1.50391 6.4043L1.51953 6.30078C1.52214 6.25679 1.52175 6.20261 1.51758 6.13574C1.50893 5.99763 1.48774 5.86107 1.46484 5.67578C1.42763 5.37452 1.3604 4.84652 1.62012 4.39746C1.88172 3.94513 2.37255 3.7392 2.65527 3.62012C2.82843 3.54719 2.95635 3.49745 3.08008 3.43652C3.19918 3.37784 3.26424 3.33147 3.2998 3.2959C3.33537 3.26033 3.38174 3.19527 3.44043 3.07617C3.50135 2.95244 3.55109 2.82452 3.62402 2.65137C3.74311 2.36865 3.94904 1.87781 4.40137 1.61621C4.85043 1.3565 5.37842 1.42373 5.67969 1.46094C5.86498 1.48383 6.00153 1.50503 6.13965 1.51367C6.27298 1.522 6.35567 1.51398 6.4082 1.5L6.49512 1.46484C6.53197 1.44615 6.5776 1.41997 6.63281 1.38281C6.7471 1.30587 6.85185 1.22084 7.00293 1.10645C7.25124 0.918448 7.67606 0.599609 8.20312 0.599609Z"
+                    stroke="#183C1A"
+                    stroke-width="1.2"
+                  />
+                </svg>
+                <span class="text-sm font-medium text-[#183C1A]">Free. Seriously!</span>
+              </div>
+              <div
+                class="w-full mt-[60px] relative max-w-[300px] mx-auto py-[11px] flex items-center justify-center bg-[radial-gradient(73.09%_100%_at_50%_100%,#F3FFC7_0%,rgba(255,255,255,0.5)_50%,rgba(255,255,255,0)_100%)] text-[#26943D] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[radial-gradient(circle,#007D47_0%,#A3C81B_50%,rgba(255,255,255,0.5)_100%)]"
+              >
+                See it. Try it. Make it yours.
+              </div>
+            </div>
+
+            <!-- preview -->
+            <div class="relative w-full p-2.5 bg-white rounded-10px pt-0">
+              <div class="flex items-center justify-between w-full bg-white p-2.5 pr-0">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#ED6A5E]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#F4BF4F]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#61C554]"></span>
+                </div>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="130"
+                    height="30"
+                    viewBox="0 0 130 30"
+                    fill="none"
+                  >
+                    <path
+                      d="M0 5C0 2.23858 2.23858 0 5 0H125C127.761 0 130 2.23858 130 5V25C130 27.7614 127.761 30 125 30H5C2.23858 30 0 27.7614 0 25V5Z"
+                      fill="#F0F8D3"
+                    />
+                    <path
+                      d="M63.7681 17.3984C63.5593 17.0269 63.2702 16.9946 62.9811 17.2853L61.7606 18.5612V20.7416H59.8173V9.43607H61.7606V16.2032L65.1492 12.5855H67.5262L65.2456 15.0081C64.9726 15.2988 64.9405 15.5734 65.1171 15.8964L67.7671 20.7416H65.5347L63.7681 17.3984Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M68.5845 20.7416V12.5693H70.6402V20.7416H68.5845ZM69.6123 11.3742C68.8896 11.3742 68.3596 10.8735 68.3596 10.1952C68.3596 9.53298 68.8896 9 69.6123 9C70.335 9 70.865 9.53298 70.865 10.1952C70.865 10.8735 70.335 11.3742 69.6123 11.3742Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M73.9266 20.7416L71.5176 12.5693H73.6376L74.9866 17.9314H75.1151L76.4963 12.5693H78.5038L79.885 17.9314H79.9974L81.3464 12.5693H83.4824L81.0734 20.7416H78.8732L77.5241 15.5572H77.4599L76.1269 20.7416H73.9266Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M84.3624 20.7416V12.5693H86.4181V20.7416H84.3624ZM85.3902 11.3742C84.6675 11.3742 84.1375 10.8735 84.1375 10.1952C84.1375 9.53298 84.6675 9 85.3902 9C86.1129 9 86.6429 9.53298 86.6429 10.1952C86.6429 10.8735 86.1129 11.3742 85.3902 11.3742Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M88.7738 20.7416V14.2813H87.2802L87.2641 12.5693H88.292C88.5971 12.5693 88.7416 12.4078 88.7738 12.1171V11.8425C88.9022 10.5989 89.7052 9.43607 91.6485 9.43607H92.5318V11.148H91.231C90.8776 11.148 90.7331 11.2934 90.7331 11.6326V12.5693H92.3873V14.2813H90.7652V20.7416H88.7738Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M96.9844 21C94.3826 21 92.7284 19.2719 92.7284 16.6555C92.7284 14.039 94.3826 12.3109 96.9844 12.3109C99.554 12.3109 101.208 14.039 101.208 16.6555C101.208 19.2719 99.554 21 96.9844 21ZM96.9844 19.2396C98.2692 19.2396 99.1204 18.2221 99.1204 16.6555C99.1204 15.0888 98.2692 14.0552 96.9844 14.0552C95.6835 14.0552 94.8323 15.0888 94.8323 16.6555C94.8323 18.2221 95.6835 19.2396 96.9844 19.2396Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M102.241 14.6366C102.241 13.2961 102.963 12.5693 104.345 12.5693H106.978V14.3136H104.296V20.7416H102.241V14.6366Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M107.778 20.7416V12.5693H109.641V13.7483C110.139 12.7954 110.99 12.3109 112.098 12.3109C113.319 12.3109 114.186 12.8923 114.62 13.9098C115.086 12.8762 115.985 12.3109 117.173 12.3109C118.924 12.3109 120 13.5222 120 15.5087V20.7416H117.944V15.8479C117.944 14.6689 117.511 14.1036 116.659 14.1036C115.728 14.1036 114.925 14.8466 114.925 16.5747V20.7416H112.869V15.8479C112.869 14.6689 112.436 14.1036 111.584 14.1036C110.605 14.1036 109.834 14.895 109.834 16.5747V20.7416H107.778Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M10 20V9.81445H13.7506C14.4729 9.81445 15.0717 9.93294 15.5471 10.1699C16.0225 10.4069 16.3768 10.7282 16.6099 11.1338C16.8476 11.5348 16.9665 11.986 16.9665 12.4873C16.9665 12.9111 16.8865 13.2689 16.7265 13.5605C16.5711 13.8522 16.3631 14.0846 16.1025 14.2578C15.842 14.431 15.554 14.5586 15.2386 14.6406V14.7363C15.5814 14.7546 15.9151 14.8639 16.2396 15.0645C16.5642 15.265 16.8316 15.5498 17.0419 15.9189C17.2567 16.2835 17.3642 16.7301 17.3642 17.2588C17.3642 17.7783 17.2407 18.2454 16.9939 18.6602C16.7516 19.0703 16.3768 19.3962 15.8694 19.6377C15.362 19.8792 14.7106 20 13.9152 20H10ZM11.5428 18.6875H13.7644C14.5049 18.6875 15.0351 18.5439 15.3551 18.2568C15.6751 17.9697 15.8351 17.612 15.8351 17.1836C15.8351 16.86 15.7528 16.5661 15.5883 16.3018C15.4283 16.0329 15.1974 15.8187 14.8957 15.6592C14.594 15.4997 14.2375 15.4199 13.8261 15.4199H11.5428V18.6875ZM11.5428 14.2236H13.6135C13.9563 14.2236 14.2672 14.1576 14.546 14.0254C14.8249 13.8932 15.0443 13.7064 15.2043 13.4648C15.3688 13.2188 15.4511 12.9339 15.4511 12.6104C15.4511 12.1911 15.3026 11.8402 15.0054 11.5576C14.7129 11.2705 14.2626 11.127 13.6547 11.127H11.5428V14.2236Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M23.3432 16.8418V12.3574H24.8243V20H23.3707V18.6738H23.2884C23.1055 19.0794 22.8221 19.4189 22.4382 19.6924C22.0542 19.9658 21.5742 20.1003 20.9982 20.0957C20.5046 20.0957 20.068 19.9886 19.6886 19.7744C19.3138 19.5602 19.0189 19.2389 18.8041 18.8105C18.5938 18.3822 18.4887 17.8512 18.4887 17.2178V12.3574H19.9697V17.0469C19.9697 17.5618 20.116 17.9743 20.4086 18.2842C20.7011 18.5941 21.0782 18.7467 21.5399 18.7422C21.8188 18.7422 22.0953 18.6738 22.3696 18.5371C22.6484 18.4004 22.8793 18.1908 23.0621 17.9082C23.2495 17.6257 23.3432 17.2702 23.3432 16.8418Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M26.2505 20V12.3574H27.7316V20H26.2505ZM26.9979 11.1816C26.7373 11.1816 26.5156 11.0951 26.3328 10.9219C26.1499 10.7487 26.0585 10.5413 26.0585 10.2998C26.0585 10.0537 26.1499 9.84408 26.3328 9.6709C26.5156 9.49772 26.7373 9.41113 26.9979 9.41113C27.2539 9.41113 27.4733 9.49772 27.6561 9.6709C27.8436 9.84408 27.9373 10.0537 27.9373 10.2998C27.9373 10.5413 27.8436 10.7487 27.6561 10.9219C27.4733 11.0951 27.2539 11.1816 26.9979 11.1816Z"
+                      fill="#007D47"
+                    />
+                    <path d="M30.6388 9.81445V20H29.1578V9.81445H30.6388Z" fill="#007D47" />
+                    <path
+                      d="M35.6306 12.3574V13.5537H31.4479V12.3574H35.6306ZM32.5656 10.5391H34.0535V17.7578C34.0535 18.1087 34.1266 18.3662 34.2729 18.5303C34.4192 18.6898 34.6546 18.7695 34.9792 18.7695C35.0569 18.7695 35.1392 18.765 35.226 18.7559C35.3174 18.7467 35.4089 18.7331 35.5003 18.7148L35.7814 19.9453C35.6306 19.9954 35.466 20.0342 35.2877 20.0615C35.1094 20.0889 34.9312 20.1025 34.7529 20.1025C34.0901 20.1025 33.5598 19.918 33.1621 19.5488C32.7644 19.1751 32.5656 18.6784 32.5656 18.0586V10.5391Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M43.0427 20.1572C42.325 20.1572 41.6965 19.9932 41.1571 19.665C40.6223 19.3369 40.2063 18.8766 39.9092 18.2842C39.6166 17.6917 39.4703 17.0036 39.4703 16.2197C39.4703 15.4268 39.6166 14.734 39.9092 14.1416C40.2063 13.5446 40.6223 13.082 41.1571 12.7539C41.6965 12.4258 42.325 12.2617 43.0427 12.2617C43.765 12.2617 44.3935 12.4258 44.9283 12.7539C45.4631 13.082 45.8791 13.5446 46.1762 14.1416C46.4734 14.734 46.6219 15.4268 46.6219 16.2197C46.6219 17.0036 46.4734 17.6917 46.1762 18.2842C45.8791 18.8766 45.4631 19.3369 44.9283 19.665C44.3935 19.9932 43.765 20.1572 43.0427 20.1572ZM43.0427 18.9062C43.5135 18.9062 43.9021 18.7832 44.2084 18.5371C44.5146 18.291 44.7409 17.9652 44.8872 17.5596C45.038 17.1494 45.1134 16.7028 45.1134 16.2197C45.1134 15.7275 45.038 15.2764 44.8872 14.8662C44.7409 14.4561 44.5146 14.1279 44.2084 13.8818C43.9021 13.6357 43.5135 13.5127 43.0427 13.5127C42.5764 13.5127 42.1902 13.6357 41.8839 13.8818C41.5822 14.1279 41.3559 14.4561 41.2051 14.8662C41.0542 15.2764 40.9788 15.7275 40.9788 16.2197C40.9788 16.7028 41.0542 17.1494 41.2051 17.5596C41.3559 17.9652 41.5822 18.291 41.8839 18.5371C42.1902 18.7832 42.5764 18.9062 43.0427 18.9062Z"
+                      fill="#007D47"
+                    />
+                    <path
+                      d="M49.1795 15.4678V20H47.6984V12.3574H49.1384V13.6152H49.2412C49.4149 13.2005 49.6869 12.8724 50.0572 12.6309C50.4274 12.3848 50.9028 12.2617 51.4834 12.2617C52.0045 12.2617 52.4593 12.3711 52.8479 12.5898C53.241 12.804 53.545 13.1253 53.7598 13.5537C53.9792 13.9821 54.0889 14.513 54.0889 15.1465V20H52.6079V15.3242C52.6079 14.7728 52.4616 14.3398 52.169 14.0254C51.8765 13.7064 51.4788 13.5469 50.976 13.5469C50.6331 13.5469 50.3246 13.6243 50.0503 13.7793C49.7806 13.9297 49.5681 14.1462 49.4126 14.4287C49.2572 14.7113 49.1795 15.0576 49.1795 15.4678Z"
+                      fill="#007D47"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                id="preview"
+                class="w-full bg-[#FEFAEF] rounded-[5px] min-h-[700px] overflow-hidden"
+              >
+                <iframe
+                  src="https://share.kiwiform.com/to/22me5o9t"
+                  title="Kiwiform preview"
+                  class="w-full min-h-[700px] border-0"
+                  loading="lazy"
+                  allow="clipboard-write"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Form Fields for Every Need  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg w-full rounded-10px overflow-hidden"
+            >
+              <div
+                class="flex items-center bg-white justify-center flex-col px-2.5 lg:px-14 max-lg:py-9 w-full"
+              >
+                <div class="flex items-center flex-col w-full max-w-[483px] mx-auto">
+                  <p
+                    class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                  >
+                    Form Fields for Every Need
+                  </p>
+                  <h2 class="heading-h2 text-center lg:text-left">
+                    Collect the responses you need with 30+ Form Fields
+                  </h2>
+                  <p class="text-base leading-7 text-[#7D7676] mt-5 text-center lg:text-left">
+                    Choose from 30+ form fields to collect contact details, text, choices, ratings,
+                    matrices, and more. Add, arrange, and customize fields to create forms for
+                    surveys, feedback, lead generation, applications, and registrations.
+                  </p>
+                  <a
+                    href="https://app.kiwiform.com/"
+                    class="btn-kiwi-green w-max mx-auto lg:ml-0 mt-[30px] lg:mr-auto text-sm lead5ing-[22px] font-medium py-2.5 px-6"
+                  >
+                    Create your own form
+                  </a>
+                </div>
+              </div>
+              <div class="overflow-hidden">
+                <img
+                  src="/images/uploads/new-lending-1.png"
+                  alt="form fields image"
+                  class="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- AI-Powered Form Building -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col px-14 max-lg:py-9 w-full"
+              >
+                <div class="flex items-center flex-col w-full max-w-[1006px] mx-auto py-20">
+                  <p class="text-center w-full text-base leading-7 text-Theme-Green mb-2.5">
+                    AI-Powered Form Building
+                  </p>
+                  <h2 class="heading-h2 text-center">Create forms in seconds with Kiwizard AI</h2>
+                  <p class="text-base leading-7 text-[#7D7676] mt-5 text-center">
+                    Describe what you want to create, and Kiwizard generates a structured, editable
+                    form with relevant questions, answer options, and flow already prepared. Review
+                    the draft form, refine it with simple prompts, and customize every detail inside
+                    the form builder.
+                  </p>
+
+                  <div class="w-full max-w-[706px] mx-auto mt-10" id="ai-builder-root-landing"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Customizable Form Design  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg w-full rounded-10px overflow-hidden"
+            >
+              <div class="overflow-hidden" id="slid-show">
+                <img
+                  src="/images/uploads/new-lending-2-1.png"
+                  alt="form fields image"
+                  class="w-full h-auto"
+                />
+                <img
+                  src="/images/uploads/new-lending-2-2.png"
+                  alt="form fields image"
+                  class="w-full h-auto"
+                />
+                <img
+                  src="/images/uploads/new-lending-2-3.png"
+                  alt="form fields image"
+                  class="w-full h-auto"
+                />
+              </div>
+
+              <div
+                class="flex items-center bg-white justify-center flex-col px-2.5 lg:px-14 max-lg:py-9 w-full"
+              >
+                <div class="flex items-center flex-col w-full max-w-[483px] mx-auto">
+                  <p
+                    class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                  >
+                    Customizable Form Design
+                  </p>
+                  <h2 class="heading-h2 text-center lg:text-left">
+                    Design your forms, your way with Design & Themes
+                  </h2>
+                  <p class="text-base leading-7 text-[#7D7676] mt-5 text-center lg:text-left">
+                    Create and customize forms using colors, fonts, logos, and layouts you want for
+                    your respondents. Save your favorite form design as a theme and apply it across
+                    your forms, so you can stay consistent without designing from scratch every
+                    time.
+                  </p>
+                  <a
+                    href="/help/design-themes"
+                    class="btn-kiwi-green w-max mx-auto lg:ml-0 mt-[30px] lg:mr-auto text-sm lead5ing-[22px] font-medium py-2.5 px-6"
+                  >
+                    Design your own form
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Kiwiform MCP Server -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col px-5 max-lg:py-9 w-full"
+              >
+                <div class="flex items-center flex-col w-full pt-20 pb-5">
+                  <p class="text-center w-full text-base leading-7 text-Theme-Green mb-2.5">
+                    Kiwiform MCP Server
+                  </p>
+                  <h2 class="heading-h2 text-center">Connect Kiwiform to Your AI Assistant</h2>
+                  <p
+                    class="text-base leading-7 text-Theme-Black mt-5 text-center max-w-[1006px] mx-auto"
+                  >
+                    Connect Kiwiform to your AI assistant to create and manage forms, work with
+                    submissions, and explore form data using natural language. Create forms and work
+                    with the data they collect in the same conversation.
+                  </p>
+                  <a
+                    href="/help/kiwiform-mcp-server-overview"
+                    class="btn-kiwi-green w-max mx-auto mt-[30px] mb-10 text-sm lead5ing-[22px] font-medium py-2.5 px-6"
+                  >
+                    Explore Kiwiform MCP Server
+                  </a>
+
+                  <div class="mcp-animation" aria-label="Kiwiform MCP assistant animation">
+                    <div class="mcp-sidebar" aria-hidden="true">
+                      <div class="mcp-sidebar-nav">
+                        <button type="button" tabindex="-1">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.5 4C17.3284 4 18 4.67157 18 5.5V14.5C18 15.3284 17.3284 16 16.5 16H3.5C2.67157 16 2 15.3284 2 14.5V5.5C2 4.67157 2.67157 4 3.5 4H16.5ZM7 15H16.5C16.7761 15 17 14.7761 17 14.5V5.5C17 5.22386 16.7761 5 16.5 5H7V15ZM3.5 5C3.22386 5 3 5.22386 3 5.5V14.5C3 14.7761 3.22386 15 3.5 15H6V5H3.5Z"
+                              fill="#383835"
+                            />
+                          </svg>
+                        </button>
+                        <button type="button" tabindex="-1">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10 2.5C14.1421 2.5 17.5 5.85786 17.5 10C17.5 14.1421 14.1421 17.5 10 17.5H3C2.79779 17.5 2.61549 17.3782 2.53809 17.1914C2.4607 17.0046 2.50349 16.7895 2.64648 16.6465L4.35547 14.9365C3.20124 13.6175 2.5 11.8906 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5ZM10 3.5C6.41015 3.5 3.5 6.41015 3.5 10C3.5 11.7952 4.22659 13.4199 5.40332 14.5967L5.46582 14.6729C5.52017 14.7544 5.5498 14.8508 5.5498 14.9502C5.5498 15.0828 5.49709 15.2099 5.40332 15.3037L4.20703 16.5H10C13.5899 16.5 16.5 13.5899 16.5 10C16.5 6.41015 13.5899 3.5 10 3.5ZM10 7C10.2761 7 10.5 7.22386 10.5 7.5V9.5H12.5C12.7761 9.5 13 9.72386 13 10C13 10.2761 12.7761 10.5 12.5 10.5H10.5V12.5C10.5 12.7761 10.2761 13 10 13C9.72386 13 9.5 12.7761 9.5 12.5V10.5H7.5C7.22386 10.5 7 10.2761 7 10C7 9.72386 7.22386 9.5 7.5 9.5H9.5V7.5C9.5 7.22386 9.72386 7 10 7Z"
+                              fill="#141413"
+                            />
+                          </svg>
+                        </button>
+                        <button type="button" tabindex="-1">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10 2.5C14.1421 2.5 17.5 5.85786 17.5 10C17.5 14.1421 14.1421 17.5 10 17.5H3C2.79779 17.5 2.61549 17.3782 2.53809 17.1914C2.4607 17.0046 2.50349 16.7895 2.64648 16.6465L4.35547 14.9365C3.20124 13.6175 2.5 11.8906 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5Z"
+                              stroke="#383835"
+                            />
+                          </svg>
+                        </button>
+                        <button type="button" tabindex="-1">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M5 4H15L14 16H6L5 4Z"
+                              stroke="#383835"
+                              stroke-linejoin="round"
+                            />
+                            <path d="M4 4H16" stroke="#383835" stroke-linecap="round" />
+                          </svg>
+                        </button>
+                        <button type="button" tabindex="-1">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M5.5 4.5H8.5V7.5H5.5V4.5Z" stroke="#383835" />
+                            <path d="M11.5 4.5H14.5V7.5H11.5V4.5Z" stroke="#383835" />
+                            <path d="M5.5 12.5H8.5V15.5H5.5V12.5Z" stroke="#383835" />
+                            <path d="M11.5 12.5H14.5V15.5H11.5V12.5Z" stroke="#383835" />
+                            <path
+                              d="M10 7.5V12.5M8.5 6H11.5M8.5 14H11.5"
+                              stroke="#383835"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                        </button>
+                        <button type="button" tabindex="-1">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M7.5 6L3.5 10L7.5 14"
+                              stroke="#383835"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12.5 6L16.5 10L12.5 14"
+                              stroke="#383835"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <span class="mcp-sidebar-brand">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="28"
+                          height="28"
+                          viewBox="0 0 28 28"
+                          fill="none"
+                        >
+                          <rect width="28" height="28" rx="14" fill="#C46686" />
+                          <path
+                            d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14Z"
+                            fill="#183C1A"
+                          />
+                          <path
+                            d="M13.9984 1.40234C14.9005 1.40234 15.7804 1.49739 16.6286 1.67778C17.7654 1.91952 18.4784 2.9911 18.4784 4.1533V8.12234C18.4784 8.89554 19.1052 9.52235 19.8784 9.52235H23.8475C25.0097 9.52235 26.0813 10.2354 26.323 11.3721C26.5034 12.2204 26.5984 13.1003 26.5984 14.0023C26.5984 20.9611 20.9572 26.6023 13.9984 26.6023C7.03965 26.6023 1.39844 20.9611 1.39844 14.0023C1.39844 7.04356 7.03965 1.40234 13.9984 1.40234Z"
+                            fill="#B8DD2F"
+                          />
+                          <path
+                            d="M18.8788 9.10235L26.5984 9.52235L26.8346 12.7838C26.873 13.3149 26.8595 13.8485 26.7942 14.3769L26.6908 15.2146C26.6293 15.712 26.5222 16.2028 26.3709 16.6807L26.0664 17.6423L22.6784 13.4423L18.8788 9.10235Z"
+                            fill="url(#paint0_linear_10793_3879)"
+                          />
+                          <path
+                            d="M10.4141 13.8781C10.4141 11.8938 12.0227 10.2852 14.007 10.2852C15.9913 10.2852 17.5999 11.8938 17.5999 13.8781C17.5999 15.8624 15.9913 17.471 14.007 17.471C12.0227 17.471 10.4141 15.8624 10.4141 13.8781Z"
+                            fill="#F2F3B5"
+                          />
+                          <ellipse
+                            cx="14.134"
+                            cy="20.4432"
+                            rx="0.743366"
+                            ry="1.11505"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="14.134"
+                            cy="7.43536"
+                            rx="0.743366"
+                            ry="1.11505"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="17.381"
+                            cy="19.5705"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-30 17.381 19.5705)"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="10.8732"
+                            cy="8.30492"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-30 10.8732 8.30492)"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="19.7592"
+                            cy="17.1911"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-60 19.7592 17.1911)"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="8.49359"
+                            cy="10.6872"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-60 8.49359 10.6872)"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="20.6385"
+                            cy="13.9402"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-90 20.6385 13.9402)"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="7.62286"
+                            cy="13.9402"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-90 7.62286 13.9402)"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="8.50023"
+                            cy="17.1893"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-120 8.50023 17.1893)"
+                            fill="#183C1A"
+                          />
+                          <ellipse
+                            cx="10.8747"
+                            cy="19.5728"
+                            rx="0.743366"
+                            ry="1.11505"
+                            transform="rotate(-150 10.8747 19.5728)"
+                            fill="#183C1A"
+                          />
+                          <defs>
+                            <linearGradient
+                              id="paint0_linear_10793_3879"
+                              x1="23.098"
+                              y1="9.52234"
+                              x2="26.5981"
+                              y2="17.6423"
+                              gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stop-color="#183C1A" stop-opacity="0.25" />
+                              <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="mcp-main">
+                      <div class="mcp-topbar">
+                        <span>Product roadmap</span>
+                        <span class="mcp-share">Share</span>
+                      </div>
+                      <div class="mcp-chat">
+                        <div class="mcp-prompt-bubble">
+                          Find the best response from <strong>Product Launch Feedback Form</strong>
+                        </div>
+
+                        <div class="mcp-agent">
+                          <div class="mcp-agent-head">
+                            <span class="mcp-kiwi">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                              >
+                                <path
+                                  d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z"
+                                  fill="#183C1A"
+                                />
+                                <path
+                                  d="M10 1C10.6443 1 11.2728 1.06789 11.8787 1.19674C12.6907 1.36941 13.2 2.13483 13.2 2.96497V5.8C13.2 6.35229 13.6477 6.8 14.2 6.8H17.035C17.8652 6.8 18.6306 7.30929 18.8033 8.12128C18.9321 8.72721 19 9.35566 19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1Z"
+                                  fill="#B8DD2F"
+                                />
+                                <path
+                                  d="M13.486 6.5L19 6.8L19.1687 9.12964C19.1961 9.50897 19.1865 9.89008 19.1399 10.2675L19.0659 10.8659C19.0221 11.2212 18.9456 11.5718 18.8375 11.9131L18.62 12.6L16.2 9.6L13.486 6.5Z"
+                                  fill="url(#mcp-kiwi-gradient-1)"
+                                />
+                                <path
+                                  d="M7.4375 9.91404C7.4375 8.49667 8.58651 7.34766 10.0039 7.34766C11.4213 7.34766 12.5703 8.49667 12.5703 9.91404C12.5703 11.3314 11.4213 12.4804 10.0039 12.4804C8.58651 12.4804 7.4375 11.3314 7.4375 9.91404Z"
+                                  fill="#F2F3B5"
+                                />
+                                <ellipse
+                                  cx="10.0935"
+                                  cy="14.6051"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="10.0935"
+                                  cy="5.31209"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="12.4128"
+                                  cy="13.979"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-30 12.4128 13.979)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="7.76432"
+                                  cy="5.93208"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-30 7.76432 5.93208)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="14.1115"
+                                  cy="12.2782"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-60 14.1115 12.2782)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="6.06462"
+                                  cy="7.63371"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-60 6.06462 7.63371)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="14.7418"
+                                  cy="9.95731"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-90 14.7418 9.95731)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="5.4449"
+                                  cy="9.95731"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-90 5.4449 9.95731)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="6.06489"
+                                  cy="12.2826"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-120 6.06489 12.2826)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="7.76652"
+                                  cy="13.9823"
+                                  rx="0.530976"
+                                  ry="0.796464"
+                                  transform="rotate(-150 7.76652 13.9823)"
+                                  fill="#183C1A"
+                                />
+                                <defs>
+                                  <linearGradient
+                                    id="mcp-kiwi-gradient-1"
+                                    x1="16.4997"
+                                    y1="6.8"
+                                    x2="18.9997"
+                                    y2="12.6"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                    <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                  </linearGradient>
+                                </defs>
+                              </svg>
+                            </span>
+                            <strong>Kiwiform</strong>
+                            <em>reviewing form submissions...</em>
+                          </div>
+                          <div class="mcp-processing-card">
+                            <div class="mcp-process-steps">
+                              <div class="mcp-process-step">
+                                <strong>Reading responses</strong>
+                                Scanning 25 submissions
+                              </div>
+                              <div class="mcp-process-step">
+                                <strong>Ranking quality</strong>
+                                Comparing ratings and notes
+                              </div>
+                              <div class="mcp-process-step">
+                                <strong>Preparing answer</strong>
+                                Summarizing best match
+                              </div>
+                            </div>
+                            <div class="mcp-skeleton-line"></div>
+                            <div class="mcp-skeleton-row">
+                              <div class="mcp-skeleton-thumb"></div>
+                              <div>
+                                <div class="mcp-skeleton-text"></div>
+                                <div class="mcp-skeleton-text short"></div>
+                              </div>
+                            </div>
+                            <div class="mcp-skeleton-row">
+                              <div class="mcp-skeleton-thumb"></div>
+                              <div>
+                                <div class="mcp-skeleton-text"></div>
+                                <div class="mcp-skeleton-text short"></div>
+                              </div>
+                            </div>
+                            <div class="mcp-skeleton-row">
+                              <div class="mcp-skeleton-thumb"></div>
+                              <div>
+                                <div class="mcp-skeleton-text"></div>
+                                <div class="mcp-skeleton-text short"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mcp-result-card">
+                            <div class="mcp-result-head">
+                              <span class="flex items-center gap-2"
+                                ><span class="mcp-kiwi">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 20 20"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z"
+                                      fill="#183C1A"
+                                    />
+                                    <path
+                                      d="M10 1C10.6443 1 11.2728 1.06789 11.8787 1.19674C12.6907 1.36941 13.2 2.13483 13.2 2.96497V5.8C13.2 6.35229 13.6477 6.8 14.2 6.8H17.035C17.8652 6.8 18.6306 7.30929 18.8033 8.12128C18.9321 8.72721 19 9.35566 19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1Z"
+                                      fill="#B8DD2F"
+                                    />
+                                    <path
+                                      d="M13.486 6.5L19 6.8L19.1687 9.12964C19.1961 9.50897 19.1865 9.89008 19.1399 10.2675L19.0659 10.8659C19.0221 11.2212 18.9456 11.5718 18.8375 11.9131L18.62 12.6L16.2 9.6L13.486 6.5Z"
+                                      fill="url(#mcp-kiwi-gradient-2)"
+                                    />
+                                    <path
+                                      d="M7.4375 9.91404C7.4375 8.49667 8.58651 7.34766 10.0039 7.34766C11.4213 7.34766 12.5703 8.49667 12.5703 9.91404C12.5703 11.3314 11.4213 12.4804 10.0039 12.4804C8.58651 12.4804 7.4375 11.3314 7.4375 9.91404Z"
+                                      fill="#F2F3B5"
+                                    />
+                                    <ellipse
+                                      cx="10.0935"
+                                      cy="14.6051"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="10.0935"
+                                      cy="5.31209"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="12.4128"
+                                      cy="13.979"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-30 12.4128 13.979)"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="7.76432"
+                                      cy="5.93208"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-30 7.76432 5.93208)"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="14.1115"
+                                      cy="12.2782"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-60 14.1115 12.2782)"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="6.06462"
+                                      cy="7.63371"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-60 6.06462 7.63371)"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="14.7418"
+                                      cy="9.95731"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-90 14.7418 9.95731)"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="5.4449"
+                                      cy="9.95731"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-90 5.4449 9.95731)"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="6.06489"
+                                      cy="12.2826"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-120 6.06489 12.2826)"
+                                      fill="#183C1A"
+                                    />
+                                    <ellipse
+                                      cx="7.76652"
+                                      cy="13.9823"
+                                      rx="0.530976"
+                                      ry="0.796464"
+                                      transform="rotate(-150 7.76652 13.9823)"
+                                      fill="#183C1A"
+                                    />
+                                    <defs>
+                                      <linearGradient
+                                        id="mcp-kiwi-gradient-2"
+                                        x1="16.4997"
+                                        y1="6.8"
+                                        x2="18.9997"
+                                        y2="12.6"
+                                        gradientUnits="userSpaceOnUse"
+                                      >
+                                        <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                        <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                      </linearGradient>
+                                    </defs>
+                                  </svg>
+                                </span>
+                                <strong>Kiwiform</strong></span
+                              >
+                              <span class="mcp-result-meta"
+                                >Product Launch Feedback Form - 25 responses</span
+                              >
+                            </div>
+                            <div class="mcp-result-body">
+                              <p>Here's the best response to Product Launch Feedback:</p>
+                              <ul>
+                                <li>Name: John Marks</li>
+                                <li>Email: john@email.com</li>
+                                <li>Overall experience rating: 10 / 10</li>
+                                <li>Standout features: Access, Account Management</li>
+                                <li>What they liked most: left blank</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <p class="mcp-note">
+                            It's a strong score, but they skipped both open-text questions, so
+                            there's no qualitative detail to go with the 10/10 &mdash; worth a
+                            follow-up email if you want to know specifically what worked for them.
+                          </p>
+                        </div>
+
+                        <div class="mcp-loader" aria-hidden="true">
+                          <img
+                            src="https://media.tenor.com/WvYJnr85GLoAAAAi/claude-claude-code.gif"
+                            alt=""
+                            class="mcp-claude-gif max-w-[40px] h-auto"
+                          />
+                        </div>
+                        <div class="mcp-disclaimer">
+                          Claude can make mistakes<br />
+                          Please double check responses
+                        </div>
+                        <div class="mcp-input">
+                          <span class="mcp-placeholder">Reply to Claude</span>
+                          <span class="mcp-typed"
+                            >Find the best response from Product Launch Feedback Form</span
+                          >
+                          <div class="mcp-input-tools">
+                            <span>Sonnet 4.5</span>
+                            <span class="mcp-send">&uarr;</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Powerful Native Integrations  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg w-full rounded-10px overflow-hidden"
+            >
+              <div
+                class="flex items-center bg-white justify-center flex-col px-2.5 lg:px-14 max-lg:py-9 w-full"
+              >
+                <div class="flex items-center flex-col w-full max-w-[483px] mx-auto">
+                  <p
+                    class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                  >
+                    Powerful Native Integrations
+                  </p>
+                  <h2 class="heading-h2 text-center lg:text-left">
+                    Connect forms with your favorite tools
+                  </h2>
+                  <p class="text-base leading-7 text-[#7D7676] mt-5 text-center lg:text-left">
+                    Connect your forms with the tools you already use to send responses straight
+                    into your spreadsheets, CRM, or team chat. Automate follow-up tasks the moment
+                    someone submits the form. Link up payments, scheduling, and storage so
+                    everything runs without manual work.
+                  </p>
+                  <a
+                    href="/help/integrations-automations"
+                    class="btn-kiwi-green w-max mx-auto lg:ml-0 mt-[30px] lg:mr-auto text-sm lead5ing-[22px] font-medium py-2.5 px-6"
+                  >
+                    Explore Integrations
+                  </a>
+                </div>
+              </div>
+              <div class="overflow-hidden">
+                <img
+                  src="/images/uploads/new-lending-4.png"
+                  alt="form fields image"
+                  class="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Form Logic & Flow -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="rounded-10px flex items-center bg-linear-180 from-[#FDFFF8] via-[#FBFFEB] to-[#F3F9DD] justify-center flex-col px-5 max-lg:py-9 w-full"
+              >
+                <div class="flex items-center flex-col w-full pt-20 pb-5">
+                  <p class="text-center w-full text-base leading-7 text-Theme-Green mb-2.5">
+                    Form Logic & Flow
+                  </p>
+                  <h2 class="heading-h2 text-center">Create smart forms using logic</h2>
+                  <p
+                    class="text-base leading-7 text-Theme-Black mt-5 text-center max-w-[1006px] mx-auto"
+                  >
+                    Create a form that adapts to how you answer. Use the logic board to set
+                    conditions and branching paths that show or hide questions based on responses,
+                    so people only see what applies to them, so every respondent gets a flow built
+                    for them, not a generic form.
+                  </p>
+                  <a
+                    href="https://app.kiwiform.com/"
+                    class="btn-kiwi-green w-max mx-auto mt-[30px] mb-10 text-sm lead5ing-[22px] font-medium py-2.5 px-6 bg-[#B8DD2F] text-Theme-Black hover:text-white hover:bg-Theme-Green"
+                  >
+                    Try the logic board
+                  </a>
+
+                  <img
+                    src="/images/uploads/new-lending-5.png"
+                    alt="form fields image"
+                    class="w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Form Templates  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg w-full rounded-10px overflow-hidden"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="/images/uploads/new-lending-6.png"
+                  alt="form fields image"
+                  class="w-full h-auto"
+                />
+              </div>
+
+              <div
+                class="flex items-center bg-white justify-center flex-col px-2.5 lg:px-14 max-lg:py-9 w-full"
+              >
+                <div class="flex items-center flex-col w-full max-w-[483px] mx-auto">
+                  <p
+                    class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                  >
+                    Form Templates
+                  </p>
+                  <h2 class="heading-h2 text-center lg:text-left">
+                    Start faster with ready-made form templates
+                  </h2>
+                  <p class="text-base leading-7 text-[#7D7676] mt-5 text-center lg:text-left">
+                    Start faster with thoughtfully designed form templates for common use cases.
+                    Choose one, customize it, and go live in minutes so you can focus on collecting
+                    data, not building forms from scratch.
+                  </p>
+                  <a
+                    href="/templates"
+                    class="btn-kiwi-green w-max mx-auto lg:ml-0 mt-[30px] lg:mr-auto text-sm lead5ing-[22px] font-medium py-2.5 px-6"
+                  >
+                    Explore Form Templates
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+       <!-- User Stories -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full overflow-hidden">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full min-w-0 flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="bg-[#F6F6F6] to-[#EBFFF7] rounded-10px pt-28 pb-14 px-6 text-center w-full">
+              <p class="text-center w-full text-base leading-7 text-Theme-Green mb-2.5">
+                User Stories
+              </p>
+              <h2
+                class="text-[38px] leading-[48px] tracking-[-0.76px] font-Inter-disp text-Theme-Black"
+                style="clip-path: inset(0px 0px 0%); opacity: 1; visibility: inherit"
+              >
+                We are loved by the creators
+              </h2>
+
+              <p class="mt-5 text-base leading-6 text-Theme-Black max-w-[1006px] mx-auto">
+                Read what form creators love about us and creating powerful forms simply without any
+                complexity.
+              </p>
+            </div>
+
+            <!-- SLIDER -->
+            <div
+              class="user-stories-swiper swiper overflow-hidden bg-Theme-bg w-full min-w-0 rounded-10px max-w-full"
+            >
+              <div class="swiper-wrapper !ease-linear">
+                <!-- CARD -->
+                <div class="swiper-slide !w-[min(401px,calc(100vw-32px))] sm:!w-[401px]">
+                  <div class="rounded-10px overflow-hidden w-full p-2.5 pb-0 bg-[#F6F6F6]">
+                    <div class="w-full bg-white p-3 lg:p-5 rounded-[5px] min-h-[400px]">
+                      <h3
+                        class="text-xl font-medium leading-9 text-Theme-Green tracking-[-0.4px] mb-2.5"
+                      >
+                        “Point-and-shoot forms very straightforward.“
+                      </h3>
+                      <p class="text-base leading-[30px] text-black mb-2.5">
+                        The easiest way to create forms and start capturing leads.
+                      </p>
+                      <p class="text-sm leading-7 text-black">
+                        Regularly, in forms, you have to design CSS for every element, from colors
+                        to spacing, fonts, etc.; with kiwiform, you simply add the fields needed to
+                        capture data and launch the form (you can also customize your styles, and
+                        even better, create themes in a one-time setup), allowing you to focus more
+                        on capturing leads.
+                      </p>
+                    </div>
+                    <div
+                      class="py-5 px-5 bg-transparent capitalize text-left text-xl leading-[26px] tracking-[-0.4px] text-Theme-Black"
+                    >
+                      Juan Serna
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="swiper-slide !w-[min(401px,calc(100vw-32px))] sm:!w-[401px]">
+                  <div class="rounded-10px overflow-hidden w-full p-2.5 pb-0 bg-[#F6F6F6]">
+                    <div class="w-full bg-white p-3 lg:p-5 rounded-[5px] min-h-[400px]">
+                      <h3
+                        class="text-xl font-medium leading-9 text-Theme-Green tracking-[-0.4px] mb-2.5"
+                      >
+                        “Upgraded to Kiwiform Pro because it convinced me“
+                      </h3>
+                      <p class="text-base leading-[30px] text-black mb-2.5">
+                        I have tested several form and survey tools, and Kiwiform is currently the
+                        best fit for me.
+                      </p>
+                      <p class="text-sm leading-7 text-black">
+                        I upgraded to pro because I can see many ways to use it, especially for
+                        surveys and my own processes. What I like most is how simple and quick it is
+                        to use. You can create forms and surveys without spending a lot of time
+                        figuring out how everything works. <br />
+                        Overall, I am very satisfied so far.
+                      </p>
+                    </div>
+                    <div
+                      class="py-5 px-5 bg-transparent capitalize text-left text-xl leading-[26px] tracking-[-0.4px] text-Theme-Black"
+                    >
+                      Alexander Mai
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="swiper-slide !w-[min(401px,calc(100vw-32px))] sm:!w-[401px]">
+                  <div class="rounded-10px overflow-hidden w-full p-2.5 pb-0 bg-[#F6F6F6]">
+                    <div class="w-full bg-white p-3 lg:p-5 rounded-[5px] min-h-[400px]">
+                      <h3
+                        class="text-xl font-medium leading-9 text-Theme-Green tracking-[-0.4px] mb-2.5"
+                      >
+                        “Love the support and their promise“
+                      </h3>
+                      <p class="text-base leading-[30px] text-black mb-2.5">
+                        Thank you for bringing my requested in timely manner.
+                      </p>
+                      <p class="text-sm leading-7 text-black">
+                        What I love about this product is their customer support (Mr B) is helping
+                        me with all my questions and answer them in timely manner (even some of them
+                        under 24 hours). That is the great service. I loved that they understand
+                        what I need as a customer and they helped to make that happen.
+                        <br />
+                        Hopefully they will have a long journey and have many people use and benefit
+                        from this.
+                      </p>
+                    </div>
+                    <div
+                      class="py-5 px-5 bg-transparent capitalize text-left text-xl leading-[26px] tracking-[-0.4px] text-Theme-Black"
+                    >
+                      Juan Serna
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="swiper-slide !w-[min(401px,calc(100vw-32px))] sm:!w-[401px]">
+                  <div class="rounded-10px overflow-hidden w-full p-2.5 pb-0 bg-[#F6F6F6]">
+                    <div class="w-full bg-white p-3 lg:p-5 rounded-[5px] min-h-[400px]">
+                      <h3
+                        class="text-xl font-medium leading-9 text-Theme-Green tracking-[-0.4px] mb-2.5"
+                      >
+                        “Great start with quick responses and a promising future.“
+                      </h3>
+                      <p class="text-base leading-[30px] text-black mb-2.5">
+                        The interface and design on this is clean clean and so easy to use.
+                      </p>
+                      <p class="text-sm leading-7 text-black">
+                        The simple interface communicates a lot of clear thought put into this so
+                        far and I am looking forward to the future of this, even though it is a
+                        powerful tool already. At any rate, I have a great vibe off this product; it
+                        instills a lot of confidence already.
+                      </p>
+                    </div>
+                    <div
+                      class="py-5 px-5 bg-transparent capitalize text-left text-xl leading-[26px] tracking-[-0.4px] text-Theme-Black"
+                    >
+                      Helly Cook
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="swiper-slide !w-[min(401px,calc(100vw-32px))] sm:!w-[401px]">
+                  <div class="rounded-10px overflow-hidden w-full p-2.5 pb-0 bg-[#F6F6F6]">
+                    <div class="w-full bg-white p-3 lg:p-5 rounded-[5px] min-h-[400px]">
+                      <h3
+                        class="text-xl font-medium leading-9 text-Theme-Green tracking-[-0.4px] mb-2.5"
+                      >
+                        “Great product - and even better service!“
+                      </h3>
+                      <p class="text-base leading-[30px] text-black mb-2.5">
+                        After just five days of using Kiwiform, I'm delighted to say that I'm
+                        extremely impressed.
+                      </p>
+                      <p class="text-sm leading-7 text-black">
+                        The first thing that stood out was the overall usability. The interface is
+                        clean, intuitive and visually appealing. Anyone familiar with Typeform will
+                        feel at home almost immediately, making the learning curve quite short.
+                        Typeform import is phenomenal. Customer support is exceptional.
+                      </p>
+                    </div>
+                    <div
+                      class="py-5 px-5 bg-transparent capitalize text-left text-xl leading-[26px] tracking-[-0.4px] text-Theme-Black"
+                    >
+                      Alexander Mai
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- FAQs -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg w-full">
+              <div class="flex flex-col gap-px w-full">
+                <div class="w-full h-full py-16 px-12 lg:p-16 bg-white rounded-10px">
+                  <h2
+                    class="heading-h2 mb-2.5"
+                    style="clip-path: inset(0px 0px 0%); opacity: 1; visibility: inherit"
+                  >
+                    Frequently Asked Questions
+                  </h2>
+                  <p class="text-base leading-[28px] text-[#8C8484]">
+                    Find clear answers about using Kiwiform, from getting started to scaling up.
+                  </p>
+                </div>
+                <div class="w-full h-auto p-12 bg-white rounded-10px">
+                  <h3
+                    class="text-2xl font-Inter-disp leading-[26px] tracking-[-0.4px] capitalize text-Theme-Black mb-2.5"
+                  >
+                    Have questions or need help?
+                  </h3>
+                  <p class="text-sm leading-5 text-[#8C8484] mb-[26px]">
+                    Check our FAQs or get in touch we’re happy to help.
+                  </p>
+                  <a href="/contact-us" class="btn-kiwi-green rounded-[5px]">Contact Us </a>
+                </div>
+              </div>
+              <div class="rounded-10px overflow-hidden w-full">
+                <div x-data="{ active: 0 }" class="flex flex-col gap-px w-full">
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 0 ? null : 0"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        What is Kiwiform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300 rotate-180"
+                        :class="active === 0 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 0" x-collapse="">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform is a modern form builder that helps you collect data through
+                          clean, conversational forms designed for clarity and ease of use.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 1 ? null : 1"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Is Kiwiform really free to use?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 1 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 1" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform lets you create unlimited forms and collect unlimited
+                          responses with no hidden caps or trial limits.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 2 ? null : 2"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        How is Kiwiform different from Typeform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 2 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 2" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform is a free Typeform alternative that offers unlimited usage while
+                          keeping form creation simple, flexible, and accessible.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 3 ? null : 3"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Can I create forms without technical knowledge?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 3 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 3" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform is built for non-technical users, with an intuitive
+                          interface and smart defaults that make form building easy.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 4 ? null : 4"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        What types of forms can I build with Kiwiform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 4 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 4" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          You can build surveys, lead forms, feedback forms, registrations, quizzes,
+                          and workflow-based forms for many use cases.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 5 ? null : 5"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Does Kiwiform support logic and personalization?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 5 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 5" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. You can personalize forms and control flows using logic that adapts
+                          based on how respondents answer.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 6 ? null : 6"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Can I embed Kiwiform forms on my website?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 6 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 6" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwiform forms can be embedded on websites, landing pages, and other
+                          platforms easily.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 7 ? null : 7"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Are responses saved automatically?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 7 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 7" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Responses are collected securely and can include partial or completed
+                          submissions depending on your setup.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div class="bg-white py-5 px-6 w-full">
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 8 ? null : 8"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-base leading-7 text-Theme-Black font-medium">
+                        Why should I choose Kiwiform over Typeform?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 8 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 8" x-collapse="" style="display: none">
+                      <div class="pt-6">
+                        <p class="text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform combines unlimited usage, thoughtful design, and powerful
+                          features into a free Typeform alternative built for real-world data
+                          collection.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+    <script>
+      const userStoriesSwiper = document.querySelector('.user-stories-swiper')
+
+      if (userStoriesSwiper) {
+        const track = userStoriesSwiper.querySelector('.swiper-wrapper')
+        const originalSlides = Array.from(track.children)
+        const pixelsPerSecond = 25
+        let animation
+        let previousWidth = 0
+
+        track.style.gap = '1px'
+        track.style.willChange = 'transform'
+
+        const startStoriesLoop = () => {
+          const cycleWidth = originalSlides.reduce(
+            (width, slide) => width + slide.getBoundingClientRect().width + 1,
+            0
+          )
+          if (!cycleWidth) return
+
+          animation?.cancel()
+          track.querySelectorAll('[data-story-copy]').forEach((slide) => slide.remove())
+
+          // Repeat complete sets so the original card order never changes.
+          const copies = Math.ceil(userStoriesSwiper.clientWidth / cycleWidth)
+          for (let copy = 0; copy < copies; copy++) {
+            originalSlides.forEach((slide) => {
+              const clone = slide.cloneNode(true)
+              clone.setAttribute('data-story-copy', '')
+              clone.setAttribute('aria-hidden', 'true')
+              clone.setAttribute('inert', '')
+              track.appendChild(clone)
+            })
+          }
+
+          animation = track.animate(
+            [
+              { transform: 'translate3d(0, 0, 0)' },
+              { transform: `translate3d(-${cycleWidth}px, 0, 0)` }
+            ],
+            {
+              duration: (cycleWidth / pixelsPerSecond) * 1000,
+              iterations: Infinity,
+              easing: 'linear'
+            }
+          )
+        }
+
+        startStoriesLoop()
+        new ResizeObserver(() => {
+          const width = userStoriesSwiper.clientWidth
+          if (width === previousWidth) return
+          previousWidth = width
+          startStoriesLoop()
+        }).observe(userStoriesSwiper)
+      }
+
+      const mcpAnimation = document.querySelector('.mcp-animation')
+
+      if (mcpAnimation) {
+        const mcpTyped = mcpAnimation.querySelector('.mcp-typed')
+
+        const setMcpTypingMetrics = () => {
+          if (!mcpTyped) return
+
+          mcpTyped.style.setProperty('--mcp-typing-width', `${mcpTyped.scrollWidth}px`)
+          mcpTyped.style.setProperty(
+            '--mcp-typing-steps',
+            mcpTyped.textContent.trim().length.toString()
+          )
+        }
+
+        setMcpTypingMetrics()
+
+        if (document.fonts?.ready) {
+          document.fonts.ready.then(setMcpTypingMetrics)
+        }
+
+        const playMcpAnimation = () => {
+          setMcpTypingMetrics()
+          mcpAnimation.classList.add('mcp-play')
+        }
+
+        if ('IntersectionObserver' in window) {
+          const mcpObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return
+
+                playMcpAnimation()
+                observer.unobserve(entry.target)
+              })
+            },
+            { threshold: 0.35 }
+          )
+
+          mcpObserver.observe(mcpAnimation)
+        } else {
+          playMcpAnimation()
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="assets/css/output.css"> -->
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    x-data="templateDetailPage()"
+    x-init="init()"
+  >
+    <!-- navigation  -->
+
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+      <!-- hero -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+          >
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px] lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4"
+            >
+              <!-- badge -->
+              <div
+                class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green"
+              >
+                Tally Alternative
+              </div>
+              <h1
+                class="mt-6 mb-2.5 text-center w-full max-w-[680px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                Tally Alternative for Scalable Forms and Business Processes
+              </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter"
+              >
+                As teams outgrow simple document-style forms, compare platforms built to support
+                complex workflows, advanced customization, automation, and long-term scalability.
+              </p>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter"
+              >
+                Tally has become a popular choice for creators, startups, and small teams thanks to
+                its document-style editor and simple publishing experience. Inspired by modern
+                writing tools, it allows users to create forms quickly using slash commands, text
+                blocks, and a lightweight interface that feels familiar from the first form onward.
+                <br />
+                As organizations grow, their requirements often expand beyond document-style form
+                creation. Workflow automation, conversational experiences, advanced logic,
+                customization, operational processes, and large-scale data collection become
+                increasingly important. This guide explores the leading Tally alternative platforms
+                and highlights how each solution approaches form building differently.
+              </p>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+      <!-- Recommended Alternative  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F8FFFC] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F8FFFC] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg rounded-10px">
+              <div
+                class="rounded-10px flex items-center bg-[#F8FFFC] justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-2.5">
+                  Recommended Alternative
+                </p>
+                <h2
+                  class="heading-h2 text-left w-full text-Theme-Green tracking-[-0.76px] capitalize group"
+                >
+                  1.
+                  <a
+                    href="https://app.kiwiform.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 group-hover:text-theme-Green-hover"
+                  >
+                    Kiwiform
+                  </a>
+                  : Conversational Forms Beyond Document-Style Form Building
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Create forms, surveys, applications, and workflow-driven experiences through a
+                  platform designed to support engaging data collection, advanced logic, automation,
+                  customization, and unlimited growth.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-1.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] my-2.5 xl:my-4 text-left">
+                  Tally focuses on making forms easy to create through a document-style editing
+                  experience. Kiwiform focuses on creating better respondent experiences while
+                  supporting the operational workflows that often sit behind form submissions.
+                  Rather than presenting long documents filled with fields, Kiwiform guides
+                  respondents through conversational interactions that can improve engagement and
+                  completion rates. <br />
+                  As a Tally alternative, Kiwiform is designed for teams that need more than simple
+                  form publishing. Organizations use it to collect leads, manage applications,
+                  gather feedback, automate requests, run surveys, and support internal workflows.
+                  Combined with unlimited forms, unlimited responses, logic, automation, and
+                  customization capabilities, Kiwiform provides flexibility as requirements evolve.
+                </p>
+
+                <a
+                  href="https://app.kiwiform.com"
+                  target="_blank"
+                  class="w-full text-center py-2.5 px-5 rounded-lg text-white bg-Theme-Green transition-all duration-500 hover:bg-theme-Green-hover text-sm font-medium"
+                >
+                  Start Building with Kiwiform
+                </a>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-[#F8FFFC] flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Conversational form experiences</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Unlimited forms and responses</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Advanced workflow capabilities</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Flexible logic and branching</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Built-in AI form assistance</li>
+                  <li class="py-[15px] border-t border-Theme-bg">
+                    Extensive customization options
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-[#F8FFFC] flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Different than document editors</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Workflow setup requires planning
+                  </li>
+
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Smaller ecosystem than incumbents
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F8FFFC] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F8FFFC] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 2. Typeform: Conversational Experiences Focused on Respondent Engagement  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  2.
+                  <a
+                    href="https://www.typeform.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Typeform
+                  </a>
+                  : Conversational Experiences Focused on Respondent Engagement
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Deliver one-question-at-a-time experiences that help maintain respondent attention
+                  while supporting lead generation, surveys, applications, registrations, and
+                  customer-facing data collection initiatives.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-7.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Typeform popularized conversational forms by presenting questions individually
+                  rather than displaying everything at once. This approach helps reduce cognitive
+                  load and creates a guided experience that many organizations use to improve
+                  completion rates and engagement. <br />
+                  For users evaluating a Tally alternative, Typeform represents a move away from
+                  document-style creation toward respondent experience optimization. Organizations
+                  frequently choose it when presentation, interaction, and public-facing form
+                  experiences become priorities.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Conversational interface</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Strong visual presentation</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Interactive logic builder</li>
+                  <li class="py-[15px] border-t border-Theme-bg">AI-assisted creation</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Broad integration ecosystem</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Simple sharing and publishing</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Optimized for engagement</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="capitalize px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Limited free responses</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Premium pricing structure
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Overage costs possible
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Branding restrictions apply
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Advanced features gated
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Scaling can become expensive
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 3. Fillout: Forms Connected to Databases and Operational Systems
+  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  3.
+                  <a
+                    href="https://www.fillout.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Fillout
+                  </a>
+                  : Forms Connected to Databases and Operational Systems
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Build forms that integrate directly with Airtable, Notion, spreadsheets, CRMs, and
+                  business systems to support connected workflows and structured data management.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-8.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Fillout has become a popular platform among teams that treat forms as part of a
+                  broader operational ecosystem. Rather than focusing primarily on form
+                  presentation, it emphasizes how data moves between forms and the systems that
+                  organizations already use.
+                  <br />
+                  As a Tally alternative, Fillout appeals to teams that need stronger database
+                  relationships, dynamic data handling, and operational workflows while maintaining
+                  a relatively modern form-building experience.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="capitalize px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Airtable integration</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Notion connectivity</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Dynamic data workflows</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Flexible layouts</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Calendar scheduling</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Database-friendly architecture</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Advanced setup complexity</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Learning curve for databases
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Premium features gated
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Scaling costs increase
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Smaller ecosystem
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Technical knowledge helps
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 4. Paperform: Rich Content Experiences with Document-Like Editing  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  4.
+                  <a
+                    href="https://paperform.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Paperform
+                  </a>
+                  : Rich Content Experiences with Document-Like Editing
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Combine content, branding, scheduling, calculations, products, and forms within
+                  highly customizable experiences that feel more like landing pages than traditional
+                  questionnaires.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-6.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Paperform extends the concept of document-style form building by blending content
+                  creation and data collection into a single experience. Instead of focusing solely
+                  on questions and fields, it enables users to create highly branded pages that can
+                  collect information, process payments, schedule appointments, and showcase
+                  content. <br />
+                  Organizations evaluating a Tally alternative often consider Paperform when design
+                  flexibility and customer-facing presentation become more important than publishing
+                  speed alone.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="capitalize px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Document-style editing</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Rich design flexibility</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Built-in calculations</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Commerce capabilities</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Scheduling support</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Strong branding control</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">No permanent free plan</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Higher pricing structure
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Submission limits apply
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Layout learning curve
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Branding removal gated
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Storage restrictions
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 5. Jotform: Extensive Features for Business and Operational Processes  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  5.
+                  <a
+                    href="https://www.jotform.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Jotform
+                  </a>
+                  : Extensive Features for Business and Operational Processes
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Support registrations, approvals, applications, payments, document collection, and
+                  business workflows through a feature-rich platform designed for diverse
+                  organizational requirements.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-3.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Jotform is often chosen by organizations that require a broad set of features and
+                  integrations. Its extensive template library, workflow capabilities, payment
+                  support, and operational tooling make it suitable for teams managing complex
+                  business processes across multiple departments. <br />
+                  For users searching for a Tally alternative, Jotform offers significantly more
+                  operational depth and functionality, particularly when workflows become
+                  increasingly complex.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="capitalize px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Extensive feature library</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Large template collection</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Strong payment support</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Broad integrations</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Workflow automation tools</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Enterprise-ready capabilities</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="capitalize px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">More complex interface</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Higher learning curve
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Advanced plans cost more
+                  </li>
+
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Large feature footprint
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Setup requires time
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Usage limits vary
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 6. Google Forms: Accessible Data Collection for Everyday Collaboration  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  6.
+                  <a
+                    href="https://workspace.google.com/intl/en_in/products/forms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Google Forms
+                  </a>
+                  : Accessible Data Collection for Everyday Collaboration
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Create surveys, registrations, quizzes, and internal forms through a familiar
+                  platform that emphasizes accessibility, team collaboration, and seamless
+                  integration with Google Workspace.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-4.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Google Forms remains one of the most widely adopted tools for collecting
+                  information due to its simplicity and accessibility. Teams can launch surveys,
+                  event registrations, quizzes, and internal forms quickly while automatically
+                  storing responses inside Google Sheets. <br />
+                  As a Tally alternative, Google Forms is often chosen by organizations that
+                  prioritize simplicity, collaboration, and cost efficiency over advanced
+                  customization and workflow functionality.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="capitalize px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Free to use</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Google Workspace integration</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Easy collaboration</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Quick deployment</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Familiar interface</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Reliable data collection</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Limited customization</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Basic visual design
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Minimal branding control
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Limited workflow features
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Basic reporting tools
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Restricted advanced logic
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="max-lg:rounded-10px lg:rounded-10px flex items-center bg-[#F6F6F6] justify-center flex-col p-4 xl:p-20"
+              >
+                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-2.5">
+                  Final Recommendation
+                </p>
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black"
+                >
+                  Kiwiform: A Tally Alternative Built Beyond Document-Style Forms
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Move beyond simple document-based form creation with a platform designed for
+                  conversational experiences, workflow automation, advanced customization, and
+                  unlimited data collection. 
+                </p>
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Tally helped popularize document-style form creation by making forms feel simple,
+                  fast, and approachable. For many creators and small teams, that simplicity remains
+                  one of its biggest strengths. As organizations grow, however, data collection
+                  often becomes connected to customer journeys, lead generation, approvals,
+                  applications, surveys, workflow automation, and operational processes that require
+                  greater flexibility than a document editor alone can provide. <br />
+                  Kiwiform combines conversational experiences, advanced logic, workflow automation,
+                  customization, integrations, and unlimited usage within a single platform. For
+                  teams searching for a Tally alternative that can support both engaging respondent
+                  experiences and evolving business requirements, Kiwiform provides a foundation
+                  designed to scale alongside the way organizations collect and use data.
+                </p>
+
+                <div class="flex justify-start w-full gap-4 mt-5">
+                  <!-- desktop button -->
+                  <a
+                    href="https://app.kiwiform.com"
+                    target="_blank"
+                    class="w-fit inline-flex py-2.5 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+                  >
+                    Start Building with Kiwiform
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+  </body>
+</html>

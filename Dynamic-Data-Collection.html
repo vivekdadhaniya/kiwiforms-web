@@ -1,0 +1,2660 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="assets/css/output.css"> -->
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    x-data="templateDetailPage()"
+    x-init="init()"
+  >
+    <!-- navigation  -->
+    <div
+      x-data="{ open:false, open1:false, mobileMenu:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false } }"
+      class="fixed top-0 z-50 bg-[#E2DCDC] pb-px w-full flex flex-col gap-px"
+    >
+      <div class="flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
+          <!-- place content here -->
+          <div class="col-span-11 bg-white rounded-[10px] py-3 lg:px-5">
+            <div class="flex items-center justify-between max-lg:px-5">
+              <a href="/" class="flex items-center gap-3">
+                <svg
+                  width="143"
+                  height="32"
+                  viewBox="0 0 143 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M45.1923 20.5262C44.8292 19.8837 44.3263 19.8279 43.8235 20.3307L41.7005 22.5376V26.3088H38.3203V6.75425H41.7005V18.459L47.5947 12.2016H51.7291L47.7624 16.3918C47.2875 16.8947 47.2316 17.3696 47.5389 17.9283L52.1482 26.3088H48.2652L45.1923 20.5262Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M53.57 26.3088V12.1736H57.1457V26.3088H53.57ZM55.3579 10.1065C54.1008 10.1065 53.1789 9.24047 53.1789 8.06719C53.1789 6.92186 54.1008 6 55.3579 6C56.6149 6 57.5368 6.92186 57.5368 8.06719C57.5368 9.24047 56.6149 10.1065 55.3579 10.1065Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M62.8621 26.3088L58.6719 12.1736H62.3593L64.7058 21.4481H64.9293L67.3317 12.1736H70.8236L73.226 21.4481H73.4216L75.7681 12.1736H79.4835L75.2932 26.3088H71.4661L69.1196 17.3416H69.0078L66.6892 26.3088H62.8621Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M81.014 26.3088V12.1736H84.5897V26.3088H81.014ZM82.8019 10.1065C81.5448 10.1065 80.6229 9.24047 80.6229 8.06719C80.6229 6.92186 81.5448 6 82.8019 6C84.0589 6 84.9808 6.92186 84.9808 8.06719C84.9808 9.24047 84.0589 10.1065 82.8019 10.1065Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M88.6872 26.3088V15.1348H86.0892L86.0613 12.1736H87.8491C88.3799 12.1736 88.6313 11.8943 88.6872 11.3915V10.9166C88.9107 8.76557 90.3074 6.75425 93.6876 6.75425H95.224V9.71536H92.9613C92.3467 9.71536 92.0953 9.96678 92.0953 10.5534V12.1736H94.9726V15.1348H92.1511V26.3088H88.6872Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M102.969 26.7557C98.4433 26.7557 95.566 23.7667 95.566 19.2412C95.566 14.7157 98.4433 11.7267 102.969 11.7267C107.438 11.7267 110.316 14.7157 110.316 19.2412C110.316 23.7667 107.438 26.7557 102.969 26.7557ZM102.969 23.7108C105.204 23.7108 106.684 21.9509 106.684 19.2412C106.684 16.5315 105.204 14.7437 102.969 14.7437C100.706 14.7437 99.2255 16.5315 99.2255 19.2412C99.2255 21.9509 100.706 23.7108 102.969 23.7108Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M112.112 15.7493C112.112 13.4307 113.369 12.1736 115.771 12.1736H120.352V15.1906H115.687V26.3088H112.112V15.7493Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M121.744 26.3088V12.1736H124.984V14.2129C125.85 12.5647 127.331 11.7267 129.258 11.7267C131.381 11.7267 132.89 12.7323 133.644 14.4923C134.454 12.7044 136.018 11.7267 138.086 11.7267C141.13 11.7267 143.002 13.8218 143.002 17.2578V26.3088H139.426V17.8445C139.426 15.8052 138.672 14.8275 137.192 14.8275C135.571 14.8275 134.175 16.1125 134.175 19.1015V26.3088H130.599V17.8445C130.599 15.8052 129.845 14.8275 128.364 14.8275C126.66 14.8275 125.319 16.1963 125.319 19.1015V26.3088H121.744Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M16.0016 1.59961C17.0325 1.59961 18.038 1.70824 19.0075 1.9144C20.3067 2.19067 21.1216 3.41533 21.1216 4.74356V9.27961C21.1216 10.1633 21.8379 10.8796 22.7216 10.8796H27.2576C28.5858 10.8796 29.8105 11.6945 30.0868 12.9937C30.2929 13.9631 30.4016 14.9687 30.4016 15.9996C30.4016 23.9525 23.9545 30.3996 16.0016 30.3996C8.04866 30.3996 1.60156 23.9525 1.60156 15.9996C1.60156 8.04671 8.04866 1.59961 16.0016 1.59961Z"
+                    fill="#B8DD2F"
+                  />
+                  <path
+                    d="M21.5792 10.3996L30.4015 10.8796L30.6714 14.607C30.7154 15.214 30.6999 15.8237 30.6253 16.4277L30.5071 17.385C30.4368 17.9535 30.3145 18.5144 30.1415 19.0605L29.7935 20.1596L25.9215 15.3596L21.5792 10.3996Z"
+                    fill="url(#paint0_linear_12265_2027)"
+                  />
+                  <path
+                    d="M11.8984 15.8601C11.8984 13.5923 13.7369 11.7539 16.0046 11.7539C18.2724 11.7539 20.1109 13.5923 20.1109 15.8601C20.1109 18.1279 18.2724 19.9663 16.0046 19.9663C13.7369 19.9663 11.8984 18.1279 11.8984 15.8601Z"
+                    fill="#F2F3B5"
+                  />
+                  <ellipse cx="16.1464" cy="23.3642" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                  <ellipse cx="16.1464" cy="8.497" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                  <ellipse
+                    cx="19.8651"
+                    cy="22.3683"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-30 19.8651 22.3683)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="12.4276"
+                    cy="9.49329"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-30 12.4276 9.49329)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="22.5831"
+                    cy="19.6475"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-60 22.5831 19.6475)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="9.70808"
+                    cy="12.2139"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-60 9.70808 12.2139)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="23.5868"
+                    cy="15.9317"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-90 23.5868 15.9317)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="8.71184"
+                    cy="15.9317"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-90 8.71184 15.9317)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="9.71008"
+                    cy="19.6466"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-120 9.71008 19.6466)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="12.4249"
+                    cy="22.37"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-150 12.4249 22.37)"
+                    fill="#183C1A"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_12265_2027"
+                      x1="26.4011"
+                      y1="10.8796"
+                      x2="30.4011"
+                      y2="20.1596"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#183C1A" stop-opacity="0.25" />
+                      <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </a>
+
+              <nav class="hidden items-center gap-7 lg:flex">
+                <!-- PLATFORM -->
+                <div class="relative">
+                  <button
+                    @click="open = !open"
+                    class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                    :class="open ? 'text-Theme-Green' : 'text-Theme-Black'"
+                  >
+                    Platform
+                    <svg
+                      class="h-4 w-4 transition duration-300"
+                      :class="open ? 'rotate-180' : ''"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 8L10 12L6 8"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <a
+                  href="./templates"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Templates
+                </a>
+
+                <a
+                  href="./pricing"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Pricing
+                </a>
+
+                <a
+                  href="./blog"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Blog
+                </a>
+              </nav>
+
+              <div class="flex items-center gap-4">
+                <!-- desktop button -->
+                <a
+                  href="https://app.kiwiform.com"
+                  target="_blank"
+                  class="hidden lg:inline-flex py-2 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+                >
+                  Get Started
+                </a>
+
+                <!-- mobile hamburger -->
+                <button
+                  @click="mobileMenu = !mobileMenu"
+                  class="flex lg:hidden items-center justify-center w-10 h-10 text-Theme-Black"
+                >
+                  <!-- hamburger -->
+                  <svg
+                    x-show="!mobileMenu"
+                    x-transition
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M4 7H20"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M4 12H20"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+
+                  <!-- close -->
+                  <svg
+                    x-show="mobileMenu"
+                    x-transition
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    style="display: none"
+                  >
+                    <path
+                      d="M6 6L18 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M18 6L6 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- MOBILE MENU -->
+            <div
+              x-show="mobileMenu"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 -translate-y-3"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-3"
+              class="lg:hidden gap-px w-full"
+              style="display: none"
+            >
+              <!-- left spacer -->
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
+
+              <!-- center -->
+              <div class="w-full md:col-span-12 bg-white rounded-[10px] overflow-hidden">
+                <div class="flex flex-col items-center text-center">
+                  <div
+                    class="relative flex items-center justify-center flex-col gap-4 py-4 border-b border-[#E2DCDC] w-full"
+                  >
+                    <button
+                      @click="open1 = !open1"
+                      class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                      :class="open1 ? 'text-Theme-Green' : 'text-Theme-Black'"
+                    >
+                      Platform
+                      <svg
+                        class="h-4 w-4 transition duration-300"
+                        :class="open1 ? 'rotate-180' : ''"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 8L10 12L6 8"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      x-show="open1"
+                      @click.outside="open1 = false"
+                      @click="if ($event.target.closest('a')) closeMenus()"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 -translate-y-2"
+                      style="display: none"
+                      class="bg-transparent gap-px w-full col-span-full px-4"
+                    >
+                      <!-- main-container  -->
+
+                      <!-- place content here -->
+
+                      <div class="w-full grid grid-cols-1 gap-0 bg-white">
+                        <!-- LEFT -->
+                        <div class="col-span-1 px-px pt-px bg-[#E2DCDC]">
+                          <!-- HEADING -->
+                          <div
+                            class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]"
+                          >
+                            Product
+                          </div>
+
+                          <!-- MENU GRID -->
+                          <div class="w-full flex flex-col gap-px">
+                            <div class="grid grid-cols-1 gap-px">
+                              <!-- ITEM -->
+                              <a
+                                href="./help/overview"
+                                class="bg-white flex items-center justify-left gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Overview
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    A clear snapshot of all key features.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/responses-analytics"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M7.22168 2.55469H8.77724"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M7.22168 7.22168H13.4439"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Responses & Analytics
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Understand responses with clear insights.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/form-building"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="25"
+                                    viewBox="0 0 30 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1 17.7998H17.8"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1 23.4004H17.8"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Form Builder
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Create and customize forms with ease.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/integrations-automations"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <rect
+                                      x="13.25"
+                                      y="6.25"
+                                      width="6.99976"
+                                      height="6.99976"
+                                      rx="0.777751"
+                                      transform="rotate(90 13.25 6.25)"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M23.7397 18.5V28.9996"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M29.0005 23.7393L18.5008 23.7393"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Integrations
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Connect forms with your essential tools.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/logic-flow"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="25"
+                                    viewBox="0 0 30 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1 6.06738H19.6672"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <rect
+                                      x="19.6553"
+                                      y="1"
+                                      width="9.34468"
+                                      height="9.34468"
+                                      rx="1.36115"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Logic & Flow
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Build dynamic forms with smart logic.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/supported-languages"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                      fill="#E8F5B7"
+                                    />
+                                    <path
+                                      d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Languages & Translations
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Create forms for a global audience.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <a
+                                href="./help/design-themes"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M9.40039 19.2025L9.41221 19.1992"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Design & Themes
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Design branded forms that look great.
+                                  </p>
+                                </div>
+                              </a>
+                              <div class="w-full bg-white"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="col-span-1 bg-white border-x border-b border-[#E2DCDC]">
+                          <div class="p-[5px] h-[calc(100%-50px)]">
+                            <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                              <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">
+                                FORM TEMPLATES
+                              </p>
+                              <svg
+                                width="254"
+                                height="78"
+                                viewBox="0 0 254 78"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect x="33" width="178" height="78" rx="10" fill="white" />
+                                <rect x="38" y="5" width="68" height="68" rx="5" fill="#E8F5B7" />
+                                <path
+                                  d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                                  fill="#183C1A"
+                                />
+                                <path
+                                  d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                                  fill="#B8DD2F"
+                                />
+                                <ellipse
+                                  cx="72.194"
+                                  cy="49.1233"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="72.194"
+                                  cy="28.6809"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="82.4156"
+                                  cy="38.9031"
+                                  rx="1.16814"
+                                  ry="1.75222"
+                                  transform="rotate(-90 82.4156 38.9031)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="61.9727"
+                                  cy="38.9031"
+                                  rx="1.16814"
+                                  ry="1.75222"
+                                  transform="rotate(-90 61.9727 38.9031)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                                  fill="#183C1A"
+                                />
+                                <path
+                                  d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                                  fill="url(#paint0_linear_7194_667)"
+                                />
+                                <path
+                                  d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
+                                  stroke="#183C1A"
+                                  stroke-width="2.11063"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <rect x="121" y="19" width="70" height="8" rx="4" fill="#E8F5B7" />
+                                <rect x="121" y="35" width="50" height="8" rx="4" fill="#E8F5B7" />
+                                <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
+                                <path
+                                  d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                                  fill="url(#paint1_linear_7194_667)"
+                                />
+                                <path
+                                  d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                                  fill="url(#paint2_linear_7194_667)"
+                                />
+                                <defs>
+                                  <linearGradient
+                                    id="paint0_linear_7194_667"
+                                    x1="86.2999"
+                                    y1="31.9588"
+                                    x2="91.7999"
+                                    y2="44.7188"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                    <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="paint1_linear_7194_667"
+                                    x1="28"
+                                    y1="39"
+                                    x2="-7.1631e-08"
+                                    y2="39"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="white" />
+                                    <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
+                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="paint2_linear_7194_667"
+                                    x1="216"
+                                    y1="39"
+                                    x2="254"
+                                    y2="39"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="white" />
+                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                  </linearGradient>
+                                </defs>
+                              </svg>
+                              <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                                Templates built for real use cases
+                              </h5>
+                              <p class="text-xs leading-5 text-Theme-Black mb-5">
+                                Start faster choose a template, customize it, and go live in
+                                minutes. Focus on collecting data.
+                              </p>
+                              <a
+                                href="./templates"
+                                class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
+                                >Kiwiform Templates</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a
+                    href="./templates"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Templates
+                  </a>
+
+                  <a
+                    href="./pricing"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Pricing
+                  </a>
+
+                  <a
+                    href="./blog"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Blog
+                  </a>
+
+                  <div class="py-5">
+                    <a
+                      href="https://app.kiwiform.com/"
+                      class="inline-flex rounded-lg bg-[#B8DD2F] px-5 py-2 text-xs font-medium text-[#183C1A]"
+                    >
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- right spacer -->
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <div
+        x-show="open"
+        @click="open = false"
+        x-transition.opacity
+        style="display: none"
+        class="fixed inset-x-0 top-[61px] bottom-0 bg-black/30 z-0"
+      ></div>
+
+      <!-- dropdown  -->
+      <div
+        x-show="open"
+        @click.outside="open = false"
+        @click="if ($event.target.closest('a')) closeMenus()"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        style="display: none"
+        class="relative z-10 bg-transparent flex md:grid grid-cols-14 gap-px w-full col-span-full"
+      >
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
+          <!-- place content here -->
+          <div class="col-span-11 bg-white rounded-[10px] overflow-hidden">
+            <div class="w-full grid grid-cols-3 gap-5 bg-white">
+              <!-- LEFT -->
+              <div class="col-span-2 pr-px bg-[#E2DCDC]">
+                <!-- HEADING -->
+                <div class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]">
+                  Product
+                </div>
+
+                <!-- MENU GRID -->
+                <div class="w-full flex flex-col gap-px">
+                  <div class="grid grid-cols-2 gap-px">
+                    <!-- ITEM -->
+                    <a
+                      href="./help/overview"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Overview</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          A clear snapshot of all key features.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/ai-form-builder"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M22 1H23C26.3137 1 29 3.68629 29 7V8"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M15 1H7C3.68629 1 1 3.68629 1 7V23C1 26.3137 3.68629 29 7 29H23C26.3137 29 29 26.3137 29 23V15"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.5 11C12.2368 11 12.0014 11.1639 11.9101 11.4107L11.4774 12.5799C10.8901 14.1671 10.6515 14.7733 10.2124 15.2124C9.7733 15.6515 9.16707 15.8901 7.57994 16.4774L6.41073 16.9101C6.16388 17.0014 6 17.2368 6 17.5C6 17.7632 6.16388 17.9986 6.41073 18.0899L7.57994 18.5226C9.16707 19.1099 9.7733 19.3485 10.2124 19.7876C10.6515 20.2267 10.8901 20.8329 11.4774 22.42L11.9101 23.5893C12.0014 23.8361 12.2368 24 12.5 24C12.7632 24 12.9986 23.8361 13.0899 23.5893L13.5226 22.42C14.1099 20.8329 14.3485 20.2267 14.7876 19.7876C15.2267 19.3485 15.8329 19.1099 17.42 18.5226L18.5893 18.0899C18.8361 17.9986 19 17.7632 19 17.5C19 17.2368 18.8361 17.0014 18.5893 16.9101L17.42 16.4774C15.8329 15.8901 15.2267 15.6515 14.7876 15.2124C14.3485 14.7733 14.1099 14.1671 13.5226 12.5799L13.0899 11.4107C12.9986 11.1639 12.7632 11 12.5 11Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M20.5 6C20.2071 6 19.9451 6.18237 19.8435 6.45707L19.6371 7.01469C19.3443 7.80595 19.2591 7.99311 19.1261 8.12613C18.9931 8.25916 18.806 8.34437 18.0147 8.63716L17.4571 8.8435C17.1824 8.94515 17 9.20709 17 9.5C17 9.79291 17.1824 10.0548 17.4571 10.1565L18.0147 10.3628C18.806 10.6556 18.9931 10.7408 19.1261 10.8739C19.2591 11.0069 19.3443 11.194 19.6371 11.9853L19.8435 12.5429C19.9451 12.8176 20.2071 13 20.5 13C20.7929 13 21.0549 12.8176 21.1565 12.5429L21.3629 11.9853C21.6557 11.194 21.7409 11.0069 21.8739 10.8739C22.0069 10.7408 22.1941 10.6556 22.9853 10.3628L23.5429 10.1565C23.8176 10.0548 24 9.79291 24 9.5C24 9.20709 23.8176 8.94515 23.5429 8.8435L22.9853 8.63716C22.1941 8.34437 22.0069 8.25916 21.8739 8.12613C21.7409 7.99311 21.6557 7.80595 21.3629 7.01469L21.1565 6.45707C21.0549 6.18237 20.7929 6 20.5 6Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Kiwizard AI</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Build forms faster with Kiwizard AI
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/form-building"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="25"
+                          viewBox="0 0 30 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1 17.7998H17.8"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1 23.4004H17.8"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Form Builder</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Create and customize forms with ease.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/responses-analytics"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.22168 2.55469H8.77724"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M7.22168 7.22168H13.4439"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Responses & Analytics</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Understand responses with clear insights.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/logic-flow"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="25"
+                          viewBox="0 0 30 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 6.06738H19.6672"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <rect
+                            x="19.6553"
+                            y="1"
+                            width="9.34468"
+                            height="9.34468"
+                            rx="1.36115"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Logic & Flow</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Build dynamic forms with smart logic.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/integrations-automations"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <rect
+                            x="13.25"
+                            y="6.25"
+                            width="6.99976"
+                            height="6.99976"
+                            rx="0.777751"
+                            transform="rotate(90 13.25 6.25)"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M23.7397 18.5V28.9996"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M29.0005 23.7393L18.5008 23.7393"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Integrations</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Connect forms with your essential tools.
+                        </p>
+                      </div>
+                    </a>
+
+                    <a
+                      href="./help/design-themes"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M9.40039 19.2025L9.41221 19.1992"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Design & Themes</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Design branded forms that look great.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/supported-languages"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                          />
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">
+                          Languages & Translations
+                        </h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Create forms for a global audience.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="w-full h-[50px] bg-white"></div>
+                </div>
+              </div>
+
+              <!-- RIGHT -->
+              <div class="col-span-1 bg-white border-l border-[#E2DCDC]">
+                <div class="p-[5px] h-[calc(100%-50px)]">
+                  <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                    <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">FORM TEMPLATES</p>
+                    <svg
+                      width="254"
+                      height="78"
+                      viewBox="0 0 254 78"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect x="33" width="178" height="78" rx="10" fill="white" />
+                      <rect x="38" y="5" width="68" height="68" rx="5" fill="#E8F5B7" />
+                      <path
+                        d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                        fill="#B8DD2F"
+                      />
+                      <ellipse cx="72.194" cy="49.1233" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                      <ellipse cx="72.194" cy="28.6809" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="82.4156"
+                        cy="38.9031"
+                        rx="1.16814"
+                        ry="1.75222"
+                        transform="rotate(-90 82.4156 38.9031)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="61.9727"
+                        cy="38.9031"
+                        rx="1.16814"
+                        ry="1.75222"
+                        transform="rotate(-90 61.9727 38.9031)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                        fill="url(#paint0_linear_7194_667)"
+                      />
+                      <path
+                        d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
+                        stroke="#183C1A"
+                        stroke-width="2.11063"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <rect x="121" y="19" width="70" height="8" rx="4" fill="#E8F5B7" />
+                      <rect x="121" y="35" width="50" height="8" rx="4" fill="#E8F5B7" />
+                      <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
+                      <path
+                        d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                        fill="url(#paint1_linear_7194_667)"
+                      />
+                      <path
+                        d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                        fill="url(#paint2_linear_7194_667)"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_7194_667"
+                          x1="86.2999"
+                          y1="31.9588"
+                          x2="91.7999"
+                          y2="44.7188"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#183C1A" stop-opacity="0.25" />
+                          <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient
+                          id="paint1_linear_7194_667"
+                          x1="28"
+                          y1="39"
+                          x2="-7.1631e-08"
+                          y2="39"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="white" />
+                          <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
+                          <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient
+                          id="paint2_linear_7194_667"
+                          x1="216"
+                          y1="39"
+                          x2="254"
+                          y2="39"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="white" />
+                          <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                      Templates built for real use cases
+                    </h5>
+                    <p class="text-xs leading-5 text-Theme-Black mb-5">
+                      Start faster choose a template, customize it, and go live in minutes. Focus on
+                      collecting data.
+                    </p>
+                    <a
+                      href="./templates"
+                      class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
+                      >Kiwiform Templates</a
+                    >
+                  </div>
+                </div>
+                <div class="w-full h-[50px] bg-white border-t border-[#E2DCDC]"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+          >
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px] lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4"
+            >
+              <!-- badge -->
+              <div
+                class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green"
+              >
+                Dynamic Data Collection
+              </div>
+              <h1
+                class="mt-6 mb-2.5 text-center w-full max-w-[634px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                Dynamic Form Builder for Responsive Form Experiences
+              </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter"
+              >
+                Create dynamic forms that adapt questions, sections, and form paths as responses are
+                collected. Build more relevant form experiences without creating multiple versions
+                of the same form.
+              </p>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter"
+              >
+                Dynamic forms help you create more relevant form experiences by adapting questions,
+                sections, and form paths based on the information respondents provide. Instead of
+                showing every question to everyone, forms can evolve throughout the journey to
+                collect the right information at the right time. <br />
+                With Kiwiform Dynamic Form Builder, you can build responsive forms using
+                conversational layouts, Conditional Logic, Visual Flow Control, and AI-powered form
+                generation. Create registration forms, applications, surveys, onboarding workflows,
+                lead generation forms, and intake forms that collect better information while
+                keeping the experience simple and focused for respondents.
+              </p>
+
+              <a
+                href="https://app.kiwiform.com"
+                class="inline-flex py-2.5 px-5 rounded-md text-white bg-Theme-Green transition-all duration-500 hover:bg-[#B8DD2F] hover:text-Theme-Black text-sm font-medium"
+              >
+                Start Building Dynamic Forms
+              </a>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+      <!-- How Dynamic Forms Work  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                >
+                  How Dynamic Forms Work
+                </p>
+                <h2 class="heading-h2 text-center lg:text-left">
+                  Collect Better Information With Dynamic Forms
+                </h2>
+
+                <p
+                  class="w-full text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Collect more relevant information with forms that adapt as responses are
+                  submitted.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  A Dynamic Form Builder allows forms to adapt while they are being completed. As
+                  respondents answer questions, the form can change what is displayed next, helping
+                  create a more focused and efficient data collection experience. <br />
+                  This approach helps reduce unnecessary questions, improves response quality, and
+                  makes forms easier to complete compared to traditional one-size-fits-all forms.
+                  Instead of creating separate forms for different audiences, teams can create a
+                  single dynamic form that supports multiple scenarios and workflows.
+                </p>
+              </div>
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
+                <img
+                  src="/images/uploads/dynamic-data-1.png"
+                  alt="form fields image"
+                  class="w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!--   -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-[10px] flex items-center bg-white justify-center flex-col p-4 lg:px-6 lg:py-10"
+              >
+                <p
+                  class="w-full text-base leading-7 text-Theme-Black mt-2.5 text-center max-w-[1006px] mx-auto w-full"
+                >
+                  Kiwiform helps organizations build dynamic forms that feel natural and
+                  conversational while collecting more meaningful information. By adapting questions
+                  throughout the form journey, teams can improve the overall experience while
+                  keeping data collection organized and efficient.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.2487 24.3813H9.57576C4.19192 24.3813 1.5 23.0354 1.5 16.3056V9.57576C1.5 4.19192 4.19192 1.5 9.57576 1.5H20.3434C25.7273 1.5 28.4192 4.19192 28.4192 9.57576V16.3056C28.4192 21.6894 25.7273 24.3813 20.3434 24.3813H19.6705C19.2532 24.3813 18.8494 24.5833 18.5937 24.9197L16.5748 27.6117C15.6864 28.7961 14.2328 28.7961 13.3444 27.6117L11.3255 24.9197C11.1101 24.6236 10.6256 24.3813 10.2487 24.3813Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9.57669 10.5586L6.88477 13.2505L9.57669 15.9424"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20.3438 10.5586L23.0357 13.2505L20.3438 15.9424"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.3052 10.1147L13.6133 16.387"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Adaptive Question Paths</h4>
+                <p class="card-para">
+                  Guide respondents through different paths based on the information they provide.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="33"
+                    height="30"
+                    viewBox="0 0 33 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.67164 14.203L3.27915 11.8105L0.900391 14.203"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M26.3789 15.7979L28.7714 18.1903L31.1639 15.7979"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M28.7577 18.1901V15.0001C28.7577 7.96009 23.0515 2.26758 16.0252 2.26758C12.0102 2.26758 8.42148 4.13762 6.08398 7.03887"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M3.29297 11.8105V15.0006C3.29297 22.0406 8.99922 27.7331 16.0255 27.7331C20.0405 27.7331 23.6292 25.863 25.9667 22.9618"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.0254 17C17.13 17 18.0254 16.1046 18.0254 15C18.0254 13.8954 17.13 13 16.0254 13C14.9208 13 14.0254 13.8954 14.0254 15C14.0254 16.1046 14.9208 17 16.0254 17Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.73828 15.641V14.359C8.73828 13.6015 9.35739 12.9751 10.1222 12.9751C11.4405 12.9751 11.9795 12.0428 11.3167 10.8993C10.938 10.2438 11.1637 9.39156 11.8266 9.01281L13.0866 8.29172C13.6621 7.94939 14.405 8.15333 14.7473 8.72875L14.8274 8.86714C15.483 10.0107 16.561 10.0107 17.2238 8.86714L17.3039 8.72875C17.6462 8.15333 18.3892 7.94939 18.9646 8.29172L20.2247 9.01281C20.8875 9.39156 21.1133 10.2438 20.7345 10.8993C20.0717 12.0428 20.6107 12.9751 21.929 12.9751C22.6865 12.9751 23.3129 13.5942 23.3129 14.359V15.641C23.3129 16.3985 22.6938 17.0249 21.929 17.0249C20.6107 17.0249 20.0717 17.9572 20.7345 19.1007C21.1133 19.7635 20.8875 20.6084 20.2247 20.9872L18.9646 21.7083C18.3892 22.0506 17.6462 21.8467 17.3039 21.2713L17.2238 21.1329C16.5682 19.9893 15.4903 19.9893 14.8274 21.1329L14.7473 21.2713C14.405 21.8467 13.6621 22.0506 13.0866 21.7083L11.8266 20.9872C11.1637 20.6084 10.938 19.7562 11.3167 19.1007C11.9795 17.9572 11.4405 17.0249 10.1222 17.0249C9.35739 17.0249 8.73828 16.3985 8.73828 15.641Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Dynamic Sections</h4>
+                <p class="card-para">
+                  Display or skip entire sections when they are no longer relevant.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.5957 15C18.3236 15 21.3457 11.9779 21.3457 8.25C21.3457 4.52208 18.3236 1.5 14.5957 1.5C10.8678 1.5 7.8457 4.52208 7.8457 8.25C7.8457 11.9779 10.8678 15 14.5957 15Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M3 28.4998C3 23.2753 8.1975 19.0498 14.5965 19.0498C15.8925 19.0498 17.148 19.2253 18.3225 19.5493"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M28.0969 23.1002C28.0969 24.1127 27.8134 25.0712 27.3139 25.8812C27.0304 26.3672 26.6659 26.7992 26.2474 27.1502C25.3024 28.0007 24.0604 28.5002 22.6969 28.5002C20.7259 28.5002 19.0114 27.4472 18.0799 25.8812C17.5804 25.0712 17.2969 24.1127 17.2969 23.1002C17.2969 21.3992 18.0799 19.8737 19.3219 18.8882C20.2534 18.1457 21.4279 17.7002 22.6969 17.7002C25.6804 17.7002 28.0969 20.1167 28.0969 23.1002Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20.5898 23.1008L21.9263 24.4373L24.8018 21.7778"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Contextual Follow-Ups</h4>
+                <p class="card-para">
+                  Ask additional questions only when more information is required.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.1119 9.5H8.99219L11.8695 14.5397C12.0303 14.8213 12.0303 15.1787 11.8695 15.4603L8.99219 20.5H16.1119L19.252 15L16.1119 9.5Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M1 9.5H5.60229L8.48066 15L5.60229 20.5H1"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M28.8957 14.5397L26.6078 9.90816C26.4824 9.65423 26.2624 9.5 26.0257 9.5H20L22.4895 14.5397C22.6286 14.8213 22.6286 15.1787 22.4895 15.4603L20 20.5H26.0257C26.2624 20.5 26.4824 20.3458 26.6078 20.0918L28.8957 15.4603C29.0348 15.1787 29.0348 14.8213 28.8957 14.5397Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Multi-Step Experiences</h4>
+                <p class="card-para">
+                  Break longer workflows into structured and manageable stages.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24.8802 12.7919H5.11982C3.12082 12.7919 1.5 11.1576 1.5 9.1721V5.61982C1.5 3.62082 3.13433 2 5.11982 2H24.8802C26.8792 2 28.5 3.63433 28.5 5.61982V9.1721C28.5 11.1576 26.8657 12.7919 24.8802 12.7919Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M24.8802 27.7919H5.11982C3.12082 27.7919 1.5 26.1576 1.5 24.1721V20.6198C1.5 18.6208 3.13433 17 5.11982 17H24.8802C26.8792 17 28.5 18.6343 28.5 20.6198V24.1721C28.5 26.1576 26.8657 27.7919 24.8802 27.7919Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.89062 6.03906V8.74041"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.293 6.03906V8.74041"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.89062 21.0391V23.7404"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.293 21.0391V23.7404"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.6953 7.38965H23.098"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.6953 22.3896H23.098"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Relevant Data Collection</h4>
+                <p class="card-para">
+                  Collect information that is specific to each respondent's situation.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.0883 21.0375L23.5758 24.9875C23.7008 26.025 22.5883 26.75 21.7008 26.2125L16.4633 23.1C15.8883 23.1 15.3258 23.0625 14.7758 22.9875C15.7008 21.9 16.2508 20.525 16.2508 19.0375C16.2508 15.4875 13.1758 12.6125 9.37579 12.6125C7.92579 12.6125 6.58829 13.025 5.47579 13.75C5.43829 13.4375 5.42578 13.125 5.42578 12.8C5.42578 7.11249 10.3633 2.5 16.4633 2.5C22.5633 2.5 27.5008 7.11249 27.5008 12.8C27.5008 16.175 25.7633 19.1625 23.0883 21.0375Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.25 19.0372C16.25 20.5247 15.7 21.8998 14.775 22.9873C13.5375 24.4873 11.575 25.4498 9.375 25.4498L6.1125 27.3872C5.5625 27.7247 4.8625 27.2623 4.9375 26.6248L5.25 24.1623C3.575 22.9998 2.5 21.1372 2.5 19.0372C2.5 16.8372 3.67501 14.8998 5.47501 13.7498C6.58751 13.0248 7.925 12.6123 9.375 12.6123C13.175 12.6123 16.25 15.4872 16.25 19.0372Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Conversational Experiences</h4>
+                <p class="card-para">
+                  Create guided form journeys that feel natural and easy to complete.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!--   Built for Dynamic Experiences  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20"
+              >
+                <p
+                  class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5"
+                >
+                  Built for Dynamic Experiences
+                </p>
+                <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                  Everything You Need To Build Dynamic Forms
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                  Create responsive dynamic form experiences from a single platform.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto"
+                >
+                  Building dynamic forms should not require multiple tools, complex workflows, or
+                  technical expertise. Kiwiform combines form building, dynamic workflows,
+                  AI-assisted creation, and conversational design tools to help teams build smarter
+                  forms from a single platform. Whether you're creating a lead generation form,
+                  registration workflow, application process, onboarding experience, or customer
+                  intake form, Kiwiform provides the tools needed to create forms that adjust as
+                  information is collected. <br />
+                  Dynamic forms can support different audiences, requirements, and outcomes without
+                  requiring separate versions of the same workflow. From AI-generated drafts to
+                  visual workflow management, Kiwiform makes it easy to create and maintain dynamic
+                  forms at scale. Teams can launch forms faster, collect better information, and
+                  continuously refine experiences as requirements evolve.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/dynamic-data-2.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Visual Flow Control</h4>
+                  <p class="card-para">
+                    Design dynamic form paths using a visual interface that is easy to manage and
+                    update.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/dynamic-data-3.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Kiwizard AI Form Builder</h4>
+                  <p class="card-para">
+                    Generate structured form drafts from simple prompts and customize them visually.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! pb-10! gap-5 sm:col-span-2 lg:col-span-1">
+                <div class="p-2.5">
+                  <img src="/images/uploads/dynamic-data-4.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Pre-Built Templates</h4>
+                  <p class="card-para">
+                    Start with pre-built forms and customize them to support dynamic workflows.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Dynamic Form Use Cases  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20"
+              >
+                <p
+                  class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5"
+                >
+                  Dynamic Form Use Cases
+                </p>
+                <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                  One Dynamic Form Builder For Every Workflow
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                  Build responsive forms across teams, departments, and business processes.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto"
+                >
+                  A Dynamic Form Builder can be used anywhere information needs to be collected from
+                  different types of respondents. Instead of maintaining multiple static forms,
+                  organizations can create a single dynamic form experience that adjusts
+                  automatically based on responses. Dynamic forms are particularly valuable when
+                  different respondents require different questions, sections, or workflows. By
+                  adapting to responses in real time, dynamic forms help organizations collect more
+                  relevant information while keeping forms shorter and easier to complete. <br />
+                  Kiwiform Dynamic Form Builder helps teams create these experiences using
+                  conversational forms, Visual Flow Control, and unlimited forms and responses. As
+                  workflows grow, forms can continue adapting without increasing complexity for
+                  administrators or respondents.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Lead Qualification Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Product Recommendation Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Patient Intake Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Eligibility Screening Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Service Request Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Vendor Registration Forms
+                </h5>
+              </div>
+
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Insurance Claim Forms
+                </h5>
+              </div>
+              <div class="card-Theme px-3! md:py-10 py-5">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Course Enrollment Forms
+                </h5>
+              </div>
+              <div class="card-Theme px-3! md:py-10 py-5 sm:col-span-2 lg:col-span-1">
+                <h5 class="text-xl text-Theme-Black font-normal font-Inter-disp">
+                  Membership Application Forms
+                </h5>
+              </div>
+            </div>
+
+            <div class="bg-white w-full py-10 flex items-center justify-center rounded-[10px] px-2">
+              <a
+                href="https://app.kiwiform.com"
+                class="inline-flex py-2.5 px-5 rounded-md hover:text-white bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+              >
+                Build Dynamic Form
+              </a>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Frequently Asked Questions -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-[#F6F6F6]"
+          >
+            <div class="p-4 lg:pt-20 w-full flex flex-col gap-2.5">
+              <p class="text-center text-base font-normal text-Theme-Green leading-7">
+                Everything You Need to Know
+              </p>
+              <h2 class="heading-h2 text-center">Frequently Asked Questions</h2>
+              <p class="text-base leading-7 text-[#8C8484] text-center">
+                Frequently Asked Questions About Kiwiform Dynamic Form Builder
+              </p>
+            </div>
+            <div class="py-5 lg:pt-10 lg:pb-20 w-full rounded-lg px-4">
+              <div
+                class="flex flex-col gap-px w-full max-w-[1004px] mx-auto p-px rounded-10px bg-Theme-bg overflow-hidden"
+              >
+                <div x-data="{ active: 0 }" class="flex flex-col gap-px w-full">
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 0 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 0 ? null : 0"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What is a Dynamic Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 0 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 0" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Dynamic Form Builder allows forms to adapt as respondents complete them.
+                          Questions, sections, and form paths can change based on responses, helping
+                          organizations collect more relevant information through a single form
+                          experience.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 1 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 1 ? null : 1"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        How does a Dynamic Form Builder work?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 1 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 1" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Dynamic Form Builder uses response-based rules to determine what
+                          questions, sections, or content should appear next. This allows forms to
+                          adjust automatically as information is collected.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 2 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 2 ? null : 2"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Why use a Dynamic Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 2 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 2" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Dynamic Form Builder helps reduce unnecessary questions, improve
+                          response quality, and create more efficient form experiences. By adapting
+                          to responses, forms can stay relevant from start to finish.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 3 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 3 ? null : 3"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What is the difference between a dynamic form and a static form?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 3 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 3" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A static form shows the same questions to everyone. A Dynamic Form Builder
+                          creates forms that can display different questions, sections, or paths
+                          based on responses and collected information.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 4 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 4 ? null : 4"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can dynamic forms be used for lead generation?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 4 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 4" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. A Dynamic Form Builder can help qualify leads, collect information
+                          progressively, and create more relevant lead generation experiences
+                          without requiring multiple forms.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 5 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 5 ? null : 5"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Are dynamic forms useful for applications and registrations?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 5 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 5" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Dynamic forms are commonly used for applications, registrations,
+                          onboarding workflows, intake forms, and surveys because they can adapt to
+                          different requirements and respondent types.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 6 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 6 ? null : 6"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Do I need coding skills to build dynamic forms?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 6 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 6" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          No. Kiwiform Dynamic Form Builder includes Visual Flow Control,
+                          Conditional Logic, templates, and Kiwizard AI, allowing teams to build
+                          dynamic forms without writing code.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 7 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 7 ? null : 7"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can I create dynamic forms without managing multiple form versions?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 7 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 7" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. A Dynamic Form Builder allows a single form to support multiple
+                          paths, scenarios, and respondent types. Instead of creating separate
+                          forms, you can adapt questions and sections automatically based on
+                          responses.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 8 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 8 ? null : 8"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Why choose Kiwiform Dynamic Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 8 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 8" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform combines conversational forms, Visual Flow Control, Conditional
+                          Logic, Kiwizard AI, 32+ field types, integrations, unlimited forms, and
+                          unlimited responses to help teams create dynamic form experiences from a
+                          single platform.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+  </body>
+</html>

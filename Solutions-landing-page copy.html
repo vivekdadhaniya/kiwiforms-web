@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="assets/css/output.css"> -->
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    x-data="templateDetailPage()"
+    x-init="init()"
+  >
+    <!-- navigation  -->
+
+     <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+      <!-- hero -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+          >
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px] lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4"
+            >
+              <!-- badge -->
+              <div
+                class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green"
+              >
+                Kiwiform Solutions
+              </div>
+              <h1
+                class="mt-6 mb-2.5 text-center w-full max-w-[580px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                Form Building Solutions for Every Industry
+              </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter"
+              >
+                Build forms faster with industry-focused solutions designed for different processes,
+                audiences, and data collection needs.
+              </p>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter"
+              >
+                Kiwiform Solutions brings together industry-focused form experiences for the
+                different ways organizations collect information and manage processes. Explore
+                dedicated solutions for education, healthcare, nonprofits, ecommerce, recruiting,
+                marketing, events, and real estate—each built around the needs of its audience and
+                industry.
+              </p>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Recommended Alternative  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px overflow-hidden w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="w-full bg-white rounded-10px py-10 px-4 lg:px-12">
+              <h2
+                class="text-[38px] leading-[48px] font-Inter-disp tracking-[-0.76px] text-center mb-2.5"
+              >
+                Find the Right Form Solutions
+              </h2>
+              <p
+                class="text-center w-full max-w-[810px] mx-auto text-base leading-7 text-[#7D7676]"
+              >
+                Explore industry-focused form solutions built around the processes, audiences, and
+                information needs of your organization.
+              </p>
+            </div>
+            <div class="w-full bg-Theme-bg grid grid-cols-1 lg:grid-cols-2 gap-px">
+              <a
+                href="/solutions/education"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.832 28.1812V40.9209C12.832 43.3404 14.2893 45.5216 16.5242 46.4473L27.023 50.7959C28.488 51.4026 30.1339 51.4026 31.5988 50.7959L42.0976 46.4473C43.5349 45.8519 44.6504 44.7372 45.2637 43.3739"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M45.793 32.7288V28.1812"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M29.3086 43.4565V50.7967"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M27.7452 34.2705L7.29804 25.208C4.23399 23.85 4.23399 19.5008 7.29804 18.1428L27.7452 9.08027C28.7417 8.63861 29.8785 8.63861 30.8752 9.08027L51.3223 18.1428C54.3864 19.5008 54.3864 23.85 51.3223 25.208L30.8752 34.2705C29.8785 34.7122 28.7418 34.7122 27.7452 34.2705Z"
+                      fill="#E8F5B7"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M53.625 21.6758V50.1699"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M52.2383 46.3374H54.9998"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Forms for Schools and Education
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build online forms for schools and education
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/solutions/healthcare"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M43.2008 55H16.7992C12.3537 55 8.75 51.1168 8.75 46.3265V21.1735C8.75 16.3832 12.3537 12.5 16.7992 12.5H43.2008C47.6463 12.5 51.25 16.3832 51.25 21.1735V46.3265C51.25 51.1168 47.6463 55 43.2008 55Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.25 5H38.75"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M30 23.75V38.75"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M22.5 31.249H37.5"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M18.75 47.5H41.25"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Medical Patient Intake Forms for Healthcare
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Create structured online medical forms
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/solutions/nonprofits"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M53.75 44.3699C53.75 39.4241 49.816 35.4153 44.9644 35.4173L25.4389 35.4254C22.9172 35.4254 20.8726 37.5355 20.8726 40.1378C20.8726 42.7401 22.9172 44.85 25.4389 44.85C23.7548 44.8505 22.1813 43.9956 21.2427 42.5701L13.8139 31.8143C12.2596 30.2093 9.81517 29.9841 8.00928 31.2783C5.68216 32.9455 5.86494 36.1125 7.38726 38.4466L15.6123 50.883C17.2276 53.4489 20.0126 55.0003 23.0032 55.0003H53.75"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.4492 44.8496H37.5633"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M47.0313 12.2718C46.8221 8.2893 43.6282 5 39.7168 5C35.7131 5 32.8727 9.33644 32.8481 9.37405C32.8236 9.33644 29.9833 5 25.9795 5C22.0682 5 18.8742 8.2893 18.6651 12.2718C18.5473 14.5217 19.2587 16.2341 20.261 17.7849C22.2245 20.8226 32.4487 28.0095 32.8482 28.2897C33.2477 28.0095 43.4719 20.8226 45.4354 17.7849C46.4377 16.2341 47.149 14.5217 47.0313 12.2718Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Donations Forms for Nonprofits
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build reliable and engaging nonprofit forms
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/solutions/ecommerce"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M46.1751 20.6777L34.6562 4.99977"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.4173 4.99977L13.8984 20.6777"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M30 38.0528V46.5273"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M38.4766 38.0513V46.5259"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.5234 38.0513V46.5259"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M49.5018 49.3537C49.1404 52.5692 46.4213 55 43.1856 55H17.0071C13.7893 55 11.0792 52.5953 10.6963 49.4003L8.32031 29.5763"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M43.2415 29.5762H5V21.1016H55V29.5762H51.7125L50.6085 39.4019"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Order Forms for Ecommerce
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build ecommerce forms for orders, payments
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/solutions/hr-recruiting"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.832 29.4703V29.9999C19.832 35.6165 24.385 40.1694 30.0015 40.1694C35.618 40.1694 40.171 35.6165 40.171 29.9999V29.4703"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M5 29.2585V31.0593C5 33.3995 6.89703 35.2966 9.23729 35.2966H10.3043C11.451 35.2966 12.473 35.9971 12.9107 37.057C12.9155 37.0686 12.9203 37.0802 12.9251 37.0918C13.3653 38.1516 13.1391 39.3704 12.3278 40.1818L11.5733 40.9362C9.91854 42.5909 9.91854 45.2738 11.5733 46.9286L13.0713 48.4267C14.7261 50.0815 17.4091 50.0815 19.0638 48.4267L19.8182 47.6722C20.6297 46.8609 21.8485 46.6347 22.9082 47.0749C22.9198 47.0798 22.9314 47.0845 22.9431 47.0894C24.0029 47.527 24.7034 48.549 24.7034 49.6956V50.7627C24.7034 53.1029 26.6004 55 28.9407 55H31.0593C33.3996 55 35.2966 53.1029 35.2966 50.7627V49.6956C35.2966 48.549 35.9971 47.527 37.0569 47.0894C37.0686 47.0845 37.0802 47.0798 37.0918 47.0749C38.1515 46.6347 39.3703 46.8609 40.1818 47.6722L40.9362 48.4267C42.5909 50.0815 45.2739 50.0815 46.9287 48.4267L48.4267 46.9286C50.0815 45.2738 50.0815 42.5909 48.4267 40.9362L47.6722 40.1818C46.8609 39.3704 46.6347 38.1516 47.0749 37.0918C47.0797 37.0802 47.0845 37.0686 47.0893 37.057C47.527 35.9971 48.549 35.2966 49.6957 35.2966H50.7627C53.103 35.2966 55 33.3995 55 31.0593V29.2585"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M25.7617 9.23683C25.7617 6.89669 27.6588 4.99955 29.999 4.99955C32.3393 4.99955 34.2363 6.89669 34.2363 9.23683C34.2363 11.577 32.3393 13.4741 29.999 13.4741C27.6588 13.4741 25.7617 11.577 25.7617 9.23683Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M38.1284 20.0449C37.3492 16.2934 34.0316 13.4749 30.0572 13.4749H29.9463C25.9718 13.4749 22.6543 16.2934 21.875 20.0449"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.91406 9.23683C8.91406 6.89669 10.8111 4.99955 13.1514 4.99955C15.4916 4.99955 17.3886 6.89669 17.3886 9.23683C17.3886 11.577 15.4916 13.4741 13.1514 13.4741C10.8111 13.4741 8.91406 11.577 8.91406 9.23683Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M42.6055 9.23683C42.6055 6.89669 44.5025 4.99955 46.8428 4.99955C49.183 4.99955 51.08 6.89669 51.08 9.23683C51.08 11.577 49.183 13.4741 46.8428 13.4741C44.5025 13.4741 42.6055 11.577 42.6055 9.23683Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.2835 20.0441C20.5043 16.2926 17.1867 13.4741 13.2123 13.4741H13.1014C9.12693 13.4741 5.80945 16.2926 5.03011 20.0441C4.84897 20.9165 5.50786 21.7368 6.39695 21.7368H53.6032C54.4922 21.7368 55.1511 20.9165 54.9699 20.0441"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M46.9008 13.4749H46.7899C42.8156 13.4749 39.498 16.2934 38.7188 20.0449"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Recruitment Forms for HR And Recruiting
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build HR Forms for Hiring and Feedback
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="/solutions/marketing-agencies"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.7128 13.4752C17.7128 11.1349 15.8158 9.2379 13.4755 9.2379C11.1353 9.2379 9.23828 11.1349 9.23828 13.4752C9.23828 15.8154 11.1353 17.7124 13.4755 17.7124C15.8158 17.7124 17.7128 15.8154 17.7128 13.4752Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M42.2852 13.4752C42.2852 11.1349 44.1822 9.2379 46.5224 9.2379C48.8626 9.2379 50.7597 11.1349 50.7597 13.4752C50.7597 15.8154 48.8626 17.7124 46.5224 17.7124C44.1822 17.7124 42.2852 15.8154 42.2852 13.4752Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M46.9531 23.9617H50.7666C53.1069 23.9617 55.0039 25.8587 55.0039 28.1989V37.5209C55.0039 39.8611 53.1069 41.7581 50.7666 41.7581V54.9995"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M42.2841 54.9995V41.7581C39.9439 41.7581 38.0469 39.8611 38.0469 37.5209"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.0508 23.9617H9.23725C6.89702 23.9617 5 25.8587 5 28.1989V37.5209C5 39.8611 6.89702 41.7581 9.23725 41.7581V54.9995"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.7148 54.9995V41.7581C20.0551 41.7581 21.9521 39.8611 21.9521 37.5209"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M34.2352 39.7454V54.9995H25.7607V39.7454C23.4205 39.7454 21.5234 37.8484 21.5234 35.5082V23.9617C21.5234 21.6214 23.4205 19.7244 25.7607 19.7244H34.2352C36.5754 19.7244 38.4724 21.6214 38.4724 23.9617V35.5082C38.4724 37.8484 36.5754 39.7454 34.2352 39.7454Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.7617 9.23687C25.7617 6.89664 27.6587 4.99962 29.999 4.99962C32.3392 4.99962 34.2362 6.89664 34.2362 9.23687C34.2362 11.5771 32.3392 13.4741 29.999 13.4741C27.6587 13.4741 25.7617 11.5771 25.7617 9.23687Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Lead Generation Forms for Agencies
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build lead generation forms for lead capture
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="/solutions/events"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.0469 13.4741V9.23729C13.0469 6.89714 14.944 5 17.2842 5C19.6243 5 21.5215 6.89714 21.5215 9.23729V13.4741H13.0469Z"
+                      fill="#E8F5B7"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M46.9511 9.23729V13.4741H38.4766V9.23729C38.4766 6.89714 40.3737 5 42.7139 5C45.054 5 46.9511 6.89714 46.9511 9.23729Z"
+                      fill="#E8F5B7"
+                    />
+                    <path
+                      d="M27.8828 29.5762H32.1201"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M40.5938 29.5762H44.831"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15.1641 38.0508H19.4014"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M27.8828 38.0508H32.1201"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M40.5938 38.0508H44.831"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15.1641 46.5259H19.4014"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M27.8828 46.5259H32.1201"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M38.4746 13.4741H48.6441C52.1543 13.4741 55 16.3198 55 19.8301V48.6436C55 52.1539 52.1543 54.9995 48.6441 54.9995H11.3559C7.84566 54.9995 5 52.1539 5 48.6436V19.8301C5 16.3198 7.84566 13.4741 11.3559 13.4741H30"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.2842 21.9492C14.944 21.9492 13.0469 20.052 13.0469 17.7119V9.23729C13.0469 6.89714 14.944 5 17.2842 5C19.6243 5 21.5215 6.89714 21.5215 9.23729V13.4746"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M42.7139 21.9492C40.3737 21.9492 38.4766 20.052 38.4766 17.7119V9.23729C38.4766 6.89714 40.3737 5 42.7139 5C45.054 5 46.9511 6.89714 46.9511 9.23729V13.4746"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Event Forms for Registration and RSVP
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Create custom event forms for registrations
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+               <a
+                href="/solutions/real-estate"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M41.7471 21.4493C40.843 12.2281 33.0802 4.99988 23.6679 4.99988C13.6501 4.99988 5.5 13.1878 5.5 23.2521V23.879C5.5 34.5653 19.2051 47.5017 23.6679 51.4302" stroke="#B8DD2F" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M43.8174 48.2524H37.2109V41.6153H43.8174V48.2524Z" stroke="#183C1A" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.5117 23.2521C16.5117 19.2811 19.7161 16.0618 23.6688 16.0618C27.6214 16.0618 30.8258 19.2811 30.8258 23.2521C30.8258 27.2231 27.6214 30.4424 23.6688 30.4424C19.7161 30.4424 16.5117 27.2231 16.5117 23.2521Z" fill="#E8F5B7" stroke="#B8DD2F" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M51.201 39.1809V51.2137C51.201 53.3048 49.5137 55 47.4322 55H33.4875C31.4062 55 29.7188 53.3048 29.7188 51.2137V39.1809" stroke="#183C1A" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M54.4995 42.1201L40.4607 29.2534L26.4219 42.1201" stroke="#183C1A" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Real Estate Forms for Agents
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Create real estate forms for every processes
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div
+              class="w-full bg-white rounded-10px py-10 px-4 lg:px-12 flex items-center justify-center"
+            >
+              <a
+                href="https://app.kiwiform.com/"
+                class="w-full max-w-[250px] whitespace-nowrap text-center mx-auto py-[9px] rounded-md px-5 text-sm leading-[22px] font-medium text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green hover:text-white"
+                >Start Building for Free</a
+              >
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+  </body>
+</html>

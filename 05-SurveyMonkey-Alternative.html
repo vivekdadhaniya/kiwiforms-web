@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="assets/css/output.css"> -->
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    x-data="templateDetailPage()"
+    x-init="init()"
+  >
+    <!-- navigation  -->
+
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+      <!-- hero -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+          >
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px] lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4"
+            >
+              <!-- badge -->
+              <div
+                class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green"
+              >
+                SurveyMonkey Alternative
+              </div>
+              <h1
+                class="mt-6 mb-2.5 text-center w-full max-w-[850px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                SurveyMonkey Alternative for Feedback, Research, and Audience Insights
+              </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter"
+              >
+                Compare leading alternatives to SurveyMonkey for customer feedback, market research,
+                employee engagement, satisfaction measurement, and modern survey experiences
+                designed to support growing organizations.
+              </p>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter"
+              >
+                SurveyMonkey has long been one of the most recognized platforms for collecting
+                feedback, conducting research, measuring satisfaction, and understanding audience
+                sentiment. Organizations use it to run customer surveys, employee engagement
+                programs, market research initiatives, and feedback campaigns that help guide
+                decision-making across teams. <br />
+                As feedback programs grow, organizations often begin searching for a SurveyMonkey
+                alternative that offers greater flexibility, improved respondent experiences,
+                advanced customization, stronger workflow capabilities, or more scalable data
+                collection. The platforms below represent different approaches to collecting,
+                managing, and acting on valuable feedback and research data.
+              </p>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Recommended Alternative  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F8FFFC] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F8FFFC] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px overflow-hidden w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="grid grid-cols-1 bg-white rounded-10px">
+              <div
+                class="rounded-10px overflow-hidden flex items-center bg-[#F8FFFC] justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-2.5">
+                  Recommended Alternative
+                </p>
+                <h2
+                  class="heading-h2 text-left w-full text-Theme-Green tracking-[-0.76px] capitalize group"
+                >
+                  1.
+                  <a
+                    href="https://app.kiwiform.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 group-hover:text-theme-Green-hover"
+                  >
+                    Kiwiform
+                  </a>
+                  : Feedback Collection Built for Modern Engagement
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Create surveys, feedback programs, research questionnaires, and satisfaction
+                  studies through conversational experiences that improve engagement while
+                  supporting advanced logic, automation, and unlimited growth.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-1.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] my-2.5 xl:my-4 text-left">
+                  SurveyMonkey focuses heavily on research and survey administration. Kiwiform
+                  focuses on helping organizations create engaging feedback experiences that
+                  encourage participation while maintaining flexibility behind the scenes. Through
+                  conversational surveys, advanced logic, automation, personalization, and
+                  customizable experiences, teams can gather meaningful feedback without sacrificing
+                  usability. <br />
+                  As a SurveyMonkey alternative, Kiwiform is designed for organizations that want to
+                  move beyond traditional survey layouts while supporting customer feedback
+                  programs, employee engagement initiatives, product research, lead qualification,
+                  applications, and operational data collection. Unlimited forms and unlimited
+                  responses provide room to scale as research and feedback requirements evolve.
+                </p>
+
+                <a
+                  href="https://app.kiwiform.com"
+                  target="_blank"
+                  class="w-full text-center py-2.5 px-5 rounded-lg text-white bg-Theme-Green transition-all duration-500 hover:bg-theme-Green-hover text-sm font-medium"
+                >
+                  Start Building with Kiwiform
+                </a>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-[#F8FFFC] flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Unlimited forms and responses</li>
+                  <li class="py-[15px] border-t border-Theme-bg">
+                    Conversational survey experiences
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg">Advanced logic and branching</li>
+                  <li class="py-[15px] border-t border-Theme-bg">
+                    Workflow automation capabilities
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg">Built-in AI form assistance</li>
+                  <li class="py-[15px] border-t border-Theme-bg">
+                    Extensive customization options
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-[#F8FFFC] flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Newer ecosystem than legacy platforms</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Advanced surveys require planning
+                  </li>
+
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Smaller research-focused community
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F8FFFC] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F8FFFC] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 2. Qualtrics: Enterprise Research and Experience Management at Scale  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  2.
+                  <a
+                    href="https://www.qualtrics.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Qualtrics
+                  </a>
+                  : Enterprise Research and Experience Management at Scale
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Manage customer experience programs, employee feedback initiatives, market
+                  research projects, and large-scale organizational studies through advanced
+                  analytics and enterprise-grade research tools.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-15.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Qualtrics is widely regarded as one of the most sophisticated research and
+                  experience management platforms available. Large enterprises, universities, and
+                  research organizations use it to conduct complex studies, analyze behavioral
+                  trends, and manage customer and employee experience programs across multiple
+                  channels. For organizations evaluating a SurveyMonkey alternative, Qualtrics is
+                  often considered when advanced research capabilities, predictive analytics, and
+                  enterprise-scale insights become strategic priorities.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Advanced research capabilities</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Predictive analytics tools</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Enterprise-grade security</li>
+                  <li class="py-[15px] border-t border-Theme-bg">
+                    Multi-channel feedback collection
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg">Detailed reporting features</li>
+                  <li class="py-[15px] border-t border-Theme-bg">
+                    Strong experience management tools
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Enterprise-level pricing</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Steep learning curve
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Complex implementation process
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Longer onboarding cycles
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Overkill for basic surveys
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Requires dedicated administration
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!--3. Typeform: Survey Experiences Designed Around Participation  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  3.
+                  <a
+                    href="https://www.typeform.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Typeform
+                  </a>
+                  : Survey Experiences Designed Around Participation
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Deliver one-question-at-a-time surveys that help improve response quality,
+                  engagement, and completion rates across customer-facing feedback programs.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-7.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Typeform approaches surveys differently by focusing on how respondents experience
+                  questions. Its conversational design reduces visual clutter and creates a more
+                  interactive journey, making it particularly effective for customer feedback,
+                  research questionnaires, satisfaction surveys, and lead generation. <br />
+                  As a SurveyMonkey alternative, Typeform appeals to organizations that want to
+                  increase participation and improve respondent engagement through a more modern
+                  survey experience.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Conversational survey design</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Strong visual presentation</li>
+                  <li class="py-[15px] border-t border-Theme-bg">
+                    Interactive respondent journeys
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg">AI-assisted creation</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Broad integration ecosystem</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Optimized for engagement</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Limited free responses</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Premium pricing structure
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Overage charges possible
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Branding restrictions apply
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Advanced features gated
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Scaling becomes expensive
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 4. Zoho Forms: Data Collection Connected to Business Operations  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  4.
+                  <a
+                    href="https://www.zoho.com/forms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Zoho Forms
+                  </a>
+                  : Data Collection Connected to Business Operations
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Combine survey collection, workflow automation, approvals, and operational
+                  processes through a platform deeply integrated with the broader Zoho ecosystem.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-16.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Zoho Forms serves organizations that want feedback collection to connect directly
+                  with business systems and operational workflows. Through integrations with CRM,
+                  support, project management, and productivity tools, teams can turn survey
+                  responses into actionable processes. For teams seeking a SurveyMonkey alternative,
+                  Zoho Forms is often attractive when feedback collection is closely tied to
+                  operational decision-making and customer management activities.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Strong Zoho integrations</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Workflow automation support</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Dynamic branching logic</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Offline mobile capabilities</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Payment collection support</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Business process flexibility</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Limited visual design options</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Learning curve for advanced logic
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Dashboard complexity
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Restricted free plans
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Basic theme customization
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Less focused on research analysis
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 5. Microsoft Forms: Simple Feedback Collection Within Microsoft 365 -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  5.
+                  <a
+                    href="https://forms.office.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Microsoft Forms
+                  </a>
+                  : Simple Feedback Collection Within Microsoft 365
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Create surveys, quizzes, employee feedback programs, and internal assessments
+                  through a platform built around collaboration and productivity within Microsoft
+                  environments.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-9.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Microsoft Forms is commonly used for employee surveys, training evaluations,
+                  internal questionnaires, and organizational feedback collection. Its integration
+                  with Excel, Teams, and Microsoft 365 makes it particularly useful for
+                  organizations already operating within Microsoft's ecosystem. As a SurveyMonkey
+                  alternative, Microsoft Forms is often considered by teams seeking simplicity and
+                  workplace integration rather than advanced research capabilities.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Microsoft 365 integration</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Simple survey creation</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Easy collaboration tools</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Built-in quiz features</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Enterprise familiarity</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Strong security controls</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Limited customization</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Basic survey design
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Restricted branding options
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Limited advanced analytics
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Less flexible logic controls
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    No native payment collection
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- 6. Google Forms: Accessible Surveys for Everyday Feedback Collection  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="rounded-10px flex items-center bg-white justify-center flex-col pt-6 px-4 pb-4 xl:p-20 xl:pb-5"
+              >
+                <h2
+                  class="heading-h2 text-left w-full tracking-[-0.76px] capitalize text-Theme-Black group"
+                >
+                  6.
+                  <a
+                    href="https://workspace.google.com/intl/en_in/products/forms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-all duration-300 text-Theme-Green"
+                  >
+                    Google Forms
+                  </a>
+                  : Accessible Surveys for Everyday Feedback Collection
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Collect opinions, registrations, responses, and internal feedback through a
+                  lightweight platform that prioritizes accessibility, collaboration, and ease of
+                  adoption.
+                </p>
+
+                <img
+                  src="/images/uploads/typeform-alternative-4.png"
+                  alt=""
+                  class="mt-5 w-full h-auto"
+                />
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  Google Forms remains one of the most widely used survey tools because it is
+                  simple, familiar, and free. Organizations frequently use it for customer feedback,
+                  registrations, event surveys, internal questionnaires, and educational assessments
+                  where speed and accessibility are priorities. For users evaluating a SurveyMonkey
+                  alternative, Google Forms offers a practical option for basic survey collection
+                  without the complexity associated with larger research platforms.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-Theme-bg w-full grid grid-cols-1 lg:grid-cols-2 gap-px rounded-[10px]">
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Pros
+                  </li>
+                  <li class="py-[15px]">Free to use</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Google Workspace integration</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Easy collaboration</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Quick deployment</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Familiar user experience</li>
+                  <li class="py-[15px] border-t border-Theme-bg">Reliable response collection</li>
+                </ul>
+              </div>
+              <div class="bg-Theme-bg gap-px flex flex-col">
+                <ul
+                  class="px-5 pb-5 md:px-20 md:pb-10 pt-5 rounded-[10px] bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                >
+                  <li
+                    class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
+                  >
+                    Cons
+                  </li>
+                  <li class="py-[15px] text-[#7D7676]">Limited customization</li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Basic survey presentation
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Restricted branding control
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Minimal advanced analytics
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Basic logic capabilities
+                  </li>
+                  <li class="py-[15px] border-t border-Theme-bg text-[#7D7676]">
+                    Less suitable for research programs
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 bg-Theme-bg">
+              <div
+                class="max-lg:rounded-10px lg:rounded-10px flex items-center bg-[#F6F6F6] justify-center flex-col p-4 xl:p-20"
+              >
+                <p class="text-left w-full text-base leading-7 text-Theme-Green mb-2.5">
+                  Final Recommendation
+                </p>
+                <h2 class="heading-h2 text-left w-full">
+                  Kiwiform: A SurveyMonkey Alternative Built for Modern Feedback Collection
+                </h2>
+
+                <p class="w-full text-base leading-7 text-Theme-Black mt-2.5 xl:mt-5 text-left">
+                  Collect customer feedback, employee insights, research responses, and satisfaction
+                  data through engaging experiences designed to improve participation while
+                  supporting advanced logic, automation, and unlimited growth.
+                </p>
+
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-4 text-left">
+                  SurveyMonkey remains a popular platform for surveys, customer experience
+                  initiatives, employee engagement programs, and research projects. Its strengths in
+                  feedback collection and audience insights have made it a longstanding choice for
+                  organizations seeking structured ways to understand customers, employees, and
+                  markets. As expectations around survey experiences evolve, many teams begin
+                  looking for solutions that provide greater flexibility, stronger branding,
+                  improved engagement, and more adaptable data collection workflows. <br />
+                  Kiwiform combines conversational survey experiences, advanced logic, workflow
+                  automation, customization, integrations, and unlimited usage within a single
+                  platform. For organizations searching for a SurveyMonkey alternative that balances
+                  feedback collection with modern respondent experiences and scalable data
+                  collection capabilities, Kiwiform provides a flexible foundation for gathering and
+                  acting on meaningful insights.
+                </p>
+
+                <div class="flex justify-start w-full gap-4 mt-5">
+                  <!-- desktop button -->
+                  <a
+                    href="https://app.kiwiform.com"
+                    target="_blank"
+                    class="w-fit inline-flex py-2.5 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+                  >
+                    Start Building with Kiwiform
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2967 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="assets/css/output.css"> -->
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    x-data="templateDetailPage()"
+    x-init="init()"
+  >
+    <!-- navigation  -->
+    <div
+      x-data="{ open:false, open1:false, mobileMenu:false, closeMenus() { this.open = false; this.open1 = false; this.mobileMenu = false } }"
+      class="fixed top-0 z-50 bg-[#E2DCDC] pb-px w-full flex flex-col gap-px"
+    >
+      <div class="flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
+          <!-- place content here -->
+          <div class="col-span-11 bg-white rounded-[10px] py-3 lg:px-5">
+            <div class="flex items-center justify-between max-lg:px-5">
+              <a href="/" class="flex items-center gap-3">
+                <svg
+                  width="143"
+                  height="32"
+                  viewBox="0 0 143 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M45.1923 20.5262C44.8292 19.8837 44.3263 19.8279 43.8235 20.3307L41.7005 22.5376V26.3088H38.3203V6.75425H41.7005V18.459L47.5947 12.2016H51.7291L47.7624 16.3918C47.2875 16.8947 47.2316 17.3696 47.5389 17.9283L52.1482 26.3088H48.2652L45.1923 20.5262Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M53.57 26.3088V12.1736H57.1457V26.3088H53.57ZM55.3579 10.1065C54.1008 10.1065 53.1789 9.24047 53.1789 8.06719C53.1789 6.92186 54.1008 6 55.3579 6C56.6149 6 57.5368 6.92186 57.5368 8.06719C57.5368 9.24047 56.6149 10.1065 55.3579 10.1065Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M62.8621 26.3088L58.6719 12.1736H62.3593L64.7058 21.4481H64.9293L67.3317 12.1736H70.8236L73.226 21.4481H73.4216L75.7681 12.1736H79.4835L75.2932 26.3088H71.4661L69.1196 17.3416H69.0078L66.6892 26.3088H62.8621Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M81.014 26.3088V12.1736H84.5897V26.3088H81.014ZM82.8019 10.1065C81.5448 10.1065 80.6229 9.24047 80.6229 8.06719C80.6229 6.92186 81.5448 6 82.8019 6C84.0589 6 84.9808 6.92186 84.9808 8.06719C84.9808 9.24047 84.0589 10.1065 82.8019 10.1065Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M88.6872 26.3088V15.1348H86.0892L86.0613 12.1736H87.8491C88.3799 12.1736 88.6313 11.8943 88.6872 11.3915V10.9166C88.9107 8.76557 90.3074 6.75425 93.6876 6.75425H95.224V9.71536H92.9613C92.3467 9.71536 92.0953 9.96678 92.0953 10.5534V12.1736H94.9726V15.1348H92.1511V26.3088H88.6872Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M102.969 26.7557C98.4433 26.7557 95.566 23.7667 95.566 19.2412C95.566 14.7157 98.4433 11.7267 102.969 11.7267C107.438 11.7267 110.316 14.7157 110.316 19.2412C110.316 23.7667 107.438 26.7557 102.969 26.7557ZM102.969 23.7108C105.204 23.7108 106.684 21.9509 106.684 19.2412C106.684 16.5315 105.204 14.7437 102.969 14.7437C100.706 14.7437 99.2255 16.5315 99.2255 19.2412C99.2255 21.9509 100.706 23.7108 102.969 23.7108Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M112.112 15.7493C112.112 13.4307 113.369 12.1736 115.771 12.1736H120.352V15.1906H115.687V26.3088H112.112V15.7493Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M121.744 26.3088V12.1736H124.984V14.2129C125.85 12.5647 127.331 11.7267 129.258 11.7267C131.381 11.7267 132.89 12.7323 133.644 14.4923C134.454 12.7044 136.018 11.7267 138.086 11.7267C141.13 11.7267 143.002 13.8218 143.002 17.2578V26.3088H139.426V17.8445C139.426 15.8052 138.672 14.8275 137.192 14.8275C135.571 14.8275 134.175 16.1125 134.175 19.1015V26.3088H130.599V17.8445C130.599 15.8052 129.845 14.8275 128.364 14.8275C126.66 14.8275 125.319 16.1963 125.319 19.1015V26.3088H121.744Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16Z"
+                    fill="#183C1A"
+                  />
+                  <path
+                    d="M16.0016 1.59961C17.0325 1.59961 18.038 1.70824 19.0075 1.9144C20.3067 2.19067 21.1216 3.41533 21.1216 4.74356V9.27961C21.1216 10.1633 21.8379 10.8796 22.7216 10.8796H27.2576C28.5858 10.8796 29.8105 11.6945 30.0868 12.9937C30.2929 13.9631 30.4016 14.9687 30.4016 15.9996C30.4016 23.9525 23.9545 30.3996 16.0016 30.3996C8.04866 30.3996 1.60156 23.9525 1.60156 15.9996C1.60156 8.04671 8.04866 1.59961 16.0016 1.59961Z"
+                    fill="#B8DD2F"
+                  />
+                  <path
+                    d="M21.5792 10.3996L30.4015 10.8796L30.6714 14.607C30.7154 15.214 30.6999 15.8237 30.6253 16.4277L30.5071 17.385C30.4368 17.9535 30.3145 18.5144 30.1415 19.0605L29.7935 20.1596L25.9215 15.3596L21.5792 10.3996Z"
+                    fill="url(#paint0_linear_12265_2027)"
+                  />
+                  <path
+                    d="M11.8984 15.8601C11.8984 13.5923 13.7369 11.7539 16.0046 11.7539C18.2724 11.7539 20.1109 13.5923 20.1109 15.8601C20.1109 18.1279 18.2724 19.9663 16.0046 19.9663C13.7369 19.9663 11.8984 18.1279 11.8984 15.8601Z"
+                    fill="#F2F3B5"
+                  />
+                  <ellipse cx="16.1464" cy="23.3642" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                  <ellipse cx="16.1464" cy="8.497" rx="0.849561" ry="1.27434" fill="#183C1A" />
+                  <ellipse
+                    cx="19.8651"
+                    cy="22.3683"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-30 19.8651 22.3683)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="12.4276"
+                    cy="9.49329"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-30 12.4276 9.49329)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="22.5831"
+                    cy="19.6475"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-60 22.5831 19.6475)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="9.70808"
+                    cy="12.2139"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-60 9.70808 12.2139)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="23.5868"
+                    cy="15.9317"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-90 23.5868 15.9317)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="8.71184"
+                    cy="15.9317"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-90 8.71184 15.9317)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="9.71008"
+                    cy="19.6466"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-120 9.71008 19.6466)"
+                    fill="#183C1A"
+                  />
+                  <ellipse
+                    cx="12.4249"
+                    cy="22.37"
+                    rx="0.849561"
+                    ry="1.27434"
+                    transform="rotate(-150 12.4249 22.37)"
+                    fill="#183C1A"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_12265_2027"
+                      x1="26.4011"
+                      y1="10.8796"
+                      x2="30.4011"
+                      y2="20.1596"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#183C1A" stop-opacity="0.25" />
+                      <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </a>
+
+              <nav class="hidden items-center gap-7 lg:flex">
+                <!-- PLATFORM -->
+                <div class="relative">
+                  <button
+                    @click="open = !open"
+                    class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                    :class="open ? 'text-Theme-Green' : 'text-Theme-Black'"
+                  >
+                    Platform
+                    <svg
+                      class="h-4 w-4 transition duration-300"
+                      :class="open ? 'rotate-180' : ''"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 8L10 12L6 8"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <a
+                  href="./templates"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Templates
+                </a>
+
+                <a
+                  href="./pricing"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Pricing
+                </a>
+
+                <a
+                  href="./blog"
+                  class="text-sm font-medium text-Theme-Black transition-all duration-500 hover:text-Theme-Green"
+                >
+                  Blog
+                </a>
+              </nav>
+
+              <div class="flex items-center gap-4">
+                <!-- desktop button -->
+                <a
+                  href="https://app.kiwiform.com"
+                  target="_blank"
+                  class="hidden lg:inline-flex py-2 px-5 rounded-lg hover:text-white text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+                >
+                  Get Started
+                </a>
+
+                <!-- mobile hamburger -->
+                <button
+                  @click="mobileMenu = !mobileMenu"
+                  class="flex lg:hidden items-center justify-center w-10 h-10 text-Theme-Black"
+                >
+                  <!-- hamburger -->
+                  <svg
+                    x-show="!mobileMenu"
+                    x-transition
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M4 7H20"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M4 12H20"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+
+                  <!-- close -->
+                  <svg
+                    x-show="mobileMenu"
+                    x-transition
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    style="display: none"
+                  >
+                    <path
+                      d="M6 6L18 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M18 6L6 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- MOBILE MENU -->
+            <div
+              x-show="mobileMenu"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 -translate-y-3"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-3"
+              class="lg:hidden gap-px w-full"
+              style="display: none"
+            >
+              <!-- left spacer -->
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
+
+              <!-- center -->
+              <div class="w-full md:col-span-12 bg-white rounded-[10px] overflow-hidden">
+                <div class="flex flex-col items-center text-center">
+                  <div
+                    class="relative flex items-center justify-center flex-col gap-4 py-4 border-b border-[#E2DCDC] w-full"
+                  >
+                    <button
+                      @click="open1 = !open1"
+                      class="flex items-center gap-1 text-sm font-medium transition-all duration-500 hover:text-Theme-Green"
+                      :class="open1 ? 'text-Theme-Green' : 'text-Theme-Black'"
+                    >
+                      Platform
+                      <svg
+                        class="h-4 w-4 transition duration-300"
+                        :class="open1 ? 'rotate-180' : ''"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14 8L10 12L6 8"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      x-show="open1"
+                      @click.outside="open1 = false"
+                      @click="if ($event.target.closest('a')) closeMenus()"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 -translate-y-2"
+                      style="display: none"
+                      class="bg-transparent gap-px w-full col-span-full px-4"
+                    >
+                      <!-- main-container  -->
+
+                      <!-- place content here -->
+
+                      <div class="w-full grid grid-cols-1 gap-0 bg-white">
+                        <!-- LEFT -->
+                        <div class="col-span-1 px-px pt-px bg-[#E2DCDC]">
+                          <!-- HEADING -->
+                          <div
+                            class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]"
+                          >
+                            Product
+                          </div>
+
+                          <!-- MENU GRID -->
+                          <div class="w-full flex flex-col gap-px">
+                            <div class="grid grid-cols-1 gap-px">
+                              <!-- ITEM -->
+                              <a
+                                href="./help/overview"
+                                class="bg-white flex items-center justify-left gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Overview
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    A clear snapshot of all key features.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/responses-analytics"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M7.22168 2.55469H8.77724"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M7.22168 7.22168H13.4439"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Responses & Analytics
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Understand responses with clear insights.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/form-building"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="25"
+                                    viewBox="0 0 30 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1 17.7998H17.8"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M1 23.4004H17.8"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Form Builder
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Create and customize forms with ease.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/integrations-automations"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <rect
+                                      x="13.25"
+                                      y="6.25"
+                                      width="6.99976"
+                                      height="6.99976"
+                                      rx="0.777751"
+                                      transform="rotate(90 13.25 6.25)"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M23.7397 18.5V28.9996"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M29.0005 23.7393L18.5008 23.7393"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Integrations
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Connect forms with your essential tools.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/logic-flow"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="25"
+                                    viewBox="0 0 30 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1 6.06738H19.6672"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                    />
+                                    <path
+                                      d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <rect
+                                      x="19.6553"
+                                      y="1"
+                                      width="9.34468"
+                                      height="9.34468"
+                                      rx="1.36115"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Logic & Flow
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Build dynamic forms with smart logic.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <!-- ITEM -->
+                              <a
+                                href="./help/supported-languages"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                      fill="#E8F5B7"
+                                    />
+                                    <path
+                                      d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Languages & Translations
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Create forms for a global audience.
+                                  </p>
+                                </div>
+                              </a>
+
+                              <a
+                                href="./help/design-themes"
+                                class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                              >
+                                <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                                  <svg
+                                    width="30"
+                                    height="30"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                                      fill="#E8F5B7"
+                                      stroke="#B8DD2F"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M9.40039 19.2025L9.41221 19.1992"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                    <path
+                                      d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                                      stroke="#183C1A"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div>
+                                  <h3 class="text-left text-sm font-medium text-Theme-Black">
+                                    Design & Themes
+                                  </h3>
+
+                                  <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                                    Design branded forms that look great.
+                                  </p>
+                                </div>
+                              </a>
+                              <div class="w-full bg-white"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="col-span-1 bg-white border-x border-b border-[#E2DCDC]">
+                          <div class="p-[5px] h-[calc(100%-50px)]">
+                            <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                              <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">
+                                FORM TEMPLATES
+                              </p>
+                              <svg
+                                width="254"
+                                height="78"
+                                viewBox="0 0 254 78"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect x="33" width="178" height="78" rx="10" fill="white" />
+                                <rect x="38" y="5" width="68" height="68" rx="5" fill="#E8F5B7" />
+                                <path
+                                  d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                                  fill="#183C1A"
+                                />
+                                <path
+                                  d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                                  fill="#B8DD2F"
+                                />
+                                <ellipse
+                                  cx="72.194"
+                                  cy="49.1233"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="72.194"
+                                  cy="28.6809"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="82.4156"
+                                  cy="38.9031"
+                                  rx="1.16814"
+                                  ry="1.75222"
+                                  transform="rotate(-90 82.4156 38.9031)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="61.9727"
+                                  cy="38.9031"
+                                  rx="1.16814"
+                                  ry="1.75222"
+                                  transform="rotate(-90 61.9727 38.9031)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                                  fill="#183C1A"
+                                />
+                                <ellipse
+                                  cx="1.16815"
+                                  cy="1.75222"
+                                  rx="1.16815"
+                                  ry="1.75222"
+                                  transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                                  fill="#183C1A"
+                                />
+                                <path
+                                  d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                                  fill="url(#paint0_linear_7194_667)"
+                                />
+                                <path
+                                  d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
+                                  stroke="#183C1A"
+                                  stroke-width="2.11063"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <rect x="121" y="19" width="70" height="8" rx="4" fill="#E8F5B7" />
+                                <rect x="121" y="35" width="50" height="8" rx="4" fill="#E8F5B7" />
+                                <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
+                                <path
+                                  d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                                  fill="url(#paint1_linear_7194_667)"
+                                />
+                                <path
+                                  d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                                  fill="url(#paint2_linear_7194_667)"
+                                />
+                                <defs>
+                                  <linearGradient
+                                    id="paint0_linear_7194_667"
+                                    x1="86.2999"
+                                    y1="31.9588"
+                                    x2="91.7999"
+                                    y2="44.7188"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="#183C1A" stop-opacity="0.25" />
+                                    <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="paint1_linear_7194_667"
+                                    x1="28"
+                                    y1="39"
+                                    x2="-7.1631e-08"
+                                    y2="39"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="white" />
+                                    <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
+                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="paint2_linear_7194_667"
+                                    x1="216"
+                                    y1="39"
+                                    x2="254"
+                                    y2="39"
+                                    gradientUnits="userSpaceOnUse"
+                                  >
+                                    <stop stop-color="white" />
+                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                  </linearGradient>
+                                </defs>
+                              </svg>
+                              <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                                Templates built for real use cases
+                              </h5>
+                              <p class="text-xs leading-5 text-Theme-Black mb-5">
+                                Start faster choose a template, customize it, and go live in
+                                minutes. Focus on collecting data.
+                              </p>
+                              <a
+                                href="./templates"
+                                class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
+                                >Kiwiform Templates</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a
+                    href="./templates"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Templates
+                  </a>
+
+                  <a
+                    href="./pricing"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Pricing
+                  </a>
+
+                  <a
+                    href="./blog"
+                    class="w-full border-b border-[#E2DCDC] py-4 text-sm font-medium text-Theme-Black"
+                  >
+                    Blog
+                  </a>
+
+                  <div class="py-5">
+                    <a
+                      href="https://app.kiwiform.com/"
+                      class="inline-flex rounded-lg bg-[#B8DD2F] px-5 py-2 text-xs font-medium text-[#183C1A]"
+                    >
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- right spacer -->
+              <div class="max-md:w-4 md:col-span-1 bg-white rounded-[10px]"></div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <div
+        x-show="open"
+        @click="open = false"
+        x-transition.opacity
+        style="display: none"
+        class="fixed inset-x-0 top-[61px] bottom-0 bg-black/30 z-0"
+      ></div>
+
+      <!-- dropdown  -->
+      <div
+        x-show="open"
+        @click.outside="open = false"
+        @click="if ($event.target.closest('a')) closeMenus()"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        style="display: none"
+        class="relative z-10 bg-transparent flex md:grid grid-cols-14 gap-px w-full col-span-full"
+      >
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full md:col-span-12 bg-[#E2DCDC] 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-[10px] hidden 2xl:block"></div>
+          <!-- place content here -->
+          <div class="col-span-11 bg-white rounded-[10px] overflow-hidden">
+            <div class="w-full grid grid-cols-3 gap-5 bg-white">
+              <!-- LEFT -->
+              <div class="col-span-2 pr-px bg-[#E2DCDC]">
+                <!-- HEADING -->
+                <div class="bg-white text-sm font-medium py-4 px-5 border-b border-[#E2DCDC]">
+                  Product
+                </div>
+
+                <!-- MENU GRID -->
+                <div class="w-full flex flex-col gap-px">
+                  <div class="grid grid-cols-2 gap-px">
+                    <!-- ITEM -->
+                    <a
+                      href="./help/overview"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.1668 1V3.08378M23.1668 3.08378C24.2022 3.08378 25.1396 3.50342 25.8183 4.1819M23.1668 3.08378C22.1315 3.08378 21.1941 3.50342 20.5154 4.1819M25.8183 4.1819C26.497 4.86053 26.9168 5.79813 26.9168 6.83377M25.8183 4.1819L27.2917 2.70854M20.5154 4.1819C19.8367 4.86053 19.4169 5.79813 19.4169 6.83377M20.5154 4.1819L19.0421 2.70854M23.1668 10.5838V12.6667M23.1668 10.5838C24.2025 10.5838 25.1401 10.1639 25.8187 9.4852M23.1668 10.5838C22.1311 10.5838 21.1936 10.1639 20.5149 9.4852M25.8187 9.4852C26.4971 8.8066 26.9168 7.86919 26.9168 6.83377M25.8187 9.4852L27.2917 10.9581M20.5149 9.4852C19.8365 8.8066 19.4169 7.86919 19.4169 6.83377M20.5149 9.4852L19.0421 10.9581M29.0002 6.83333L26.9168 6.83377M19.4169 6.83377L17.3335 6.83333"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M17.6295 26.599C17.3335 25.8844 17.3335 24.9784 17.3335 23.1663C17.3335 21.3543 17.3335 20.4483 17.6295 19.7337C18.0242 18.7808 18.7813 18.0237 19.7342 17.629C20.4488 17.333 21.3548 17.333 23.1668 17.333C24.9789 17.333 25.8849 17.333 26.5995 17.629C27.5524 18.0237 28.3095 18.7808 28.7041 19.7337C29.0002 20.4483 29.0002 21.3543 29.0002 23.1663C29.0002 24.9784 29.0002 25.8844 28.7041 26.599C28.3095 27.5519 27.5524 28.309 26.5995 28.7037C25.8849 28.9997 24.9789 28.9997 23.1668 28.9997C21.3548 28.9997 20.4488 28.9997 19.7342 28.7037C18.7813 28.309 18.0242 27.5519 17.6295 26.599Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1.29602 26.599C1 25.8844 1 24.9784 1 23.1663C1 21.3543 1 20.4483 1.29602 19.7337C1.69073 18.7808 2.44779 18.0237 3.40067 17.629C4.11534 17.333 5.02134 17.333 6.83333 17.333C8.64532 17.333 9.55132 17.333 10.266 17.629C11.2189 18.0237 11.976 18.7808 12.3706 19.7337C12.6667 20.4483 12.6667 21.3543 12.6667 23.1663C12.6667 24.9784 12.6667 25.8844 12.3706 26.599C11.976 27.5519 11.2189 28.309 10.266 28.7037C9.55132 28.9997 8.64532 28.9997 6.83333 28.9997C5.02134 28.9997 4.11534 28.9997 3.40067 28.7037C2.44779 28.309 1.69073 27.5519 1.29602 26.599Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1.29602 10.266C1 9.55132 1 8.64532 1 6.83333C1 5.02134 1 4.11534 1.29602 3.40067C1.69073 2.44779 2.44779 1.69073 3.40067 1.29602C4.11534 1 5.02134 1 6.83333 1C8.64532 1 9.55132 1 10.266 1.29602C11.2189 1.69073 11.976 2.44779 12.3706 3.40067C12.6667 4.11534 12.6667 5.02134 12.6667 6.83333C12.6667 8.64532 12.6667 9.55132 12.3706 10.266C11.976 11.2189 11.2189 11.976 10.266 12.3706C9.55132 12.6667 8.64532 12.6667 6.83333 12.6667C5.02134 12.6667 4.11534 12.6667 3.40067 12.3706C2.44779 11.976 1.69073 11.2189 1.29602 10.266Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Overview</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          A clear snapshot of all key features.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/ai-form-builder"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M22 1H23C26.3137 1 29 3.68629 29 7V8"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M15 1H7C3.68629 1 1 3.68629 1 7V23C1 26.3137 3.68629 29 7 29H23C26.3137 29 29 26.3137 29 23V15"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.5 11C12.2368 11 12.0014 11.1639 11.9101 11.4107L11.4774 12.5799C10.8901 14.1671 10.6515 14.7733 10.2124 15.2124C9.7733 15.6515 9.16707 15.8901 7.57994 16.4774L6.41073 16.9101C6.16388 17.0014 6 17.2368 6 17.5C6 17.7632 6.16388 17.9986 6.41073 18.0899L7.57994 18.5226C9.16707 19.1099 9.7733 19.3485 10.2124 19.7876C10.6515 20.2267 10.8901 20.8329 11.4774 22.42L11.9101 23.5893C12.0014 23.8361 12.2368 24 12.5 24C12.7632 24 12.9986 23.8361 13.0899 23.5893L13.5226 22.42C14.1099 20.8329 14.3485 20.2267 14.7876 19.7876C15.2267 19.3485 15.8329 19.1099 17.42 18.5226L18.5893 18.0899C18.8361 17.9986 19 17.7632 19 17.5C19 17.2368 18.8361 17.0014 18.5893 16.9101L17.42 16.4774C15.8329 15.8901 15.2267 15.6515 14.7876 15.2124C14.3485 14.7733 14.1099 14.1671 13.5226 12.5799L13.0899 11.4107C12.9986 11.1639 12.7632 11 12.5 11Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M20.5 6C20.2071 6 19.9451 6.18237 19.8435 6.45707L19.6371 7.01469C19.3443 7.80595 19.2591 7.99311 19.1261 8.12613C18.9931 8.25916 18.806 8.34437 18.0147 8.63716L17.4571 8.8435C17.1824 8.94515 17 9.20709 17 9.5C17 9.79291 17.1824 10.0548 17.4571 10.1565L18.0147 10.3628C18.806 10.6556 18.9931 10.7408 19.1261 10.8739C19.2591 11.0069 19.3443 11.194 19.6371 11.9853L19.8435 12.5429C19.9451 12.8176 20.2071 13 20.5 13C20.7929 13 21.0549 12.8176 21.1565 12.5429L21.3629 11.9853C21.6557 11.194 21.7409 11.0069 21.8739 10.8739C22.0069 10.7408 22.1941 10.6556 22.9853 10.3628L23.5429 10.1565C23.8176 10.0548 24 9.79291 24 9.5C24 9.20709 23.8176 8.94515 23.5429 8.8435L22.9853 8.63716C22.1941 8.34437 22.0069 8.25916 21.8739 8.12613C21.7409 7.99311 21.6557 7.80595 21.3629 7.01469L21.1565 6.45707C21.0549 6.18237 20.7929 6 20.5 6Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Kiwizard AI</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Build forms faster with Kiwizard AI
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/form-building"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="25"
+                          viewBox="0 0 30 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.4 1H6.6C4.63982 1 3.65972 1 2.91103 1.38147C2.25247 1.71704 1.71704 2.25247 1.38147 2.91103C1 3.65972 1 4.63982 1 6.6C1 8.56018 1 9.54028 1.38147 10.289C1.71704 10.9476 2.25247 11.4829 2.91103 11.8185C3.65972 12.2 4.63982 12.2 6.6 12.2H23.4C25.3601 12.2 26.3403 12.2 27.089 11.8185C27.7476 11.4829 28.2829 10.9476 28.6185 10.289C29 9.54028 29 8.56018 29 6.6C29 4.63982 29 3.65972 28.6185 2.91103C28.2829 2.25247 27.7476 1.71704 27.089 1.38147C26.3403 1 25.3601 1 23.4 1Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M23.3998 5.20022C23.3998 5.20022 21.3376 8.0002 20.5998 8.0002C19.8619 8.0002 17.7998 5.2002 17.7998 5.2002"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1 17.7998H17.8"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M1 23.4004H17.8"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Form Builder</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Create and customize forms with ease.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/responses-analytics"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.22168 2.55469H8.77724"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M7.22168 7.22168H13.4439"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M4.11133 27.4442C5.77722 24.4156 8.03567 16.5847 12.3656 16.5847C15.3582 16.5847 16.1331 20.4002 19.0658 20.4002C24.1114 20.4002 23.38 11.8887 29.0002 11.8887"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M29 29H11.8889C6.75582 29 4.18928 29 2.59465 27.4054C1 25.8106 1 23.2441 1 18.1111V1"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Responses & Analytics</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Understand responses with clear insights.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/logic-flow"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="25"
+                          viewBox="0 0 30 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 6.06738H19.6672"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M19.6668 19.7113H11.4443C9.48057 19.7113 7.88865 18.1155 7.88865 16.1471V7.84944C7.88865 6.86524 6.29673 6.06738 4.333 6.06738H2.55518"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <rect
+                            x="19.6553"
+                            y="1"
+                            width="9.34468"
+                            height="9.34468"
+                            rx="1.36115"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M19.6553 16.0164C19.6553 15.2647 20.2647 14.6553 21.0164 14.6553H27.6388C28.3906 14.6553 29 15.2647 29 16.0164V22.6388C29 23.3906 28.3906 24 27.6388 24H21.0164C20.2647 24 19.6553 23.3906 19.6553 22.6388V16.0164Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Logic & Flow</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Build dynamic forms with smart logic.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/integrations-automations"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M23.7492 12.3746V7.22201C23.7492 4.28893 23.7492 2.82238 22.838 1.91119C21.9268 1 20.4603 1 17.5272 1H7.22201C4.28893 1 2.82238 1 1.91119 1.91119C1 2.82238 1 4.28893 1 7.22202V17.5272C1 20.4603 1 21.9268 1.91119 22.838C2.82238 23.7492 4.28893 23.7492 7.22201 23.7492H12.3746"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <rect
+                            x="13.25"
+                            y="6.25"
+                            width="6.99976"
+                            height="6.99976"
+                            rx="0.777751"
+                            transform="rotate(90 13.25 6.25)"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M23.7397 18.5V28.9996"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M29.0005 23.7393L18.5008 23.7393"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Integrations</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Connect forms with your essential tools.
+                        </p>
+                      </div>
+                    </a>
+
+                    <a
+                      href="./help/design-themes"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 15C1 22.7319 7.26801 29 15 29C18.8889 29 17.3333 27.4444 17.3333 27.4444C11.8889 22 16.1328 18.1821 23.5556 19.6667C25.7422 20.104 27.0482 19.694 27.7726 19.2513C27.7758 19.2494 27.7678 19.2543 28.2381 18.5677C28.7084 17.8812 28.7309 17.7569 28.7759 17.5085C28.9231 16.6946 29 15.8563 29 15C29 7.26801 22.7319 1 15 1C7.26801 1 1 7.26801 1 15Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M9.40039 19.2025L9.41221 19.1992"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10.8 13.6C12.3464 13.6 13.6 12.3464 13.6 10.8C13.6 9.2536 12.3464 8 10.8 8C9.2536 8 8 9.2536 8 10.8C8 12.3464 9.2536 13.6 10.8 13.6Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M21.3007 13.6004C22.4605 13.6004 23.4007 12.6602 23.4007 11.5004C23.4007 10.3406 22.4605 9.40039 21.3007 9.40039C20.1409 9.40039 19.2007 10.3406 19.2007 11.5004C19.2007 12.6602 20.1409 13.6004 21.3007 13.6004Z"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">Design & Themes</h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Design branded forms that look great.
+                        </p>
+                      </div>
+                    </a>
+
+                    <!-- ITEM -->
+                    <a
+                      href="./help/supported-languages"
+                      class="bg-white flex items-center gap-3 py-4 px-[18px] transition hover:bg-[#FBFBFB]"
+                    >
+                      <div class="flex h-10 w-10 items-center justify-center rounded-lg">
+                        <svg
+                          width="30"
+                          height="30"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                          />
+                          <path
+                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                            fill="#E8F5B7"
+                            stroke="#B8DD2F"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M8.12305 9.97695H14.423M14.423 9.97695H22.123M14.423 9.97695V7.87695M10.223 21.877C13.723 19.077 17.923 13.477 18.623 9.97695M12.323 13.477C13.023 15.577 15.823 19.077 17.223 19.777"
+                            stroke="#183C1A"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <h3 class="text-sm font-medium text-Theme-Black">
+                          Languages & Translations
+                        </h3>
+
+                        <p class="mt-0.5 text-[12px] leading-5 text-[#7D7676]">
+                          Create forms for a global audience.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="w-full h-[50px] bg-white"></div>
+                </div>
+              </div>
+
+              <!-- RIGHT -->
+              <div class="col-span-1 bg-white border-l border-[#E2DCDC]">
+                <div class="p-[5px] h-[calc(100%-50px)]">
+                  <div class="bg-[#F2F3B5]/25 p-[18px] h-full">
+                    <p class="text-sm font-medium text-[#A2C92A] mb-10 uppercase">FORM TEMPLATES</p>
+                    <svg
+                      width="254"
+                      height="78"
+                      viewBox="0 0 254 78"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect x="33" width="178" height="78" rx="10" fill="white" />
+                      <rect x="38" y="5" width="68" height="68" rx="5" fill="#E8F5B7" />
+                      <path
+                        d="M50 39C50 26.8497 59.8497 17 72 17C84.1503 17 94 26.8497 94 39C94 51.1502 84.1503 60.9999 72 60.9999C59.8497 60.9999 50 51.1502 50 39Z"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M72.0002 19.2002C73.0015 19.2002 73.9855 19.2747 74.9468 19.4184C77.4711 19.7957 79.0402 22.1767 79.0402 24.7291V28.8855C79.0402 30.5836 80.4168 31.9602 82.1149 31.9602H86.2713C88.8237 31.9602 91.2047 33.5292 91.582 36.0536C91.7257 37.0149 91.8002 37.9988 91.8002 39.0002C91.8002 49.9354 82.9354 58.8001 72.0002 58.8001C61.065 58.8001 52.2002 49.9354 52.2002 39.0002C52.2002 28.0649 61.065 19.2002 72.0002 19.2002Z"
+                        fill="#B8DD2F"
+                      />
+                      <ellipse cx="72.194" cy="49.1233" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                      <ellipse cx="72.194" cy="28.6809" rx="1.16815" ry="1.75222" fill="#183C1A" />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.866026 -0.499999 0.500001 0.866025 75.4189 46.8223)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.866026 -0.499999 0.500001 0.866025 65.1968 29.1182)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.500001 -0.866025 0.866026 0.499999 78.9438 44.1484)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(0.5 -0.866025 0.866026 0.499999 61.241 33.9277)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="82.4156"
+                        cy="38.9031"
+                        rx="1.16814"
+                        ry="1.75222"
+                        transform="rotate(-90 82.4156 38.9031)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="61.9727"
+                        cy="38.9031"
+                        rx="1.16814"
+                        ry="1.75222"
+                        transform="rotate(-90 61.9727 38.9031)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(-0.500001 -0.866025 0.866026 -0.499999 62.4089 45.9004)"
+                        fill="#183C1A"
+                      />
+                      <ellipse
+                        cx="1.16815"
+                        cy="1.75222"
+                        rx="1.16815"
+                        ry="1.75222"
+                        transform="matrix(-0.866026 -0.499999 0.5 -0.866025 67.2188 49.8574)"
+                        fill="#183C1A"
+                      />
+                      <path
+                        d="M79.6692 31.2988L91.7999 31.9588L92.1349 36.5851C92.2194 37.7515 92.1897 38.9233 92.0464 40.0838L92.0028 40.4365C91.8678 41.5291 91.6327 42.6069 91.3004 43.6564L90.9639 44.7188L85.6399 38.1188L79.6692 31.2988Z"
+                        fill="url(#paint0_linear_7194_667)"
+                      />
+                      <path
+                        d="M68.2876 38.3581L71.2209 41.2915L77.0876 35.4248"
+                        stroke="#183C1A"
+                        stroke-width="2.11063"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <rect x="121" y="19" width="70" height="8" rx="4" fill="#E8F5B7" />
+                      <rect x="121" y="35" width="50" height="8" rx="4" fill="#E8F5B7" />
+                      <rect x="121" y="51" width="30" height="8" rx="4" fill="#E8F5B7" />
+                      <path
+                        d="M0 0H18C23.5228 0 28 4.47715 28 10V68C28 73.5229 23.5228 78 18 78H0V0Z"
+                        fill="url(#paint1_linear_7194_667)"
+                      />
+                      <path
+                        d="M216 10C216 4.47715 220.477 0 226 0H254V78H226C220.477 78 216 73.5229 216 68V10Z"
+                        fill="url(#paint2_linear_7194_667)"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_7194_667"
+                          x1="86.2999"
+                          y1="31.9588"
+                          x2="91.7999"
+                          y2="44.7188"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="#183C1A" stop-opacity="0.25" />
+                          <stop offset="1" stop-color="#183C1A" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient
+                          id="paint1_linear_7194_667"
+                          x1="28"
+                          y1="39"
+                          x2="-7.1631e-08"
+                          y2="39"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="white" />
+                          <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
+                          <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient
+                          id="paint2_linear_7194_667"
+                          x1="216"
+                          y1="39"
+                          x2="254"
+                          y2="39"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stop-color="white" />
+                          <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <h5 class="text-lg leading-6 font-Inter text-Theme-Black mt-5 mb-2.5">
+                      Templates built for real use cases
+                    </h5>
+                    <p class="text-xs leading-5 text-Theme-Black mb-5">
+                      Start faster choose a template, customize it, and go live in minutes. Focus on
+                      collecting data.
+                    </p>
+                    <a
+                      href="./templates"
+                      class="w-full inline-flex justify-center rounded-lg py-2.5 px-5 text-center text-base leading-5 font-medium text-Theme-Black bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green"
+                      >Kiwiform Templates</a
+                    >
+                  </div>
+                </div>
+                <div class="w-full h-[50px] bg-white border-t border-[#E2DCDC]"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-[10px] hidden 2xl:block"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+      <!-- hero -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+          >
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px] lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4"
+            >
+              <!-- badge -->
+              <div
+                class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green"
+              >
+                Feedback & Research Collection
+              </div>
+              <h1
+                class="mt-6 mb-2.5 text-center w-full max-w-[680px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                Survey Form Builder for Feedback, <br />
+                Research, and Insights
+              </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter"
+              >
+                Create surveys that help collect feedback, understand opinions, measure
+                satisfaction, and gather research data through engaging response experiences.
+              </p>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter"
+              >
+                Surveys help organizations understand the people they serve. Whether collecting
+                customer feedback, measuring employee engagement, conducting market research,
+                evaluating experiences, or gathering community input, surveys provide a structured
+                way to collect information that supports better decisions and long-term improvement.
+                A modern Survey Form Builder should make it easy to design surveys, encourage
+                participation, and organize responses into useful insights. <br />
+                Kiwiform helps teams create surveys that are simple to build and easy to complete.
+                As a modern Survey Form Builder, Kiwiform combines conversational experiences,
+                flexible question formats, conditional logic, customization tools, response
+                management, and reporting capabilities in a single platform. From customer feedback
+                surveys to research initiatives, Kiwiform helps organizations collect meaningful
+                responses while keeping the experience engaging for participants.
+              </p>
+
+              <a
+                href="https://app.kiwiform.com"
+                class="inline-flex py-2.5 px-5 rounded-md text-white bg-Theme-Green transition-all duration-500 hover:bg-[#B8DD2F] hover:text-Theme-Black text-sm font-medium"
+              >
+                Create Your Survey
+              </a>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+      <!-- Understanding Respondents  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                >
+                  Understanding Respondents
+                </p>
+                <h2 class="heading-h2 text-center lg:text-left">
+                  Turn Feedback Into Clearer Decisions
+                </h2>
+
+                <p
+                  class="w-full text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Collect meaningful responses that help teams understand experiences, opinions, and
+                  opportunities.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Organizations use surveys to understand customers, employees, communities, and
+                  stakeholders more effectively. Surveys help collect feedback, evaluate
+                  experiences, measure satisfaction, and uncover insights that support better
+                  decisions and continuous improvement. <br />
+                  A modern Survey Form Builder should do more than collect responses. Kiwiform helps
+                  teams create engaging survey experiences, improve participation, gather meaningful
+                  feedback, and turn responses into insights that support research, planning, and
+                  organizational growth.
+                </p>
+              </div>
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
+                <img
+                  src="/images/uploads/survey-form-builder-1.png"
+                  alt="form fields image"
+                  class="w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Survey Building Capabilities  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20"
+              >
+                <p
+                  class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5"
+                >
+                  Survey Building Capabilities
+                </p>
+                <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                  Everything You Need in a Survey Form Builder
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                  Build, distribute, manage, and analyze surveys from a single platform.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto"
+                >
+                  Different survey projects require different approaches. Some surveys focus on
+                  customer satisfaction, while others support employee engagement, market research,
+                  product feedback, academic studies, or operational planning. A Survey Form Builder
+                  should provide the flexibility needed to support these different objectives while
+                  keeping survey creation efficient and manageable. <br />
+                  The best survey experiences balance ease of participation with quality data
+                  collection. From survey design and question management to response collection and
+                  reporting, organizations need tools that help them collect useful information
+                  without creating unnecessary friction for respondents.
+                </p>
+              </div>
+            </div>
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-[10px] flex items-center bg-white justify-center flex-col p-4 lg:px-6 lg:py-10"
+              >
+                <p
+                  class="w-full text-base leading-7 text-Theme-Black mt-2.5 text-center max-w-[1006px] mx-auto w-full"
+                >
+                  Kiwiform provides a complete set of survey-building tools designed for modern
+                  feedback collection. Create surveys with conversational experiences, personalize
+                  question paths with conditional logic, distribute surveys across channels, and
+                  manage responses through a flexible platform built for feedback, research, and
+                  insight generation.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-2.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Survey Creation</h4>
+                  <p class="card-para">
+                    Build surveys for feedback, research, and evaluation goals.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-3.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Flexible Questions</h4>
+                  <p class="card-para">
+                    Collect responses through multiple survey question formats.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-4.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Adaptive Logic</h4>
+                  <p class="card-para">
+                    Adapt survey paths based on participant answers or responses.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-5.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Personalized Experiences</h4>
+                  <p class="card-para">Deliver relevant survey questions to different audiences.</p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-6.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Anonymous Collection</h4>
+                  <p class="card-para">
+                    Support confidential and privacy-focused survey participation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-7.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Multi-Channel Distribution</h4>
+                  <p class="card-para">
+                    Share surveys across websites, email campaigns, and channels.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-8.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Response Management</h4>
+                  <p class="card-para">
+                    Deliver relevant survey questions to different audiences effectively.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-9.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Report Insights</h4>
+                  <p class="card-para">
+                    Analyze survey results and identify meaningful response patterns.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10! sm:col-span-2 lg:col-span-1">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-10.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Cross-Device Access</h4>
+                  <p class="card-para">
+                    Deliver survey experiences seamlessly across every device.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Survey Applications  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20"
+              >
+                <p
+                  class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5"
+                >
+                  Survey Applications
+                </p>
+                <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                  One Survey Form Builder <br />
+                  for Every Feedback Program
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                  Create surveys that support feedback, research, evaluation, and organizational
+                  learning.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto"
+                >
+                  Surveys are used across nearly every industry because organizations need reliable
+                  ways to collect opinions, measure experiences, and understand changing needs.
+                  Different goals require different survey structures, audiences, and reporting
+                  requirements, making flexibility essential when designing survey programs. A
+                  versatile Survey Form Builder should support a wide range of survey use cases
+                  while helping organizations maintain consistency in how feedback is collected and
+                  analyzed. From short pulse surveys to large-scale research projects, surveys help
+                  teams gather information that informs action. <br />
+                  Whether the goal is understanding customers, evaluating employee experiences,
+                  measuring satisfaction, or conducting research, surveys provide a structured way
+                  to capture information and uncover meaningful insights. As survey initiatives
+                  grow, organizations need tools that can support diverse objectives while
+                  maintaining a consistent experience for both creators and respondents.
+                </p>
+              </div>
+            </div>
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-[10px] flex items-center bg-white justify-center flex-col p-4 lg:px-6 lg:py-10"
+              >
+                <p
+                  class="w-full text-base leading-7 text-Theme-Black mt-2.5 text-center max-w-[1006px] mx-auto w-full"
+                >
+                  Kiwiform helps organizations create surveys that align with real-world feedback
+                  and research initiatives. Whether measuring satisfaction, collecting opinions,
+                  evaluating programs, or conducting research, Kiwiform provides a flexible
+                  foundation for survey-driven decision-making.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-11.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Customer Feedback Surveys</h4>
+                  <p class="card-para">
+                    Collect feedback about customer experiences, expectations, and satisfaction.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-12.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Customer Satisfaction Surveys</h4>
+                  <p class="card-para">
+                    Measure satisfaction levels across products, services, and interactions.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-13.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Employee Engagement Surveys</h4>
+                  <p class="card-para">
+                    Gather employee perspectives on workplace culture and experiences.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-14.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Event Feedback Surveys</h4>
+                  <p class="card-para">
+                    Gather attendee feedback about events, sessions, and experiences.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-15.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Market Research Surveys</h4>
+                  <p class="card-para">
+                    Collect opinions, preferences, and audience research insights.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-16.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Product Feedback Surveys</h4>
+                  <p class="card-para">
+                    Understand how users evaluate products, features, and updates.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-17.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Brand Awareness Surveys</h4>
+                  <p class="card-para">
+                    Measure brand recognition, perception, and audience familiarity.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10!">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-18.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Net Promoter Score (NPS) Surveys</h4>
+                  <p class="card-para">
+                    Evaluate customer loyalty, advocacy, and recommendation likelihood.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-Theme px-0! pt-0! gap-5 pb-10! sm:col-span-2 lg:col-span-1">
+                <div class="p-2.5">
+                  <img src="/images/uploads/survey-form-builder-19.png" alt="form img" />
+                </div>
+                <div class="">
+                  <h4 class="card-title mt-0 mb-2.5">Education Surveys</h4>
+                  <p class="card-para">
+                    Collect feedback from students, educators, and learning communities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white w-full py-10 flex items-center justify-center rounded-[10px] px-2">
+              <a
+                href="https://app.kiwiform.com"
+                class="inline-flex py-2.5 px-5 rounded-md hover:text-white bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+              >
+                Build Your First Survey
+              </a>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Survey Response Insights -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-Theme-bg">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-9"
+              >
+                <p
+                  class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                >
+                  Survey Response Insights
+                </p>
+                <h2 class="heading-h2 text-center lg:text-left">
+                  Turn Survey Responses Into Meaningful Insights
+                </h2>
+
+                <p
+                  class="w-full text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Discover patterns, trends, and opportunities from survey responses and feedback.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-2.5 xl:mt-5 text-center lg:text-left"
+                >
+                  Collecting survey responses is only the beginning. The value of a survey comes
+                  from what organizations learn after responses are submitted. Surveys help teams
+                  identify patterns, understand experiences, validate assumptions, and uncover
+                  opportunities that may otherwise go unnoticed. A modern Survey Form Builder should
+                  help organizations move beyond data collection and focus on understanding the
+                  information they receive. Whether evaluating customer satisfaction, measuring
+                  employee engagement, conducting research, or gathering public opinion, survey
+                  insights help guide planning, improvement, and decision-making.
+                </p>
+              </div>
+              <div class="max-lg:rounded-10px lg:rounded-r-10px overflow-hidden">
+                <img
+                  src="/images/uploads/survey-form-builder-20.png"
+                  alt="form fields image"
+                  class="w-full h-full"
+                />
+              </div>
+            </div>
+
+            <div
+              class="max-lg:rounded-10px lg:rounded-[10px] w-full flex items-center bg-white justify-center flex-col p-4 lg:px-6 lg:py-10"
+            >
+              <p
+                class="w-full text-base leading-7 text-Theme-Black mt-2.5 text-center max-w-[1006px] mx-auto w-full"
+              >
+                Kiwiform helps teams collect and review survey responses in ways that make
+                information easier to understand and act upon. From identifying recurring themes to
+                monitoring response patterns, Kiwiform helps transform survey data into useful
+                knowledge.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-Theme-bg w-full">
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21.0758 11.625L15.4058 17.295L13.2458 14.055L8.92578 18.375"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M18.375 11.625H21.075V14.325"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10.95 28.5H19.05C25.8 28.5 28.5 25.8 28.5 19.05V10.95C28.5 4.2 25.8 1.5 19.05 1.5H10.95C4.2 1.5 1.5 4.2 1.5 10.95V19.05C1.5 25.8 4.2 28.5 10.95 28.5Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Trend Discovery</h4>
+                <p class="card-para">
+                  Identify recurring patterns across survey responses and feedback.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.1196 8.46501C23.0386 8.45151 22.9441 8.45151 22.8631 8.46501C21.0004 8.39752 19.5156 6.87224 19.5156 4.98251C19.5156 3.05228 21.0679 1.5 22.9981 1.5C24.9284 1.5 26.4806 3.06578 26.4806 4.98251C26.4671 6.87224 24.9823 8.39752 23.1196 8.46501Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.728 18.2923C23.5772 18.6027 25.6154 18.2788 27.0462 17.3204C28.9495 16.0516 28.9495 13.9729 27.0462 12.7041C25.6019 11.7457 23.5367 11.4218 21.6875 11.7457"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.88055 8.46501C6.96154 8.45151 7.05603 8.45151 7.13702 8.46501C8.99975 8.39752 10.4845 6.87224 10.4845 4.98251C10.4845 3.05228 8.93226 1.5 7.00204 1.5C5.07181 1.5 3.51953 3.06578 3.51953 4.98251C3.53303 6.87224 5.01782 8.39752 6.88055 8.46501Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.27105 18.2923C6.42182 18.6027 4.38361 18.2788 2.95281 17.3204C1.04958 16.0516 1.04958 13.9729 2.95281 12.7041C4.39711 11.7457 6.46231 11.4218 8.31155 11.7457"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15.02 18.548C14.939 18.5345 14.8445 18.5345 14.7635 18.548C12.9008 18.4805 11.416 16.9552 11.416 15.0655C11.416 13.1353 12.9683 11.583 14.8985 11.583C16.8287 11.583 18.381 13.1488 18.381 15.0655C18.3675 16.9552 16.8827 18.494 15.02 18.548Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M11.0934 22.8006C9.19021 24.0695 9.19021 26.1482 11.0934 27.417C13.2531 28.8613 16.7896 28.8613 18.9493 27.417C20.8525 26.1482 20.8525 24.0695 18.9493 22.8006C16.8031 21.3698 13.2531 21.3698 11.0934 22.8006Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Audience Understanding</h4>
+                <p class="card-para">
+                  Gain clearer visibility into respondent perspectives and behaviors.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.7501 15C21.7501 11.2721 18.7279 8.25 15.0001 8.25C11.2721 8.25 8.25 11.2721 8.25 15C8.25 18.7279 11.2721 21.75 15.0001 21.75" stroke="#183C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.7001 28.2299C16.8277 28.407 15.9247 28.5 15.0001 28.5C7.54415 28.5 1.5 22.4558 1.5 15C1.5 7.54422 7.54415 1.5 15.0001 1.5C22.4558 1.5 28.5001 7.54422 28.5001 15C28.5001 15.9246 28.407 16.8276 28.2301 17.7" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.4052 20.4163V24.4432L24.413 28.4384C24.4207 28.446 24.4337 28.4421 24.4359 28.4316L25.1088 25.1607C25.1099 25.1554 25.114 25.1513 25.1192 25.1502L28.4786 24.4481C28.4891 24.4459 28.4929 24.4329 28.4853 24.4253L24.4348 20.4202C24.4322 20.4178 24.4288 20.4163 24.4253 20.4163H20.4052ZM20.4052 20.4163L14.9844 14.9976L20.4052 20.4163Z" fill="#E8F5B7"/>
+<path d="M20.4052 20.4163V24.4432L24.413 28.4384C24.4207 28.446 24.4337 28.4421 24.4359 28.4316L25.1088 25.1607C25.1099 25.1554 25.114 25.1513 25.1192 25.1502L28.4786 24.4481C28.4891 24.4459 28.4929 24.4329 28.4853 24.4253L24.4348 20.4203C24.4322 20.4178 24.4288 20.4163 24.4253 20.4163H20.4052ZM20.4052 20.4163L14.9844 14.9976" stroke="#B8DD2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                </span>
+                <h4 class="card-title">Opportunity Identification</h4>
+                <p class="card-para">
+                  Uncover areas for improvement, growth, and optimization opportunities.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.25 26.5C2.25 27.6046 3.14543 28.5 4.25 28.5H4.75C5.85457 28.5 6.75 27.6046 6.75 26.5V15.5C6.75 14.3954 5.85457 13.5 4.75 13.5H4.25C3.14543 13.5 2.25 14.3954 2.25 15.5V26.5Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="square"
+                    />
+                    <path
+                      d="M12.75 26.4992C12.75 27.6038 13.6454 28.4993 14.75 28.4993H15.25C16.3546 28.4993 17.25 27.6038 17.25 26.4993V18.5C17.25 17.3954 16.3546 16.5 15.25 16.5H14.75C13.6454 16.5 12.75 17.3954 12.75 18.5V26.4992Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="square"
+                    />
+                    <path
+                      d="M23.25 26.5C23.25 27.6046 24.1454 28.5 25.25 28.5H25.75C26.8546 28.5 27.75 27.6046 27.75 26.5V12.5C27.75 11.3954 26.8546 10.5 25.75 10.5H25.25C24.1454 10.5 23.25 11.3954 23.25 12.5V26.5Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="square"
+                    />
+                    <path
+                      d="M6.75 6.75C6.75 7.99264 5.74264 9 4.5 9C3.25736 9 2.25 7.99264 2.25 6.75C2.25 5.50736 3.25736 4.5 4.5 4.5C5.74264 4.5 6.75 5.50736 6.75 6.75Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="square"
+                    />
+                    <path
+                      d="M27.75 3.75C27.75 4.99264 26.7426 6 25.5 6C24.2574 6 23.25 4.99264 23.25 3.75C23.25 2.50736 24.2574 1.5 25.5 1.5C26.7426 1.5 27.75 2.50736 27.75 3.75Z"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="square"
+                    />
+                    <path
+                      d="M6.66406 7.36799L12.836 9.13143M16.954 8.63321L23.5462 4.86621"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M17.25 9.75C17.25 10.9926 16.2426 12 15 12C13.7574 12 12.75 10.9926 12.75 9.75C12.75 8.50735 13.7574 7.5 15 7.5C16.2426 7.5 17.25 8.50735 17.25 9.75Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="square"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Response Analysis</h4>
+                <p class="card-para">Review feedback through organized response data and trends.</p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.89453 13.6502C10.0578 13.6502 13.3377 13.6504 16.501 13.6504"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.89453 19.5H12.751"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.89453 8.25H20.3945"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.9693 28.5H5.50786C3.62222 28.5 2.6794 28.5 2.09361 27.9142C1.50783 27.3284 1.50784 26.3856 1.50786 24.5L1.50808 5.49995C1.5081 3.61435 1.50812 2.67156 2.0939 2.08578C2.67969 1.5 3.62248 1.5 5.50808 1.5H21.7945C23.6802 1.5 24.623 1.5 25.2088 2.08581C25.7946 2.67162 25.7946 3.61445 25.7945 5.50012L25.7943 11.8037"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M28.5003 28.4996L26.25 26.25"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.9874 27.47C25.0169 27.47 27.4728 25.014 27.4728 21.9845C27.4728 18.955 25.0169 16.499 21.9874 16.499C18.9579 16.499 16.502 18.955 16.502 21.9845C16.502 25.014 18.9579 27.47 21.9874 27.47Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Performance Evaluation</h4>
+                <p class="card-para">
+                  Assess outcomes across programs, initiatives, and activities.
+                </p>
+              </div>
+
+              <div class="card-Theme">
+                <span class="w-[50px] h-[50px] flex items-center justify-center">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9878 15.0005L15.0215 11.1113"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.9863 28.4784V24.624"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10.8613 28.5H19.1113"
+                      stroke="#183C1A"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M22.1656 1.5H10.8082C10.2582 1.5 9.73563 1.69251 9.30938 2.02251L6.29813 4.42876C5.08812 5.39126 5.08812 7.21998 6.29813 8.18248L9.30938 10.5887C9.73563 10.9325 10.2719 11.1112 10.8082 11.1112H22.1656C23.4993 11.1112 24.5718 10.0387 24.5718 8.70499V3.89249C24.5718 2.57249 23.4993 1.5 22.1656 1.5Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.83594 15H19.1935C19.7435 15 20.266 15.1925 20.6922 15.5225L23.7035 17.9288C24.9135 18.8913 24.9135 20.72 23.7035 21.6825L20.6922 24.0887C20.266 24.4325 19.7297 24.6112 19.1935 24.6112H7.83594C6.50219 24.6112 5.42969 23.5387 5.42969 22.205V17.3925C5.42969 16.0725 6.50219 15 7.83594 15Z"
+                      stroke="#B8DD2F"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h4 class="card-title">Decision Support</h4>
+                <p class="card-para">
+                  Use survey findings to guide future actions confidently and effectively.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- AI-Assisted Survey Creation -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="bg-Theme-bg w-full">
+              <div
+                class="max-lg:rounded-10px lg:rounded-l-10px lg:rounded-r-10px flex items-center bg-white justify-center flex-col p-4 xl:px-14 xl:py-20"
+              >
+                <p
+                  class="text-center w-full text-base font-normal font-Inter leading-7 text-Theme-Green mb-2.5"
+                >
+                  AI-Assisted Survey Creation
+                </p>
+                <h2 class="heading-h2 text-center font-Inter-disp max-w-[806px] mx-auto">
+                  Create Surveys Faster with AI Assistance
+                </h2>
+                <p class="text-base leading-7 text-[#7D7676] mt-2.5 text-center font-Inter">
+                  Generate structured survey drafts from simple prompts and refine them before
+                  publishing.
+                </p>
+                <p
+                  class="text-base leading-7 text-[#7D7676] mt-5 text-center font-Inter max-w-[1006px] mx-auto"
+                >
+                  Creating surveys often requires careful planning, question development, audience
+                  consideration, and survey structure design. Whether building customer feedback
+                  surveys, employee engagement surveys, market research surveys, or satisfaction
+                  surveys, creating a well-organized survey can take significant time and effort.
+                  <br />
+                  Kiwizard, the AI Form Builder inside Kiwiform, helps accelerate survey creation by
+                  generating structured survey drafts from simple prompts. As part of the Kiwiform
+                  Survey Form Builder, Kiwizard helps teams move from an idea to a ready-to-edit
+                  survey faster while maintaining full control over every question, logic path, and
+                  survey experience before publishing.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white w-full py-10 flex items-center justify-center rounded-[10px] px-2">
+              <a
+                href="https://app.kiwiform.com"
+                class="inline-flex py-2.5 px-5 rounded-md hover:text-white bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green text-sm font-medium"
+              >
+                Generate a Survey with AI
+              </a>
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Frequently Asked Questions -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-[#F6F6F6]"
+          >
+            <div class="p-4 lg:pt-20 w-full flex flex-col gap-2.5">
+              <p class="text-center text-base font-normal text-Theme-Green leading-7">
+                Everything You Need to Know
+              </p>
+              <h2 class="heading-h2 text-center">Frequently Asked Questions</h2>
+              <p class="text-base leading-7 text-[#8C8484] text-center">
+                Frequently Asked Questions About Kiwiform Survey Form Builder
+              </p>
+            </div>
+            <div class="py-5 lg:pt-10 lg:pb-20 w-full rounded-lg px-4">
+              <div
+                class="flex flex-col gap-px w-full max-w-[1004px] mx-auto p-px rounded-10px bg-Theme-bg overflow-hidden"
+              >
+                <div x-data="{ active: 0 }" class="flex flex-col gap-px w-full">
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 0 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 0 ? null : 0"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What is a Survey Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 0 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 0" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Survey Form Builder is a tool that helps create surveys for collecting
+                          feedback, opinions, satisfaction data, and research insights. It
+                          simplifies survey creation, distribution, and response collection.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 1 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 1 ? null : 1"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Who should use a Survey Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 1 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 1" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Survey Form Builder is useful for businesses, educators, researchers,
+                          nonprofits, healthcare organizations, and teams that need to gather
+                          feedback or conduct surveys.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 2 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 2 ? null : 2"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What types of surveys can be created with a Survey Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 2 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 2" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          You can create customer feedback surveys, customer satisfaction surveys,
+                          employee engagement surveys, market research surveys, product feedback
+                          surveys, event surveys, and education surveys.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 3 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 3 ? null : 3"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Why is a Survey Form Builder important for collecting feedback?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 3 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 3" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A Survey Form Builder helps organizations collect feedback in a structured
+                          and consistent way, making it easier to understand opinions, measure
+                          experiences, and identify opportunities for improvement.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 4 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 4 ? null : 4"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What features should a Survey Form Builder include?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 4 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 4" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          A modern Survey Form Builder should include flexible question types,
+                          adaptive logic, personalization, response management, reporting tools, and
+                          multi-channel survey distribution.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 5 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 5 ? null : 5"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can a Survey Form Builder support market research?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 5 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 5" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. A Survey Form Builder can support market research by helping
+                          organizations collect audience opinions, understand preferences, identify
+                          trends, and gather research data efficiently.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 6 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 6 ? null : 6"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        How does Kiwiform help organizations create surveys?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 6 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 6" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform helps organizations create engaging surveys through
+                          conversational experiences, adaptive logic, customization options,
+                          response management tools, and reporting capabilities.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 7 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 7 ? null : 7"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Can Kiwiform create surveys with AI?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 7 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 7" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. Kiwizard, the AI Form Builder inside Kiwiform, helps generate
+                          structured survey drafts from simple prompts, allowing teams to refine and
+                          customize surveys before publishing.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 8 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 8 ? null : 8"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        Are surveys useful for measuring customer and employee satisfaction?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 8 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 8" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Yes. A Survey Form Builder can be used to measure customer satisfaction,
+                          employee engagement, service quality, and overall experiences. Surveys
+                          help organizations understand perceptions and identify areas for
+                          improvement.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ITEM -->
+                  <div
+                    class="bg-[#F6F6F6] p-4 lg:py-5 lg:px-6 w-full rounded-lg transition-colors duration-300"
+                    :class="active === 8 ? 'bg-white' : 'bg-[#F6F6F6]'"
+                  >
+                    <!-- HEADER -->
+                    <button
+                      @click="active = active === 8 ? null : 8"
+                      class="flex w-full items-center justify-between text-left"
+                    >
+                      <span class="text-sm lg:text-base leading-7 text-Theme-Black font-medium">
+                        What are the benefits of using Kiwiform as a Survey Form Builder?
+                      </span>
+
+                      <svg
+                        class="h-5 w-5 text-[#111] transition duration-300"
+                        :class="active === 8 ? 'rotate-180' : ''"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- CONTENT -->
+                    <div x-show="active === 8" x-collapse style="display: none">
+                      <div class="pt-2.5">
+                        <p class="text-xs lg:text-[14px] font-medium leading-5 text-[#8c8484]">
+                          Kiwiform helps teams create surveys faster, collect meaningful feedback,
+                          support research initiatives, improve response experiences, and gain
+                          valuable insights from survey data.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+  </body>
+</html>

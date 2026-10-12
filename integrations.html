@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Integrations | Kiwiform</title>
+    <meta
+      name="description"
+      content="Explore the Kiwiform integrations directory. Find apps and tools to connect your form responses and workflows."
+    />
+    <link rel="canonical" href="https://kiwiform.com/integrations" />
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+    <style>
+      .integration-categories::-webkit-scrollbar-track {
+        margin-block: 40px;
+      }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body
+    class="m-0 bg-Theme-bg font-Inter text-sm text-[#101914]"
+    x-data="integrationsPage()"
+    @popstate.window="restore()"
+  >
+    <main class="pt-[114px] sm:pt-[62px] flex flex-col gap-px">
+      <!-- hero section  -->
+      <div class="flex md:grid grid-cols-14 gap-px w-full bg-Theme-bg">
+        <div class="max-md:w-4 shrink-0 md:col-span-1 bg-[#f6f6f6] max-2xl:rounded-r-10px"></div>
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#f6f6f6] rounded-r-10px max-2xl:hidden"></div>
+          <div class="col-span-11 min-w-0 rounded-10px bg-[#f6f6f6]">
+            <div
+              class="flex py-20 flex-col items-center px-5 text-center sm:px-6 min-[1001px]:px-[30px]"
+            >
+              <span
+                class="rounded-full border border-Theme-bg bg-white px-3 py-[5px] text-sm leading-5 font-medium text-Theme-Green"
+                >Kiwiform Integrations</span
+              >
+              <h1
+                class="mt-6 mb-5 text-[48px] leading-[60px] font-normal tracking-[-0.96px] text-center text-Theme-Black"
+              >
+                Connect Kiwiform<br />with your favorite apps and tools
+              </h1>
+              <p class="mb-10 text-base leading-7 text-[#7D7676] text-center">
+                Send form responses where they need to go, automate tasks, and keep your workflows
+                connected.
+              </p>
+              <form
+                role="search"
+                @submit.prevent
+                class="flex h-[50px] w-full max-w-[806px] items-center gap-[18px] rounded-[10px] bg-white px-5 text-left focus-within:ring-2 focus-within:ring-Theme-Green"
+              >
+                <svg
+                  class="size-5 shrink-0 text-[#999]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  aria-hidden="true"
+                >
+                  <circle cx="10.5" cy="10.5" r="7.5" />
+                  <path d="m16 16 5 5" />
+                </svg>
+                <label class="sr-only" for="integration-search">Search all integrations</label>
+                <input
+                  id="integration-search"
+                  x-ref="search"
+                  x-model="query"
+                  @input="writeURL(false)"
+                  type="search"
+                  placeholder="Search integrations..."
+                  autocomplete="off"
+                  class="h-full w-full min-w-0 border-0 bg-transparent outline-none placeholder:text-[#7D7676] text-[15px] leading-5 text-Theme-Black"
+                />
+                <button
+                  type="button"
+                  x-show="query"
+                  style="display: none"
+                  @click="query='';writeURL();$refs.search.focus()"
+                  aria-label="Clear search"
+                  class="cursor-pointer text-2xl text-[#777] focus-visible:outline-2 focus-visible:outline-Theme-Green focus-visible:outline-offset-4"
+                >
+                  &#215;
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#f6f6f6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 shrink-0 md:col-span-1 bg-[#f6f6f6] max-2xl:rounded-l-10px"></div>
+      </div>
+      <!-- Blank line  -->
+      <div class="flex md:grid grid-cols-14 gap-px w-full bg-Theme-bg">
+        <div class="max-md:w-4 shrink-0 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <div class="col-span-11 min-w-0 rounded-10px bg-white">
+            <div class="h-7 sm:h-[60px]" aria-hidden="true"></div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 shrink-0 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- category and list section  -->
+      <div class="flex md:grid grid-cols-14 gap-px w-full bg-Theme-bg">
+        <div class="max-md:w-4 shrink-0 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <div class="col-span-11 min-w-0 rounded-10px bg-white">
+            <section
+              aria-label="Integration directory"
+              class="grid grid-cols-1 gap-px bg-Theme-bg lg:grid-cols-[295px_minmax(0,1fr)]"
+            >
+              <aside
+                style="border-right: 10px solid white"
+                class="integration-categories order-1 rounded-10px max-lg:max-h-[400px] overflow-y-auto bg-white lg:sticky lg:top-[61px] lg:h-[calc(100vh-61px)] lg:overflow-y-auto py-5 px-2.5 [&::-webkit-scrollbar]:w-[5px] [&::-webkit-scrollbar-track]:bg-[#F6F6F6] [&::-webkit-scrollbar-thumb]:bg-[#EDE9E9] [&::-webkit-scrollbar-thumb]:rounded-full"
+              >
+                <h2 class="mx-[15px] mb-5 text-base font-medium sm:mb-[28px] text-Theme-Black">
+                  Categories
+                </h2>
+                <nav aria-label="Integration categories" class="flex flex-col gap-1.5">
+                  <template x-for="category in categories" :key="category[0]">
+                    <a
+                      :href="categoryURL(category[0])"
+                      @click="if(!$event.ctrlKey&&!$event.metaKey&&!$event.shiftKey&&!$event.altKey){$event.preventDefault();selectCategory(category[0])}"
+                      :aria-current="String(!query.trim() && selected===slug(category[0]))"
+                      :class="!query.trim() && selected===slug(category[0]) ? 'bg-[#F2EFEF] text-Theme-Black   font-medium' : 'text-[#928b8b]'"
+                      class="flex min-h-[41px] shrink-0 items-center justify-between gap-2 rounded-lg border border-[#F2EFEF] py-[5px] pr-[5px] pl-3 text-[13px] whitespace-nowrap hover:bg-[#F2EFEF] hover:text-Theme-Black sm:border-0 sm:pl-[15px] min-[1001px]:text-sm focus-visible:outline-1 focus-visible:outline-Theme-Green focus-visible:outline-offset-0.5"
+                    >
+                      <span x-text="category[0]"></span
+                      ><span
+                        x-text="category[1]"
+                        :class="!query.trim() && selected===slug(category[0]) ? 'bg-white' : 'bg-[#f7f5f5]'"
+                        class="min-w-7 rounded px-[5px] py-[7px] text-center text-xs sm:min-w-9"
+                      ></span>
+                    </a>
+                  </template>
+                </nav>
+              </aside>
+              <div
+                class="order-2 min-w-0 min-h-[calc(100vh-61px)] rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-[30px] lg:py-[30px]"
+              >
+                <h2
+                  class="sr-only"
+                  x-text="query.trim() ? 'Search results' : categoryName + ' integrations'"
+                ></h2>
+                <p
+                  class="sr-only"
+                  role="status"
+                  aria-live="polite"
+                  x-text="filtered.length + ' integrations ' + (query.trim() ? 'matching '+query : 'in '+categoryName)"
+                ></p>
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+                  <template x-for="entry in filtered" :key="entry.name">
+                    <a
+                      :href="detailURL(entry)"
+                      class="flex min-w-0 items-center gap-2.5 rounded-[15px] border border-[#EDE9E9] bg-white p-2.5 pr-[15px] text-left transition hover:border-Theme-Green focus-visible:outline-0"
+                    >
+                      <span
+                        class="flex items-center justify-center rounded-10px min-w-20 aspect-square bg-Theme-Forground"
+                        x-html="icon(entry.name)"
+                      ></span>
+                      <div class="min-w-0 flex-1">
+                        <h5
+                          class="mb-2.5 block text-lg font-medium leading-[30px] tracking-[-0.36px] capitalize text-Theme-Black"
+                          x-text="entry.name"
+                        ></h5>
+                        <p
+                          class="block truncate text-sm text-[#7D7676]"
+                          x-text="'Connect Kiwiform to '+entry.name"
+                        ></p>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M8 20L16 12L8 4"
+                          stroke="#8C8484"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </template>
+                </div>
+                <div
+                  x-show="!filtered.length"
+                  style="display: none"
+                  class="px-4 py-[50px] text-center text-[#928b8b]"
+                >
+                  <h3 class="mb-4 text-[22px] font-medium text-[#101914]">No integrations found</h3>
+                  <p
+                    class="mb-5"
+                    x-text="query.trim() ? 'No matches for '+query.trim()+'. Try another app name.' : 'The supplied directory data does not include entries for '+categoryName+' yet.'"
+                  ></p>
+                  <button
+                    type="button"
+                    @click="selectCategory('Analytics & Reporting')"
+                    class="cursor-pointer rounded-lg bg-[#b8dd2f] px-[18px] py-3 text-[#183c1a] focus-visible:outline-2 focus-visible:outline-Theme-Green focus-visible:outline-offset-4"
+                  >
+                    View Analytics & Reporting
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 shrink-0 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </main>
+
+    <script>
+      function integrationsPage() {
+        const categoryNames = [
+          'Analytics & Reporting',
+          'Automation',
+          'Blogging',
+          'CMS',
+          'CRM',
+          'Communication',
+          'Data Management',
+          'E-Signature',
+          'E-commerce',
+          'EHR & Healthcare',
+          'Emailing',
+          'File Sharing & Storage',
+          'GEO & Mapping',
+          'Marketing & Sales',
+          'Payment Processor',
+          'Project Management',
+          'SSO',
+          'Scheduling & Booking',
+          'Social Media',
+          'Wrapper/ Library/ SDK',
+          'Other'
+        ]
+        const slug = (name) =>
+          name
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/-$/, '')
+        const shapes = {
+          Slack:
+            '<g fill="#36c5f0"><rect x="4" y="17" width="22" height="9" rx="4.5"/><rect x="17" y="4" width="9" height="11" rx="4.5"/></g><g fill="#2eb67d"><rect x="28" y="4" width="9" height="22" rx="4.5"/><rect x="39" y="17" width="11" height="9" rx="4.5"/></g><g fill="#ecb22e"><rect x="28" y="28" width="22" height="9" rx="4.5"/><rect x="28" y="39" width="9" height="11" rx="4.5"/></g><g fill="#e01e5a"><rect x="17" y="28" width="9" height="22" rx="4.5"/><rect x="4" y="28" width="11" height="9" rx="4.5"/></g>',
+          CallRail:
+            '<path fill="#348bf1" d="M26 5a21 21 0 0 0-17 33L5 48l12-5A21 21 0 1 0 26 5"/><path stroke="white" stroke-width="3" stroke-linecap="round" d="M16 22v9m6-14v19m6-13v8m0-4h18"/>',
+          Converly:
+            '<path d="M40 15a16 16 0 1 0 0 22" fill="none" stroke="#333" stroke-width="11"/>',
+          LeadSources:
+            '<rect width="52" height="52" rx="6" fill="#090909"/><circle cx="26" cy="27" r="18" fill="none" stroke="#d99238" stroke-width="2.5"/><path d="m41 5 2 9 7 2-7 2-2 8-2-8-8-2 8-2Z" fill="#ffc871"/>',
+          'Microsoft Power BI':
+            '<rect x="8" y="27" width="11" height="22" rx="2" fill="#f8dd55"/><rect x="19" y="16" width="11" height="33" rx="2" fill="#efc323"/><rect x="30" y="5" width="11" height="44" rx="2" fill="#dba800"/>',
+          Tableau:
+            '<g stroke-width="2"><path stroke="#6b9aa9" d="M26 3v12m-6-6h12M43 17v12m-6-6h12M10 16v12m-6-6h12"/><path stroke="#ec902b" d="M18 17v17m-8-9h16"/><path stroke="#6874a2" d="M34 27v17m-8-9h16M26 40v10m-5-5h10"/><path stroke="#bd625a" d="M10 33v12m-6-6h12"/><path stroke="#4385a0" d="M33 11v12m-6-6h12M44 34v10m-5-5h10"/></g>',
+          Attributer:
+            '<circle cx="26" cy="26" r="20" fill="none" stroke="#17191b" stroke-width="3.5"/><circle cx="26" cy="26" r="5.5" fill="#17191b"/>',
+          'Google Analytics':
+            '<rect x="29" y="5" width="11" height="43" rx="5.5" fill="#f9ab00"/><rect x="15" y="22" width="11" height="26" rx="5.5" fill="#e87800"/><circle cx="7" cy="42" r="5.5" fill="#e87800"/>',
+          SolveXia:
+            '<path fill="#008bff" d="M17 10h30c3 0 3 2 1 5l-5 7H29l-8 10H8l9-15c2-4 3-7 0-7ZM9 35h16l8-10h13L35 43H5c-3 0-3-2-1-5Z"/>'
+        }
+
+        return {
+          get categories() {
+            const counts = this.entries.reduce((totals, entry) => {
+              totals[entry.category] = (totals[entry.category] || 0) + 1
+              return totals
+            }, {})
+            return categoryNames.map((name) => [name, counts[this.slug(name)] || 0])
+          },
+          shapes,
+          query: '',
+          selected: 'analytics-reporting',
+          slug,
+          get entries() {
+            return Object.keys(this.shapes).map((name) => ({
+              name,
+              category: name === 'Slack' ? 'communication' : 'analytics-reporting'
+            }))
+          },
+          get filtered() {
+            const q = this.query.trim().toLowerCase()
+            return this.entries.filter((entry) =>
+              q ? entry.name.toLowerCase().includes(q) : entry.category === this.selected
+            )
+          },
+          get categoryName() {
+            return this.categories.find((category) => this.slug(category[0]) === this.selected)[0]
+          },
+          icon(name) {
+            return '<svg viewBox="0 0 52 52" aria-hidden="true">' + this.shapes[name] + '</svg>'
+          },
+          categoryURL(name) {
+            const url = new URL(location.href)
+            url.search = ''
+            url.searchParams.set('category', this.slug(name))
+            return url.href
+          },
+          detailURL(entry) {
+            return entry.name === 'Slack'
+              ? 'integration-detail.html'
+              : '/integrations/' + this.slug(entry.name)
+          },
+          writeURL(push = true) {
+            const url = new URL(location.href)
+            url.searchParams.set('category', this.selected)
+            if (this.query.trim()) url.searchParams.set('q', this.query.trim())
+            else url.searchParams.delete('q')
+            url.searchParams.delete('integration')
+            history[push ? 'pushState' : 'replaceState']({}, '', url)
+          },
+          selectCategory(name) {
+            this.selected = this.slug(name)
+            this.query = ''
+            this.writeURL()
+          },
+          restore() {
+            const params = new URLSearchParams(location.search)
+            this.selected = this.categories.some(
+              (category) => this.slug(category[0]) === params.get('category')
+            )
+              ? params.get('category')
+              : 'analytics-reporting'
+            this.query = params.get('q') || ''
+          },
+          init() {
+            this.$nextTick(() => this.restore())
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

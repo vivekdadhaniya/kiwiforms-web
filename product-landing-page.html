@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="assets/css/output.css"> -->
+    <link rel="stylesheet" href="assets/css/style-output.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+
+  <body
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    x-data="templateDetailPage()"
+    x-init="init()"
+  >
+    <!-- navigation  -->
+
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+      <!-- hero -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-[#F6F6F6] rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+          >
+            <!-- hero top  -->
+            <div
+              class="w-full bg-[#F6F6F6] py-14 lg:pt-[64px] lg:pb-20 flex flex-col items-center justify-center rounded-10px px-4"
+            >
+              <!-- badge -->
+              <div
+                class="font-Inter border border-Theme-bg bg-white rounded-full px-3 py-[5px] font-medium text-sm text-Theme-Green"
+              >
+                Kiwiform Product
+              </div>
+              <h1
+                class="mt-6 mb-2.5 text-center w-full max-w-[580px] mx-auto font-Inter-disp text-4xl leading-[46px] sm:text-[48px] sm:leading-[60px] tracking-[-0.96px] text-Theme-Black"
+              >
+                Form Building Product For Every Workflow
+              </h1>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-5 font-Inter"
+              >
+                Build forms faster with specialized form builders designed for data collection,
+                automation, collaboration, and business workflows.
+              </p>
+              <p
+                class="text-base leading-7 text-[#7D7676] text-center w-full max-w-[806px] mx-auto mb-[30px] font-Inter"
+              >
+                Kiwiform offers specialized form builders for different workflows, industries, and
+                data collection needs. With conversational experiences, flexible logic,
+                integrations, and unlimited usage, teams can create forms that are easier to
+                complete, manage, and scale—making Kiwiform a practical free Typeform alternative
+                for modern organizations.
+              </p>
+            </div>
+          </div>
+          <div class="col-span-2 bg-[#F6F6F6] rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-[#F6F6F6] max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+
+      <!-- Recommended Alternative  -->
+      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px overflow-hidden w-full flex items-center justify-center flex-col gap-px h-full"
+          >
+            <div class="w-full bg-white rounded-10px py-10 px-4 lg:px-12">
+              <h2
+                class="text-[38px] leading-[48px] font-Inter-disp tracking-[-0.76px] text-center mb-2.5"
+              >
+                Find the Right Form Builder
+              </h2>
+              <p
+                class="text-center w-full max-w-[810px] mx-auto text-base leading-7 text-[#7D7676]"
+              >
+                Discover specialized form builders that help teams create, customize, automate, and
+                optimize data collection experiences across a wide range of workflows and
+                industries.
+              </p>
+            </div>
+            <div class="w-full bg-Theme-bg grid grid-cols-1 lg:grid-cols-2 gap-px">
+              <a
+                href="/ai-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 53 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M39 1.5H40.7857C46.7031 1.5 51.5 6.29695 51.5 12.2143V14"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M26.5 1.5H12.2143C6.29695 1.5 1.5 6.29695 1.5 12.2143V40.7857C1.5 46.7031 6.29695 51.5 12.2143 51.5H40.7857C46.7031 51.5 51.5 46.7031 51.5 40.7857V26.5"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M22.0329 19.3579C21.5629 19.3579 21.1426 19.6506 20.9795 20.0914L20.2069 22.1792C19.1582 25.0134 18.732 26.0959 17.9479 26.8801C17.1638 27.6641 16.0813 28.0902 13.2471 29.1391L11.1592 29.9116C10.7184 30.0747 10.4258 30.4951 10.4258 30.9651C10.4258 31.435 10.7184 31.8554 11.1592 32.0185L13.2471 32.791C16.0813 33.8399 17.1638 34.266 17.9479 35.05C18.732 35.8342 19.1582 36.9167 20.2069 39.7508L20.9795 41.8388C21.1426 42.2795 21.5629 42.5722 22.0329 42.5722C22.5029 42.5722 22.9233 42.2795 23.0864 41.8388L23.8589 39.7508C24.9078 36.9167 25.3338 35.8342 26.1179 35.05C26.9021 34.266 27.9846 33.8399 30.8187 32.791L32.9066 32.0185C33.3474 31.8554 33.6401 31.435 33.6401 30.9651C33.6401 30.4951 33.3474 30.0747 32.9066 29.9116L30.8187 29.1391C27.9846 28.0902 26.9021 27.6641 26.1179 26.8801C25.3338 26.0959 24.9078 25.0134 23.8589 22.1792L23.0864 20.0914C22.9233 19.6506 22.5029 19.3579 22.0329 19.3579Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M36.3164 10.4282C35.7934 10.4282 35.3256 10.7539 35.1441 11.2444L34.7756 12.2402C34.2527 13.6531 34.1006 13.9874 33.8631 14.2249C33.6256 14.4624 33.2914 14.6146 31.8784 15.1374L30.8826 15.5059C30.3921 15.6874 30.0664 16.1552 30.0664 16.6782C30.0664 17.2013 30.3921 17.669 30.8826 17.8505L31.8784 18.219C33.2914 18.7418 33.6256 18.894 33.8631 19.1315C34.1006 19.3691 34.2527 19.7033 34.7756 21.1163L35.1441 22.112C35.3256 22.6026 35.7934 22.9282 36.3164 22.9282C36.8394 22.9282 37.3072 22.6026 37.4887 22.112L37.8572 21.1163C38.3801 19.7033 38.5322 19.3691 38.7697 19.1315C39.0072 18.894 39.3416 18.7418 40.7544 18.219L41.7502 17.8505C42.2407 17.669 42.5664 17.2013 42.5664 16.6782C42.5664 16.1552 42.2407 15.6874 41.7502 15.5059L40.7544 15.1374C39.3416 14.6146 39.0072 14.4624 38.7697 14.2249C38.5322 13.9874 38.3801 13.6531 37.8572 12.2402L37.4887 11.2444C37.3072 10.7539 36.8394 10.4282 36.3164 10.4282Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Kiwizard AI
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build forms faster with AI Form Builder
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/hipaa-compliant-form-builder"
+                class="w-full bg-white hidden items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="46"
+                    height="53"
+                    viewBox="0 0 46 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M43.9024 14.374C43.8765 13.0241 43.8517 11.7488 43.8517 10.5152C43.8517 9.54857 43.0592 8.76507 42.0813 8.76507C34.5099 8.76507 28.7454 6.61394 23.9403 1.9956C23.2529 1.33472 22.1591 1.33503 21.4719 1.9956C16.6674 6.61394 10.9038 8.76507 3.33291 8.76507C2.3551 8.76507 1.5624 9.54857 1.5624 10.5152C1.5624 11.7491 1.53795 13.0248 1.51172 14.375"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M25.8479 22.8746V16.3112H19.5657V22.8746H12.9258V29.0847H19.5657V35.6479H25.8479V29.0847H32.4869V22.8746H25.8479Z"
+                      fill="#E8F5B7"
+                      stroke="#A2C92A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M1.5 21.5002C1.84523 32.7907 4.74079 45.4453 22.129 51.4033C22.3169 51.4677 22.5128 51.5 22.7087 51.5C22.9047 51.5 23.1008 51.4677 23.2885 51.4033C40.6776 45.4452 43.5741 32.7907 43.9196 21.5002"
+                      stroke="#A2C92A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    HIPAA Compliant Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">Build secure healthcare forms</p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/form-builder-for-sheets"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="41"
+                    height="53"
+                    viewBox="0 0 41 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M26.5 1.5V10.25C26.5 11.2446 26.8951 12.1984 27.5983 12.9017C28.3016 13.6049 29.2554 14 30.25 14H39"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M38.9999 12.3696V48.2391C38.9999 49.104 38.6513 49.9334 38.0308 50.5449C37.4103 51.1564 36.5687 51.5 35.6911 51.5H4.80882C3.93126 51.5 3.08965 51.1564 2.46913 50.5449C1.84861 49.9334 1.5 49.104 1.5 48.2391V4.76087C1.5 3.89603 1.84861 3.06662 2.46913 2.45509C3.08965 1.84355 3.93126 1.5 4.80882 1.5H27.9705L38.9999 12.3696Z"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M11.5 24L19.7915 24L29 24V41.5H11.5V24Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20.25 24L20.25 41.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M29.0078 32.7378L11.5078 32.7378"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Form Builder for Sheets
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build and Connect forms to Google Sheets
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/ai-quiz-generator"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 53 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.2852 27.3594C16.2852 27.1399 16.3 26.9239 16.3286 26.7126C16.6383 24.4268 18.5659 22.6745 20.8813 22.7226C23.2236 22.7712 25.164 24.7032 25.2855 27.1127C25.42 29.7829 23.3549 31.9973 20.7884 31.9973V34.8831"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <ellipse cx="20.7866" cy="40.8143" rx="2.11867" ry="2.18196" fill="#183C1A" />
+                    <path
+                      d="M37.7682 41.0419C38.7712 39.1213 39.4829 36.9967 39.8332 34.72C41.5033 23.8665 34.3301 13.6711 23.8112 11.9478C13.2926 10.2246 3.41142 17.6261 1.74138 28.4796C0.907367 33.8998 2.27889 39.1558 5.17108 43.2746L3.77064 47.9885L8.87069 47.2488C11.3719 49.2804 14.3962 50.7001 17.7634 51.2518C22.288 51.993 26.6945 51.046 30.3804 48.8622"
+                      stroke="#A2C92A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20.6133 11.5707C22.7192 6.50789 27.2201 2.63655 32.8833 1.70878C41.6593 0.271088 49.9032 6.44625 51.2965 15.5014C51.9924 20.0235 50.8481 24.4087 48.4351 27.845L49.6034 31.7779L45.3484 31.1607C43.8074 32.4124 42.0284 33.3857 40.0721 33.9945"
+                      stroke="#A2C92A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M49.447 15.7847C48.2038 7.7076 40.8837 2.29804 33.1895 3.55803C29.0892 4.22976 25.6613 6.6617 23.5312 10.018C23.7252 10.0443 23.9203 10.0668 24.1148 10.0986C34.4403 11.7905 41.758 20.8662 41.9396 31.1876C42.731 30.7634 43.4767 30.2652 44.1686 29.7033C44.5752 29.3734 45.1031 29.2277 45.6213 29.3029L46.9738 29.4982L46.6418 28.3776C46.4787 27.8285 46.5739 27.235 46.903 26.7662C49.046 23.7143 50.0671 19.8143 49.447 15.7847Z"
+                      fill="#E8F5B7"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    AI Quiz Generator
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Generate quiz questions faster with AI
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/quiz-funnel-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="52"
+                    height="53"
+                    viewBox="0 0 52 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M38.7228 46.0159C44.1119 46.0159 48.4808 41.6471 48.4808 36.258C48.4808 30.8688 44.1119 26.5 38.7228 26.5C33.3337 26.5 28.9648 30.8688 28.9648 36.258C28.9648 41.6471 33.3337 46.0159 38.7228 46.0159Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M35.3672 36.257L37.6056 38.4954L42.0825 34.0186"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M40.6602 19.8824L48.848 11.7547C49.5593 11.0486 49.9149 10.6956 50.1024 10.2455C50.2898 9.79537 50.2898 9.29426 50.2898 8.29204V1.5C50.2898 1.5 35.4349 1.5 25.8949 1.5C16.3549 1.5 1.5 1.5 1.5 1.5V8.29205C1.5 9.29426 1.5 9.79537 1.68742 10.2455C1.87484 10.6956 2.23048 11.0486 2.94176 11.7547L19.3174 28.01C20.0286 28.7161 20.3843 29.0691 20.5717 29.5192C20.7591 29.9693 20.7591 30.4704 20.7591 31.4727V51.5L25.8949 47.8235"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Quiz Funnel Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">Create interactive Quiz Funnels</p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/conditional-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="46"
+                    height="50"
+                    viewBox="0 0 46 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.40625 30.1122C8.40625 27.8528 10.2378 26.0213 12.4972 26.0213H15.5653C17.7892 26.0213 18.9011 26.0213 19.7782 25.7099C20.9475 25.2947 21.8768 24.4982 22.3612 23.4959C22.7244 22.744 22.7244 21.7923 22.7244 19.8862C22.7244 21.7923 22.7244 22.744 23.0877 23.4959C23.5721 24.4982 24.5013 25.2947 25.6707 25.7099C26.5478 26.0213 27.6597 26.0213 29.8835 26.0213H32.9517C35.2111 26.0213 37.0426 27.8528 37.0426 30.1122"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M22.7301 14.5457C24.2099 14.5457 24.9497 14.5457 25.5548 14.375C27.077 13.9457 28.2665 12.7562 28.6958 11.234C28.8665 10.6289 28.8665 9.88906 28.8665 8.40931C28.8665 6.92956 28.8665 6.18969 28.6958 5.58458C28.2665 4.06247 27.077 2.87289 25.5548 2.44361C24.9497 2.27295 24.2099 2.27295 22.7301 2.27295C21.2504 2.27295 20.5105 2.27295 19.9054 2.44361C18.3833 2.87289 17.1937 4.06247 16.7644 5.58458C16.5938 6.18969 16.5938 6.92956 16.5938 8.40931C16.5938 9.88906 16.5938 10.6289 16.7644 11.234C17.1937 12.7562 18.3833 13.9457 19.9054 14.375C20.5105 14.5457 21.2504 14.5457 22.7301 14.5457Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.4098 47.7263C9.88955 47.7263 10.6294 47.7263 11.2345 47.5557C12.7566 47.1264 13.9462 45.9368 14.3755 44.4147C14.5462 43.8096 14.5462 43.0697 14.5462 41.59C14.5462 40.1102 14.5462 39.3704 14.3755 38.7652C13.9462 37.2431 12.7566 36.0536 11.2345 35.6243C10.6294 35.4536 9.88955 35.4536 8.4098 35.4536C6.93005 35.4536 6.19018 35.4536 5.58507 35.6243C4.06295 36.0536 2.87338 37.2431 2.4441 38.7652C2.27344 39.3704 2.27344 40.1102 2.27344 41.59C2.27344 43.0697 2.27344 43.8096 2.4441 44.4147C2.87338 45.9368 4.06295 47.1264 5.58507 47.5557C6.19018 47.7263 6.93005 47.7263 8.4098 47.7263Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M37.0465 47.7263C38.5263 47.7263 39.2661 47.7263 39.8713 47.5557C41.3934 47.1264 42.5829 45.9368 43.0122 44.4147C43.1829 43.8096 43.1829 43.0697 43.1829 41.59C43.1829 40.1102 43.1829 39.3704 43.0122 38.7652C42.5829 37.2431 41.3934 36.0536 39.8713 35.6243C39.2661 35.4536 38.5263 35.4536 37.0465 35.4536C35.5668 35.4536 34.8269 35.4536 34.2218 35.6243C32.6997 36.0536 31.5101 37.2431 31.0808 38.7652C30.9102 39.3704 30.9102 40.1102 30.9102 41.59C30.9102 43.0697 30.9102 43.8096 31.0808 44.4147C31.5101 45.9368 32.6997 47.1264 34.2218 47.5557C34.8269 47.7263 35.5668 47.7263 37.0465 47.7263Z"
+                      fill="#E8F5B7"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Conditional Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build dynamic forms with Conditional Logic
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/drag-and-drop-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 53 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M26.5 3.75098V21.4912"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M26.5 49.249L26.5 31.5088"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M33.25 8.25L26.5 1.5L19.75 8.25"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19.75 44.75L26.5 51.5L33.25 44.75"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M49.2539 26.5L31.5137 26.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M3.75781 26.5L21.498 26.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M44.75 33.2495L51.5 26.4995L44.75 19.7495"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.25 19.7505L1.5 26.5005L8.25 33.2505"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Drag and Drop Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Create forms visually without coding
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/medical-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="48"
+                    height="53"
+                    viewBox="0 0 48 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M46.5 14V39C46.5 46.5 42.75 51.5 34 51.5H14C5.25 51.5 1.5 46.5 1.5 39V14C1.5 6.5 5.25 1.5 14 1.5H34C42.75 1.5 46.5 6.5 46.5 14Z"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M30.25 7.75V12.75C30.25 15.5 32.5 17.75 35.25 17.75H40.25"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.7028 35.2252C11.8778 32.6502 12.8527 29.4753 15.5277 28.6003C16.9527 28.1503 18.7027 28.5252 19.6777 29.9002C20.6027 28.4752 22.4277 28.1503 23.8277 28.6003C26.5277 29.4753 27.4778 32.6502 26.6778 35.2252C25.4028 39.3002 20.9277 41.4252 19.6777 41.4252C18.4527 41.4002 14.0278 39.3252 12.7028 35.2252Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Medical Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">Build healthcare forms Faster</p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/dynamic-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="42"
+                    height="53"
+                    viewBox="0 0 42 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M40.3885 19.0004V41.5C40.3885 46.214 40.3885 48.5711 38.924 50.0355C37.4595 51.5 35.1025 51.5 30.3885 51.5H11.5C6.78596 51.5 4.42893 51.5 2.96447 50.0355C1.5 48.5711 1.5 46.214 1.5 41.5V11.5005C1.5 6.78649 1.5 4.42947 2.96447 2.965C4.42893 1.50054 6.78595 1.50054 11.5 1.50054H23.3748L40.3885 19.0004Z"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M23.375 1.50019V9C23.375 13.714 23.375 16.0711 24.8395 17.5355C26.3039 19 28.661 19 33.375 19H40.3887"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.7852 28.6875L31.7852 28.6875"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.7852 38.6875L31.7852 38.6875"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M11.7852 28.6875H10.5352"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M11.7852 38.6875H10.5352"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Dynamic Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build more relevant form experiences
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/embeddable-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 53 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18.9969 29C17.3469 29.825 15.9719 31.05 14.9469 32.575C14.3719 33.45 14.3719 34.55 14.9469 35.425C15.9719 36.95 17.3469 38.175 18.9969 39"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M34.5273 29C36.1773 29.825 37.5523 31.05 38.5773 32.575C39.1523 33.45 39.1523 34.55 38.5773 35.425C37.5523 36.95 36.1773 38.175 34.5273 39"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M2.07812 16.525L50.1281 16.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19 51.5H34C46.5 51.5 51.5 46.5 51.5 34V19C51.5 6.5 46.5 1.5 34 1.5H19C6.5 1.5 1.5 6.5 1.5 19V34C1.5 46.5 6.5 51.5 19 51.5Z"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Embeddable Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build and share embeddable forms anywhere
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="/mobile-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="43"
+                    height="53"
+                    viewBox="0 0 43 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41.5 24.075V39C41.5 49 39 51.5 29 51.5H14C4 51.5 1.5 49 1.5 39V14C1.5 4 4 1.5 14 1.5H29C39 1.5 41.5 4 41.5 14"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M26.5 10.25H16.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.5 44.25C23.6401 44.25 25.375 42.5151 25.375 40.375C25.375 38.2349 23.6401 36.5 21.5 36.5C19.3599 36.5 17.625 38.2349 17.625 40.375C17.625 42.5151 19.3599 44.25 21.5 44.25Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Mobile Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Create forms for better mobile experiences
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/workflow-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 53 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="1.5"
+                      y="1.5"
+                      width="13.889"
+                      height="13.889"
+                      rx="2.50001"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                    />
+                    <rect
+                      x="37.6133"
+                      y="37.6108"
+                      width="13.889"
+                      height="13.889"
+                      rx="2.50001"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M23.7266 8.44434H42.476C43.8953 8.44434 44.605 8.44434 45.1986 8.54012C48.3904 9.05518 50.893 11.5577 51.408 14.7496C51.5038 15.3431 51.5038 16.0528 51.5038 17.4722C51.5038 18.8915 51.5038 19.6012 51.408 20.1948C50.893 23.3866 48.3904 25.8891 45.1986 26.4042C44.605 26.5 43.8953 26.5 42.476 26.5H34.8371"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M29.2812 44.5557H10.5313C9.1119 44.5557 8.40222 44.5557 7.80866 44.4599C4.6168 43.9448 2.11426 41.4423 1.59921 38.2504C1.50342 37.6569 1.50343 36.9472 1.50343 35.5278C1.50343 34.1085 1.50343 33.3988 1.59922 32.8052C2.11428 29.6134 4.61682 27.1109 7.80867 26.5958C8.40223 26.5 9.11191 26.5 10.5313 26.5H18.1702"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <rect
+                      x="18.168"
+                      y="26.5"
+                      width="11.7864"
+                      height="11.7864"
+                      rx="2.50001"
+                      transform="rotate(-45 18.168 26.5)"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Workflow Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build forms for automated data collection
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/google-sites-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="53"
+                    height="51"
+                    viewBox="0 0 53 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="3"
+                      y1="20"
+                      x2="50"
+                      y2="20"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M34 11.5L41.5 11.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19 11.5H19.0781"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M11.5 11.5H11.5781"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <rect
+                      x="1.5"
+                      y="1.5"
+                      width="50"
+                      height="47.5"
+                      rx="12.5"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Google Sites Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Create customizable forms for Google Sites
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="/test-maker"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 53 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M27.4297 18.6997H40.5547"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.4453 18.6997L14.3203 20.5747L19.9453 14.9497"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M27.4297 36.1997H40.5547"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.4453 36.1997L14.3203 38.0747L19.9453 32.4497"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19 51.5H34C46.5 51.5 51.5 46.5 51.5 34V19C51.5 6.5 46.5 1.5 34 1.5H19C6.5 1.5 1.5 6.5 1.5 19V34C1.5 46.5 6.5 51.5 19 51.5Z"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Free Test Maker
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Create online tests to evaluate knowledge
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="/survey-form-builder"
+                class="w-full bg-white flex items-center gap-5 p-5 pr-[30px] rounded-10px"
+              >
+                <div
+                  class="w-full max-w-[100px] h-[100px] rounded-10px flex items-center justify-center bg-[#F9FBF2]"
+                >
+                  <svg
+                    width="43"
+                    height="53"
+                    viewBox="0 0 43 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41.5 17.125V41.5C41.5 49 37.025 51.5 31.5 51.5H11.5C5.975 51.5 1.5 49 1.5 41.5V17.125C1.5 9 5.975 7.125 11.5 7.125C11.5 8.675 12.1249 10.075 13.1499 11.1C14.1749 12.125 15.575 12.75 17.125 12.75H25.875C28.975 12.75 31.5 10.225 31.5 7.125C37.025 7.125 41.5 9 41.5 17.125Z"
+                      stroke="#B8DD2F"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M31.5 7.125C31.5 10.225 28.975 12.75 25.875 12.75H17.125C15.575 12.75 14.1749 12.125 13.1499 11.1C12.1249 10.075 11.5 8.675 11.5 7.125C11.5 4.025 14.025 1.5 17.125 1.5H25.875C27.425 1.5 28.8251 2.12501 29.8501 3.15001C30.8751 4.17501 31.5 5.575 31.5 7.125Z"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M11.5 29H21.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M11.5 39H31.5"
+                      stroke="#183C1A"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <h3
+                    class="text-xl leading-[26px] font-Inter-disp tracking-[-0.4px] capitalize text-Theme-Black mb-3.5"
+                  >
+                    Survey Form Builder
+                  </h3>
+                  <p class="text-base leading-7 text-[#7D7676]">
+                    Build surveys to collect feedback
+                  </p>
+                </div>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 20L16 12L8 4"
+                    stroke="#8C8484"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div
+              class="w-full bg-white rounded-10px py-10 px-4 lg:px-12 flex items-center justify-center"
+            >
+              <a
+                href="https://app.kiwiform.com/"
+                class="w-full max-w-[250px] whitespace-nowrap text-center mx-auto py-[9px] rounded-md px-5 text-sm leading-[22px] font-medium text-[#183C1A] bg-[#B8DD2F] transition-all duration-500 hover:bg-Theme-Green hover:text-white"
+                >Start Building for Free</a
+              >
+            </div>
+          </div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </section>
+
+      <!-- Blank line  -->
+      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <!-- main-container  -->
+        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
+          <!-- place content here -->
+          <div
+            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+          ></div>
+          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+        </div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+      </div>
+    </div>
+  </body>
+</html>

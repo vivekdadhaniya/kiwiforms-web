@@ -8,3 +8,6 @@
 /changelog.html /changelog 301
 /changelog /changelog.html 200
 /changelog/* /changelog.html 200
+
+/integrations.html /integrations 301
+/integrations /integrations.html 200

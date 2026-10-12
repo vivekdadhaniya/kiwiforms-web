@@ -1,232 +1,1514 @@
-  <!-- Template section -->
-      <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
-          >
-            <div class="bg-white rounded-10px pt-28 pb-16 px-6 text-center w-full">
-              <h2
-                class="text-[38px] leading-[48px] tracking-[-0.76px] font-Inter-disp text-Theme-Black"
-              >
-                Start faster with ready-made templates
-              </h2>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-              <p class="mt-4 text-base leading-6 text-[#8C8484]">
-                Explore thoughtfully designed templates for common use cases, ready to use and easy
-                to customize.
-              </p>
-            </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-            <!-- tab function  -->
-            <!-- WRAPPER -->
-            <div
-              x-data="{
-              activeTab1: 'Lead',
-              tabWorkspaces: {
-                Lead: 'Lead generation',
-                Marketing: 'Marketing',
-                Surveys: 'Surveys',
-                Registrations: 'Registrations',
-                Quizzes: 'Quizzes',
-              },
-              templates: [],
-              isLoadingTemplates: true,
-              templatesError: '',
-              latestTime(template) {
-                const rawDate = template.createdAt || template.created_at || template.updatedAt || template.updated_at || template.publishedAt || template.published_at || template.date || '';
-                const parsedDate = rawDate ? Date.parse(rawDate) : 0;
+    <title>Interactive Curtain Experience</title>
 
-                return Number.isNaN(parsedDate) ? 0 : parsedDate;
-              },
-              latestTemplates(templates) {
-                return [...templates]
-                  .sort((a, b) => this.latestTime(b) - this.latestTime(a))
-                  .slice(0, 6);
-              },
-              templateUrl(template) {
-                const titleSlug = (template.slug)
-                  .trim();
-                 
-                return `/templates/${titleSlug}`;
-              },
-              async loadTemplates() {
-                this.isLoadingTemplates = true;
-                this.templatesError = '';
+    <!-- =========================================================
+       GSAP
+  ========================================================== -->
 
-                try {
-                  const params = new URLSearchParams({
-                    workspaceName: this.tabWorkspaces[this.activeTab1],
-                    limit: '1000',
-                  });
-                  const response = await fetch(`https://kiwiform.com/api/templates?${params.toString()}`);
-                  const result = await response.json();
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
-                  if (!response.ok || !result.success) {
-                    throw new Error(result.message || 'Unable to load templates.');
-                  }
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-                  this.templates = Array.isArray(result.data) ? this.latestTemplates(result.data) : [];
-                } catch (error) {
-                  this.templatesError = error.message || 'Unable to load templates.';
-                } finally {
-                  this.isLoadingTemplates = false;
-                }
-              },
-            }"
-              x-init="$watch('activeTab1', () => loadTemplates()); loadTemplates()"
-              class="relative w-full flex flex-col gap-px"
-            >
-              <!-- TABS -->
-              <div
-                class="grid grid-cols-1 sm:grid-cols-2 lg:flex items-center justify-center flex-row lg:p-[2px] gap-px bg-Theme-bg rounded-10px lg:absolute lg:-top-[22px] lg:left-1/2 lg:-translate-x-1/2 w-full lg:max-w-[804px]"
-              >
-                <div class="absolute -left-[8px] top-[12.5px] hidden lg:block">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="17"
-                    fill="none"
-                    overflow="visible"
-                  >
-                    <path
-                      d="M 8 0 C 8 4.418 4.418 8 0 8 L 8 8 Z M 0 8 L 8 8 L 8 9 L 0 9 Z M 8 17 C 8 12.582 4.418 9 0 9 L 8 9 Z"
-                      fill="rgb(226,220,220)"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="absolute -right-[8px] top-[12.5px] hidden lg:block">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="17"
-                    fill="none"
-                    overflow="visible"
-                  >
-                    <path
-                      d="M 0 0 C 0 4.418 3.582 8 8 8 L 0 8 Z M 8 8 L 0 8 L 0 9 L 8 9 Z M 0 17 C 0 12.582 3.582 9 8 9 L 0 9 Z"
-                      fill="rgb(226,220,220)"
-                    ></path>
-                  </svg>
-                </div>
-                <!-- TAB -->
-                <button
-                  @click="activeTab1 = 'Lead'"
-                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
-                  :class="activeTab1 === 'Lead'
-          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
-          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
-                >
-                  Lead Generation
-                </button>
+    <style>
+      /* =========================================================
+       RESET
+    ========================================================== */
 
-                <!-- TAB -->
-                <button
-                  @click="activeTab1 = 'Marketing'"
-                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
-                  :class="activeTab1 === 'Marketing'
-          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
-          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
-                >
-                  Marketing
-                </button>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-                <!-- TAB -->
-                <button
-                  @click="activeTab1 = 'Surveys'"
-                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
-                  :class="activeTab1 === 'Surveys'
-          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
-          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
-                >
-                  Surveys
-                </button>
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+      }
 
-                <!-- TAB -->
-                <button
-                  @click="activeTab1 = 'Registrations'"
-                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300"
-                  :class="activeTab1 === 'Registrations'
-          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
-          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
-                >
-                  Registrations
-                </button>
+      body {
+        overflow-x: hidden;
 
-                <!-- TAB -->
-                <button
-                  @click="activeTab1 = 'Quizzes'"
-                  class="relative w-full flex py-2.5 flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-300 sm:col-span-2"
-                  :class="activeTab1 === 'Quizzes'
-          ? 'bg-white text-[#007D47] shadow-[0_1px_2px_rgba(0,0,0,0.05)]'
-          : 'text-[#6f6767] max-lg:bg-white hover:text-[#222]'"
-                >
-                  Quizzes
-                </button>
-              </div>
-              <div class="bg-white rounded-10px w-fill h-[46px]"></div>
-              <!-- CONTENT -->
-              <div class="">
-                <!-- Dynamic template cards -->
-                <div
-                  class="overflow-hidden rounded-10px bg-Theme-bg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
-                >
-                  <template x-if="isLoadingTemplates">
-                    <div class="p-[22px] pb-8 rounded-10px bg-white md:col-span-2 lg:col-span-3">
-                      <p class="text-sm leading-5 text-[#8C8484]">Loading templates...</p>
-                    </div>
-                  </template>
+        background: #101615;
 
-                  <template x-if="!isLoadingTemplates && templatesError">
-                    <div class="p-[22px] pb-8 rounded-10px bg-white md:col-span-2 lg:col-span-3">
-                      <p class="text-sm leading-5 text-[#8C8484]" x-text="templatesError"></p>
-                    </div>
-                  </template>
+        font-family: Inter, Arial, Helvetica, sans-serif;
 
-                  <template x-if="!isLoadingTemplates && !templatesError && templates.length === 0">
-                    <div class="p-[22px] pb-8 rounded-10px bg-white md:col-span-2 lg:col-span-3">
-                      <p class="text-sm leading-5 text-[#8C8484]">No templates found.</p>
-                    </div>
-                  </template>
+        color: #ffffff;
+      }
 
-                  <template x-for="template in templates" :key="template.id">
-                    <a
-                      class="group block p-[22px] pb-8 rounded-10px bg-white transition-all duration-300 hover:shadow-[0_16px_32px_rgba(24,60,26,0.08)]"
-                      :href="templateUrl(template)"
-                    >
-                      <div class="overflow-hidden rounded-lg">
-                        <img
-                          class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.05]"
-                          :src="template.thumbnail"
-                          :alt="`${template.title} template poster image`"
-                        />
-                      </div>
-                      <h5
-                        class="mt-5 mb-2 text-base leading-5 font-medium text-Theme-Black capitalize"
-                        x-text="template.title"
-                      ></h5>
-                      <p
-                        class="text-sm leading-5 text-[#8C8484] line-clamp-2"
-                        x-text="template.description || 'Explore this ready-made template and customize it for your workflow.'"
-                      ></p>
-                    </a>
-                  </template>
-                </div>
-              </div>
+      /* =========================================================
+       MAIN SCROLL AREA
+    ========================================================== */
 
-              <div
-                class="bg-white rounded-10px w-fill h-[120px] flex items-center justify-center relative overflow-visible"
-              >
-                <a href="/templates" class="btn-kiwi-green w-max px-6 rounded-lg">
-                  Browse Templates
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
+      .curtain-section {
+        position: relative;
+
+        width: 100%;
+
+        height: 100vh;
+      }
+
+      /* =========================================================
+       CONTENT BEHIND THE CURTAIN
+    ========================================================== */
+
+      .page-content {
+        position: sticky;
+
+        top: 0;
+
+        width: 100%;
+
+        height: 100vh;
+
+        overflow: hidden;
+
+        background:
+          linear-gradient(90deg, rgba(0, 0, 0, 0.12), transparent 24%, transparent 76%, rgba(0, 0, 0, 0.12)),
+          #f7faf7;
+      }
+
+      .sky,
+      .sun,
+      .sun-rays,
+      .mountains,
+      .forest-far,
+      .ground,
+      .tree,
+      .leaves,
+      .content-inner {
+        display: none;
+      }
+
+      /* =========================================================
+       NATURE SKY
+    ========================================================== */
+
+      .sky {
+        position: absolute;
+
+        inset: 0;
+
+        background: linear-gradient(180deg, #bfe5f3 0%, #dff4f4 42%, #d9ead0 100%);
+      }
+
+      /* =========================================================
+       SUN
+    ========================================================== */
+
+      .sun {
+        position: absolute;
+
+        width: 180px;
+
+        height: 180px;
+
+        top: 14%;
+
+        right: 16%;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 220, 1) 0%,
+          rgba(255, 238, 154, 0.9) 25%,
+          rgba(255, 215, 90, 0.25) 55%,
+          transparent 72%
+        );
+
+        filter: blur(2px);
+
+        opacity: 0.9;
+      }
+
+      /* =========================================================
+       SUN RAYS
+    ========================================================== */
+
+      .sun-rays {
+        position: absolute;
+
+        top: -15%;
+
+        right: 2%;
+
+        width: 60%;
+
+        height: 100%;
+
+        background: linear-gradient(
+          125deg,
+          transparent 25%,
+          rgba(255, 255, 220, 0.18) 45%,
+          transparent 65%
+        );
+
+        transform: rotate(-7deg);
+
+        filter: blur(8px);
+
+        opacity: 0.7;
+      }
+
+      /* =========================================================
+       DISTANT MOUNTAINS
+    ========================================================== */
+
+      .mountains {
+        position: absolute;
+
+        left: -5%;
+
+        bottom: 30%;
+
+        width: 110%;
+
+        height: 35%;
+
+        background: linear-gradient(
+          135deg,
+          transparent 35%,
+          #7ca681 35%,
+          #7ca681 55%,
+          transparent 55%
+        );
+
+        opacity: 0.55;
+
+        transform: scale(1.1);
+      }
+
+      /* =========================================================
+       FAR FOREST
+    ========================================================== */
+
+      .forest-far {
+        position: absolute;
+
+        bottom: 25%;
+
+        left: -5%;
+
+        width: 110%;
+
+        height: 22%;
+
+        background: radial-gradient(ellipse at bottom, #547e4e 0 38%, transparent 39%);
+
+        background-size: 120px 100px;
+
+        opacity: 0.8;
+
+        filter: blur(1px);
+      }
+
+      /* =========================================================
+       GRASS / GROUND
+    ========================================================== */
+
+      .ground {
+        position: absolute;
+
+        left: 0;
+
+        bottom: 0;
+
+        width: 100%;
+
+        height: 38%;
+
+        background: linear-gradient(180deg, #719f5b 0%, #416d3c 45%, #274b2d 100%);
+      }
+
+      /* =========================================================
+       TREES
+    ========================================================== */
+
+      .tree {
+        position: absolute;
+
+        bottom: 25%;
+
+        transform-origin: bottom center;
+
+        will-change: transform;
+      }
+
+      .tree-trunk {
+        position: absolute;
+
+        left: 50%;
+
+        bottom: 0;
+
+        width: 20px;
+
+        height: 180px;
+
+        transform: translateX(-50%);
+
+        border-radius: 20px;
+
+        background: linear-gradient(90deg, #3b2618, #70462a, #321d12);
+      }
+
+      .tree-crown {
+        position: absolute;
+
+        left: 50%;
+
+        bottom: 130px;
+
+        width: 180px;
+
+        height: 180px;
+
+        transform: translateX(-50%);
+
+        border-radius: 50%;
+
+        background: radial-gradient(circle at 35% 30%, #8ec56f, #4c8a48 45%, #28603a 75%);
+
+        box-shadow:
+          40px 30px 0 -20px #397442,
+          -40px 25px 0 -18px #397442,
+          20px -20px 0 -25px #6ba955;
+      }
+
+      .tree-1 {
+        left: 17%;
+
+        transform: scale(0.95);
+      }
+
+      .tree-2 {
+        left: 39%;
+
+        bottom: 20%;
+
+        transform: scale(0.7);
+
+        opacity: 0.9;
+      }
+
+      .tree-3 {
+        right: 14%;
+
+        transform: scale(1.1);
+      }
+
+      /* =========================================================
+       FOREGROUND LEAVES
+    ========================================================== */
+
+      .leaves {
+        position: absolute;
+
+        inset: 0;
+
+        pointer-events: none;
+      }
+
+      .leaf {
+        position: absolute;
+
+        width: 28px;
+
+        height: 12px;
+
+        border-radius: 100%;
+
+        background: #4b813f;
+
+        opacity: 0.7;
+
+        transform-origin: center;
+      }
+
+      .leaf:nth-child(1) {
+        left: 12%;
+        top: 35%;
+      }
+
+      .leaf:nth-child(2) {
+        left: 28%;
+        top: 22%;
+      }
+
+      .leaf:nth-child(3) {
+        left: 52%;
+        top: 31%;
+      }
+
+      .leaf:nth-child(4) {
+        left: 71%;
+        top: 20%;
+      }
+
+      .leaf:nth-child(5) {
+        left: 83%;
+        top: 39%;
+      }
+
+      .leaf:nth-child(6) {
+        left: 43%;
+        top: 15%;
+      }
+
+      /* =========================================================
+       PAGE CONTENT
+    ========================================================== */
+
+      .content-inner {
+        position: relative;
+
+        z-index: 10;
+
+        min-height: 100vh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 30px;
+      }
+
+      .content-inner h1 {
+        font-size: clamp(48px, 8vw, 120px);
+
+        color: rgba(255, 255, 255, 0.92);
+
+        letter-spacing: -0.06em;
+
+        line-height: 0.9;
+
+        text-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .content-inner p {
+        max-width: 650px;
+
+        margin-top: 30px;
+
+        font-size: clamp(16px, 2vw, 22px);
+
+        line-height: 1.6;
+
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* =========================================================
+       WINDOW
+    ========================================================== */
+
+      .window {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        transform: none;
+
+        z-index: 20;
+
+        overflow: hidden;
+
+        background: #ffffff;
+
+        border: 0;
+
+        box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.15);
+      }
+
+      .window img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+
+        display: block;
+      }
+
+      /* =========================================================
+       WINDOW GLASS
+    ========================================================== */
+
+      .glass {
+        position: absolute;
+
+        inset: 0;
+
+        overflow: hidden;
+
+        background: rgba(255, 255, 255, 0.12);
+
+        backdrop-filter: blur(1px);
+      }
+
+      /* =========================================================
+       WINDOW VERTICAL FRAME
+    ========================================================== */
+
+      .window-frame-v {
+        position: absolute;
+
+        top: 0;
+
+        left: 50%;
+
+        width: 12px;
+
+        height: 100%;
+
+        transform: translateX(-50%);
+
+        background: #ffffff;
+
+        z-index: 30;
+
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.12);
+      }
+
+      /* =========================================================
+       WINDOW HORIZONTAL FRAME
+    ========================================================== */
+
+      .window-frame-h {
+        position: absolute;
+
+        left: 0;
+
+        top: 50%;
+
+        width: 100%;
+
+        height: 12px;
+
+        transform: translateY(-50%);
+
+        background: #ffffff;
+
+        z-index: 30;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      /* =========================================================
+       GLASS REFLECTION
+    ========================================================== */
+
+      .glass-reflection {
+        position: absolute;
+
+        top: -20%;
+
+        left: -20%;
+
+        width: 55%;
+
+        height: 150%;
+
+        background: linear-gradient(
+          110deg,
+          transparent 20%,
+          rgba(255, 255, 255, 0.5) 45%,
+          transparent 65%
+        );
+
+        transform: rotate(8deg);
+
+        z-index: 35;
+
+        pointer-events: none;
+
+        mix-blend-mode: screen;
+      }
+
+      /* =========================================================
+       GLASS GLOW
+    ========================================================== */
+
+      .glass-glow {
+        position: absolute;
+
+        inset: 0;
+
+        background: radial-gradient(circle at 70% 25%, rgba(255, 255, 255, 0.4), transparent 40%);
+
+        z-index: 34;
+
+        pointer-events: none;
+      }
+
+      /* =========================================================
+       CURTAIN STAGE
+    ========================================================== */
+
+      .curtain-stage {
+        position: fixed;
+
+        inset: 0;
+
+        width: 100vw;
+
+        height: 100vh;
+
+        z-index: 100;
+
+        overflow: hidden;
+
+        pointer-events: none;
+
+        perspective: 1200px;
+
+        background:
+          radial-gradient(circle at 50% 7%, rgba(255, 244, 218, 0.12), transparent 26%),
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.22),
+            transparent 25%,
+            transparent 75%,
+            rgba(0, 0, 0, 0.22)
+          );
+      }
+
+      .curtain-stage::before {
+        content: '';
+
+        position: absolute;
+
+        left: 5vw;
+
+        right: 5vw;
+
+        top: clamp(28px, 5.4vh, 54px);
+
+        height: clamp(10px, 1.2vw, 18px);
+
+        border-radius: 999px;
+
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 28%),
+          linear-gradient(90deg, #100c0b, #3c2a22 18%, #050403 50%, #3c2a22 82%, #100c0b);
+
+        box-shadow:
+          0 6px 20px rgba(0, 0, 0, 0.45),
+          inset 0 2px 3px rgba(255, 255, 255, 0.28),
+          inset 0 -2px 4px rgba(0, 0, 0, 0.65);
+
+        z-index: 145;
+      }
+
+      .curtain-stage::after {
+        content: '';
+
+        position: absolute;
+
+        top: clamp(18px, 4.6vh, 46px);
+
+        left: 3.6vw;
+
+        right: 3.6vw;
+
+        height: clamp(28px, 3.4vw, 52px);
+
+        background:
+          radial-gradient(
+            circle at left center,
+            #070505 0 9px,
+            #1c1512 10px 18px,
+            transparent 19px
+          ),
+          radial-gradient(
+            circle at right center,
+            #070505 0 9px,
+            #1c1512 10px 18px,
+            transparent 19px
+          );
+
+        pointer-events: none;
+
+        z-index: 146;
+      }
+
+      /* =========================================================
+       SVG FILTER
+    ========================================================== */
+
+      .svg-filters {
+        position: absolute;
+
+        width: 0;
+
+        height: 0;
+
+        pointer-events: none;
+      }
+
+      /* =========================================================
+       CURTAIN
+    ========================================================== */
+
+      .curtain {
+        position: absolute;
+
+        top: clamp(34px, 5.7vh, 58px);
+
+        width: 64vw;
+
+        min-width: 500px;
+
+        height: calc(100vh - clamp(18px, 3vh, 34px));
+
+        overflow: hidden;
+
+        border-radius: 2px 2px 22px 22px;
+
+        transform-style: preserve-3d;
+
+        filter: drop-shadow(0 26px 36px rgba(0, 0, 0, 0.45));
+
+        will-change: transform, filter, clip-path;
+      }
+
+      .curtain-left {
+        left: 0;
+
+        transform-origin: left center;
+      }
+
+      .curtain-right {
+        right: 0;
+
+        transform-origin: right center;
+      }
+
+      /* =========================================================
+       FABRIC
+    ========================================================== */
+
+      .fabric {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        background:
+          radial-gradient(ellipse at 50% 105%, rgba(255, 112, 104, 0.28), transparent 22%),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.14) 0%,
+            transparent 10%,
+            rgba(0, 0, 0, 0.18) 72%,
+            rgba(0, 0, 0, 0.48) 100%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            #1a0205 0px,
+            #4b0610 18px,
+            #9a142b 34px,
+            #c13645 47px,
+            #500711 68px,
+            #160104 86px,
+            #6f0b18 112px,
+            #b42239 130px,
+            #3a040b 154px
+          );
+
+        box-shadow:
+          inset 18px 0 36px rgba(0, 0, 0, 0.62),
+          inset -18px 0 36px rgba(0, 0, 0, 0.62),
+          inset 0 26px 32px rgba(255, 255, 255, 0.08),
+          inset 0 -42px 48px rgba(0, 0, 0, 0.55);
+      }
+
+      .fabric::before,
+      .fabric::after {
+        content: '';
+
+        position: absolute;
+
+        inset: 0;
+
+        pointer-events: none;
+      }
+
+      .fabric::before {
+        background:
+          repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.82) 0 5px,
+            rgba(255, 255, 255, 0.18) 11px 15px,
+            rgba(120, 0, 20, 0.18) 24px 36px,
+            rgba(0, 0, 0, 0.66) 44px 56px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.035) 0 1px,
+            rgba(0, 0, 0, 0.035) 2px 4px
+          );
+
+        mix-blend-mode: overlay;
+
+        opacity: 0.78;
+      }
+
+      .fabric::after {
+        background:
+          radial-gradient(ellipse at 18% 92%, rgba(0, 0, 0, 0.52), transparent 24%),
+          radial-gradient(ellipse at 78% 94%, rgba(255, 130, 118, 0.18), transparent 18%),
+          linear-gradient(
+            105deg,
+            transparent 0 18%,
+            rgba(255, 255, 255, 0.11) 28%,
+            transparent 42% 100%
+          );
+
+        mix-blend-mode: soft-light;
+
+        opacity: 0.95;
+      }
+
+      /* =========================================================
+       FABRIC FOLDS
+    ========================================================== */
+
+      .fabric-folds {
+        position: absolute;
+
+        inset: -5%;
+
+        width: 110%;
+
+        height: 110%;
+
+        background:
+          repeating-radial-gradient(
+            ellipse at 50% 105%,
+            rgba(255, 255, 255, 0.09) 0 2px,
+            transparent 3px 20px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.86) 0px,
+            rgba(0, 0, 0, 0.28) 12px,
+            rgba(255, 255, 255, 0.22) 25px,
+            rgba(255, 255, 255, 0.04) 39px,
+            rgba(0, 0, 0, 0.88) 55px,
+            rgba(0, 0, 0, 0.18) 74px,
+            rgba(255, 255, 255, 0.17) 91px,
+            rgba(255, 255, 255, 0.02) 112px
+          );
+
+        mix-blend-mode: soft-light;
+
+        opacity: 0.95;
+
+        will-change: transform;
+      }
+
+      /* =========================================================
+       FABRIC HIGHLIGHTS
+    ========================================================== */
+
+      .fabric-light {
+        position: absolute;
+
+        inset: -10%;
+
+        width: 120%;
+
+        height: 120%;
+
+        background:
+          radial-gradient(ellipse at 48% 28%, rgba(255, 170, 150, 0.16), transparent 34%),
+          repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 20px,
+            rgba(255, 220, 210, 0.28) 30px,
+            rgba(255, 255, 255, 0.03) 44px,
+            transparent 62px
+          );
+
+        mix-blend-mode: screen;
+
+        opacity: 0.45;
+
+        will-change: transform;
+      }
+
+      /* =========================================================
+       CURTAIN DARK EDGE
+    ========================================================== */
+
+      .curtain-edge {
+        position: absolute;
+
+        top: 0;
+
+        width: 54px;
+
+        height: 100%;
+
+        z-index: 20;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(255, 206, 190, 0.22),
+          rgba(0, 0, 0, 0.82)
+        );
+
+        filter: blur(1px);
+      }
+
+      .curtain-left .curtain-edge {
+        right: -10px;
+      }
+
+      .curtain-right .curtain-edge {
+        left: -10px;
+      }
+
+      /* =========================================================
+       TOP GATHER
+    ========================================================== */
+
+      .fabric-gather {
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: clamp(68px, 13vh, 132px);
+
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.56), transparent 78%),
+          repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.68) 0 8px,
+            rgba(80, 7, 18, 0.16) 13px 24px,
+            rgba(255, 255, 255, 0.12) 32px 38px,
+            transparent 45px 62px
+          );
+
+        opacity: 0.92;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
+      .fabric-hem {
+        position: absolute;
+
+        left: -4%;
+
+        right: -4%;
+
+        bottom: -2px;
+
+        height: clamp(70px, 13vh, 128px);
+
+        background:
+          radial-gradient(ellipse at 12% 82%, rgba(0, 0, 0, 0.72), transparent 28%),
+          radial-gradient(ellipse at 34% 100%, rgba(255, 104, 96, 0.24), transparent 20%),
+          radial-gradient(ellipse at 58% 88%, rgba(0, 0, 0, 0.58), transparent 24%),
+          radial-gradient(ellipse at 82% 104%, rgba(255, 104, 96, 0.18), transparent 22%),
+          linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+
+        clip-path: polygon(
+          0 32%,
+          7% 55%,
+          14% 37%,
+          23% 65%,
+          32% 42%,
+          43% 76%,
+          53% 44%,
+          65% 70%,
+          76% 39%,
+          88% 62%,
+          100% 35%,
+          100% 100%,
+          0 100%
+        );
+
+        mix-blend-mode: multiply;
+
+        opacity: 0.86;
+
+        z-index: 12;
+      }
+
+      /* =========================================================
+       CURTAIN SHADOW
+    ========================================================== */
+
+      .curtain-shadow {
+        position: absolute;
+
+        inset: 0;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.7),
+          transparent 15%,
+          transparent 85%,
+          rgba(0, 0, 0, 0.75)
+        );
+
+        pointer-events: none;
+      }
+
+      .curtain-toggle {
+        position: fixed;
+
+        right: 24px;
+
+        bottom: 24px;
+
+        z-index: 350;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        min-width: 116px;
+
+        height: 42px;
+
+        border: 1px solid rgba(255, 255, 255, 0.32);
+
+        border-radius: 999px;
+
+        background: rgba(12, 8, 8, 0.58);
+
+        color: #fff;
+
+        font:
+          700 12px/1 Inter,
+          Arial,
+          sans-serif;
+
+        letter-spacing: 0.08em;
+
+        text-transform: uppercase;
+
+        backdrop-filter: blur(12px);
+
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32);
+
+        cursor: pointer;
+      }
+
+      .curtain-toggle:focus-visible {
+        outline: 2px solid #fff;
+
+        outline-offset: 3px;
+      }
+
+      /* =========================================================
+       MOUSE INTERACTION AREA
+    ========================================================== */
+
+      .interaction-layer {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 150;
+
+        pointer-events: auto;
+
+        background: transparent;
+
+        cursor: grab;
+
+        touch-action: none;
+      }
+
+      .interaction-layer.is-dragging {
+        cursor: grabbing;
+      }
+
+      /* =========================================================
+       CLICK RIPPLE
+    ========================================================== */
+
+      .ripple {
+        position: fixed;
+
+        width: 20px;
+
+        height: 20px;
+
+        border-radius: 50%;
+
+        border: 2px solid rgba(255, 255, 255, 0.65);
+
+        transform: translate(-50%, -50%) scale(0);
+
+        pointer-events: none;
+
+        z-index: 500;
+
+        opacity: 0;
+
+        filter: blur(1px);
+      }
+
+      /* =========================================================
+       SCROLL TEXT
+    ========================================================== */
+
+      .scroll-hint {
+        position: fixed;
+
+        left: 50%;
+
+        bottom: 35px;
+
+        transform: translateX(-50%);
+
+        z-index: 300;
+
+        color: rgba(255, 255, 255, 0.9);
+
+        font-size: 12px;
+
+        letter-spacing: 0.2em;
+
+        text-transform: uppercase;
+
+        pointer-events: none;
+      }
+
+      .scroll-line {
+        width: 1px;
+
+        height: 45px;
+
+        margin: 12px auto 0;
+
+        background: linear-gradient(to bottom, #fff, transparent);
+
+        animation: scrollPulse 1.6s ease-in-out infinite;
+      }
+
+      @keyframes scrollPulse {
+        0% {
+          transform: scaleY(0.2);
+
+          transform-origin: top;
+        }
+
+        50% {
+          transform: scaleY(1);
+
+          transform-origin: top;
+        }
+
+        100% {
+          transform: scaleY(0.2);
+
+          transform-origin: bottom;
+        }
+      }
+
+      /* =========================================================
+       MOBILE
+    ========================================================== */
+
+      @media (max-width: 768px) {
+        .curtain {
+          width: 78vw;
+
+          min-width: 0;
+        }
+
+        .curtain-stage::before {
+          left: 2vw;
+
+          right: 2vw;
+        }
+
+        .curtain-toggle {
+          right: 16px;
+
+          bottom: 16px;
+
+          min-width: 106px;
+        }
+
+        .window {
+          border-width: 10px;
+        }
+
+        .window-frame-v,
+        .window-frame-h {
+          width: 8px;
+        }
+
+        .tree-1 {
+          left: 5%;
+        }
+
+        .tree-3 {
+          right: 4%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================================================
+       MAIN SCROLL SECTION
+  ========================================================== -->
+
+    <section class="curtain-section">
+      <!-- =======================================================
+         NATURE / PAGE CONTENT
+    ======================================================== -->
+
+      <div class="page-content">
+        <!-- SKY -->
+
+        <div class="sky"></div>
+
+        <!-- SUN -->
+
+        <div class="sun"></div>
+
+        <div class="sun-rays"></div>
+
+        <!-- MOUNTAINS -->
+
+        <div class="mountains"></div>
+
+        <!-- FAR FOREST -->
+
+        <div class="forest-far"></div>
+
+        <!-- GROUND -->
+
+        <div class="ground"></div>
+
+        <!-- =====================================================
+           TREES
+      ====================================================== -->
+
+        <div class="tree tree-1">
+          <div class="tree-trunk"></div>
+
+          <div class="tree-crown"></div>
         </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </section>
+
+        <div class="tree tree-2">
+          <div class="tree-trunk"></div>
+
+          <div class="tree-crown"></div>
+        </div>
+
+        <div class="tree tree-3">
+          <div class="tree-trunk"></div>
+
+          <div class="tree-crown"></div>
+        </div>
+
+        <!-- =====================================================
+           FLOATING LEAVES
+      ====================================================== -->
+
+        <div class="leaves">
+          <div class="leaf"></div>
+
+          <div class="leaf"></div>
+
+          <div class="leaf"></div>
+
+          <div class="leaf"></div>
+
+          <div class="leaf"></div>
+
+          <div class="leaf"></div>
+        </div>
+
+        <!-- =====================================================
+           WINDOW
+      ====================================================== -->
+
+        <div class="window">
+          <img src="./assets/images/curtain-window.webp" alt="Bright white window with garden view" />
+        </div>
+
+        <!-- =====================================================
+           PAGE CONTENT
+      ====================================================== -->
+
+        <div class="content-inner">
+          <h1>A New View</h1>
+
+          <p>Scroll down to open the curtains and reveal the world outside.</p>
+        </div>
+      </div>
+
+      <!-- =======================================================
+         CURTAIN STAGE
+    ======================================================== -->
+
+      <div class="curtain-stage">
+        <!-- =====================================================
+           LEFT CURTAIN
+      ====================================================== -->
+
+        <div
+          class="curtain curtain-left"
+          id="curtainLeft"
+          style="filter: drop-shadow(0 26px 36px rgba(0, 0, 0, 0.45))"
+        >
+          <div class="fabric">
+            <div class="fabric-folds"></div>
+
+            <div class="fabric-light"></div>
+
+            <div class="fabric-gather"></div>
+
+            <div class="fabric-hem"></div>
+
+            <div class="curtain-shadow"></div>
+          </div>
+
+          <div class="curtain-edge"></div>
+        </div>
+
+        <!-- =====================================================
+           RIGHT CURTAIN
+      ====================================================== -->
+
+        <div
+          class="curtain curtain-right"
+          id="curtainRight"
+          style="filter: drop-shadow(0 26px 36px rgba(0, 0, 0, 0.45))"
+        >
+          <div class="fabric">
+            <div class="fabric-folds"></div>
+
+            <div class="fabric-light"></div>
+
+            <div class="fabric-gather"></div>
+
+            <div class="fabric-hem"></div>
+
+            <div class="curtain-shadow"></div>
+          </div>
+
+          <div class="curtain-edge"></div>
+        </div>
+      </div>
+
+      <!-- =======================================================
+         INTERACTION
+    ======================================================== -->
+
+      <div class="interaction-layer" id="interactionLayer"></div>
+
+      <!-- =======================================================
+         CLICK RIPPLE
+    ======================================================== -->
+
+      <div class="ripple" id="ripple"></div>
+
+      <!-- =======================================================
+         SCROLL HINT
+    ======================================================== -->
+
+      <div class="scroll-hint" id="scrollHint">
+        Drag to open
+
+        <div class="scroll-line"></div>
+      </div>
+
+      <button class="curtain-toggle" id="curtainToggle" type="button" aria-pressed="false">
+        Open
+      </button>
+    </section>
+
+    <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger)
+
+      const leftCurtain = document.querySelector('#curtainLeft')
+      const rightCurtain = document.querySelector('#curtainRight')
+      const leftFolds = leftCurtain.querySelector('.fabric-folds')
+      const rightFolds = rightCurtain.querySelector('.fabric-folds')
+      const leftLight = leftCurtain.querySelector('.fabric-light')
+      const rightLight = rightCurtain.querySelector('.fabric-light')
+      const hems = document.querySelectorAll('.fabric-hem')
+      const gathers = document.querySelectorAll('.fabric-gather')
+      const interactionLayer = document.querySelector('#interactionLayer')
+      const ripple = document.querySelector('#ripple')
+      const scrollHint = document.querySelector('#scrollHint')
+      const curtainToggle = document.querySelector('#curtainToggle')
+
+      let curtainProgress = 0
+      let dragStartX = 0
+      let dragStartProgress = 0
+      let isDragging = false
+
+      function updateCurtains(progress, animate = false) {
+        curtainProgress = gsap.utils.clamp(0, 1, progress)
+
+        const leftState = {
+          xPercent: -86 * curtainProgress,
+          scaleX: 1 - 0.42 * curtainProgress,
+          rotation: -1.8 * curtainProgress,
+          rotationY: -16 * curtainProgress,
+          skewY: 1.4 * curtainProgress,
+          filter:
+            curtainProgress > 0.02
+              ? 'drop-shadow(24px 30px 34px rgba(0, 0, 0, 0.52))'
+              : 'drop-shadow(0 26px 36px rgba(0, 0, 0, 0.45))'
+        }
+
+        const rightState = {
+          xPercent: 86 * curtainProgress,
+          scaleX: 1 - 0.42 * curtainProgress,
+          rotation: 1.8 * curtainProgress,
+          rotationY: 16 * curtainProgress,
+          skewY: -1.4 * curtainProgress,
+          filter:
+            curtainProgress > 0.02
+              ? 'drop-shadow(-24px 30px 34px rgba(0, 0, 0, 0.52))'
+              : 'drop-shadow(0 26px 36px rgba(0, 0, 0, 0.45))'
+        }
+
+        const foldState = {
+          xPercent: 12 * curtainProgress,
+          scaleX: 1 + 0.16 * curtainProgress
+        }
+
+        const tween = animate ? gsap.to : gsap.set
+
+        tween(leftCurtain, { ...leftState, duration: 0.7, ease: 'power3.out' })
+        tween(rightCurtain, { ...rightState, duration: 0.7, ease: 'power3.out' })
+        tween(leftFolds, { xPercent: -foldState.xPercent, scaleX: foldState.scaleX, duration: 0.7, ease: 'power3.out' })
+        tween(rightFolds, { xPercent: foldState.xPercent, scaleX: foldState.scaleX, duration: 0.7, ease: 'power3.out' })
+        tween(leftLight, { xPercent: -30 * curtainProgress, duration: 0.7, ease: 'power3.out' })
+        tween(rightLight, { xPercent: 30 * curtainProgress, duration: 0.7, ease: 'power3.out' })
+        tween(gathers, { scaleX: 1 + 0.35 * curtainProgress, xPercent: 4 * curtainProgress, duration: 0.7, ease: 'power3.out' })
+        tween(hems, { yPercent: 5 * curtainProgress, scaleX: 1 + 0.2 * curtainProgress, duration: 0.7, ease: 'power3.out' })
+
+        const open = curtainProgress > 0.55
+        curtainToggle.setAttribute('aria-pressed', String(open))
+        curtainToggle.textContent = open ? 'Close' : 'Open'
+        scrollHint.style.opacity = curtainProgress > 0.08 ? '0' : '1'
+      }
+
+      function showRipple(x, y) {
+        gsap.set(ripple, {
+          left: x,
+          top: y,
+          scale: 0,
+          opacity: 0.65
+        })
+
+        gsap.to(ripple, {
+          scale: 6,
+          opacity: 0,
+          duration: 0.65,
+          ease: 'power3.out'
+        })
+      }
+
+      interactionLayer.addEventListener('pointerdown', function (event) {
+        isDragging = true
+        dragStartX = event.clientX
+        dragStartProgress = curtainProgress
+        interactionLayer.classList.add('is-dragging')
+        interactionLayer.setPointerCapture(event.pointerId)
+        showRipple(event.clientX, event.clientY)
+      })
+
+      interactionLayer.addEventListener('pointermove', function (event) {
+        if (!isDragging) {
+          return
+        }
+
+        const dragDistance = Math.abs(event.clientX - dragStartX)
+        const direction = dragStartX < window.innerWidth / 2 ? -1 : 1
+        const signedDistance = (event.clientX - dragStartX) * direction
+        const nextProgress = dragStartProgress + signedDistance / (window.innerWidth * 0.42)
+
+        updateCurtains(nextProgress)
+
+        if (dragDistance > 6) {
+          event.preventDefault()
+        }
+      })
+
+      function stopDrag(event) {
+        if (!isDragging) {
+          return
+        }
+
+        isDragging = false
+        interactionLayer.classList.remove('is-dragging')
+
+        if (event.pointerId !== undefined && interactionLayer.hasPointerCapture(event.pointerId)) {
+          interactionLayer.releasePointerCapture(event.pointerId)
+        }
+
+        updateCurtains(curtainProgress > 0.5 ? 1 : 0, true)
+      }
+
+      interactionLayer.addEventListener('pointerup', stopDrag)
+      interactionLayer.addEventListener('pointercancel', stopDrag)
+
+      curtainToggle.addEventListener('click', function (event) {
+        event.stopPropagation()
+        updateCurtains(curtainProgress < 0.5 ? 1 : 0, true)
+      })
+
+      updateCurtains(0)
+
+      /* =========================================================
+       RESIZE
+    ========================================================== */
+
+      window.addEventListener('resize', function () {
+        updateCurtains(curtainProgress)
+      })
+    </script>
+  </body>
+</html>
