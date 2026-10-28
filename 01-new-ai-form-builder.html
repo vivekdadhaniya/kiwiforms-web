@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Generate a Form With AI, Step by Step | Kiwiform</title>
+<meta name="description" content="Generate a form with AI from a plain-language prompt. Compare 8 AI form generators, learn how to write a prompt, check validation and logic, and see dated free-plan limits.">
+<link rel="canonical" href="https://kiwiform.com/ai-form-builder">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kiwiform">
+<meta property="og:url" content="https://kiwiform.com/ai-form-builder">
+<meta property="og:title" content="How to Generate a Form With AI, Step by Step">
+<meta property="og:description" content="Type a prompt, get an editable form. How AI form generators work, how to write a good prompt, and which free plan fits.">
+<meta property="og:image" content="https://kiwiform.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Generate a Form With AI, Step by Step">
+<meta name="twitter:description" content="Type a prompt, get an editable form. How AI form generators work, how to write a good prompt, and which free plan fits.">
+<meta name="twitter:image" content="https://kiwiform.com/images/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Generate a Form With AI, Step by Step",
+  "dateModified": "2026-10",
+  "author": {"@type": "Organization", "name": "Kiwiform Team", "url": "https://kiwiform.com"},
+  "publisher": {"@type": "Organization", "name": "Kiwiform", "url": "https://kiwiform.com"},
+  "mainEntityOfPage": "https://kiwiform.com/ai-form-builder",
+  "image": "https://kiwiform.com/images/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to generate a form with AI",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Choose", "text": "Choose an AI form builder whose free plan covers the number of forms and responses you expect."},
+    {"@type": "HowToStep", "position": 2, "name": "Prompt", "text": "Write a prompt that names the purpose, audience, fields and rules."},
+    {"@type": "HowToStep", "position": 3, "name": "Generate", "text": "Generate the draft, then check that each field got the right type, such as email, phone or date."},
+    {"@type": "HowToStep", "position": 4, "name": "Review", "text": "Review and edit the draft by chat or by hand."},
+    {"@type": "HowToStep", "position": 5, "name": "Publish", "text": "Publish the form by link, QR code or embed."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the difference between a form builder and a survey tool?", "acceptedAnswer": {"@type": "Answer", "text": "A form collects structured information to act on, such as an application or an order. A survey measures opinion across many people using scales and comparable answers. Many AI tools can draft both from a prompt, and a quiz is a third type that scores answers against correct ones."}},
+    {"@type": "Question", "name": "Why do free plans differ so much between AI form builders?", "acceptedAnswer": {"@type": "Answer", "text": "Vendors meter different things: forms, responses, AI generations or features. A plan that is “free” on forms can still cap responses or AI drafts. Decision rule: estimate your monthly responses first, then rule out every free plan whose cap sits below that number in the dated pricing table."}},
+    {"@type": "Question", "name": "Do I need coding skills to generate a form with AI?", "acceptedAnswer": {"@type": "Answer", "text": "No. You describe the form in plain language, or upload a document in tools that support it, and the AI builds an editable draft. Editing is done by chat or by drag and drop. Code is only needed if you want custom builds through an API or webhooks."}},
+    {"@type": "Question", "name": "Where can I create a free digital form?", "acceptedAnswer": {"@type": "Answer", "text": "Any tool in the pricing table with a free plan will do for a small form. The cap decides the rest: above 100 submissions a month, Jotform’s free plan is out; above 1,000, Fillout’s is too. Tally and Youform list unlimited free responses, and sign-up rules still vary by vendor."}},
+    {"@type": "Question", "name": "How to create an online form to fill out for free?", "acceptedAnswer": {"@type": "Answer", "text": "Pick a tool with a free plan, generate or build the form, then share it by link, QR code or embed so people can fill it out online. Generating the form with AI and filling it out are separate workflows."}},
+    {"@type": "Question", "name": "Can I embed an AI-generated form on my existing website?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, usually by pasting the tool’s embed code into your site builder. If your site builder blocks embeds, a standalone link or QR code works instead. Check whether embedding is limited to a paid plan in the tool you choose."}},
+    {"@type": "Question", "name": "How do I send AI form responses to Google Sheets or other apps?", "acceptedAnswer": {"@type": "Answer", "text": "Use a native integration when the tool has one for your destination, since it needs no extra account. For apps without one, route entries through Zapier or Make. Reserve webhooks or an API for custom builds, and check whether webhooks sit on a paid plan."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --kiwi:#4E9A1F;          /* brand green: buttons, links */
+  --kiwi-strong:#3B7A14;   /* hover */
+  --kiwi-wash:#F1F7EA;     /* soft section fill */
+  --seed:#2A1D12;          /* kiwi-seed brown, used once for the prompt deck */
+  --ink:#16261A;           /* headings + body */
+  --ink-soft:#4A5A4E;      /* secondary text */
+  --line:#DCE5D4;
+  --bg:#FFFFFF;
+  --surface:#FFFFFF;
+  --gold:#E8C547;          /* kiwi golden flesh: highlight row only */
+  --radius-lg:22px;
+  --radius-sm:10px;
+  --font-display:"Bricolage Grotesque", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --kiwi:#7CC44A; --kiwi-strong:#97D86A; --kiwi-wash:#16231A;
+    --seed:#0E140F; --ink:#E7EFE6; --ink-soft:#A9B8AB; --line:#2B3A2F;
+    --bg:#0F1711; --surface:#152018; --gold:#C9A930;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --kiwi:#7CC44A; --kiwi-strong:#97D86A; --kiwi-wash:#16231A;
+  --seed:#0E140F; --ink:#E7EFE6; --ink-soft:#A9B8AB; --line:#2B3A2F;
+  --bg:#0F1711; --surface:#152018; --gold:#C9A930;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--kiwi);text-underline-offset:3px}
+a:hover{color:var(--kiwi-strong)}
+:focus-visible{outline:3px solid var(--kiwi);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.15;margin:0;color:var(--ink);letter-spacing:-0.01em}
+h2{font-size:clamp(1.65rem,3vw,2.15rem);font-weight:800;margin-bottom:.6rem}
+h3{font-size:1.3rem;font-weight:700;margin:2rem 0 .5rem}
+p{margin:0 0 1rem}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);top:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px)}
+.site-header .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{font-family:var(--font-display);font-weight:800;font-size:1.35rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo-dot{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#FFF6D6 0 18%,#9BD15F 19% 70%,#6B4B2E 71%)}
+.nav{display:flex;gap:22px;margin-left:8px}
+.nav a{color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav a:hover{color:var(--ink)}
+.header-cta{margin-left:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:.98rem;border-radius:999px;padding:11px 20px;text-decoration:none;border:0;cursor:pointer;background:var(--kiwi);color:#fff}
+.btn:hover{background:var(--kiwi-strong);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{background:var(--kiwi-wash);color:var(--ink)}
+@media (max-width:820px){.nav{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{padding:64px 0 56px;text-align:center}
+.hero .tag{display:inline-block;font-weight:600;font-size:.9rem;color:var(--kiwi);background:var(--kiwi-wash);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.9rem);font-weight:800;max-width:15ch;margin:0 auto 22px;letter-spacing:-0.025em}
+.hero .lede{max-width:66ch;margin:0 auto 34px;color:var(--ink-soft);font-size:1.08rem}
+
+/* Prompt deck: the one bold element */
+.prompt-deck{max-width:820px;margin:0 auto;background:var(--seed);border-radius:28px;padding:10px;text-align:left;box-shadow:0 30px 60px -30px rgba(42,29,18,.55)}
+.prompt-inner{background:var(--surface);border-radius:20px;padding:18px 18px 14px}
+.prompt-inner label{display:block;font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin-bottom:8px}
+.prompt-inner textarea{width:100%;min-height:118px;resize:vertical;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:1.05rem;line-height:1.55}
+.prompt-inner textarea::placeholder{color:var(--ink-soft);opacity:.8}
+.prompt-inner:focus-within{box-shadow:inset 0 0 0 2px var(--kiwi)}
+.prompt-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.prompt-bar .hint{color:var(--ink-soft);font-size:.88rem;margin-right:auto}
+.prompt-bar .btn{padding:12px 22px;font-size:1rem}
+.prompt-bar .btn svg{width:18px;height:18px}
+.prompt-error{color:#C0392B;font-size:.9rem;margin:8px 0 0;min-height:1.2em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:14px 8px 6px}
+.chips span{color:#CDBFAF;font-size:.88rem;margin-right:4px;align-self:center}
+.chip{font:inherit;font-size:.88rem;color:#F2EADF;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 13px;cursor:pointer}
+.chip:hover{background:rgba(255,255,255,.16)}
+.byline{margin-top:26px;color:var(--ink-soft);font-size:.9rem}
+
+/* ---------- Layout with TOC ---------- */
+.doc{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;padding-bottom:40px}
+.toc{position:sticky;top:96px;align-self:start;font-size:.92rem;max-height:calc(100vh - 120px);overflow:auto}
+.toc p{font-family:var(--font-display);font-weight:700;margin-bottom:10px}
+.toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--ink-soft);text-decoration:none;line-height:1.35}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--kiwi);border-left-color:var(--kiwi);font-weight:600}
+@media (max-width:980px){.doc{grid-template-columns:1fr;gap:0}.toc{display:none}}
+.article{max-width:760px}
+.article > section{padding:48px 0;border-top:1px solid var(--line)}
+.article > section:first-child{border-top:0;padding-top:0}
+.article ul,.article ol{padding-left:1.25rem;margin:0 0 1rem}
+.article li{margin-bottom:.45rem}
+.muted{color:var(--ink-soft)}
+
+/* TL;DR */
+.tldr{background:var(--kiwi-wash);border-radius:var(--radius-lg);padding:26px 28px}
+.tldr h2{font-size:1.35rem;margin-bottom:12px}
+.tldr ul{margin:0}
+
+/* Tool entries */
+.tools{display:grid;gap:14px;margin-top:22px}
+.tool{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:var(--surface)}
+.tool.ours{border:2px solid var(--kiwi)}
+.tool h3{margin:0 0 10px;font-size:1.15rem}
+.tool h3 small{font-family:var(--font-body);font-weight:600;font-size:.8rem;color:var(--kiwi);background:var(--kiwi-wash);padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.tool dl{display:grid;grid-template-columns:96px 1fr;gap:6px 14px;margin:0;font-size:.97rem}
+.tool dt{font-weight:600;color:var(--ink-soft)}
+.tool dd{margin:0}
+@media (max-width:560px){.tool dl{grid-template-columns:1fr}.tool dt{margin-top:6px}}
+
+/* Steps (a real sequence) */
+.steps{counter-reset:s;list-style:none;padding:0!important;margin:22px 0 0!important}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 62px;margin:0!important}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:42px;height:42px;border-radius:50%;background:var(--kiwi);color:#fff;font-family:var(--font-display);font-weight:800;font-size:1.15rem;display:grid;place-items:center}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:20px;top:44px;bottom:2px;width:2px;background:var(--line)}
+.steps strong{display:block;font-family:var(--font-display);font-size:1.1rem}
+
+/* Prompt quote blocks */
+.prompt-quote{position:relative;background:var(--surface);border:1px dashed color-mix(in srgb,var(--kiwi) 55%,var(--line));border-radius:14px;padding:16px 18px;margin:12px 0 16px;font-size:1rem}
+.prompt-quote p{margin:0 0 10px}
+.use-prompt{font:inherit;font-size:.86rem;font-weight:600;color:var(--kiwi);background:transparent;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.use-prompt:hover{color:var(--kiwi-strong)}
+.prompt-label{font-weight:700;display:block;margin-bottom:4px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 22px}
+.compare .prompt-quote{margin:0}
+.compare .vague{border-style:solid;border-color:var(--line);color:var(--ink-soft)}
+@media (max-width:640px){.compare{grid-template-columns:1fr}}
+
+/* Kiwiform plan block */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.plan{border-radius:18px;padding:22px 24px;background:var(--kiwi-wash)}
+.plan.pro{background:var(--surface);border:1.5px solid var(--line)}
+.plan h3{margin:0 0 10px;font-size:1.15rem}
+.plan ul{margin:0}
+@media (max-width:700px){.plans{grid-template-columns:1fr}}
+.note{border-left:3px solid var(--gold);padding:4px 0 4px 16px;margin:18px 0}
+.cta-inline{margin-top:20px}
+
+/* Tables */
+.table-scroll{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.94rem}
+th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
+thead th{font-family:var(--font-display);font-weight:700;background:var(--kiwi-wash);font-size:.95rem}
+tbody tr:last-child td{border-bottom:0}
+tbody th{font-weight:600}
+tr.highlight td,tr.highlight th{background:color-mix(in srgb,var(--gold) 16%,var(--surface))}
+
+/* Features */
+.feature-group h3{margin-top:28px}
+.features{display:grid;gap:0;margin:8px 0 0;border-top:1px solid var(--line)}
+.features div{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.features dt{font-weight:700;font-family:var(--font-display)}
+.features dd{margin:0}
+@media (max-width:600px){.features div{grid-template-columns:1fr;gap:4px}}
+
+/* Definitions */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 8px;padding:0!important;list-style:none}
+.trio li{background:var(--kiwi-wash);border-radius:14px;padding:16px 18px;margin:0!important}
+.trio strong{display:block;font-family:var(--font-display);font-size:1.05rem;margin-bottom:4px}
+@media (max-width:700px){.trio{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;list-style:none;font-family:var(--font-display);font-weight:700;font-size:1.08rem;padding:14px 36px 14px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;border-right:2px solid var(--ink-soft);border-bottom:2px solid var(--ink-soft);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{color:var(--ink-soft);padding-bottom:10px}
+
+/* Final CTA */
+.final-cta{background:var(--seed);color:#F2EADF;border-radius:28px;padding:56px 32px;text-align:center;margin:40px 0 72px}
+.final-cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem)}
+.final-cta p{max-width:60ch;margin:0 auto 26px;color:#D8CCBD}
+.final-cta .points{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:.92rem;color:#CDBFAF}
+.final-cta .btn{background:#9BD15F;color:#1B2A12}
+.final-cta .btn:hover{background:#B4E07F;color:#1B2A12}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);padding:48px 0 calc(32px + env(safe-area-inset-bottom,0px));font-size:.92rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:28px}
+.footer-grid h4{font-size:1rem;margin-bottom:10px}
+.footer-grid ul{list-style:none;padding:0;margin:0}
+.footer-grid li{margin-bottom:7px}
+.footer-grid a{color:var(--ink-soft);text-decoration:none}
+.footer-grid a:hover{color:var(--ink)}
+.copyright{margin-top:36px;color:var(--ink-soft)}
+@media (max-width:860px){.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="https://kiwiform.com/" aria-label="Kiwiform home"><span class="logo-dot" aria-hidden="true"></span>Kiwiform</a>
+    <nav class="nav" aria-label="Main">
+      <a href="https://kiwiform.com/features">Product</a>
+      <a href="https://kiwiform.com/solutions">Solutions</a>
+      <a href="https://kiwiform.com/templates">Templates</a>
+      <a href="https://kiwiform.com/integrations">Integrations</a>
+      <a href="https://kiwiform.com/blog">Resources</a>
+      <a href="https://kiwiform.com/pricing">Pricing</a>
+    </nav>
+    <a class="btn header-cta" href="https://app.kiwiform.com">Start building for free</a>
+  </div>
+</header>
+
+<main>
+  <!-- ===================== HERO + PROMPT BOX ===================== -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="tag">Kiwizard AI</span>
+      <h1>How to Generate a Form With AI, Step by Step</h1>
+      <p class="lede">You generate a form with AI by typing a plain-language prompt, or uploading a document, into an AI powered form builder (a text to form generator) that drafts the fields, field types, validation, logic and theme as an editable form. Kiwizard AI, the Jotform AI Form Generator, Fillout, Formester and Google Forms with Gemini all start from a prompt like this. You then review the draft, edit it by chat or by hand, and publish it by link or embed code.</p>
+
+      <form class="prompt-deck" id="kiwizard-form" novalidate>
+        <div class="prompt-inner">
+          <label for="kiwizard-prompt">Describe the form you want</label>
+          <textarea id="kiwizard-prompt" name="prompt" maxlength="2000" placeholder="e.g. Registration for a Saturday cookie-tasting event: name, email, phone, dietary preferences, session choice and a signature field."></textarea>
+          <div class="prompt-bar">
+            <span class="hint">Name the purpose, audience, fields, rules and layout.</span>
+            <button type="submit" class="btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>
+              Generate form
+            </button>
+          </div>
+          <p class="prompt-error" id="prompt-error" role="alert"></p>
+        </div>
+        <div class="chips">
+          <span>Try:</span>
+          <button type="button" class="chip" data-prompt="Customer feedback survey for a coffee shop: visit date, drink ordered, 1-5 ratings for taste and service, optional comment, one question per screen.">Coffee shop feedback</button>
+          <button type="button" class="chip" data-prompt="Registration form for a two-day watercolor workshop: full name, email, phone, which days attending, dietary needs dropdown, and a yes/no T-shirt question that shows a size field only on yes.">Workshop registration</button>
+          <button type="button" class="chip" data-prompt="Custom cake order form: name, phone, pickup date, cake size, flavor, inscription text, allergy notes, and card payment at the end.">Cake order</button>
+          <button type="button" class="chip" data-prompt="Client intake for a wedding photographer: couple’s names, email, wedding date, venue, package choice, must-have shots, and a ‘second shooter needed?’ yes/no.">Client intake</button>
+        </div>
+      </form>
+
+      <p class="byline">Updated October 2026 · Written by the Kiwiform Team, which builds Kiwizard AI and publishes this page.</p>
+    </div>
+  </section>
+
+  <div class="wrap doc">
+    <aside class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#tldr">TL;DR</a></li>
+        <li><a href="#top-generators">Top AI form generators</a></li>
+        <li><a href="#steps">Steps to generate a form</a></li>
+        <li><a href="#registration">Registration form with AI</a></li>
+        <li><a href="#kiwizard">Why Kiwizard AI</a></li>
+        <li><a href="#prompts">Writing a prompt</a></li>
+        <li><a href="#validation">Field validation</a></li>
+        <li><a href="#logic">Conditional logic</a></li>
+        <li><a href="#surveys">Surveys and questionnaires</a></li>
+        <li><a href="#features">Features to look for</a></li>
+        <li><a href="#ai-vs-traditional">AI vs traditional</a></li>
+        <li><a href="#gemini">Google Forms with Gemini</a></li>
+        <li><a href="#pricing">Pricing and free plans</a></li>
+        <li><a href="#use-cases">Use cases</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ol>
+    </aside>
+
+    <article class="article">
+
+      <!-- TL;DR -->
+      <section id="tldr">
+        <div class="tldr">
+          <h2>TL;DR</h2>
+          <ul>
+            <li>An AI form generator writes a first draft, and you still check every field, rule and ending before you publish.</li>
+            <li>This page covers 8 AI form tools, starting with our own and then Jotform, Fillout, Formester, Makeform, Tally, Typeform and Google Forms.</li>
+            <li>A good prompt names five things: purpose, audience, fields, rules and layout.</li>
+            <li>“Free” means very different things from tool to tool, so check the <a href="#pricing">dated limits table</a> before you commit.</li>
+            <li>Gemini in Google Forms depends on your Workspace account, and published sources disagree on who gets it.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TOP GENERATORS -->
+      <section id="top-generators">
+        <h2>Top AI form generators: which AI form maker online should you try?</h2>
+        <p>Jotform and Fillout appear in the most AI answers. Formester, Makeform, Tally, Typeform and Google Forms with Gemini follow. Whatever you call it (an AI form creator, builder or generator), each entry below gives the same four things: what you give it, what it builds, what stands out, and what adopting it takes. Prices and limits are in the <a href="#pricing">table further down</a>.</p>
+
+        <div class="tools">
+          <div class="tool ours">
+            <h3>Kiwizard AI (Kiwiform)<small>Our tool</small></h3>
+            <dl>
+              <dt>You give it</dt><dd>You describe the form in plain words.</dd>
+              <dt>Builds</dt><dd>An editable draft with fields, sections and flow in place, which you refine with follow-up prompts.</dd>
+              <dt>Stands out</dt><dd>The draft goes straight into Logic Flow and 30+ field types.</dd>
+              <dt>Takes</dt><dd>A free account, with the AI-form allowance shown in the table below.</dd>
+            </dl>
+          </div>
+          <div class="tool">
+            <h3>Jotform AI Form Generator</h3>
+            <dl>
+              <dt>You give it</dt><dd>You write a prompt, then chat with the generator to change content or design.</dd>
+              <dt>Builds</dt><dd>A shareable or embeddable form.</dd>
+              <dt>Stands out</dt><dd>250+ integrations and 500+ widgets, plus a huge template library, a PDF editor, approvals, e-signatures and a HIPAA plan.</dd>
+              <dt>Takes</dt><dd>Moving up a multi-tier plan ladder once the free plan’s limits are used.</dd>
+            </dl>
+          </div>
+          <div class="tool">
+            <h3>Fillout</h3>
+            <dl>
+              <dt>You give it</dt><dd>You type the request, paste existing questions, upload a PDF or import a form.</dd>
+              <dt>Builds</dt><dd>Questions, field types, conditional logic and a theme, editable by asking or by hand.</dd>
+              <dt>Stands out</dt><dd>A generous free tier and strong Notion and Airtable ties.</dd>
+              <dt>Takes</dt><dd>Response-metered paid tiers as volume grows.</dd>
+            </dl>
+          </div>
+          <div class="tool">
+            <h3>Formester</h3>
+            <dl>
+              <dt>You give it</dt><dd>You describe the outcome, paste a URL, or upload a PDF or image.</dd>
+              <dt>Builds</dt><dd>An editable form.</dd>
+              <dt>Stands out</dt><dd>Generation in about 30 seconds, by Formester’s own claim.</dd>
+              <dt>Takes</dt><dd>Plan limits that were not verified for this page, so check Formester’s pricing page.</dd>
+            </dl>
+          </div>
+          <div class="tool">
+            <h3>Makeform</h3>
+            <dl>
+              <dt>You give it</dt><dd>You describe the form in a chat.</dd>
+              <dt>Builds</dt><dd>Questions, logic and design from that conversation.</dd>
+              <dt>Stands out</dt><dd>The whole build happens in one chat thread.</dd>
+              <dt>Takes</dt><dd>Plan limits that were not verified for this page, so check Makeform’s pricing page.</dd>
+            </dl>
+          </div>
+          <div class="tool">
+            <h3>Tally</h3>
+            <dl>
+              <dt>You give it</dt><dd>It appears in AI answers mainly for its free tier.</dd>
+              <dt>Builds</dt><dd>Forms in its own editor. Check Tally’s site for its current AI drafting options.</dd>
+              <dt>Stands out</dt><dd>An uncapped free plan.</dd>
+              <dt>Takes</dt><dd>The Pro plan for paid features.</dd>
+            </dl>
+          </div>
+          <div class="tool">
+            <h3>Typeform AI</h3>
+            <dl>
+              <dt>You give it</dt><dd>You describe the form, and Typeform AI drafts it.</dd>
+              <dt>Builds</dt><dd>A one-question-at-a-time Typeform.</dd>
+              <dt>Stands out</dt><dd>Design polish and a well-known brand.</dd>
+              <dt>Takes</dt><dd>Paid plans that meter monthly responses and gate features by tier.</dd>
+            </dl>
+          </div>
+          <div class="tool">
+            <h3>Google Forms with Gemini</h3>
+            <dl>
+              <dt>You give it</dt><dd>You prompt Gemini inside Google Forms or use a Workspace add-on.</dd>
+              <dt>Builds</dt><dd>A Google Forms form tied to Google Sheets.</dd>
+              <dt>Stands out</dt><dd>Free to start and familiar to most people.</dd>
+              <dt>Takes</dt><dd>A Google account, plus Gemini access that depends on your Workspace setup.</dd>
+            </dl>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:20px">Other names that come up in AI answers include Fomr, involve.me, Orbit AI, Zoho Forms (with its Zia assistant), Opinion Stage, Weavely, Appy Pie, Heyflow, Paperform and Cognito Forms. Check each vendor’s site for current AI features.</p>
+      </section>
+
+      <!-- STEPS -->
+      <section id="steps">
+        <h2>Steps to generate a form with AI</h2>
+        <p>Every tool follows the same five steps: choose, prompt, generate, review, publish. Plan on spending most of your time on the review step.</p>
+        <ol class="steps">
+          <li><strong>Choose</strong>Choose an AI form builder whose free plan covers the number of forms and responses you expect.</li>
+          <li><strong>Prompt</strong>Write a prompt that names the purpose, audience, fields and rules, such as: “Registration for a Saturday cookie-tasting event: name, email, phone, dietary preferences, session choice and a signature field.”</li>
+          <li><strong>Generate</strong>Generate the draft, then check that each field got the right type, such as email, phone or date.</li>
+          <li><strong>Review</strong>Review and edit the draft by chat or by hand. An AI form generator with drag and drop editing lets you reorder fields directly. An AI form generator that edits an existing form also takes follow-ups like “make phone optional.”</li>
+          <li id="step-publish"><strong>Publish</strong>Publish the form by link, QR code or embed. An AI form generator with embed code lets you paste the form into WordPress, Webflow, Shopify or Squarespace.</li>
+        </ol>
+      </section>
+
+      <!-- REGISTRATION -->
+      <section id="registration">
+        <h2>How to create a registration form with AI</h2>
+        <p>Start with a prompt that spells out the fields, one logic rule and where responses should go. Here is one for a two-day class:</p>
+        <div class="prompt-quote">
+          <p>“Registration form for a two-day watercolor workshop: full name, email, phone, which days attending, dietary needs dropdown, and a yes/no T-shirt question that shows a size field only on yes.”</p>
+          <button type="button" class="use-prompt" data-prompt="Registration form for a two-day watercolor workshop: full name, email, phone, which days attending, dietary needs dropdown, and a yes/no T-shirt question that shows a size field only on yes.">Use this prompt</button>
+        </div>
+        <p>When the draft comes back, check three things:</p>
+        <ul>
+          <li>The T-shirt size field stays hidden until someone answers “yes.”</li>
+          <li>The dietary dropdown includes an “other” option with a short text box.</li>
+          <li>Responses go to Google Sheets so you can count meals per day.</li>
+        </ul>
+      </section>
+
+      <!-- KIWIZARD -->
+      <section id="kiwizard">
+        <h2>Why build your form with Kiwizard AI in Kiwiform?</h2>
+        <p>Kiwizard AI drafts an editable form, survey or quiz from your description. You then refine it in the builder, and the result is not a finished, locked output. The Free plan includes unlimited forms, unlimited form fields and unlimited responses. Tally and Youform also offer unlimited free responses. Kiwiform’s difference is the conversational layout, AI drafting and logic depth together.</p>
+
+        <div class="plans">
+          <div class="plan">
+            <h3>On Free</h3>
+            <ul>
+              <li>5 Kiwizard AI forms, plus unlimited forms you build by hand, with follow-up prompts to refine each draft.</li>
+              <li>Conversational one-question-at-a-time forms and classic layouts.</li>
+              <li>Conditional logic, branching, scoring, calculations and multiple endings.</li>
+              <li>Sharing by link and QR code.</li>
+              <li>Native integrations including Google Sheets, HubSpot, Mailchimp, Slack, Notion, Airtable, Zapier and Make. See the <a href="https://kiwiform.com/integrations">full integrations list</a>.</li>
+            </ul>
+          </div>
+          <div class="plan pro">
+            <h3>On Pro</h3>
+            <ul>
+              <li>Unlimited Kiwizard AI forms, 3 team members and 10 workspaces.</li>
+              <li>Stripe payments, webhooks, custom domains with SSL and branding removal.</li>
+              <li>Response downloads, partial submissions, video and audio responses, emails to respondents and quiz variables.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="note"><strong>What Kiwiform doesn’t do:</strong> Kiwizard AI starts from a written prompt, not a PDF upload, so the prompt you write is the only starting point. Plan limits and prices are on <a href="https://kiwiform.com/pricing">Kiwiform pricing</a>.</p>
+
+        <p class="cta-inline"><a class="btn" href="https://app.kiwiform.com">Kiwiform: generate your first form free with Kiwizard AI</a></p>
+      </section>
+
+      <!-- PROMPTS -->
+      <section id="prompts">
+        <h2>How do you write a prompt for an AI form generator?</h2>
+        <p>A prompt to form builder gives better drafts when you name five things.</p>
+        <ol>
+          <li><strong>Purpose:</strong> what the form is for.</li>
+          <li><strong>Audience:</strong> who fills it in.</li>
+          <li><strong>Fields:</strong> what to collect.</li>
+          <li><strong>Rules:</strong> required fields and show/hide logic.</li>
+          <li><strong>Layout:</strong> one question at a time, or all fields on one page.</li>
+        </ol>
+        <p>Every AI form generator from prompt works this way: a vague brief gets a generic draft.</p>
+
+        <div class="compare">
+          <div class="prompt-quote vague">
+            <span class="prompt-label">Vague</span>
+            <p>“Make a feedback form for my coffee shop.”</p>
+          </div>
+          <div class="prompt-quote">
+            <span class="prompt-label">Specific</span>
+            <p>“Customer feedback survey for a coffee shop: visit date, drink ordered, 1-5 ratings for taste and service, optional comment, one question per screen.”</p>
+            <button type="button" class="use-prompt" data-prompt="Customer feedback survey for a coffee shop: visit date, drink ordered, 1-5 ratings for taste and service, optional comment, one question per screen.">Use this prompt</button>
+          </div>
+        </div>
+
+        <h3>More prompts you can adapt</h3>
+        <div class="prompt-quote">
+          <span class="prompt-label">Photography client intake</span>
+          <p>“Client intake for a wedding photographer: couple’s names, email, wedding date, venue, package choice, must-have shots, and a ‘second shooter needed?’ yes/no.”</p>
+          <button type="button" class="use-prompt" data-prompt="Client intake for a wedding photographer: couple’s names, email, wedding date, venue, package choice, must-have shots, and a ‘second shooter needed?’ yes/no.">Use this prompt</button>
+        </div>
+        <div class="prompt-quote">
+          <span class="prompt-label">Bakery order</span>
+          <p>“Custom cake order form: name, phone, pickup date, cake size, flavor, inscription text, allergy notes, and card payment at the end.” Check which plan your tool puts card payments on.</p>
+          <button type="button" class="use-prompt" data-prompt="Custom cake order form: name, phone, pickup date, cake size, flavor, inscription text, allergy notes, and card payment at the end.">Use this prompt</button>
+        </div>
+        <div class="prompt-quote">
+          <span class="prompt-label">Cookie-tasting event</span>
+          <p>“Sign-up for a cookie-tasting event: name, email, session time, dietary preferences, and a consent checkbox for event photos.”</p>
+          <button type="button" class="use-prompt" data-prompt="Sign-up for a cookie-tasting event: name, email, session time, dietary preferences, and a consent checkbox for event photos.">Use this prompt</button>
+        </div>
+      </section>
+
+      <!-- VALIDATION -->
+      <section id="validation">
+        <h2>What does an AI form generator with automatic field validation check?</h2>
+        <p>Most of the checks come from the field type the AI picks. An email field checks email format, a date field checks dates, and a required flag blocks blank answers. Some tools add AI checks that read the meaning of free-text answers. Test that kind of check before you rely on it.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Check type</th><th scope="col">What it does</th><th scope="col">Example</th><th scope="col">Who sets it</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Format check</th><td>Rejects answers in the wrong format</td><td>An email field that rejects “john@”</td><td>Usually the AI, through the field type</td></tr>
+              <tr><th scope="row">Required field</th><td>Blocks submission while a field is empty</td><td>Phone number required for callbacks</td><td>The AI or you; review every flag</td></tr>
+              <tr><th scope="row">Conditional logic</th><td>Shows, hides or skips questions based on answers</td><td>“How did you hear about us?” appears only for new clients</td><td>The AI from your prompt, then you</td></tr>
+              <tr><th scope="row">Calculation</th><td>Computes a total or score from answers</td><td>Quantity × price on an order form</td><td>Usually you, after the draft</td></tr>
+              <tr><th scope="row">AI semantic check</th><td>Reads meaning in free text</td><td>Flags a vague answer to “Describe the issue”</td><td>Varies by tool; verify first</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- LOGIC -->
+      <section id="logic">
+        <h2>How does an AI form generator with conditional logic set up rules?</h2>
+        <p>You write the rule in plain words, and the AI turns it into a show/hide or skip step. For example: “If ‘Are you a returning client?’ is No, show ‘How did you hear about us?’” Then open the logic view and test both paths.</p>
+      </section>
+
+      <!-- SURVEYS -->
+      <section id="surveys">
+        <h2>What can an AI survey builder or AI questionnaire generator create?</h2>
+        <p>An AI survey builder drafts the questions, answer scales and branching for a survey from one prompt. An AI questionnaire generator does the same for structured fact-gathering. SurveyMonkey, Jotform, Formester and Makeform all appear in AI answers for these prompts.</p>
+
+        <h3>Questionnaire vs. survey vs. quiz</h3>
+        <ul class="trio">
+          <li><strong>Questionnaire</strong>Collects facts from one person, such as an intake or application.</li>
+          <li><strong>Survey</strong>Measures opinions across many people, using scales and comparable answers.</li>
+          <li><strong>Quiz</strong>Scores answers against correct ones, often with different endings by score.</li>
+        </ul>
+
+        <h3>What should a survey prompt include?</h3>
+        <p>Name the goal, the audience, the number of questions, the scale and one branching rule. Here is an example for any AI survey creator online:</p>
+        <div class="prompt-quote">
+          <p>“8-question satisfaction survey for gym members: 1-5 scales for cleanliness, staff and equipment, one multiple choice on visit frequency, and a follow-up text box only for scores of 1 or 2.”</p>
+          <button type="button" class="use-prompt" data-prompt="8-question satisfaction survey for gym members: 1-5 scales for cleanliness, staff and equipment, one multiple choice on visit frequency, and a follow-up text box only for scores of 1 or 2.">Use this prompt</button>
+        </div>
+        <p>A sound draft from that prompt should include:</p>
+        <ul>
+          <li>A rating question for each of the three areas.</li>
+          <li>A frequency question with four to five options.</li>
+          <li>One open question that only low scorers see.</li>
+        </ul>
+        <p>Delete anything you did not ask for.</p>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features">
+        <h2>Which features should an AI form builder have?</h2>
+        <p>Look for the features below, and test each one in the tool before you rely on it. Kiwiform’s plan is listed under each feature.</p>
+
+        <div class="feature-group">
+          <h3>Building the form</h3>
+          <dl class="features">
+            <div><dt>Calculations</dt><dd>An AI form generator with calculation fields totals prices or scores on its own. Included on Free. Test: submit a sample order and check the math.</dd></div>
+            <div><dt>Templates</dt><dd>An AI form generator with built in templates lets you start from a pattern instead of a blank prompt. Test: check the template count on the vendor’s own page, because AI answers often misquote it.</dd></div>
+            <div><dt>File uploads</dt><dd>An AI form generator with file upload field collects files from respondents, which is different from importing a document to build the form. Uploads go up to 20 MB on Free and 200 MB on Pro. Test: upload your largest expected file.</dd></div>
+            <div><dt>Multi-step and conversational layouts</dt><dd>A multi step AI form generator splits long forms into screens. Pick a conversational form builder AI can draft into directly, so the form opens one question at a time. Both layouts are on Free.</dd></div>
+            <div><dt>Thank-you pages</dt><dd>An AI form generator with custom thank you page sends people to the right next step. Multiple endings are on Free.</dd></div>
+            <div><dt>Signatures</dt><dd>An AI form generator with e signature field captures a drawn signature. See the e-signature caveat above. Test: confirm the signature meets your legal needs before you use it for contracts.</dd></div>
+            <div><dt>Languages</dt><dd>A multilingual AI form generator publishes the same form in several languages. Supported: 43 languages, including right-to-left layouts.</dd></div>
+            <div><dt>Branding</dt><dd>An AI form generator with custom branding applies your colors and fonts. Branding removal and custom domains need Pro.</dd></div>
+            <div><dt>Voice</dt><dd>An AI form builder with voice input can mean two things. Either you speak to build the form, or respondents record their answers. Pro adds video and audio responses.</dd></div>
+          </dl>
+        </div>
+
+        <div class="feature-group">
+          <h3>Collecting responses</h3>
+          <dl class="features">
+            <div><dt>Spam protection</dt><dd>An AI form generator with spam protection blocks junk entries. Pro adds duplicate-submission prevention, and a fair-use policy restricts automated flooding. Test: submit the form twice yourself.</dd></div>
+            <div><dt>Payments</dt><dd>An AI form generator with payment collection takes card payments at checkout. Stripe payments need Pro.</dd></div>
+            <div><dt>Notifications</dt><dd>An AI form generator with email notifications alerts you to new entries and can confirm receipt to the respondent. Alerts to Slack or Discord are on every plan; emails to respondents need Pro.</dd></div>
+            <div><dt>Privacy</dt><dd>A GDPR compliant AI form builder still depends on how you set it up and what you collect. Acting as a data processor under a DPA, the builder supports export and deletion of respondent data and offers optional EU hosting. Its GDPR compliance support is on Pro.</dd></div>
+          </dl>
+        </div>
+
+        <div class="feature-group">
+          <h3>Getting responses out</h3>
+          <dl class="features">
+            <div><dt>AI summaries</dt><dd>An AI form builder with AI response summaries turns entries into short insights. The <a href="https://kiwiform.com/kiwiform-mcp-server">Kiwiform MCP Server</a> uses MCP (Model Context Protocol) to let ChatGPT or Claude analyze responses in plain language.</dd></div>
+            <div><dt>Analytics</dt><dd>An AI form generator with response analytics shows views, completions and drop-off. Google Analytics, Google Tag Manager and response downloads need Pro.</dd></div>
+            <div><dt>Zapier</dt><dd>An AI form generator with Zapier integration sends each entry to thousands of other apps. Zapier and Make are on every plan, webhooks need Pro, and the <a href="https://developers.kiwiform.com/kiwiform-api/introduction">Kiwiform API</a> covers custom builds.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- AI VS TRADITIONAL -->
+      <section id="ai-vs-traditional">
+        <h2>AI form builder vs traditional form builder: which do you need?</h2>
+        <p>The difference is how the form starts. An AI form builder writes the first draft, while a traditional form builder starts you on a blank canvas. Both are usually an AI form generator, no code required, and both end in the same drag-and-drop editor. AI saves the most time on long forms. Building by hand is quicker for a three-field contact form.</p>
+      </section>
+
+      <!-- GEMINI -->
+      <section id="gemini">
+        <h2>Can you generate a Google Forms form with Gemini?</h2>
+        <p>Yes, if your account has Gemini in Google Forms, but sources disagree on who gets it. A 2025 video ties it to Workspace Labs. A 2026 Jotform blog says it needs a paid Workspace plan with Gemini. Check your own account.</p>
+        <p>Two Google Workspace Marketplace listings named “AI Form Builder” offer another route. One is from Live Polls and one is from Jotform. These are third-party add-ons, not official Google tools. They build a form from prompt text, or pull content from a PDF, web page or video. Google Forms itself is free at the core as of October 2026.</p>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing">
+        <h2>AI form builder pricing: which free AI form generator gives you the most?</h2>
+        <p>Free plans range from 100 submissions a month to unlimited, and first paid plans start at different prices. Every figure below comes from the vendor’s own pricing page, checked October 24, 2026. Some AI answers quote other Jotform and Fillout prices. The vendor pages win.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Tool</th><th scope="col">Free forms</th><th scope="col">Free responses</th><th scope="col">AI drafting on Free</th><th scope="col">First paid plan (USD)</th></tr>
+            </thead>
+            <tbody>
+              <tr class="highlight"><th scope="row">Kiwiform</th><td>Unlimited</td><td>Unlimited</td><td>5 Kiwizard AI forms</td><td>Pro: $19/mo, or $14/mo billed yearly</td></tr>
+              <tr><th scope="row">Jotform</th><td>5</td><td>100 submissions/mo</td><td>Not verified</td><td>Bronze: $34/mo billed annually</td></tr>
+              <tr><th scope="row">Fillout</th><td>Not verified</td><td>1,000 responses/mo</td><td>Not verified</td><td>Starter: $15/mo billed annually</td></tr>
+              <tr><th scope="row">Tally</th><td>Unlimited</td><td>Unlimited</td><td>Not verified</td><td>Pro: $24/mo billed monthly; yearly saves 2 months</td></tr>
+              <tr><th scope="row">Youform</th><td>Not verified</td><td>Unlimited</td><td>Not verified</td><td>Pro: $20/mo billed annually, $29 monthly</td></tr>
+              <tr><th scope="row">Typeform</th><td>Not verified</td><td>Metered by plan</td><td>Not verified</td><td>Basic: $28/mo billed annually, $39 monthly</td></tr>
+              <tr><th scope="row">SurveyMonkey</th><td>Not verified</td><td>Capped; overages $0.15 per response</td><td>AI survey building included at $0</td><td>Team Advantage: $30 per user/mo billed annually, 3-user minimum</td></tr>
+              <tr><th scope="row">Zoho Forms</th><td>3</td><td>500 submissions/mo</td><td>Not verified</td><td>Basic: USD price not checked</td></tr>
+              <tr><th scope="row">Google Forms</th><td>Free at the core</td><td>Free at the core</td><td>Gemini access varies (see <a href="#gemini">Google section</a>)</td><td>No paid base plan required</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">What each paid plan adds is listed in the tool’s own section.</p>
+      </section>
+
+      <!-- USE CASES -->
+      <section id="use-cases">
+        <h2>Which AI form builder fits your use case?</h2>
+        <p>Start from what you’re collecting and where responses need to go. The destination, whether that’s Google Sheets, a CRM or a WordPress site, rules out tools faster than any feature list.</p>
+
+        <h3>AI form generator for small business</h3>
+        <p>Prompt a salon booking request with these fields: name, phone, service, preferred date, and a hair-length question that appears only when someone picks “color.” Send entries to Google Sheets and post an alert to Slack. For order forms that take cards, see the <a href="#features">payments line in the features list</a>.</p>
+
+        <h3>AI form builder for schools</h3>
+        <p>Prompt a field-trip permission slip with these fields: student name, guardian name, guardian phone, and an allergy yes/no that shows a details box on yes. Send responses to Google Sheets. For quizzes, use scoring and multiple endings so a quiz can grade itself.</p>
+
+        <h3>Events, surveys and payments</h3>
+        <ul>
+          <li><strong>Registrations:</strong> follow the <a href="#registration">workshop example in the steps section</a>.</li>
+          <li><strong>Surveys:</strong> use the <a href="#surveys">survey prompt formula above</a>.</li>
+          <li><strong>Payments:</strong> confirm the tool supports your processor, and which plan it sits on, before you build.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="faq">
+        <h2>Frequently asked questions</h2>
+        <details>
+          <summary>What is the difference between a form builder and a survey tool?</summary>
+          <p>A form collects structured information to act on, such as an application or an order. A survey measures opinion across many people using scales and comparable answers. Many AI tools can draft both from a prompt, and a quiz is a third type that scores answers against correct ones.</p>
+        </details>
+        <details>
+          <summary>Why do free plans differ so much between AI form builders?</summary>
+          <p>Vendors meter different things: forms, responses, AI generations or features. A plan that is “free” on forms can still cap responses or AI drafts. Decision rule: estimate your monthly responses first, then rule out every free plan whose cap sits below that number in the <a href="#pricing">dated pricing table</a>.</p>
+        </details>
+        <details>
+          <summary>Do I need coding skills to generate a form with AI?</summary>
+          <p>No. You describe the form in plain language, or upload a document in tools that support it, and the AI builds an editable draft. Editing is done by chat or by drag and drop. Code is only needed if you want custom builds through an API or webhooks.</p>
+        </details>
+        <details>
+          <summary>Where can I create a free digital form?</summary>
+          <p>Any tool in the pricing table with a free plan will do for a small form. The cap decides the rest: above 100 submissions a month, Jotform’s free plan is out; above 1,000, Fillout’s is too. Tally and Youform list unlimited free responses, and sign-up rules still vary by vendor.</p>
+        </details>
+        <details>
+          <summary>How to create an online form to fill out for free?</summary>
+          <p>Pick a tool with a free plan, generate or build the form, then share it by link, QR code or embed so people can fill it out online. Generating the form with AI and filling it out are separate workflows.</p>
+        </details>
+        <details>
+          <summary>Can I embed an AI-generated form on my existing website?</summary>
+          <p>Yes, usually by pasting the tool’s embed code into your site builder (see <a href="#step-publish">step 5</a>). If your site builder blocks embeds, a standalone link or QR code works instead. Check whether embedding is limited to a paid plan in the tool you choose.</p>
+        </details>
+        <details>
+          <summary>How do I send AI form responses to Google Sheets or other apps?</summary>
+          <p>Use a native integration when the tool has one for your destination, since it needs no extra account. For apps without one, route entries through Zapier or Make. Reserve webhooks or an API for custom builds, and check whether webhooks sit on a paid plan.</p>
+        </details>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- FINAL CTA (existing site block) -->
+  <div class="wrap">
+    <section class="final-cta">
+      <h2>Create unlimited forms for free</h2>
+      <p>Create unlimited forms and collect unlimited responses, with no caps at all. It’s a clean builder designed for logic, personalization, and effortless data collection, ready to use the moment you have an idea.</p>
+      <a class="btn" href="https://app.kiwiform.com">Start building for free</a>
+      <div class="points"><span>No trials</span><span>No caps</span><span>No surprises</span></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="https://kiwiform.com/"><span class="logo-dot" aria-hidden="true"></span>Kiwiform</a>
+        <p class="muted" style="margin-top:12px">Create unlimited forms for free! No response limits, no stress.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://kiwiform.com/ai-form-builder">Kiwizard AI</a></li>
+          <li><a href="https://kiwiform.com/ai-quiz-generator">AI Quiz Generator</a></li>
+          <li><a href="https://kiwiform.com/form-builder-for-sheets">Form Builder for Sheets</a></li>
+          <li><a href="https://kiwiform.com/conditional-form-builder">Conditional Form Builder</a></li>
+          <li><a href="https://kiwiform.com/features">View all</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="https://kiwiform.com/typeform-alternative">Typeform alternative</a></li>
+          <li><a href="https://kiwiform.com/jotform-alternative">Jotform alternative</a></li>
+          <li><a href="https://kiwiform.com/tally-alternative">Tally alternative</a></li>
+          <li><a href="https://kiwiform.com/google-forms-alternative">Google Forms alternative</a></li>
+          <li><a href="https://kiwiform.com/alternatives">View all</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://kiwiform.com/help">Help Center</a></li>
+          <li><a href="https://kiwiform.com/blog">Blog</a></li>
+          <li><a href="https://kiwiform.com/changelog">Changelog</a></li>
+          <li><a href="https://kiwiform.com/integrations">Integrations</a></li>
+          <li><a href="https://kiwiform.com/affiliate">Affiliate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://kiwiform.com/privacy-policy">Privacy Policy</a></li>
+          <li><a href="https://kiwiform.com/terms-conditions">Terms of Service</a></li>
+          <li><a href="https://kiwiform.com/fair-use-policy">Fair Use</a></li>
+          <li><a href="https://kiwiform.com/gdpr">GDPR</a></li>
+          <li><a href="https://kiwiform.com/security">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">©2026 Kiwiform. Powered By Creativity, Not Complexity.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Where the Generate button sends people. Swap in your real Kiwizard
+     entry point; the prompt is passed as ?prompt= so the app can prefill it. */
+  var KIWIZARD_URL = "https://app.kiwiform.com";
+
+  var form = document.getElementById("kiwizard-form");
+  var box = document.getElementById("kiwizard-prompt");
+  var err = document.getElementById("prompt-error");
+
+  function fill(text){
+    box.value = text;
+    err.textContent = "";
+    var top = document.getElementById("top");
+    top.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start"});
+    setTimeout(function(){ box.focus({preventScroll:true}); box.setSelectionRange(box.value.length, box.value.length); }, 350);
+  }
+
+  document.querySelectorAll("[data-prompt]").forEach(function(b){
+    b.addEventListener("click", function(){ fill(b.getAttribute("data-prompt")); });
+  });
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var text = box.value.trim();
+    if (text.length < 10){
+      err.textContent = "Describe your form in a sentence or two, such as its purpose and the fields to collect.";
+      box.focus();
+      return;
+    }
+    window.location.href = KIWIZARD_URL + "?prompt=" + encodeURIComponent(text);
+  });
+
+  box.addEventListener("keydown", function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key === "Enter"){ form.requestSubmit(); }
+  });
+
+  /* Highlight the current section in the table of contents */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
+  if ("IntersectionObserver" in window && links.length){
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute("href").slice(1)] = a; });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting && map[en.target.id]){
+          links.forEach(function(a){ a.classList.remove("active"); });
+          map[en.target.id].classList.add("active");
+        }
+      });
+    }, {rootMargin:"-30% 0px -60% 0px"});
+    Object.keys(map).forEach(function(id){ var s = document.getElementById(id); if (s) obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

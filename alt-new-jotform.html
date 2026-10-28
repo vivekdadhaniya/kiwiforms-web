@@ -16,22 +16,22 @@
   </head>
 
   <body
-    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px box-border overflow-x-hidden"
     x-data="templateDetailPage()"
     x-init="init()"
   >
     <!-- navigation  -->
 
-    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
+    <div class="pt-[61px] min-w-0 w-full bg-Theme-bg flex flex-col gap-px">
       <!-- hero -->
       <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px"
           >
             <!-- hero top  -->
             <div
@@ -62,7 +62,7 @@
                 Limits verified on jotform.com/pricing & vendor pages, Sept 2026
               </p>
 
-              <div class="flex w-full items-center justify-center gap-[15px]">
+              <div class="flex flex-col md:flex-row w-full items-center justify-center gap-[15px]">
                 <a
                   href="https://app.kiwiform.com/"
                   target="_blank"
@@ -125,11 +125,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -139,9 +139,9 @@
       <!-- In this guide -->
       <section class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-white px-5 py-12 md:px-10 lg:px-14">
+          <div class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-12 md:px-10 lg:px-14">
             <p class="mb-5 text-sm font-medium text-[#8C8484]">In this guide</p>
             <ol class="grid gap-x-6 gap-y-0 md:grid-cols-2 lg:grid-cols-3">
               <li>
@@ -234,11 +234,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -248,16 +248,18 @@
       <!-- typeform-pricing -->
       <section id="Tally-in-2026" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 min-w-0 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1080px]">
               <h2 class="heading-h2">Jotform pricing and limits in 2026</h2>
               <p class="mt-4 text-base leading-7 text-[#4A4545]">
                 Jotform's pricing page lists these limits (annual billing, USD). Several separate
                 caps apply to each plan, and you upgrade when you hit any of them.
               </p>
-              <div class="mt-6 overflow-x-auto rounded-10px border border-Theme-bg bg-white">
+              <div
+                class="mt-6 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain rounded-10px border border-Theme-bg bg-white"
+              >
                 <table class="min-w-[760px] w-full text-left text-sm">
                   <thead class="bg-[#183C1A] text-white">
                     <tr>
@@ -368,11 +370,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -381,9 +383,9 @@
 
       <section id="Why-people-look" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1080px]">
               <h2 class="heading-h2">
                 Why people look for a <span class="text-Theme-Green">Jotform alternative</span>
@@ -444,11 +446,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -458,15 +460,17 @@
       <!-- comparison Table  -->
       <section id="comparison" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1040px]">
               <h2 class="heading-h2">
                 Jotform alternatives compared: <span class="text-Theme-Green">side-by-side</span>
               </h2>
 
-              <div class="mt-6 overflow-x-auto rounded-10px border border-Theme-bg">
+              <div
+                class="mt-6 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain rounded-10px border border-Theme-bg"
+              >
                 <table class="min-w-[1100px] w-full text-left text-sm">
                   <thead class="bg-[#183C1A] text-white">
                     <tr>
@@ -657,11 +661,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -671,9 +675,9 @@
       <!-- Best Typeform alternative by use case -->
       <section id="picks" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 min-w-0 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1080px]">
               <h2 class="heading-h2">Best Jotform alternative by use case</h2>
               <div
@@ -769,11 +773,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -784,11 +788,11 @@
       <section id="reviews" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px overflow-hidden w-full flex items-center justify-center flex-col gap-px h-full"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px overflow-hidden w-full flex items-center justify-center flex-col gap-px h-full"
           >
             <div class="grid grid-cols-1 bg-white rounded-10px w-full">
               <div
@@ -815,11 +819,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -830,11 +834,11 @@
       <section id="kiwiform" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px overflow-hidden w-full flex items-center justify-center flex-col gap-px h-full"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px overflow-hidden w-full flex items-center justify-center flex-col gap-px h-full"
           >
             <div class="grid grid-cols-1 bg-white rounded-10px">
               <div
@@ -985,7 +989,9 @@
                   limits, seats and builder complexity are the problem, not approvals or
                   e-signatures.
                 </p>
-                <div class="flex w-full items-center justify-start gap-[15px] mt-5">
+                <div
+                  class="flex flex-col md:flex-row w-full items-center justify-start gap-[15px] mt-5"
+                >
                   <a
                     href="https://app.kiwiform.com/"
                     target="_blank"
@@ -1011,11 +1017,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1026,11 +1032,11 @@
       <section id="cognito-forms" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1104,11 +1110,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1119,11 +1125,11 @@
       <section id="formstack" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1194,11 +1200,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1209,11 +1215,11 @@
       <section id="fillout" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1277,11 +1283,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1292,11 +1298,11 @@
       <section id="tally" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1347,11 +1353,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1362,11 +1368,11 @@
       <section id="typeform" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1416,11 +1422,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1431,11 +1437,11 @@
       <section id="paperform" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1487,11 +1493,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1502,11 +1508,11 @@
       <section id="gravity-forms" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1552,11 +1558,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1567,11 +1573,11 @@
       <section id="wufoo" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1617,11 +1623,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1632,11 +1638,11 @@
       <section id="zoho-forms" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg">
               <div
@@ -1674,11 +1680,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1689,11 +1695,11 @@
       <section id="google-forms" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg w-full">
               <div
@@ -1736,11 +1742,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1749,9 +1755,9 @@
 
       <section id="fits" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1040px]">
               <h2 class="heading-h2">
                 Jotform plan calculator:
@@ -1861,11 +1867,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -1879,11 +1885,11 @@
       >
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
             <div class="grid grid-cols-1 bg-Theme-bg w-full">
               <div
@@ -1942,7 +1948,7 @@
                 <!-- comparison table  -->
 
                 <div
-                  class="mt-6 w-full overflow-x-auto rounded-10px border border-Theme-bg bg-white"
+                  class="mt-6 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain rounded-10px border border-Theme-bg bg-white"
                 >
                   <table class="w-full text-left text-sm">
                     <thead class="bg-[#183C1A] text-white">
@@ -2453,11 +2459,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -2466,11 +2472,11 @@
 
       <section id="head-to-head" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <div
             id="how-we-evaluated"
-            class="col-span-11 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14"
+            class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14"
           >
             <div class="mx-auto max-w-[1040px]">
               <h2 class="heading-h2">Jotform vs Wufoo, Formstack, Gravity Forms & Paperform</h2>
@@ -2517,11 +2523,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -2531,9 +2537,9 @@
       <!-- How to switch from Typeform to Kiwiform -->
       <section id="migrate" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1040px]">
               <h2 class="heading-h2">How to switch from Jotform to Kiwiform</h2>
               <!-- Steps -->
@@ -2646,11 +2652,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -2661,11 +2667,11 @@
       <div id="faq" class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-[#F6F6F6]"
+            class="col-span-11 min-w-0 rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-[#F6F6F6]"
           >
             <div class="p-4 lg:pt-20 w-full flex flex-col gap-2.5">
               <p class="text-center text-base font-normal text-Theme-Green leading-7">
@@ -3115,11 +3121,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
@@ -3129,9 +3135,9 @@
       <!-- How to switch from Typeform to Kiwiform -->
       <section class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 rounded-10px bg-Theme-bg flex flex-col gap-px w-full">
+          <div class="col-span-11 min-w-0 rounded-10px bg-Theme-bg flex flex-col gap-px w-full">
             <div
               class="w-full h-auto rounded-10px bg-[#1B523A] text-white py-9 lg:py-16 px-2.5 lg:px-12"
             >
@@ -3144,7 +3150,7 @@
                 payments, branding removal, custom domains and 3 team members.
               </p>
 
-              <div class="flex w-full items-center justify-center gap-[15px] my-5">
+              <div class="flex flex-wrap w-full items-center justify-center gap-[15px] my-5">
                 <a
                   href="https://app.kiwiform.com/"
                   target="_blank"
@@ -3341,11 +3347,11 @@
       <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full min-w-0 col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <!-- place content here -->
           <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
+            class="col-span-11 min-w-0 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
           ></div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
