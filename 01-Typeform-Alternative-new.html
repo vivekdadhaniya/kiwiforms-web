@@ -14,16 +14,16 @@
   </head>
 
   <body
-    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px box-border overflow-x-hidden"
+    class="font-Inter bg-[#E2DCDC] w-full flex flex-col gap-px"
     x-data="templateDetailPage()"
     x-init="init()"
   >
     <!-- navigation  -->
 
-    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px w-full">
+    <div class="pt-[61px] bg-Theme-bg flex flex-col gap-px">
       <!-- hero -->
       <section class="bg-transparent flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
         <!-- main-container  -->
         <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
@@ -60,15 +60,15 @@
                 Prices verified on each vendor's pricing page, Sept 2026
               </p>
 
-              <div class="flex flex-col md:flex-row w-full items-center justify-center gap-[15px]">
+              <div class="flex w-full items-center justify-center gap-[15px]">
                 <a
                   href="https://app.kiwiform.com/"
                   target="_blank"
-                  class="btn-kiwi-green w-max text-xs leading-5 md:text-sm md:leading-[22px] font-medium py-2.5 px-6 whitespace-pre-wrap"
+                  class="btn-kiwi-green w-max text-sm lead5ing-[22px] font-medium py-2.5 px-6"
                   >Try Kiwiform free — unlimited responses</a
                 >
                 <a
-                  href="#comparison"
+                  href="#compare"
                   class="btn-white-icon-text flex items-center gap-6 w-max text-sm lead5ing-[22px] text-Theme-Green font-medium py-[9px] px-[15px]"
                 >
                   Jump to comparison table
@@ -76,7 +76,7 @@
               </div>
 
               <div
-                class="w-full max-w-[800px] mx-auto bg-white rounded-10px py-5 px-3 lg:p-5 border-l-4 border-Theme-Green mt-7"
+                class="w-full max-w-[800px] mx-auto bg-white rounded-10px p-5 border-l-4 border-Theme-Green mt-7"
               >
                 <p
                   class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
@@ -105,7 +105,7 @@
           </div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </section>
 
       <!-- Blank line  -->
@@ -126,7 +126,7 @@
       <!-- In this guide -->
       <section class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <div class="col-span-11 rounded-10px bg-white px-5 py-12 md:px-10 lg:px-14">
             <p class="mb-5 text-sm font-medium text-[#8C8484]">In this guide</p>
@@ -315,20 +315,18 @@
 
       <!-- typeform-pricing -->
       <section id="typeform-pricing" class="flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
-            <div class="mx-auto max-w-[1040px]">
+          <div class="col-span-11 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
+            <div class="mx-auto max-w-[1080px]">
               <h2 class="heading-h2">Typeform pricing and limits in 2026</h2>
               <p class="mt-4 text-base leading-7 text-[#4A4545]">
                 This is what Typeform's pricing page lists as of September 2026. The response count
                 is the monthly response base included in each plan.
               </p>
-              <div
-                class="mt-6 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain rounded-10px border border-Theme-bg"
-              >
-                <table class="min-w-[1100px] w-full text-left text-sm">
+              <div class="mt-6 overflow-x-auto rounded-10px border border-Theme-bg bg-white">
+                <table class="min-w-[760px] w-full text-left text-sm">
                   <thead class="bg-[#183C1A] text-white">
                     <tr>
                       <th class="p-4 font-medium">Plan</th>
@@ -411,7 +409,7 @@
           </div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </section>
 
       <!-- Blank line  -->
@@ -431,10 +429,10 @@
 
       <!-- comparison Table  -->
       <section id="comparison" class="flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1040px]">
               <h2 class="heading-h2">
                 Typeform alternatives compared: <span class="text-Theme-Green">side-by-side</span>
@@ -443,9 +441,7 @@
                 Starting price is the lowest paid plan. Free responses means what the free plan
                 allows each month.
               </p>
-              <div
-                class="mt-6 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain rounded-10px border border-Theme-bg"
-              >
+              <div class="mt-6 overflow-x-auto rounded-10px border border-Theme-bg">
                 <table class="min-w-[1100px] w-full text-left text-sm">
                   <thead class="bg-[#183C1A] text-white">
                     <tr>
@@ -584,7 +580,7 @@
           </div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </section>
 
       <!-- Blank line  -->
@@ -605,9 +601,9 @@
       <!-- Best Typeform alternative by use case -->
       <section id="picks" class="flex md:grid grid-cols-14 gap-px w-full">
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 min-w-0 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1080px]">
               <h2 class="heading-h2">Best Typeform alternative by use case</h2>
               <div
@@ -942,9 +938,7 @@
                     >See the full Kiwiform vs Typeform comparison</a
                   >
                 </p>
-                <div
-                  class="flex flex-col md:flex-row w-full items-center justify-start gap-[15px] mt-5"
-                >
+                <div class="flex w-full items-center justify-start gap-[15px] mt-5">
                   <a
                     href="https://app.kiwiform.com/"
                     target="_blank"
@@ -1043,7 +1037,7 @@
                 >
                   <div class="gap-px flex flex-col">
                     <ul
-                      class="p-5 rounded-10px bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
+                      class="p-5 rounded-10px bg-white flex flex-col text-base font-normal text-Theme-Black"
                     >
                       <li
                         class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-Theme-Green pb-5 border-b border-[#E2DCDC] w-full"
@@ -1062,7 +1056,7 @@
                   </div>
                   <div class="gap-px flex flex-col">
                     <ul
-                      class="p-5 rounded-10px bg-white flex flex-col text-base font-normal text-Theme-Black h-auto"
+                      class="p-5 rounded-10px bg-white flex flex-col text-base font-normal text-Theme-Black h-full"
                     >
                       <li
                         class="text-xl leading-[26px] tracking-[-0.4px] font-medium font-Inter-disp text-[#DC3027] pb-5 border-b border-[#E2DCDC] w-full"
@@ -2123,18 +2117,16 @@
 
       <!-- Kiwiform vs Typeform: feature by feature -->
       <section id="kiwiform-vs-typeform" class="flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <div class="col-span-11 min-w-0 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
+          <div class="col-span-11 rounded-10px bg-[#F5FBF6] px-5 py-14 md:px-10 lg:px-14">
             <div class="mx-auto max-w-[1040px]">
               <h2 class="heading-h2">
                 Kiwiform vs Typeform:
                 <span class="text-Theme-Green"> feature by feature</span>
               </h2>
-              <div
-                class="mt-6 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain rounded-10px border border-Theme-bg"
-              >
+              <div class="mt-6 overflow-x-auto rounded-10px border border-Theme-bg bg-white">
                 <table class="min-w-[780px] w-full text-left text-sm">
                   <thead class="bg-[#183C1A] text-white">
                     <tr>
@@ -2819,7 +2811,7 @@
           </div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </section>
 
       <!-- Blank line  -->
@@ -2838,12 +2830,12 @@
       </div>
 
       <section id="how-we-evaluated" class="flex md:grid grid-cols-14 gap-px w-full">
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <div class="w-full min-w-0 md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
+        <div class="w-full md:col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
           <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
           <div
             id="how-we-evaluated"
-            class="col-span-11 min-w-0 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14"
+            class="col-span-11 rounded-10px bg-white px-5 py-14 md:px-10 lg:px-14"
           >
             <div class="mx-auto max-w-[1040px]">
               <h2 class="heading-h2">How we evaluated these Typeform alternatives</h2>
@@ -2851,9 +2843,7 @@
                 We scored each tool on the criteria people cite most when leaving Typeform, weighted
                 by how often they come up.
               </p>
-              <div
-                class="mt-6 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain rounded-10px border border-Theme-bg"
-              >
+              <div class="mt-6 overflow-x-auto rounded-10px border border-Theme-bg">
                 <table class="min-w-[700px] w-full text-left text-sm">
                   <thead class="bg-[#183C1A] text-white">
                     <tr>
@@ -2906,7 +2896,7 @@
           </div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
         </div>
-        <div class="max-md:min-w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
+        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </section>
 
       <!-- Blank line  -->
@@ -3684,7 +3674,7 @@
                 <li>
                   <a
                     class="group flex items-center gap-3 border-b border-dashed border-[#D8D2D2] py-3 text-base leading-6 text-Theme-Black transition-colors duration-300 hover:text-Theme-Green"
-                    href="/tally-alternative "
+                    href="#typeform-pricing"
                     ><span class="text-xs leading-5 text-[#8C8484]">02</span
                     ><span>Tally alternative</span></a
                   >
@@ -3692,7 +3682,7 @@
                 <li>
                   <a
                     class="group flex items-center gap-3 border-b border-dashed border-[#D8D2D2] py-3 text-base leading-6 text-Theme-Black transition-colors duration-300 hover:text-Theme-Green"
-                    href="/jotform-alternative"
+                    href="#comparison"
                     ><span class="text-xs leading-5 text-[#8C8484]">03</span
                     ><span>Jotform alternative</span></a
                   >
@@ -3700,7 +3690,7 @@
                 <li>
                   <a
                     class="group flex items-center gap-3 border-b border-dashed border-[#D8D2D2] py-3 text-base leading-6 text-Theme-Black transition-colors duration-300 hover:text-Theme-Green"
-                    href="/google-forms-alternative"
+                    href="#picks"
                     ><span class="text-xs leading-5 text-[#8C8484]">04</span
                     ><span>Google Forms alternative</span></a
                   >
@@ -3708,7 +3698,7 @@
                 <li>
                   <a
                     class="group flex items-center gap-3 border-b border-dashed border-[#D8D2D2] py-3 text-base leading-6 text-Theme-Black transition-colors duration-300 hover:text-Theme-Green"
-                    href="/surveymonkey-alternative"
+                    href="#reviews"
                     ><span class="text-xs leading-5 text-[#8C8484]">05</span
                     ><span>SurveyMonkey alternative</span></a
                   >
@@ -3716,7 +3706,7 @@
                 <li>
                   <a
                     class="group flex items-center gap-3 border-b border-dashed border-[#D8D2D2] py-3 text-base leading-6 text-Theme-Black transition-colors duration-300 hover:text-Theme-Green"
-                    href="/microsoft-forms-alternative"
+                    href="#calculator"
                     ><span class="text-xs leading-5 text-[#8C8484]">06</span
                     ><span>Microsoft Forms alternative</span></a
                   >
@@ -3745,6 +3735,7 @@
                     ><span>AI form builder</span></a
                   >
                 </li>
+             
               </ol>
             </div>
           </div>
@@ -3768,6 +3759,10 @@
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
     </div>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <script>
       function costCalculator() {
         return {
@@ -3874,8 +3869,5 @@
         }
       }
     </script>
-
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </body>
 </html>

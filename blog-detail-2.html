@@ -1616,43 +1616,7 @@
           <div
             class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-Theme-bg"
           >
-            <!-- TL;DR -->
-            <div class="w-full bg-white rounded-10px p-3 lg:p-20" id="tldr">
-              <div class="w-full mx-auto bg-white rounded-10px border-l-4 border-Theme-Green">
-                <div class="p-5 border-y border-r border-Theme-bg rounded-10px">
-                  <h2
-                    class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
-                  >
-                    TL;DR
-                  </h2>
-                  <ul class="legal-disc">
-                    <li class="legal-para">
-                      Five of the builders compared here put no cap on free responses; the
-                      <a href="#limits" class="text-Theme-Green underline transition-all duration-300 hover:text-theme-Green-hover">limits table</a>
-                      below lists them.
-                    </li>
-                    <li class="legal-para">
-                      If you need many live forms, check the form count too, because forms.app’s
-                      free plan caps it.
-                    </li>
-                    <li class="legal-para">
-                      If a capped plan from Jotform, Typeform, Fillout or Microsoft Forms already
-                      stopped your form, the
-                      <a href="#alternatives" class="text-Theme-Green underline transition-all duration-300 hover:text-theme-Green-hover">alternatives table</a>
-                      below shows each cap.
-                    </li>
-                    <li class="legal-para">
-                      Budget for at least one paid feature: branding removal, a custom domain or
-                      payments costs money on almost every plan here.
-                    </li>
-                    <li class="legal-para">
-                      For survey-first work, Surveyplanet, SurveyHero and SurveyMars state unlimited
-                      questions and responses for free.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+           
 
             <!-- guide  -->
             <nav class="w-full py-12 px-3 lg:px-20 bg-white rounded-10px" aria-label="On this page">
@@ -1711,6 +1675,44 @@
                 </li>
               </ol>
             </nav>
+
+             <!-- TL;DR -->
+            <div class="w-full bg-white rounded-10px p-3 lg:p-20" id="tldr">
+              <div class="w-full mx-auto bg-white rounded-10px border-l-4 border-Theme-Green">
+                <div class="p-5 border-y border-r border-Theme-bg rounded-10px">
+                  <h2
+                    class="text-center lg:text-left w-full text-base leading-7 text-Theme-Green mb-2.5"
+                  >
+                    TL;DR
+                  </h2>
+                  <ul class="legal-disc">
+                    <li class="legal-para">
+                      Five of the builders compared here put no cap on free responses; the
+                      <a href="#limits" class="text-Theme-Green underline transition-all duration-300 hover:text-theme-Green-hover">limits table</a>
+                      below lists them.
+                    </li>
+                    <li class="legal-para">
+                      If you need many live forms, check the form count too, because forms.app’s
+                      free plan caps it.
+                    </li>
+                    <li class="legal-para">
+                      If a capped plan from Jotform, Typeform, Fillout or Microsoft Forms already
+                      stopped your form, the
+                      <a href="#alternatives" class="text-Theme-Green underline transition-all duration-300 hover:text-theme-Green-hover">alternatives table</a>
+                      below shows each cap.
+                    </li>
+                    <li class="legal-para">
+                      Budget for at least one paid feature: branding removal, a custom domain or
+                      payments costs money on almost every plan here.
+                    </li>
+                    <li class="legal-para">
+                      For survey-first work, Surveyplanet, SurveyHero and SurveyMars state unlimited
+                      questions and responses for free.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
             <!-- limits -->
             <div class="w-full py-12 px-3 lg:px-20 bg-white rounded-10px" id="limits">
@@ -2511,80 +2513,7 @@
               </div>
             </div>
 
-            <!-- build -->
-            <div class="w-full py-12 lg:py-20 px-3 lg:px-20 bg-white rounded-10px" id="build">
-              <h2 class="heading-h2 normal-case text-center">
-                Build your free form in <span class="text-Theme-Green">Kiwiform</span>
-              </h2>
-              <p class="mt-4 text-base leading-7 text-[#4A4545] text-center max-w-[620px] mx-auto">
-                Describe the form and Kiwizard AI drafts it on the Free plan, with unlimited
-                responses.
-              </p>
-
-              <!-- kiwi prompt box -->
-              <form id="kiwizard-form" novalidate class="w-full mt-8">
-                <label
-                  for="kiwizard-prompt"
-                  class="block max-w-[706px] mx-auto mb-2.5 text-base font-medium leading-6 text-Theme-Black"
-                  >Describe the form you want</label
-                >
-                <div
-                  class="relative bg-[#EDE9E9] w-full max-w-[706px] min-h-[146px] mx-auto rounded-2xl p-[2px] overflow-hidden"
-                >
-                  <div class="absolute inset-0 flex items-center justify-center z-0" aria-hidden="true">
-                    <div
-                      class="w-[200%] aspect-square rounded-full blur-xl bg-[radial-gradient(circle_at_30%_30%,#007D47_0%,#B8DD2F_25%,transparent_60%)] animate-spin-slow"
-                    ></div>
-                  </div>
-                  <div class="relative z-10 w-full pl-5 p-2.5 bg-white rounded-[14px] flex flex-col h-full min-h-[142px]">
-                    <textarea
-                      id="kiwizard-prompt"
-                      name="prompt"
-                      maxlength="2000"
-                      placeholder="e.g. Production request form: project name, requester email, production type (Video, Webinar, Print), target launch date. Show shoot location and shoot dates only for Video."
-                      class="resize-none w-full h-[88px] overflow-y-auto text-base leading-[22px] text-Theme-Black placeholder:text-[#7D7676] outline-0 focus:outline-0 bg-transparent font-Inter [&::-webkit-scrollbar]:w-[5px] [&::-webkit-scrollbar-track]:bg-[#FFFFFF] [&::-webkit-scrollbar-thumb]:bg-[#E2DCDC] [&::-webkit-scrollbar-thumb]:rounded-full"
-                    ></textarea>
-                    <div class="flex flex-wrap items-center justify-between gap-2.5 w-full mt-auto pt-2.5">
-                      <span class="text-xs leading-5 text-[#7D7676] font-Inter">
-                        Name the purpose, fields and any show/hide rules.
-                      </span>
-                      <button
-                        type="submit"
-                        class="relative overflow-hidden pl-3 pr-4 py-[11px] rounded-[5px] flex items-center gap-5 bg-[#007D47] cursor-pointer ml-auto"
-                      >
-                        <div class="flex items-center gap-5 relative z-[2]">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path
-                              d="M7.94873 4.10254C7.62685 4.10254 7.339 4.30295 7.2273 4.60482L6.69823 6.03462C5.98005 7.97547 5.68819 8.7168 5.15124 9.25383C4.61429 9.79075 3.87295 10.0825 1.93208 10.8008L0.502278 11.3298C0.200411 11.4415 0 11.7294 0 12.0513C0 12.3731 0.200411 12.661 0.502278 12.7727L1.93208 13.3017C3.87295 14.02 4.61429 14.3118 5.15124 14.8487C5.68819 15.3857 5.98005 16.1271 6.69823 18.0679L7.2273 19.4977C7.339 19.7996 7.62685 20 7.94873 20C8.27057 20 8.55847 19.7996 8.67016 19.4977L9.19919 18.0679C9.91745 16.1271 10.2092 15.3857 10.7462 14.8487C11.2832 14.3118 12.0245 14.02 13.9654 13.3017L15.3952 12.7727C15.697 12.661 15.8975 12.3731 15.8975 12.0513C15.8975 11.7294 15.697 11.4415 15.3952 11.3298L13.9654 10.8008C12.0245 10.0825 11.2832 9.79075 10.7462 9.25383C10.2092 8.7168 9.91745 7.97547 9.19919 6.03462L8.67016 4.60482C8.55847 4.30295 8.27057 4.10254 7.94873 4.10254Z"
-                              fill="white"
-                            />
-                            <path
-                              d="M16.1538 0C15.8319 0 15.544 0.200411 15.4323 0.502278L15.2056 1.11505C14.8838 1.98457 14.7902 2.19024 14.644 2.33641C14.4979 2.4826 14.2922 2.57624 13.4227 2.89798L12.8099 3.12473C12.508 3.23643 12.3076 3.52428 12.3076 3.84616C12.3076 4.16804 12.508 4.45588 12.8099 4.56759L13.4227 4.79433C14.2922 5.11608 14.4979 5.20972 14.644 5.35589C14.7902 5.50208 14.8838 5.70775 15.2056 6.57727L15.4323 7.19004C15.544 7.49191 15.8319 7.69232 16.1538 7.69232C16.4756 7.69232 16.7635 7.49191 16.8752 7.19004L17.102 6.57727C17.4237 5.70775 17.5174 5.50208 17.6635 5.35589C17.8097 5.20972 18.0154 5.11608 18.8849 4.79433L19.4977 4.56759C19.7995 4.45588 19.9999 4.16804 19.9999 3.84616C19.9999 3.52428 19.7995 3.23643 19.4977 3.12473L18.8849 2.89798C18.0154 2.57624 17.8097 2.4826 17.6635 2.33641C17.5174 2.19024 17.4237 1.98457 17.102 1.11505L16.8752 0.502278C16.7635 0.200411 16.4756 0 16.1538 0Z"
-                              fill="white"
-                            />
-                          </svg>
-                          <span class="text-base text-white font-medium leading-[140%] font-Inter">Generate form</span>
-                        </div>
-                        <div
-                          class="absolute w-[50%] h-[300%] -top-3 left-1/2 pointer-events-none -translate-x-1/2 -rotate-12 z-[1] bg-gradient-to-r from-[#B8DD2F]/0 via-[#B8DD2F]/50 to-[#B8DD2F]/0 animate-Slide"
-                        ></div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <p
-                  id="prompt-error"
-                  role="alert"
-                  class="max-w-[706px] mx-auto mt-2.5 text-center text-xs leading-5 text-[#BF000F] empty:hidden"
-                ></p>
-              </form>
-
-              <p class="mt-[15px] text-center text-sm leading-5 text-[#7D7676]">
-                Prefer to start from scratch?
-                <a href="https://app.kiwiform.com" class="text-Theme-Green underline transition-all duration-300 hover:text-theme-Green-hover">Open the builder</a>.
-              </p>
-            </div>
+           
             <div class="w-full visible h-0 opacity-0" id="faq"></div>
           </div>
           <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
@@ -2771,64 +2700,7 @@
         <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
       </div>
 
-      <!-- related blogs  -->
-      <section class="flex w-full gap-px md:grid md:grid-cols-14" aria-labelledby="related-title">
-        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-r-10px"></div>
-        <div class="w-full bg-Theme-bg md:col-span-12 2xl:grid 2xl:grid-cols-15 2xl:gap-px">
-          <div class="col-span-2 hidden rounded-r-10px bg-white 2xl:block"></div>
-          <div class="col-span-11 rounded-10px bg-white px-5 py-8 sm:px-8 lg:px-10">
-            <div class="mb-5 flex items-center justify-between">
-              <h2 id="related-title" class="text-xl font-semibold">Related blogs</h2>
-              <a href="https://kiwiform.com/blog" class="text-sm font-medium text-Theme-Green">View all</a>
-            </div>
-            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              <a
-                href="https://kiwiform.com/blog/test-scoring-calculator"
-                class="group block rounded-10px border border-Theme-bg p-5 transition-colors duration-300 hover:border-Theme-Green"
-              >
-                <h3 class="text-sm font-semibold leading-5 transition-colors duration-300 group-hover:text-Theme-Green">
-                  Test Scoring Calculator: A Step-by-Step Guide
-                </h3>
-                <p class="mt-1 text-xs text-[#8C8484]">Last updated: September 2026</p>
-              </a>
-              <a
-                href="https://kiwiform.com/blog/web-forms-creating"
-                class="group block rounded-10px border border-Theme-bg p-5 transition-colors duration-300 hover:border-Theme-Green"
-              >
-                <h3 class="text-sm font-semibold leading-5 transition-colors duration-300 group-hover:text-Theme-Green">
-                  Web Forms Creating: A Practical Guide from Plan to Launch
-                </h3>
-                <p class="mt-1 text-xs text-[#8C8484]">Last updated: September 2026</p>
-              </a>
-              <a
-                href="https://kiwiform.com/blog/survey-questionnaire-for-research"
-                class="group block rounded-10px border border-Theme-bg p-5 transition-colors duration-300 hover:border-Theme-Green"
-              >
-                <h3 class="text-sm font-semibold leading-5 transition-colors duration-300 group-hover:text-Theme-Green">
-                  Survey Questionnaire for Research: Design That Gets Answers
-                </h3>
-                <p class="mt-1 text-xs text-[#8C8484]">Last updated: September 2026</p>
-              </a>
-            </div>
-          </div>
-          <div class="col-span-2 hidden rounded-l-10px bg-white 2xl:block"></div>
-        </div>
-        <div class="max-md:w-4 bg-white md:col-span-1 max-2xl:rounded-l-10px"></div>
-      </section>
-      <!-- Blank line  -->
-      <div class="bg-transparent flex md:grid grid-cols-14 gap-px w-full h-[50px]">
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-r-10px"></div>
-        <!-- main-container  -->
-        <div class="w-full col-span-12 bg-Theme-bg 2xl:grid 2xl:grid-cols-15 gap-px">
-          <div class="col-span-2 bg-white rounded-r-10px max-2xl:hidden"></div>
-          <!-- place content here -->
-          <div
-            class="col-span-11 bg-Theme-bg rounded-10px w-full flex items-center justify-center flex-col gap-px h-full bg-white"
-          ></div>
-          <div class="col-span-2 bg-white rounded-l-10px max-2xl:hidden"></div>
-        </div>
-        <div class="max-md:w-4 md:col-span-1 bg-white max-2xl:rounded-l-10px"></div>
-      </div>
+     
     </main>
 
 
